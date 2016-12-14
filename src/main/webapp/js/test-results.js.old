@@ -1,0 +1,15 @@
+$(document).foundation();
+
+$(document).ready(function() {
+    var id = $("#courses-select").val();
+    if (id!=-1) {
+        $("#course-"+id).fadeIn();
+    }
+    $("#courses-select").change(function(){
+        id = $(this).val();
+        if (id!=-1) {
+            $(".course-stat").hide(0);
+            $("#course-"+id).fadeIn();
+        }
+    });
+});

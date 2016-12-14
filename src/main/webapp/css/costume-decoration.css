@@ -1,0 +1,33 @@
+
+.footer{
+    width: 100%;
+}
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+    .footer{
+        position:relative;
+        bottom: 0;
+    }
+    h1.statistic__title{
+        margin-top:20px;
+        font-size: 1.4rem;
+        font-weight: 800;
+    }
+    .statistic_subtitle > h2{
+        font-size: 1.4rem;
+        font-weight: 800;
+    }
+}
+/* Large and up */
+@media screen and (min-width: 64em) {
+    .footer{
+        bottom:0;
+    }
+}
+.file-upload-2{
+    text-transform: uppercase;
+    min-height: 57px;
+}
+a.save-changes{
+    min-height:57px;
+}

@@ -1,0 +1,12 @@
+$(document).ready(function() {
+    $("#search_form").submit(function(event) {
+        event.preventDefault();
+        searchCourses();
+    });
+});
+
+function searchCourses() {
+    var query = $("#search-text").val();
+    var cat = $("#search-category").val();
+    window.location = 'http://doctrado.me/course/1?query='+query+'&cat='+cat;
+}

@@ -1,0 +1,108 @@
+$(document).ready(function() {
+
+    $('.themes__slider').slick({
+        dots: false,
+        infinite: false,
+        arrows: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: false
+                }
+            }
+        ]
+    }).on('afterChange', function(event, slick, currentSlide, nextSlide) {
+        $("#theme-select").val(currentSlide);
+    });
+
+    $("#theme-select").change(function() {
+        $('.themes__slider').slick('slickGoTo', $(this).val(), false);
+    });
+});
+
+function slideNext() {
+    $('.themes__slider').slick('slickPrev');
+}
+
+function slidePrev() {
+    $('.themes__slider').slick('slickNext');
+}
+
+function themeVideo(t, st) {
+    $("#theme-"+t+"-"+st+" .video").addClass("active");
+    $("#theme-"+t+"-"+st+" .document, #theme-"+t+"-"+st+" .presentation").removeClass("active");
+    $("#theme-"+t+"-"+st+" #with-presentation, #theme-"+t+"-"+st+" #with-document").hide(0);
+    $("#theme-"+t+"-"+st+" #with-video").fadeIn(300);
+}
+function themePresentation(t, st) {
+    $("#theme-"+t+"-"+st+" .presentation").addClass("active");
+    $("#theme-"+t+"-"+st+" .document, #theme-"+t+"-"+st+" .video").removeClass("active");
+    $("#theme-"+t+"-"+st+" #with-video, #theme-"+t+"-"+st+" #with-document").hide(0);
+    $("#theme-"+t+"-"+st+" #with-presentation").fadeIn(300);
+}
+function themeDocument(t, st) {
+    $("#theme-"+t+"-"+st+" .document").addClass("active");
+    $("#theme-"+t+"-"+st+" .video, #theme-"+t+"-"+st+" .presentation").removeClass("active");
+    $("#theme-"+t+"-"+st+" #with-video, #theme-"+t+"-"+st+" #with-presentation").hide(0);
+    $("#theme-"+t+"-"+st+" #with-document").fadeIn(300);
+}
+
+function initPayment() {
+    var height = (screen.height/2);
+    var width = (screen.width/2);
+    var newWin = open('','windowName','height=250,width=300,left=' + (width-150) + ',top=' + (height-250));
+    newWin.document.write("<div style='text-align:center;'><img style=\"height:120px;width:120px;\" src='../css/ajax-loader.gif'><p>Ожидаем ответа от сервера...</p></div>");
+    $.ajax({
+        type: 'post',
+        url: '../pay',
+        dataType: 'html',
+        data: {
+            'course_id': course_id
+        },
+        success: function (data) {
+            if (data!=1) {
+				newWin.close();
+				$('body').empty();
+                window.document.write(data);
+                window.document.getElementsByTagName("form")[0].style.display="none";
+                window.document.getElementsByTagName("form")[0].submit();
+            }
+            else {
+                newWin.close();
+                location.reload();
+            }
+        }
+    });
+}
+
+function initTest(theme_t, theme_st) {
+    $("#confirm-test-button").attr('onclick', 'passTest('+theme_t+','+theme_st+')');
+    $("#confirm-test-popup").fadeIn();
+}
+
+function passTest(theme_t, theme_st) {
+    $.redirect('../test', {'course': course_id, 'user_id': user_id, 'theme': theme_t, 'stheme': theme_st});
+}

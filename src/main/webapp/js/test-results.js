@@ -1,0 +1,1 @@
+$(document).foundation(),$(document).ready(function(){var e=$("#courses-select").val();-1!=e&&$("#course-"+e).fadeIn(),$("#courses-select").change(function(){e=$(this).val(),-1!=e&&($(".course-stat").hide(0),$("#course-"+e).fadeIn())})});

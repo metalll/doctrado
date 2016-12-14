@@ -1,0 +1,1 @@
+function passwordRestoreRequest(){var e=$(".reset-your-password").val();""!=e&&$.ajax({type:"post",url:"passwordRestoreAttempt",data:{mail:e},success:function(){$("#reset-result").finish().fadeIn().delay(5e3).fadeOut()}})}

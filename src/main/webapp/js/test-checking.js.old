@@ -1,0 +1,48 @@
+$(document).foundation();
+
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+function setRight(id) {
+    var right = $("#question-"+id+" .right");
+    var wrong = $("#question-"+id+" .wrong");
+    if(!right.hasClass('right-answer')) right.addClass('right-answer');
+    if(wrong.hasClass('wrong-answer')) wrong.removeClass('wrong-answer');
+}
+
+function setWrong(id) {
+    var right = $("#question-"+id+" .right");
+    var wrong = $("#question-"+id+" .wrong");
+    if(!wrong.hasClass('wrong-answer')) wrong.addClass('wrong-answer');
+    if(right.hasClass('right-answer')) right.removeClass('right-answer');
+}
+
+var answers_raw;
+
+function finishTestChecking() {
+    answers_raw = $('.waiting-answer');
+    var answers = [];
+    for (var i = 0; i < answers_raw.length; i++) {
+        var answer = $(answers_raw[i]);
+        answers[i] = {};
+        answers[i]['question_n'] = answer.attr('id').substring(9);
+        var right = $('#' + $(answers_raw[i]).attr('id') + ' .right');
+        var wrong = $('#' + $(answers_raw[i]).attr('id') + ' .wrong');
+        if(right.hasClass('right-answer')||!wrong.hasClass('wrong-answer')) answers[i]['score'] = 1;
+        else answers[i]['score'] = 0;
+    }
+    $.ajax({
+        type: 'post',
+        url: '../finishTestChecking',
+        data: {
+            attempt_id: attempt_id,
+            answers: answers
+        },
+        success: function() {
+            location.href = '../test-check';
+        }
+    });
+}

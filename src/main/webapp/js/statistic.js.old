@@ -1,0 +1,27 @@
+$(document).foundation();
+
+$(document).ready(function(){
+    var id = $("#courses-select").val();
+    if (id!=-1) {
+        $("#course-"+id).fadeIn();
+    }
+    $(".courses-button").click(function(){
+        $(".students").removeClass("success").addClass("secondary");
+        $(".courses-button").addClass("success");
+        $(".students-progress").fadeOut(0);
+        $(".list-of-user-courses").fadeIn(300);
+    });
+    $(".students").click(function(){
+        $(".courses-button").removeClass("success").addClass("secondary");
+        $(".students").addClass("success");
+        $(".list-of-user-courses").fadeOut(0);
+        $(".students-progress").fadeIn(300);
+    });
+    $("#courses-select").change(function(){
+        id = $(this).val();
+        if (id!=-1) {
+            $(".course-stat").hide(0);
+            $("#course-"+id).fadeIn();
+        }
+    });
+});

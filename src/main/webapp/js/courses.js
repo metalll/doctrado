@@ -1,0 +1,1 @@
+function searchCourses(){var e=$("#search-text").val(),r=$("#search-category").val();window.location="https://doctrado.me/course/1?query="+e+"&cat="+r}$(document).ready(function(){$("#search_form").submit(function(e){e.preventDefault(),searchCourses()})});
