@@ -1,7 +1,7 @@
 package auth_system;
 
 import Interfaces.ICompletion;
-import database.DBBaseUser;
+import database.User.DBBaseUser;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,7 +1,8 @@
-package database;
+package database.User;
 
 import Interfaces.ICompletion;
 import com.mysql.jdbc.Statement;
+import database.DB;
 import model.Users.BaseUser;
 
 import java.sql.Connection;
@@ -13,7 +14,7 @@ import java.util.Properties;
 /**
  * Created by NSD on 14.12.16.
  */
-public class DBBaseUser extends  DB {
+public class DBBaseUser extends DB {
 
     private static volatile DBBaseUser instance;
     private Statement stmt;

@@ -10,11 +10,40 @@
         <servlet-name>validator</servlet-name>
         <servlet-class>auth_system.Validator</servlet-class>
     </servlet>
-
     <servlet-mapping>
         <servlet-name>validator</servlet-name>
         <url-pattern>/validate_user</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>authorizator</servlet-name>
+        <servlet-class>auth_system.Authorizator</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>authorizator</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>certificates</servlet-name>
+        <servlet-class>UI.certificates</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>certificates</servlet-name>
+        <url-pattern>/certificates</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>restorePass</servlet-name>
+        <servlet-class>UI.restorePass</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>restorePass</servlet-name>
+        <url-pattern>/restorePass</url-pattern>
+    </servlet-mapping>
+
 
     <context-param>
         <param-name>javax.servlet.jsp.jstl.fmt.request.charset</param-name>
