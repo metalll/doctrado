@@ -38,9 +38,14 @@ public class Validator extends HttpServlet {
 
 
         BufferedWriter writer = null;
+        result += new FileWriter("fcw").getEncoding();
+
+
+
         try
         {
             writer = new BufferedWriter( new FileWriter("file1"));
+
 //
 //
 //            for(String paramName:map.keySet()) {
