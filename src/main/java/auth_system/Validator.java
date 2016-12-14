@@ -12,6 +12,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
+import java.util.Map;
 
 /**
  * Created by NSD on 14.12.16.
@@ -24,15 +25,14 @@ public class Validator extends HttpServlet {
         PrintWriter out = response.getWriter ();
         request.setCharacterEncoding ("UTF-8");
         int error = 0;
-        // request.setCharacterEncoding("Cp1251");
 
-        //   Map<String,String[]> map = request.getParameterMap();
+
+        Map<String,String[]> map = request.getParameterMap();
         String str = request.getCharacterEncoding() + "\n";
         str += BodyGetter.getBody(request);
 //                String result = URLDecoder.decode(str,"UTF-8");
 
-        //Reading the Map
-        //Works for GET && POST Method
+
 
         String result = URLDecoder.decode(str, "UTF-8").replaceAll("\\+", "%20");
 
@@ -78,7 +78,7 @@ public class Validator extends HttpServlet {
 
 
         response.setStatus(HttpServletResponse.SC_OK);
-        out.write(result);
+        out.write("0");
         out.flush();
         out.close();
 
