@@ -15,7 +15,7 @@ import java.net.URLDecoder;
 /**
  * Created by NSD on 14.12.16.
  */
-@WebServlet(name = "Validator")
+@WebServlet("/validate_user")
 public class Validator extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
