@@ -2,7 +2,6 @@ package database;
 
 import Interfaces.ICompletion;
 import com.mysql.jdbc.Statement;
-import com.sun.xml.internal.rngom.parse.host.Base;
 import model.Users.BaseUser;
 
 import java.sql.Connection;
