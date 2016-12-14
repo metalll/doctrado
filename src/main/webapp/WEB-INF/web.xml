@@ -44,6 +44,15 @@
         <url-pattern>/restorePass</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>webinar</servlet-name>
+        <servlet-class>UI.webinar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>webinar</servlet-name>
+        <url-pattern>/webinar</url-pattern>
+    </servlet-mapping>
+
 
     <context-param>
         <param-name>javax.servlet.jsp.jstl.fmt.request.charset</param-name>
