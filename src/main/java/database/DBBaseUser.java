@@ -58,7 +58,7 @@ public class DBBaseUser extends  DB {
 
 
 
-
+/* TO DO */
 
     }
     public void hasUserTelephone(String telephone,ICompletion completion){
