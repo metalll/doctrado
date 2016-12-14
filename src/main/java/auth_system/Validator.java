@@ -73,9 +73,9 @@ public class Validator extends HttpServlet {
 
 
         response.setStatus(HttpServletResponse.SC_OK);
-        response.getWriter().write(result);
-        response.getWriter().flush();
-        response.getWriter().close();
+        out.write(result);
+        out.flush();
+        out.close();
 
 
 
