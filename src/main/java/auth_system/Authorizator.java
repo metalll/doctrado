@@ -94,6 +94,7 @@ public class Authorizator extends HttpServlet {
                         cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
 
                         response.addCookie(cookie);
+                        response.addCookie(cookie1);
                         response.setStatus(HttpServletResponse.SC_OK);
                         response.getWriter().write("");
                         response.getWriter().flush();
