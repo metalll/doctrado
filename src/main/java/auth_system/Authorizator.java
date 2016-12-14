@@ -1,16 +1,15 @@
 package auth_system;
 
 import Interfaces.ICompletion;
-import database.DBUserManager;
+import database.DBBaseUser;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Map;
 
 /**
@@ -19,7 +18,9 @@ import java.util.Map;
 @WebServlet("/login")
 public class Authorizator extends HttpServlet {
     protected void doPost(HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
-
+        response.setContentType ("text/html; charset=UTF-8");
+        PrintWriter out = response.getWriter ();
+        request.setCharacterEncoding ("UTF-8");
      //if auth
         Map<String, String[]> map = request.getParameterMap();
             //Reading the Map
@@ -61,7 +62,7 @@ public class Authorizator extends HttpServlet {
         String login =  map.get("email")[0];
         String password = map.get("password")[0];
 
-        DBUserManager.getInstance().getUserWithLoginAndPass(login, password, new ICompletion() {
+        DBBaseUser.getInstance().getUserWithEmailAndPass(login, password, new ICompletion() {
             @Override
             public void afterOperation(Object bundle) {
                 if(bundle == null) {
@@ -89,7 +90,6 @@ public class Authorizator extends HttpServlet {
                 }
             }
         });
-
 
 
 

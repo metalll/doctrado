@@ -7,7 +7,7 @@ import java.sql.Connection;
  */
 public abstract class DB {
 
-    protected static final String databaseUrl = "jdbc:mysql://127.2.159.2:3306/doctrade";
+    protected static final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
     //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
     protected static final String userName = "adminsBmIZAN";
     protected static final String password = "qIqWymbbb-hk";

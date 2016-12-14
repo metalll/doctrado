@@ -1,7 +1,7 @@
 package auth_system;
 
 import Interfaces.ICompletion;
-import database.DBUserManager;
+import database.DBBaseUser;
 import model.Users.BaseUser;
 import utils.BodyGetter;
 
@@ -19,7 +19,7 @@ public class AuthManager {
     public static AuthManager getInstance() {
         AuthManager localInstance = instance;
         if (localInstance == null) {
-            synchronized (DBUserManager.class) {
+            synchronized (AuthManager.class) {
                 localInstance = instance;
                 if (localInstance == null) {
                     instance = localInstance = new AuthManager();
@@ -42,13 +42,15 @@ public class AuthManager {
 
            if(!(uName.isEmpty())&&!(uToken.isEmpty())){
 
-               DBUserManager.getInstance().validateTokenAndGetUser(uName, uToken, new ICompletion() {
+               DBBaseUser.getInstance().getUserWithLastUserToken(uToken, new ICompletion() {
                    @Override
                    public void afterOperation(Object bundle) {
                        BaseUser baseUser = (BaseUser) bundle;
-                        completion.afterOperation(baseUser);
+                       completion.afterOperation(baseUser);
                    }
                });
+
+
 
            }
 
@@ -68,6 +70,7 @@ public class AuthManager {
             String uName ;
             String uPass;
             if(requestBody!=null){
+
 
 
 
