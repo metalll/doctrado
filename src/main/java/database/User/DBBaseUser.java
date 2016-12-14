@@ -78,7 +78,7 @@ public class DBBaseUser extends DB {
 
     }
     public void getUserWithEmailAndPass(String email,String password,ICompletion completion){
-        String query =  "SELECT * FROM `users` WHERE `email` = '"+email+"' AND 'password' ="+password+"";
+        String query =  "SELECT * FROM `users` WHERE `email` = '"+email+"' AND 'password' = '"+password+"'";
         this.getExecute(query,completion);
     }
 

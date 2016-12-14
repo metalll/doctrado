@@ -59,7 +59,7 @@ public class Authorizator extends HttpServlet {
 //        }
 
 
-        String login =  map.get("email")[0];
+        final String login =  map.get("email")[0];
         String password = map.get("password")[0];
 
         DBBaseUser.getInstance().getUserWithEmailAndPass(login, password, new ICompletion() {
@@ -71,6 +71,9 @@ public class Authorizator extends HttpServlet {
                         response.getWriter().write("-1");
                         response.getWriter().flush();
                         response.getWriter().close();
+
+
+
 
                     }
                     catch (Exception e){

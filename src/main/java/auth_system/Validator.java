@@ -36,15 +36,15 @@ public class Validator extends HttpServlet {
 //                String result = URLDecoder.decode(str,"UTF-8");
 
 
-        BaseUser u = new BaseUser(0,"Алексей","Владимирович","Петров","metall112@bk.ru",
-                "QazWsx321","380679662385","09.09.1991","Высшее","Одесса","0324552532562","s");
+//        BaseUser u = new BaseUser(0,"Алексей","Владимирович","Петров","metall112@bk.ru",
+//                "QazWsx321","380679662385","09.09.1991","Высшее","Одесса","0324552532562","s");
 
-        DBBaseUser.getInstance().addUser(u, new ICompletion() {
-            @Override
-            public void afterOperation(Object bundle) {
-
-            }
-        });
+//        DBBaseUser.getInstance().addUser(u, new ICompletion() {
+//            @Override
+//            public void afterOperation(Object bundle) {
+//
+//            }
+//        });
 
         String result = URLDecoder.decode(str, "UTF-8").replaceAll("\\+", "%20");
 
