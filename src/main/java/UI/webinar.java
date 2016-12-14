@@ -18,11 +18,16 @@ public class webinar extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         boolean registered = false;
+        try {
+
+
         for(int i=0 ;i<request.getCookies().length;i++){
             if(request.getCookies()[i].getName().equals("Token")){
                 registered = true;
             }
         }
+        }
+        catch (Exception e){}
         response.setContentType("text/html;charset=UTF-8");
         if(registered){
         request.getRequestDispatcher("./webinar.jsp").include(request, response);//рисуем jsp.e
