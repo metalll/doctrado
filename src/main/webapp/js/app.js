@@ -312,14 +312,14 @@ $(document).ready(function() {
         if (errors) return;
         $.ajax({
             type: 'post',
-            url: 'http://doctrade-sviasy.rhcloud.com/login',
+            url: 'http://doctrado-sviasy.rhcloud.com/login',
             data: {
                 email: form[0]['value'],
                 password: form[1]['value']
             },
             success: function(data) {
                 if (data==-1) $('#alert-login-password').text('Неправильный логин/пароль').fadeIn();
-				else window.location.href = "//https://doctrado.me/profile";
+				else window.location.href = "http://doctrado-sviasy.rhcloud.com/profile";
             }
         });
     });
