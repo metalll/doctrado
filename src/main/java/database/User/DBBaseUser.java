@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
+
 /**
  * Created by NSD on 14.12.16.
  */
@@ -122,6 +123,7 @@ public class DBBaseUser extends DB {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+
         }
 
     }
