@@ -2,9 +2,11 @@ package auth_system;
 
 import Interfaces.ICompletion;
 import database.User.DBBaseUser;
+import model.Users.BaseUser;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,6 +24,9 @@ public class Authorizator extends HttpServlet {
         PrintWriter out = response.getWriter ();
         request.setCharacterEncoding ("UTF-8");
      //if auth
+
+
+
         Map<String, String[]> map = request.getParameterMap();
             //Reading the Map
             //Works for GET && POST Method
@@ -75,6 +80,7 @@ public class Authorizator extends HttpServlet {
 
 
 
+
                     }
                     catch (Exception e){
 
@@ -82,6 +88,11 @@ public class Authorizator extends HttpServlet {
                 }
                 else {
                     try {
+                        Cookie cookie = new Cookie("Token",((BaseUser)bundle).getLastUserToken());
+                        cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
+
+
+                        response.addCookie(cookie);
                         response.setStatus(HttpServletResponse.SC_OK);
                         response.getWriter().write("");
                         response.getWriter().flush();
@@ -104,4 +115,6 @@ public class Authorizator extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
+
 }
