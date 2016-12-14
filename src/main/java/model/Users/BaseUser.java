@@ -24,6 +24,9 @@ public class BaseUser {
                     String surname,String email,String password,
                     String telephone,String born_date,String edu_level,
                     String work_location,String lastUserToken,String userType){
+
+
+
         this.id = id;
         this.name = name;
         this.second_name = second_name;
