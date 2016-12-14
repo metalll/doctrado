@@ -18,12 +18,12 @@ public class BaseUser {
     private String edu_level;
     private String work_location;
     private String lastUserToken;
-
+    private String userType;
 
     public BaseUser(int id,String name,String second_name,
                     String surname,String email,String password,
                     String telephone,String born_date,String edu_level,
-                    String work_location,String lastUserToken){
+                    String work_location,String lastUserToken,String userType){
         this.id = id;
         this.name = name;
         this.second_name = second_name;
@@ -34,9 +34,8 @@ public class BaseUser {
         this.born_date = born_date;
         this.edu_level = edu_level;
         this.work_location = work_location;
-
-
         this.lastUserToken = lastUserToken;
+        this.userType = userType;
     }
 
 
@@ -126,5 +125,13 @@ public class BaseUser {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 }
