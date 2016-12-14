@@ -10,22 +10,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.util.Map;
 
 /**
- * Created by NSD on 13.12.16.
+ * Created by NSD on 14.12.16.
  */
-@WebServlet("/validate_user")
-public class validate_user extends HttpServlet {
+@WebServlet(name = "Validator")
+public class Validator extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int error = 0;
-       // request.setCharacterEncoding("Cp1251");
 
-    //   Map<String,String[]> map = request.getParameterMap();
-     String str = request.getCharacterEncoding() + "\n";
+        int error = 0;
+        // request.setCharacterEncoding("Cp1251");
+
+        //   Map<String,String[]> map = request.getParameterMap();
+        String str = request.getCharacterEncoding() + "\n";
         str += BodyGetter.getBody(request);
 //                String result = URLDecoder.decode(str,"UTF-8");
 
@@ -78,15 +76,7 @@ public class validate_user extends HttpServlet {
 
 
 
-
-
     }
-
-    public static String decodeGetParameter(String parameter,String enc) throws UnsupportedEncodingException {
-        return new String(parameter.getBytes(enc),"UTF-8");
-    }
-
-
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
