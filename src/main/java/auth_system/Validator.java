@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URLDecoder;
 
 /**
@@ -19,6 +20,9 @@ import java.net.URLDecoder;
 public class Validator extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        response.setContentType ("text/html; charset=UTF-8");
+        PrintWriter out = response.getWriter ();
+        request.setCharacterEncoding ("UTF-8");
         int error = 0;
         // request.setCharacterEncoding("Cp1251");
 
