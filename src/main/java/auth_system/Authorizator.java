@@ -90,7 +90,8 @@ public class Authorizator extends HttpServlet {
                     try {
                         Cookie cookie = new Cookie("Token",((BaseUser)bundle).getLastUserToken());
                         cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
-
+                        Cookie cookie1 = new Cookie("UType",((BaseUser)bundle).getUserType());
+                        cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
 
                         response.addCookie(cookie);
                         response.setStatus(HttpServletResponse.SC_OK);
