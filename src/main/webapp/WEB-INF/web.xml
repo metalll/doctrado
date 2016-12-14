@@ -54,6 +54,16 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>course</servlet-name>
+        <servlet-class>UI.course</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>course</servlet-name>
+        <url-pattern>/course</url-pattern>
+    </servlet-mapping>
+
+
     <context-param>
         <param-name>javax.servlet.jsp.jstl.fmt.request.charset</param-name>
         <param-value>UTF-8</param-value>
