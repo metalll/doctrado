@@ -33,7 +33,7 @@ public class webinar extends HttpServlet {
         request.getRequestDispatcher("./webinar.jsp").include(request, response);//рисуем jsp.e
         }
         else {
-            request.getRequestDispatcher("./webinarUnreg.jsp");
+            request.getRequestDispatcher("./webinarUnreg.jsp").include(request,response);
         }
     }
 }
