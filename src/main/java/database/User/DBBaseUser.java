@@ -32,8 +32,8 @@ public class DBBaseUser extends DB {
     }
 
     public void addUser(BaseUser user, ICompletion completion){
-        String execute = "INSERT INTO `doctrado`.`users` (`id`, `name`, `second_name`, `surname`, `email`, `password`, `telephone`, `born_date`, `edu_level`, `work_location`, `lastUserToken`)" +
-                " VALUES (NULL, "+user.getName()+", "+user.getSecond_name()+", "+user.getSurname()+", "+user.getEmail()+", '"+user.getPassword()+", "+user.getTelephone()+", "+user.getBorn_date()+", "+user.getEdu_level()+", "+user.getWork_location()+", "+user.getLastUserToken()+");";
+        String execute = "INSERT INTO `doctrado`.`users` (`id`, `name`, `second_name`, `surname`, `email`, `password`, `telephone`, `born_date`, `edu_level`, `work_location`, `lastUserToken`,`type`)" +
+                " VALUES (NULL, "+user.getName()+", "+user.getSecond_name()+", "+user.getSurname()+", "+user.getEmail()+", '"+user.getPassword()+", "+user.getTelephone()+", "+user.getBorn_date()+", "+user.getEdu_level()+", "+user.getWork_location()+", "+user.getLastUserToken()+", "+ user.getUserType() +");";
         this.setExecute(execute,completion);
 
     }
