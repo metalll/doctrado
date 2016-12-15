@@ -13,11 +13,11 @@ import java.io.IOException;
 @WebServlet(name = "creatingCourse",urlPatterns = "/creating-course")
 public class creatingCourse extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.getRequestDispatcher("./creatingCourse.jsp").include(request, response);//рисуем jsp.e
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        response.setContentType("text/html;charset=UTF-8");
+        request.getRequestDispatcher("./creatingCourse.jsp").include(request, response);//рисуем jsp.e
     }
 }
