@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Created by NSD on 15.12.16.
  */
-@WebServlet(name = "creatingCourse")
+@WebServlet(name = "creatingCourse",urlPatterns = "/creating-course")
 public class creatingCourse extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
