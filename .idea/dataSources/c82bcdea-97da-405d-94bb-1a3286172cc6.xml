@@ -56,15 +56,20 @@
       <Position>11</Position>
       <DataType>varchar(60)|0</DataType>
     </column>
-    <index id="18" parent="6" name="users_id_uindex">
+    <column id="18" parent="6" name="type">
+      <Position>12</Position>
+      <DataType>varchar(3)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="19" parent="6" name="users_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="19" parent="6" name="PRIMARY">
+    <key id="20" parent="6" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="20" parent="6" name="users_id_uindex">
+    <key id="21" parent="6" name="users_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_id_uindex</UnderlyingIndexName>
     </key>

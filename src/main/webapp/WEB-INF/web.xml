@@ -83,7 +83,14 @@
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
 
-
+    <servlet>
+        <servlet-name>creatingCourse</servlet-name>
+        <servlet-class>UI.creatingCourse</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>creatingCourse</servlet-name>
+        <url-pattern>/creating-course</url-pattern>
+    </servlet-mapping>
 
 
     <context-param>
