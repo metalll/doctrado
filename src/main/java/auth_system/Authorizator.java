@@ -19,6 +19,10 @@ import java.util.Map;
  */
 @WebServlet("/login")
 public class Authorizator extends HttpServlet {
+    public static final String uTypeCookie = "UType";
+    public static final String uTokenCookie = "Token";
+
+
     protected void doPost(HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
         response.setContentType ("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter ();
@@ -88,10 +92,11 @@ public class Authorizator extends HttpServlet {
                 }
                 else {
                     try {
-                        Cookie cookie = new Cookie("Token",((BaseUser)bundle).getLastUserToken());
+                        Cookie cookie = new Cookie(uTokenCookie,((BaseUser)bundle).getLastUserToken());
                         cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
-                        Cookie cookie1 = new Cookie("UType",((BaseUser)bundle).getUserType());
+                        Cookie cookie1 = new Cookie(uTypeCookie,((BaseUser)bundle).getUserType());
                         cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
+
 
                         response.addCookie(cookie);
                         response.addCookie(cookie1);

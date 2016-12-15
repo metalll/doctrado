@@ -64,6 +64,27 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>profile</servlet-name>
+        <servlet-class>UI.profile</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>profile</servlet-name>
+        <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>logout</servlet-name>
+        <servlet-class>auth_system.CookieKiller</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+
+
     <context-param>
         <param-name>javax.servlet.jsp.jstl.fmt.request.charset</param-name>
         <param-value>UTF-8</param-value>
