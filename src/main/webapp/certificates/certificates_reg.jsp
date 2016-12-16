@@ -14,9 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="csrf-token" content="y2BIl0WED1VBxU51YQ69dy5HvBNL5HRxywo2LwSw" />
     <title>Doctrado</title>
-    <link rel="stylesheet" type="text/css" href="/css/slick.css"/>
-    <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/costume-decoration.css">
+    <link rel="stylesheet" type="text/css" href="../css/slick.css"/>
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/costume-decoration.css">
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
     <script>
         var user_id = 28;
@@ -31,7 +31,7 @@
 <body>
 <div id="loading-bg" style="display:none;">
     <div style="position: fixed;  background: rgba(0, 0, 0, 0.3);  width: 100%;  height: 100%;z-index: 1001;"></div>
-    <img src="css/ajax-loader.gif" style="position: fixed; z-index: 1000; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width:200px; max-height: 200px;">
+    <img src="../css/ajax-loader.gif" style="position: fixed; z-index: 1000; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width:200px; max-height: 200px;">
 </div>
 <div class="login-popup" id="login-popup">
     <div class="login-popup__bg"></div>
@@ -263,16 +263,16 @@
         </div>
         <div class="small-12 medium-4 columns">
             <a href="//elegance.od.ua" class="footer_logo">
-                <img src="img/elegance.png" class="elegance-logo" alt="">
+                <img src="../img/elegance.png" class="elegance-logo" alt="">
             </a>
         </div>
     </div>
 </footer>
 
-<script src="/js/jquery.min.js"></script>
-<script src="/js/slick.min.js"></script>
-<script src="/js/foundation.min.js"></script>
-<script src="/js/app.js"></script>
-<script src="/js/profile.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/slick.min.js"></script>
+<script src="../js/foundation.min.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/profile.js"></script>
 </body>
 </html>
