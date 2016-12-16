@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,24 +15,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="csrf-token" content="y2BIl0WED1VBxU51YQ69dy5HvBNL5HRxywo2LwSw" />
     <title>Doctrado</title>
-    <link rel="stylesheet" type="text/css" href="../css/slick.css"/>
-    <link rel="stylesheet" href="../css/app.css">
-    <link rel="stylesheet" href="../css/costume-decoration.css">
+    <link rel="stylesheet" href="css/app.css">
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
-    <script>
-        var user_id = 28;
-        var user_type = 't';
-    </script>
-    <style>
-        .courses__img {
-            height: 200px;
-        }
-    </style>
 </head>
 <body>
-<div id="loading-bg" style="display:none;">
-    <div style="position: fixed;  background: rgba(0, 0, 0, 0.3);  width: 100%;  height: 100%;z-index: 1001;"></div>
-    <img src="../css/ajax-loader.gif" style="position: fixed; z-index: 1000; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width:200px; max-height: 200px;">
+<div class="reg-popup">
+    <div class="reg-popup__bg"></div>
+    <div class="reg-popup__wrapper">
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="reg-popup__wrapper-form">
+                    <div class="reg-popup__close-button">
+                        <i class="fa fa-times"></i>
+                    </div>
+                    <p class="reg-popup__title">Добро пожаловать</p>
+                    <p class="reg-popup__subtitle">Заполните, пожалуйста, все поля.</p>
+                    <form class="registration-form" name="registration-form" id="registration-form">
+                        <div class="row">
+                            <div class="small-12 medium-6 columns">
+                                <fieldset form="registration-form">
+                                    <input type="text" placeholder="Ваше имя" name="name">
+                                    <p class="reg-alert" id="alert-name">Заполните это поле</p>
+                                    <input type="text" placeholder="Ваша фамилия" name="surname">
+                                    <p class="reg-alert" id="alert-surname">Заполните это поле</p>
+                                    <input type="text" placeholder="Ваше отчество" name="patronymic">
+                                    <p class="reg-alert" id="alert-patronymic">Заполните это поле</p>
+                                    <input type="text" placeholder="Ваш e-mail" name="email">
+                                    <p class="reg-alert" id="alert-email">Заполните это поле</p>
+                                    <input type="text" placeholder="Ваш пароль" name="password">
+                                    <p class="reg-alert" id="alert-password">Заполните это поле</p>
+                                    <input type="text" placeholder="Ваш телефон" name="phone">
+                                    <p class="reg-alert" id="alert-phone">Заполните это поле</p>
+
+                                </fieldset>
+                            </div>
+                            <div class="small-12 medium-6 columns">
+                                <fieldset form="registration-form">
+                                    <input type="text" placeholder="Дата рождения" name="birth-date">
+                                    <p class="reg-alert" id="alert-date">Заполните это поле</p>
+                                    <input type="text" placeholder="Уровень образования" name="graduate">
+                                    <p class="reg-alert" id="alert-graduate">Заполните это поле</p>
+                                    <input type="text" placeholder="Место работы *" name="experience">
+                                </fieldset>
+                                <p class="reg-popup__condition">* При условии, что Вы регистрируетесь от юр. лица в ином
+                                    случае - можете оставить это поле пустым</p>
+                                <fieldset form="registration-form">
+                                    <input type="checkbox"><span class="reg-popup__checkbox-text">Я согласен с условиями предоставления услуг</span>
+                                </fieldset>
+                                <p class="reg-popup__who">Кто Вы?</p>
+                                <fieldset form="registration-form" class="reg-popup__buttons">
+                                    <!--<input class="reg-popup__teacher-submit" type="submit" value="Преподаватель">-->
+                                    <button class="reg-popup__teacher-submit">Преподаватель</button>
+                                    <input class="reg-popup__student-submit" type="submit" value="Студент">
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="reg-popup-second">
+    <div class="reg-popup__bg"></div>
+    <div class="reg-popup__wrapper">
+        <div class="row">
+            <div class="small-12 columns">
+                <div class="reg-popup__wrapper-form">
+                    <div class="reg-popup__close-button">
+                        <i class="fa fa-times"></i>
+                    </div>
+                    <p class="reg-popup__title">Регистрация преподавателя</p>
+                    <form class="registration-form" name="registration-form-2" id="registration-form-2">
+                        <div class="row">
+                            <div class="small-12 medium-6 columns">
+                                <fieldset class="text-center" form="registration-form-2">
+                                    <input type="text" placeholder="Ваше образование" name="graduate">
+                                    <p class="reg-alert" id="alert-graduate-2">Заполните это поле</p>
+                                    <input type="text" placeholder="Дополнительное образование" name="extra graduate">
+                                    <p class="reg-alert" id="alert-graduate-extra">Заполните это поле</p>
+                                    <input type="text" placeholder="Ваш преподавательский опыт" name="experience">
+                                    <p class="reg-alert" id="alert-experience">Заполните это поле</p>
+                                    <p class="reg-popup__condition">* Добавьте, пожалуйста, копии подтверждающих
+                                        документов</p>
+                                    <button class="reg-popup__upload">
+                                        <input class="reg-upload" type="file">
+                                        Загрузить
+                                    </button>
+                                    <input class="reg-popup__ready" type="submit" value="Готово">
+                                    <input type="text" placeholder="Номер банковской карты (для выплат)" name="card">
+                                    <p class="reg-alert" id="alert-card">Заполните это поле</p>
+                                </fieldset>
+                            </div>
+                            <div class="small-12 medium-6 columns">
+                                <fieldset class="text-center" form="registration-form-2">
+                                    <button class="reg-popup__upload-avatar">
+                                        <img src="img/camera.png" alt="">
+                                        <input class="reg-upload" type="file">
+                                    </button>
+                                    <p>Ваш аватар для сайта</p>
+                                    <p>
+                                        <input type="checkbox"><span class="reg-popup__checkbox-text">Я согласен с условиям предоставления данных</span>
+                                    </p>
+                                    <button class="reg-popup__back">Вернуться</button>
+                                    <input class="reg-popup__ready" type="submit" value="Готово">
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="login-popup" id="login-popup">
     <div class="login-popup__bg"></div>
@@ -50,199 +146,107 @@
             <div class="row">
                 <div class="small-12 columns">
                     <fieldset form="login-form">
-                        <input type="text" placeholder="E-mail" name="email">
-                        <p class="login-alert" id="alert-login">Введите ваш e-mail</p>
-                        <input type="text" placeholder="Пароль" name="pass">
+                        <input type="text" placeholder="Логин" name="login">
+                        <p class="login-alert" id="alert-login">Введите ваш логин</p>
+                        <input type="password" placeholder="Пароль" name="pass">
                         <p class="login-alert" id="alert-login-password">Введите ваш пароль</p>
                         <input class="login-popup__submit" type="submit" value="Войти">
+                        <a class="lost-your-password" href="#">Забыли ваш пароль?</a>
                     </fieldset>
+
                 </div>
             </div>
         </form>
     </div>
 </div>
-<div class="full-about-popup">
-    <div class="full-about-popup__bg"></div>
-    <div class="full-about-popup__wrapper">
-        <div class="row">
-            <div class="small-12  columns">
-                <div class="full-about-popup__wrapper-form ">
-                    <div class="full-about-popup__close-button">
-                        <i class="fa fa-times"></i>
-                    </div>
-                    <p class="full-about-popup__subtitle">Полная информация о пользователе</p>
-                    <form name="full-about-form" id="full-about-form">
-                        <div class="row">
-                            <div class="small-12 medium-6 columns">
-                                <fieldset form="full-about-form">
-                                    <input type="text" placeholder="Ваше имя" title="Ваше имя" name="name" value="Леша">
-                                    <p class="reg-alert" id="alert-0">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваше отчество" title="Ваше отчество" name="patronymic" value="Влад">
-                                    <p class="reg-alert" id="alert-1">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваша фамилия" title="Ваша фамилия" name="surname" value="Петров">
-                                    <p class="reg-alert" id="alert-2">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваш e-mail" title="Ваш e-mail" name="email" value="linuxoid6666@gmail.com">
-                                    <p class="reg-alert" id="alert-3">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваш преподавательский опыт" title="Ваш преподавательский опыт" name="experience" value="100">
-                                    <p class="reg-alert" id="alert-4">Заполните это поле</p>
-                                    <input type="text" placeholder="Номер банковской карты (для выплат)" title="Номер банковской карты (для выплат)" name="card" value="442423242343424143242" readonly>
-                                    <p class="reg-alert" id="alert-5">Заполните это поле</p>
-                                </fieldset>
-                            </div>
-                            <div class="small-12 medium-6 columns">
-                                <fieldset form="full-about-form">
-                                    <input type="text" placeholder="Ваш телефон" title="Ваш телефон" name="phone" value="0487043938">
-                                    <p class="reg-alert" id="alert-6">Заполните это поле</p>
-                                    <input type="text" placeholder="Дата рождения" title="Дата рождения" name="birth_date" value="23.12.1991">
-                                    <p class="reg-alert" id="alert-7">Заполните это поле</p>
-                                    <input type="text" placeholder="Уровень образования" title="Уровень образования" name="education" value="Макс">
-                                    <p class="reg-alert" id="alert-8">Заполните это поле</p>
-                                    <input type="text" title="Дополнительное образование" name="extra_graduate" value="Мин">
-                                    <p class="reg-alert" id="alert-9">Заполните это поле</p>
-                                    <input type="text" placeholder="Место работы " name="work_place">
-                                    <div class="small-12 medium-6 columns">
-                                        <a class="creating success button save-changes" onclick="commitChanges()"><span class="class">сохранить</span></a>
-                                    </div>
-                                    <div class="small-12 medium-6 columns">
-                                        <button class="file-upload-2" type="button" onclick="$('#photo-input').click()">
-                                            сменить фото
-                                        </button>
-                                    </div>
-                                    <input type="file" class="file-input new-avatar-button" style="display:none;" id="photo-input">
-                                </fieldset>
-                            </div>
-                        </div>
-                    </form>
+
+<nav class="header__top-bar">
+    <div class="row collapse">
+        <div class="small-12 columns">
+            <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
+                <button class="menu-icon" type="button" data-toggle></button>
+            </div>
+            <div class="top-bar" id="main-menu">
+                <div class="top-bar-left">
+                    <h1 class="site-title">
+                        <a href="/">Doctrado</a>
+                    </h1>
+                    <a href="profile" class="login-btn" id="profile-button" style="margin-right:10px;">Кабинет</a><a class="login-btn" href="logout">Выход</a>
                 </div>
+                <div class="top-bar-right">
+                    <ul class="menu vertical large-horizontal">
+                        <li>
+                            <a class="menu-elem" href="./#about">О проекте</a>
+                        </li>
+                        <li>
+                            <a class="menu-elem" href="./#capabilities">Возможности</a>
+                        </li>
+                        <li>
+                            <a class="menu-elem" href="./certificates">Сертификаты</a>
+                        </li>
+                        <li>
+                            <a class="menu-elem" href="./webinar">Вебинары</a>
+                        </li>
+                        <li>
+                            <a class="menu-elem" href="./course">Курсы</a>
+                        </li>
+                        <li>
+                            <a class="menu-elem" href="./#contacts">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </div>
-</div>
-<header class="profile-header">
+</nav>
 
-    <nav class="header__top-bar">
-        <div class="row collapse">
-            <div class="small-12 columns">
-                <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
-                    <button class="menu-icon" type="button" data-toggle></button>
-                </div>
-                <div class="top-bar" id="main-menu">
-                    <div class="top-bar-left">
-                        <h1 class="site-title">
-                            <a href="/">Doctrado</a>
-                        </h1>
-                        <a class="login-btn" id="profile-button" style="margin-right:10px;">Кабинет</a><a class="login-btn" href="logout">Выход</a>
-                    </div>
-                    <div class="top-bar-right">
-                        <ul class="menu vertical large-horizontal">
-                            <li>
-                                <a class="menu-elem" href="./#about">О проекте</a>
-                            </li>
-                            <li>
-                                <a class="menu-elem" href="./#capabilities">Возможности</a>
-                            </li>
-                            <li>
-                                <a class="menu-elem" href="./certificates">Сертификаты</a>
-                            </li>
-                            <li>
-                                <a class="menu-elem" href="./webinar">Вебинары</a>
-                            </li>
-                            <li>
-                                <a class="menu-elem" href="./course">Курсы</a>
-                            </li>
-                            <li>
-                                <a class="menu-elem" href="./#contacts">Контакты</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<section class="certificates" style="margin-top: 20px;">
+    <div class="row">
+        <div class="small-12 columns">
+            <h2 class="checking__title">
+                Проверка сертификатов пользователей
+            </h2>
         </div>
-    </nav>
-</header>
-<section class="global-container">
-    <section class="content__teacher-profile">
-        <div class="row">
-            <div class="small-12 columns">
-                <div class="user-profile-container">
-                    <div class="information-about-user-container" style="margin-top:20px;">
+        <section class="content__checking-container">
+            <div class="about-this-container">
+                <div class="row">
+                    <div class="small-12 columns">
                         <div class="row">
-                            <div class="small-12 columns">
-                                <!-- Показывать только администратору -->
-                                <a class="button creating success admin-success-button"><span class="class">разрешить быть преподавателем</span></a>
-                            </div>
-                            <div class="small-12 medium-4 columns end">
-                                <div class="user-avatar-container" style="text-align: center;"><img style="height: 200px;" src="img/camera.gif"></div>
-                            </div>
-                            <div class="small-12 medium-5 columns end">
-                                <div class="user-about-container">
-                                    <h2 class="info-about-user">Леша Влад Петров</h2>
-                                    <h2 class="info-about-user">Дата рождения: 23.12.1991</h2>
-                                    <h2 class="info-about-user">Преподавательский опыт: 100</h2>
-                                </div>
-                            </div>
-                            <div class="small-12 medium-3 columns end">
-                                <div class="user-profile-buttons">
-                                    <p class="user-rank"><span class="class">Преподаватель</span></p>
-                                    <a class="creating button secondary look-more"><span class="class">подробнее</span></a>
-                                    <!-- Должно быть спрятано при условии, что не твой профиль. А кто-то другой просматривает его -->
-                                    <a href="statistic" class="creating button secondary "><span class="class">ваша статистика</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="delimiter-buttons">
-                            <div class="small-12 medium-4 columns">
-                                <a id="user-courses-all" class="button success creating"><span class="class">Созданные курсы (0)</span></a>
-                            </div>
-                            <div class="small-12 medium-4 columns">
-                                <a id="user-courses-bought" class="button secondary creating"><span class="class">Купленные курсы (0)</span></a>
-                            </div>
-                            <div class="small-12 medium-4 columns">
-                                <a id="user-notifications" class="button secondary creating"><span class="class">оповещения (0)</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="nocourses-question-container">
-                            <div class="small-12 medium-6 medium-offset-3 columns">
-                                <a href="creating-course" class="creating button success"><span class="class">создать курс</span></a>
-                            </div>
-                        </div>
-                        <div class="user-courses-container-all">
-                            <div class="row">
-                                <div class="small-12 columns">
-                                    <h2 class="info-about-courses-title">Ваши курсы:</h2>
-                                </div>
-                                <div class="row small-up-1 medium-up-3">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="user-courses-container-bought" style="display:none;">
-                            <div class="row">
-                                <div class="small-12 columns">
-                                    <h2 class="info-about-courses-title">Ваши курсы:</h2>
-                                </div>
-                                <div class="small-12 medium-6 medium-centered columns" style="float:none;">
-                                    <p class="user-notification-content" style="text-align: center; margin-top: 50px;">У Вас ещё не приобретён ни один курс</p>
-                                    <a href="course" class="creating button success"><span class="class">Приобрести курс</span></a>
-                                </div>
-                                <div class="row small-up-1 medium-up-3">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="user-notifications-container for-teacher">
-                            <div class="small-12 columns">
-                                <p class="user-notification-content">Новых оповещений нет.</p>
-                            </div>
+                            <p class="why-it-needs">
+                                Некоторые курсы сервиса Doctrado предоставляют студентам специальные сертификаты,
+                                которые являются документом, подтверждающим, что студент действительно прошёл тот или иной курс.
+                                <br>Вы можете проверить подлинность такого сертификаты введя его номер ниже.
+                                <br><br>Внимание! Электронный сертификат может не совпадать внешним видом с физическим, совпадать должны лишь данные!
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <div class="small-up-12 columns">
+                <form id="get_certificates_form">
+                    <div class="row">
+                        <div class="check-certificate-field">
+                            <div class="small-12 columns">
+                                <div class="row collapse">
+                                    <div class="small-10 columns checking-field">
+                                        <input id="cert-number" type="number" placeholder="Введите номер сертификата" style="padding: 0 15px;">
+                                    </div>
+                                    <div class="small-2 columns search-button">
+                                        <a onclick="getCertificates()" class="button postfix checking-start"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+    <section class="content__certificate-container" id="certificates">
     </section>
 </section>
+
 
 <footer class="footer">
     <div class="row">
@@ -263,16 +267,17 @@
         </div>
         <div class="small-12 medium-4 columns">
             <a href="//elegance.od.ua" class="footer_logo">
-                <img src="../img/elegance.png" class="elegance-logo" alt="">
+                <img src="img/elegance.png" class="elegance-logo" alt="">
             </a>
         </div>
     </div>
 </footer>
 
 <script src="../js/jquery.min.js"></script>
-<script src="../js/slick.min.js"></script>
 <script src="../js/foundation.min.js"></script>
+<script src="../js/slick.min.js"></script>
 <script src="../js/app.js"></script>
-<script src="../js/profile.js"></script>
+<script src="../js/certificates.js"></script>
+
 </body>
 </html>
