@@ -14,9 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="csrf-token" content="y2BIl0WED1VBxU51YQ69dy5HvBNL5HRxywo2LwSw" />
     <title>Doctrado</title>
-    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/costume-decoration.css">
+    <link rel="stylesheet" type="text/css" href="/css/slick.css"/>
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/costume-decoration.css">
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
     <script>
         var user_id = 28;
@@ -269,10 +269,10 @@
     </div>
 </footer>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/foundation.min.js"></script>
-<script src="js/app.js"></script>
-<script src="js/profile.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/slick.min.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/profile.js"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="csrf-token" content="y2BIl0WED1VBxU51YQ69dy5HvBNL5HRxywo2LwSw" />
     <title>Doctrado</title>
-    <link rel="stylesheet" href="css/app">
+    <link rel="stylesheet" href="/css/app">
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
 </head>
 <body>
@@ -266,17 +266,17 @@
         </div>
         <div class="small-12 medium-4 columns">
             <a href="//elegance.od.ua" class="footer_logo">
-                <img src="img/elegance.png" class="elegance-logo" alt="">
+                <img src="/img/elegance.png" class="elegance-logo" alt="">
             </a>
         </div>
     </div>
 </footer>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/foundation.min.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/app.js"></script>
-<script src="js/certificates.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/slick.min.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/certificates.js"></script>
 
 </body>
 </html>
