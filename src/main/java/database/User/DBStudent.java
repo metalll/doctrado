@@ -34,7 +34,15 @@ public class DBStudent extends DB {
 
 
 
-    public void add(Student student, ICompletion completion){
+    public void add(final Student student, ICompletion completion){
+
+        DBBaseUser.getInstance().addUser(student, new ICompletion() {
+            @Override
+            public void afterOperation(Object bundle) {
+
+            }
+        });
+
 
 
     }

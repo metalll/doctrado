@@ -1,6 +1,7 @@
 package auth_system;
 
 import Interfaces.ICompletion;
+import database.User.DBStudent;
 import model.Users.Student;
 import model.Users.Teacher;
 
@@ -29,6 +30,7 @@ public class Registrator extends HttpServlet {
             @Override
             public void afterOperation(Object bundle) {
                 if(bundle == null){
+
 
 
                 }
@@ -61,7 +63,7 @@ public class Registrator extends HttpServlet {
                 paramMap.get("user[work_place]")[0],
                 UUIDGenerator.Generate(),
                 "t",
-                "NULL",
+                paramMap.get("user[avatar]")[0].equals("true")?"YES":"NO",
                 paramMap.get("teacher[graduate_t]")[0],
                 paramMap.get("teacher[extra_graduate]")[0],
                 paramMap.get("teacher[extra_experience]")[0],
@@ -86,9 +88,15 @@ public class Registrator extends HttpServlet {
                 paramMap.get("user[work_place]")[0],
                 UUIDGenerator.Generate(),
                 "s",
-                "NULL");
+                paramMap.get("user[avatar]")[0].equals("true")?"YES":"NO");
 
 
+        DBStudent.getInstance().addUser(student, new ICompletion() {
+            @Override
+            public void afterOperation(Object bundle) {
+
+            }
+        });
 
             //todo put to db
 
