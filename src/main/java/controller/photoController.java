@@ -18,9 +18,16 @@ import java.io.*;
 /**
  * Created by NSD on 19.12.16.
  */
+
+
+
+
 @WebServlet(name = "photoController")
 public class photoController extends HttpServlet {
+        private static final String startImage = "/9j/4AAQSkZJ"
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
         response.setContentType ("text/html; charset=UTF-8");
         final PrintWriter out = response.getWriter ();
         request.setCharacterEncoding ("UTF-8");
@@ -43,6 +50,13 @@ public class photoController extends HttpServlet {
 
         sun.misc.BASE64Encoder encoder = new sun.misc.BASE64Encoder();
         String  img =  encoder.encode(bytes);
+
+        int location = img.indexOf(startImage);
+
+        String img1 = img.substring(location);
+
+
+
         String key  = "";
 
         for(Cookie cookie : request.getCookies()){
@@ -54,7 +68,7 @@ public class photoController extends HttpServlet {
         }
 
 
-        DBImage.getInstance().add(img, key, new ICompletion() {
+        DBImage.getInstance().add(img1, key, new ICompletion() {
             @Override
             public void afterOperation(Object bundle) {
                 out.print("");
