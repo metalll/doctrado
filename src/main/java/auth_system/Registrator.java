@@ -75,28 +75,28 @@ public class Registrator extends HttpServlet {
     }
 
     private void reg_student(Map<String,String[]> paramMap,ICompletion completion){
-//        Student student = new Student(
-//                1,
-//                paramMap.get("user[name]")[0],
-//                paramMap.get("user[patronymic]")[0],
-//                paramMap.get("user[surname]")[0],
-//                paramMap.get("user[email]")[0],
-//                paramMap.get("user[password]")[0],
-//                paramMap.get("user[phone]")[0],
-//                paramMap.get("user[birth_date]")[0],
-//                paramMap.get("user[education]")[0],
-//                paramMap.get("user[work_place]")[0],
-//                UUIDGenerator.Generate(),
-//                "s",
-//                paramMap.get("user[avatar]")[0].equals("true")?"YES":"NO");
+                Student student = new Student(
+                        1,
+                        paramMap.get("user[name]")[0],
+                        paramMap.get("user[patronymic]")[0],
+                        paramMap.get("user[surname]")[0],
+                        paramMap.get("user[email]")[0],
+                        paramMap.get("user[password]")[0],
+                        paramMap.get("user[phone]")[0],
+                        paramMap.get("user[birth_date]")[0],
+                        paramMap.get("user[education]")[0],
+                        paramMap.get("user[work_place]")[0],
+                        UUIDGenerator.Generate(),
+                        "s",
+                        paramMap.get("user[avatar]")[0].equals("true")?"YES":"NO");
+
 //
+//                DBStudent.getInstance().addUser(student, new ICompletion() {
+//                    @Override
+//                    public void afterOperation(Object bundle) {
 //
-//        DBStudent.getInstance().addUser(student, new ICompletion() {
-//            @Override
-//            public void afterOperation(Object bundle) {
-//
-//            }
-//        });
+//                    }
+//                });
 
             //todo put to db
 
