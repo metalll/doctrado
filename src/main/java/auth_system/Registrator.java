@@ -76,7 +76,7 @@ public class Registrator extends HttpServlet {
 
     private void reg_student(Map<String,String[]> paramMap,ICompletion completion){
         Student student = new Student(
-                0,
+                1,
                 paramMap.get("user[name]")[0],
                 paramMap.get("user[patronymic]")[0],
                 paramMap.get("user[surname]")[0],
