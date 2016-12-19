@@ -35,7 +35,18 @@ public class DBTeacher extends DB {
     private DBTeacher(){}
 
 
-    public void add(Teacher teacher, ICompletion completion){
+    public void add(final Teacher teacher, final ICompletion completion){
+        DBBaseUser.getInstance().addUser(teacher, new ICompletion() {
+            @Override
+            public void afterOperation(Object bundle) {
+
+                String ex = "INSERT INTO `doctrado`.`teacher` (`id`, `avatar`, `teacherEdu`, `addEdu`, `teacherExp`, `bankCard`) VALUES" +
+                        " ('"+teacher.getLastUserToken()+"', '"+teacher.getAvatar()+"', '"+teacher.getTeacherEdu()+"', '"+teacher.getAddEdu()+"', '"+teacher.getTeacherExp()+"', '"+teacher.getBankCard()+"');";
+                setExecute(ex,completion);
+
+            }
+        });
+
 
     }
 
