@@ -1,7 +1,5 @@
 package model.Users;
 
-import model.Users.BaseUser;
-
 /**
  * Created by NSD on 08.12.16.
  */

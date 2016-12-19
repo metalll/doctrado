@@ -3,6 +3,7 @@ package auth_system;
 import Interfaces.ICompletion;
 import database.User.DBBaseUser;
 import database.User.DBStudent;
+import database.User.DBTeacher;
 import model.Users.BaseUser;
 import model.Users.Student;
 import model.Users.Teacher;
@@ -68,7 +69,7 @@ public class Registrator extends HttpServlet {
 
     private void reg_teacher(Map<String,String[]> paramMap, ICompletion completion){
         Teacher teacher = new Teacher(
-                0,
+                1,
                 paramMap.get("user[name]")[0],
                 paramMap.get("user[patronymic]")[0],
                 paramMap.get("user[surname]")[0],
@@ -80,14 +81,19 @@ public class Registrator extends HttpServlet {
                 paramMap.get("user[work_place]")[0],
                 UUIDGenerator.Generate(),
                 "t",
-                paramMap.get("user[avatar]")[0].equals("true")?"YES":"NO",
+                paramMap.get("user[photo]")[0].equals("true")?"YES":"NO",
                 paramMap.get("teacher[graduate_t]")[0],
                 paramMap.get("teacher[extra_graduate]")[0],
                 paramMap.get("teacher[extra_experience]")[0],
                 paramMap.get("teacher[card]")[0]);
 
+        DBBaseUser.getInstance().addUser(teacher, new ICompletion() {
+            @Override
+            public void afterOperation(Object bundle) {
 
-            //todo put to db
+            }
+        });
+
 
     }
 
@@ -114,7 +120,7 @@ public class Registrator extends HttpServlet {
             }
         });
 
-            //todo put to db
+
 
     }
 
