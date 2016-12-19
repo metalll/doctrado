@@ -67,8 +67,8 @@ public class Registrator extends HttpServlet {
     }
 
 
-    private void reg_teacher(Map<String,String[]> paramMap, ICompletion completion){
-        Teacher teacher = new Teacher(
+    private void reg_teacher(Map<String,String[]> paramMap, final ICompletion completion){
+        final Teacher teacher = new Teacher(
                 1,
                 paramMap.get("user[name]")[0],
                 paramMap.get("user[patronymic]")[0],
@@ -87,7 +87,12 @@ public class Registrator extends HttpServlet {
                 paramMap.get("teacher[experience]")[0],
                 paramMap.get("teacher[card]")[0]);
 
-       DBTeacher.getInstance().add(teacher,completion);
+       DBTeacher.getInstance().add(teacher, new ICompletion() {
+           @Override
+           public void afterOperation(Object bundle) {
+               completion.afterOperation(teacher);
+           }
+       });
 
 
     }
@@ -108,7 +113,12 @@ public class Registrator extends HttpServlet {
                         "s",
                         paramMap.get("user[photo]")[0].equals("true")?"YES":"NO");
 
-        DBStudent.getInstance().add(student,completion);
+        DBStudent.getInstance().add(student, new ICompletion() {
+            @Override
+            public void afterOperation(Object bundle) {
+                completion.afterOperation(student);
+            }
+        });
 
 
 
