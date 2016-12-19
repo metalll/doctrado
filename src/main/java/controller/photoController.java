@@ -2,8 +2,13 @@ package controller;
 
 
 
+import Interfaces.ICompletion;
+import auth_system.Authorizator;
+import database.DBImage;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +22,7 @@ import java.io.*;
 public class photoController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType ("text/html; charset=UTF-8");
-        PrintWriter out = response.getWriter ();
+        final PrintWriter out = response.getWriter ();
         request.setCharacterEncoding ("UTF-8");
 
 
@@ -37,37 +42,57 @@ public class photoController extends HttpServlet {
 
 
         sun.misc.BASE64Encoder encoder = new sun.misc.BASE64Encoder();
-        String  str =  encoder.encode(bytes);
+        String  img =  encoder.encode(bytes);
+        String key  = "";
 
+        for(Cookie cookie : request.getCookies()){
 
-
-        BufferedWriter writer = null;
-        try
-        {
-            writer = new BufferedWriter( new FileWriter("file"));
-
-
-            writer.write(str);
-        }
-        catch ( IOException e)
-        {
-        }
-        finally
-        {
-            try
-            {
-                if ( writer != null)
-                    writer.close( );
+            if(cookie.getName().equals(Authorizator.uTokenCookie)){
+                key = cookie.getValue();
             }
-            catch ( IOException e)
-            {
-            }
+
         }
 
 
-        out.print(str);
-        out.flush();
-        out.close();
+        DBImage.getInstance().add(img, key, new ICompletion() {
+            @Override
+            public void afterOperation(Object bundle) {
+                out.print();
+                out.flush();
+                out.close();
+
+            }
+        });
+
+//        BufferedWriter writer = null;
+//        try
+//        {
+//            writer = new BufferedWriter( new FileWriter("file"));
+//
+//
+//            writer.write(str);
+//        }
+//        catch ( IOException e)
+//        {
+//        }
+//        finally
+//        {
+//            try
+//            {
+//                if ( writer != null)
+//                    writer.close( );
+//            }
+//            catch ( IOException e)
+//            {
+//            }
+//        }
+
+
+
+
+
+
+
 
     }
 
