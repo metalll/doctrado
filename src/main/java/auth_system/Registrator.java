@@ -105,7 +105,7 @@ public class Registrator extends HttpServlet {
                         paramMap.get("user[work_place]")[0],
                         UUIDGenerator.Generate(),
                         "s",
-                        paramMap.get("user[avatar]")[0].equals("true")?"YES":"NO");
+                        paramMap.get("user[photo]")[0].equals("true")?"YES":"NO");
 
         DBBaseUser.getInstance().addUser(student, new ICompletion() {
             @Override
