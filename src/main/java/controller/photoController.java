@@ -7,10 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
+import java.io.*;
 
 
 /**
@@ -41,6 +38,32 @@ public class photoController extends HttpServlet {
 
         sun.misc.BASE64Encoder encoder = new sun.misc.BASE64Encoder();
         String  str =  encoder.encode(bytes);
+
+
+
+        BufferedWriter writer = null;
+        try
+        {
+            writer = new BufferedWriter( new FileWriter("file"));
+
+
+            writer.write(str);
+        }
+        catch ( IOException e)
+        {
+        }
+        finally
+        {
+            try
+            {
+                if ( writer != null)
+                    writer.close( );
+            }
+            catch ( IOException e)
+            {
+            }
+        }
+
 
         out.print(str);
         out.flush();
