@@ -83,6 +83,11 @@ public class DBStudent extends DB {
             }
         }
         catch (SQLException e){ e.printStackTrace();  }
+        finally {
+            if(stmt != null) try {stmt.close();} catch (Exception e){}
+            if(conn != null) try {conn.close();} catch (Exception e){}
+
+        }
         if(!isSuccess){   completion.afterOperation(null);  }
     }
 
@@ -105,6 +110,11 @@ public class DBStudent extends DB {
             completion.afterOperation(null);
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+        finally {
+            if(stmt != null) try {stmt.close();} catch (Exception e){}
+            if(conn != null) try {conn.close();} catch (Exception e){}
+
         }
 
     }

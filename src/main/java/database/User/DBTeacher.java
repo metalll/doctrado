@@ -78,6 +78,11 @@ public class DBTeacher extends DB {
             }
         }
         catch (SQLException e){ e.printStackTrace();  }
+        finally {
+            if(stmt != null) try {stmt.close();} catch (Exception e){}
+            if(conn != null) try {conn.close();} catch (Exception e){}
+
+        }
         if(!isSuccess){   completion.afterOperation(null);  }
     }
 
@@ -100,6 +105,11 @@ public class DBTeacher extends DB {
             completion.afterOperation(null);
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+        finally {
+            if(stmt != null) try {stmt.close();} catch (Exception e){}
+            if(conn != null) try {conn.close();} catch (Exception e){}
+
         }
 
     }

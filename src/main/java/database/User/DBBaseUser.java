@@ -125,8 +125,14 @@ public class DBBaseUser extends DB {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+              finally {
+                  if(stmt != null) try {stmt.close();} catch (Exception e){}
+                  if(conn != null) try {conn.close();} catch (Exception e){}
+
+              }
 
         }
+
 
     }
 
