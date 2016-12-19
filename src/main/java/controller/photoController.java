@@ -24,7 +24,7 @@ import java.io.*;
 
 @WebServlet(name = "photoController")
 public class photoController extends HttpServlet {
-        private static final String startImage = "/9j/4AAQSkZJ"
+        private static final String startImage = "/9j/4AAQSkZJ";
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
