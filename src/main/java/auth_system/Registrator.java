@@ -32,7 +32,7 @@ public class Registrator extends HttpServlet {
         ICompletion completion = new ICompletion() {
             @Override
             public void afterOperation(Object bundle) {
-                if(bundle == null){
+                if(bundle != null){
                     Cookie cookie = new Cookie(Authorizator.uTokenCookie,((BaseUser)bundle).getLastUserToken());
                     cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
                     Cookie cookie1 = new Cookie(Authorizator.uTypeCookie,((BaseUser)bundle).getUserType());
