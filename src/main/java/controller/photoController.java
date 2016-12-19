@@ -51,9 +51,12 @@ public class photoController extends HttpServlet {
         sun.misc.BASE64Encoder encoder = new sun.misc.BASE64Encoder();
         String  img =  encoder.encode(bytes);
 
+
         int location = img.indexOf(startImage);
 
-        String img1 = img.substring(location);
+        String img1 = "";
+        if(location!=-1)
+               img1 = img.substring(location);
 
 
 
@@ -67,7 +70,7 @@ public class photoController extends HttpServlet {
 
         }
 
-
+if(!img1.equals(""))
         DBImage.getInstance().add(img1, key, new ICompletion() {
             @Override
             public void afterOperation(Object bundle) {
