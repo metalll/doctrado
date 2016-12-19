@@ -96,8 +96,7 @@ public class documentController extends HttpServlet {
                     "There was an error: " + ex.getMessage());
         }
         // redirects client to message page
-        getServletContext().getRequestDispatcher("/message.jsp").forward(
-                request, response);
+
     }
 
     @Override
