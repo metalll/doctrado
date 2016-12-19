@@ -1,12 +1,15 @@
 package auth_system;
 
 import Interfaces.ICompletion;
+import database.User.DBBaseUser;
 import database.User.DBStudent;
+import model.Users.BaseUser;
 import model.Users.Student;
 import model.Users.Teacher;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +22,7 @@ import java.util.Map;
  */
 @WebServlet(name = "Registrator")
 public class Registrator extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request,final HttpServletResponse response) throws ServletException, IOException {
         response.setContentType ("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter ();
         request.setCharacterEncoding ("UTF-8");
@@ -30,8 +33,22 @@ public class Registrator extends HttpServlet {
             @Override
             public void afterOperation(Object bundle) {
                 if(bundle == null){
+                    Cookie cookie = new Cookie(Authorizator.uTokenCookie,((BaseUser)bundle).getLastUserToken());
+                    cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
+                    Cookie cookie1 = new Cookie(Authorizator.uTypeCookie,((BaseUser)bundle).getUserType());
+                    cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
 
 
+                    response.addCookie(cookie);
+                    response.addCookie(cookie1);
+                    response.setStatus(HttpServletResponse.SC_OK);
+                    try {
+                        response.getWriter().write("");
+                        response.getWriter().flush();
+                        response.getWriter().close();
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
 
                 }
 
@@ -74,8 +91,8 @@ public class Registrator extends HttpServlet {
 
     }
 
-    private void reg_student(Map<String,String[]> paramMap,ICompletion completion){
-                Student student = new Student(
+    private void reg_student(Map<String,String[]> paramMap, final ICompletion completion){
+                final Student student = new Student(
                         1,
                         paramMap.get("user[name]")[0],
                         paramMap.get("user[patronymic]")[0],
@@ -90,13 +107,12 @@ public class Registrator extends HttpServlet {
                         "s",
                         paramMap.get("user[avatar]")[0].equals("true")?"YES":"NO");
 
-//
-//                DBStudent.getInstance().addUser(student, new ICompletion() {
-//                    @Override
-//                    public void afterOperation(Object bundle) {
-//
-//                    }
-//                });
+        DBBaseUser.getInstance().addUser(student, new ICompletion() {
+            @Override
+            public void afterOperation(Object bundle) {
+                completion.afterOperation(student);
+            }
+        });
 
             //todo put to db
 
