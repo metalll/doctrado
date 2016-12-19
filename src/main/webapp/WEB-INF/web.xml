@@ -120,6 +120,15 @@
         <url-pattern>/uploadPhoto</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>uploadDocument</servlet-name>
+        <servlet-class>controller.documentController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>uploadDocument</servlet-name>
+        <url-pattern>/uploadDocument</url-pattern>
+    </servlet-mapping>
+
 
     <context-param>
         <param-name>javax.servlet.jsp.jstl.fmt.request.charset</param-name>
