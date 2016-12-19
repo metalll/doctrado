@@ -17,15 +17,15 @@ import java.util.Properties;
  */
 public class DBStudent extends DB {
 
-    private static volatile DBBaseUser instance;
+    private static volatile DBStudent instance;
     private Statement stmt;
-    public static DBBaseUser getInstance() {
-        DBBaseUser localInstance = instance;
+    public static DBStudent getInstance() {
+        DBStudent localInstance = instance;
         if (localInstance == null) {
-            synchronized (DBBaseUser.class) {
+            synchronized (DBStudent.class) {
                 localInstance = instance;
                 if (localInstance == null) {
-                    instance = localInstance = new DBBaseUser();
+                    instance = localInstance = new DBStudent();
                 }
             }
         }
