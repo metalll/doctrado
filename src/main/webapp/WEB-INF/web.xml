@@ -111,6 +111,15 @@
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>photoController</servlet-name>
+        <servlet-class>controller.photoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>photoController</servlet-name>
+        <url-pattern>/uploadPhoto</url-pattern>
+    </servlet-mapping>
+
 
     <context-param>
         <param-name>javax.servlet.jsp.jstl.fmt.request.charset</param-name>

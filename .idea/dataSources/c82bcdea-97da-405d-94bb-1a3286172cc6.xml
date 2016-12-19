@@ -17,7 +17,7 @@
     </column>
     <column id="9" parent="6" name="avatar">
       <Position>2</Position>
-      <DataType>linestring|0</DataType>
+      <DataType>longtext|0</DataType>
     </column>
     <column id="10" parent="7" name="id">
       <Position>1</Position>
