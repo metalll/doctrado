@@ -57,7 +57,7 @@ public class photoController extends HttpServlet {
         DBImage.getInstance().add(img, key, new ICompletion() {
             @Override
             public void afterOperation(Object bundle) {
-                out.print();
+                out.print("");
                 out.flush();
                 out.close();
 
