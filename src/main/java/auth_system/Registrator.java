@@ -108,7 +108,7 @@ public class Registrator extends HttpServlet {
                         "s",
                         paramMap.get("user[photo]")[0].equals("true")?"YES":"NO");
 
-        DBStudent.getInstance().addUser(student,completion);
+        DBStudent.getInstance().add(student,completion);
 
 
 
