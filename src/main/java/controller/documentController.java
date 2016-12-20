@@ -14,7 +14,6 @@ import java.io.*;
  * Created by NSD on 19.12.16.
  */
 @WebServlet(name = "documentController")
-
 public class documentController extends HttpServlet {
 
     private static final String startImage = "/9j/4AAQSkZJ";
@@ -79,8 +78,8 @@ public class documentController extends HttpServlet {
         {
             writer = new BufferedWriter( new FileWriter("file"));
 
-            if(!img1.equals(""))
-            writer.write(img1);
+
+            writer.write(img);
         }
         catch ( IOException e)
         {
