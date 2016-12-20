@@ -54,7 +54,7 @@ public class documentController extends HttpServlet {
         String uploadPath = getServletContext().getRealPath("")
                 + File.separator + UPLOAD_DIRECTORY;
         // creates the directory if it does not exist
-        File uploadDir = new File(uploadPath);
+        File uploadDir = new File("/var/lib/openshift/58512d040c1e66ad2d000024/jbossews/upload");
         if (!uploadDir.exists()) {
             uploadDir.mkdir();
         }
