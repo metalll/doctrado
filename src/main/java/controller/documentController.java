@@ -1,11 +1,13 @@
 package controller;
 
+import auth_system.Authorizator;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,6 +43,16 @@ public class documentController extends HttpServlet {
             return;
         }
 
+        String key = "";
+
+        for(Cookie cookie : request.getCookies()){
+
+            if(cookie.getName().equals(Authorizator.uTokenCookie)){
+                key = cookie.getValue();
+            }
+
+        }
+
         // configures upload settings
         DiskFileItemFactory factory = new DiskFileItemFactory();
         factory.setSizeThreshold(THRESHOLD_SIZE);
@@ -68,7 +80,7 @@ public class documentController extends HttpServlet {
                 FileItem item = (FileItem) iter.next();
                 // processes only fields that are not form fields
                 if (!item.isFormField()) {
-                    String fileName = new File(item.getName()).getName();
+                    String fileName =  FileNameConsructor(new File(item.getName()).getName(),key);
                     String filePath = uploadPath + File.separator + fileName;
                     File storeFile = new File(filePath);
 
@@ -81,5 +93,16 @@ public class documentController extends HttpServlet {
             request.setAttribute("message", "There was an error: " + ex.getMessage());
         }
         getServletContext().getRequestDispatcher("/message.jsp").forward(request, response);
+    }
+
+
+
+    private String FileNameConsructor(String fileName,String key){
+        int locale = fileName.lastIndexOf('.');
+        String ext = "";
+        if(locale != -1){
+            ext = fileName.substring(locale);
+        }
+        return key+ext;
     }
 }
