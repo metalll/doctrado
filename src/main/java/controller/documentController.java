@@ -23,7 +23,7 @@ public class documentController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    private static final String UPLOAD_DIRECTORY = "upload";
+    private static final String UPLOAD_DIRECTORY = "/var/lib/openshift/58512d040c1e66ad2d000024/jbossews/upload";
     private static final int THRESHOLD_SIZE 	= 1024 * 1024 * 3; 	// 3MB
     private static final int MAX_FILE_SIZE 		= 1024 * 1024 * 40; // 40MB
     private static final int MAX_REQUEST_SIZE 	= 1024 * 1024 * 50; // 50MB
