@@ -1,11 +1,8 @@
 package controller;
 
-import Interfaces.ICompletion;
 import auth_system.Authorizator;
-import database.DBImage;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +14,7 @@ import java.io.*;
  * Created by NSD on 19.12.16.
  */
 @WebServlet(name = "documentController")
-@MultipartConfig
+
 public class documentController extends HttpServlet {
 
     private static final String startImage = "/9j/4AAQSkZJ";
