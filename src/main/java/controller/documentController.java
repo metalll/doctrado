@@ -1,106 +1,76 @@
 package controller;
 
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
-
+import javax.activation.MimetypesFileTypeMap;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
+import javax.servlet.http.Part;
+import java.io.*;
+import java.net.URLDecoder;
 
 /**
  * Created by NSD on 19.12.16.
  */
 @WebServlet(name = "documentController")
+@MultipartConfig
 public class documentController extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
-    // location to store file uploaded
-    private static final String UPLOAD_DIRECTORY = System.getenv("OPENSHIFT_DATA_DIR");
-
-    // upload settings
-    private static final int MEMORY_THRESHOLD   = 1024 * 1024 * 3;  // 3MB
-    private static final int MAX_FILE_SIZE      = 1024 * 1024 * 40; // 40MB
-    private static final int MAX_REQUEST_SIZE   = 1024 * 1024 * 50; // 50MB
-
-    /**
-     * Upon receiving file upload submission, parses the request to read
-     * upload data and saves the file on disk.
-     */
+    private static final long serialVersionUID = 2857847752169838915L;
+    int BUFFER_LENGTH = 4096;
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
-        // checks if the request actually contains upload file
-        if (!ServletFileUpload.isMultipartContent(request)) {
-            // if not, we stop here
-            PrintWriter writer = response.getWriter();
-            writer.println("Error: Form must has enctype=multipart/form-data.");
-            writer.flush();
-            return;
-        }
-
-        // configures upload settings
-        DiskFileItemFactory factory = new DiskFileItemFactory();
-        // sets memory threshold - beyond which files are stored in disk
-        factory.setSizeThreshold(MEMORY_THRESHOLD);
-        // sets temporary location to store files
-        factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
-
-        ServletFileUpload upload = new ServletFileUpload(factory);
-
-        // sets maximum size of upload file
-        upload.setFileSizeMax(MAX_FILE_SIZE);
-
-        // sets maximum size of request (include file + form data)
-        upload.setSizeMax(MAX_REQUEST_SIZE);
-
-        // constructs the directory path to store upload file
-        // this path is relative to application's directory
-        String uploadPath = getServletContext().getRealPath("")
-                + File.separator + UPLOAD_DIRECTORY;
-
-        // creates the directory if it does not exist
-        File uploadDir = new File(uploadPath);
-        if (!uploadDir.exists()) {
-            uploadDir.mkdir();
-        }
-
-        try {
-            // parses the request's content to extract file data
-            @SuppressWarnings("unchecked")
-            List<FileItem> formItems = upload.parseRequest(request);
-
-            if (formItems != null && formItems.size() > 0) {
-                // iterates over form's fields
-                for (FileItem item : formItems) {
-                    // processes only fields that are not form fields
-                    if (!item.isFormField()) {
-                        String fileName = new File(item.getName()).getName();
-                        String filePath = uploadPath + File.separator + fileName;
-                        File storeFile = new File(filePath);
-
-                        // saves the file on disk
-                        item.write(storeFile);
-                        request.setAttribute("message",
-                                "Upload has been done successfully!");
-                    }
-                }
+        PrintWriter out = response.getWriter();
+        for (Part part : request.getParts()) {
+            InputStream is = request.getPart(part.getName()).getInputStream();
+            String fileName = getFileName(part);
+            FileOutputStream os = new FileOutputStream(
+                    System.getenv("OPENSHIFT_DATA_DIR") + fileName);
+            byte[] bytes = new byte[BUFFER_LENGTH];
+            int read = 0;
+            while ((read = is.read(bytes, 0, BUFFER_LENGTH)) != -1) {
+                os.write(bytes, 0, read);
             }
-        } catch (Exception ex) {
-            request.setAttribute("message",
-                    "There was an error: " + ex.getMessage());
+            os.flush();
+            is.close();
+            os.close();
+            out.println(fileName + " was uploaded to "
+                    + System.getenv("OPENSHIFT_DATA_DIR"));
         }
-        // redirects client to message page
-
     }
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+    protected void doGet(HttpServletRequest request,
+                         HttpServletResponse response) throws ServletException, IOException {
+        //Remove extra context path which exists in local Tomcat applications.
+        String filePath = request.getRequestURI().substring(
+                request.getContextPath().length());
+        //Decode url. Fixes issue with files having space within the file name
+        filePath = URLDecoder.decode(filePath, "UTF-8");
+        File file = new File(System.getenv("OPENSHIFT_DATA_DIR")
+                + filePath.replace("/uploads/", ""));
+        InputStream input = new FileInputStream(file);
+        response.setContentLength((int) file.length());
+        response.setContentType(new MimetypesFileTypeMap().getContentType(file));
+        OutputStream output = response.getOutputStream();
+        byte[] bytes = new byte[BUFFER_LENGTH];
+        int read = 0;
+        while ((read = input.read(bytes, 0, BUFFER_LENGTH)) != -1) {
+            output.write(bytes, 0, read);
+            output.flush();
+        }
+        input.close();
+        output.close();
+    }
+    private String getFileName(Part part) {
+        for (String cd : part.getHeader("content-disposition").split(";")) {
+            if (cd.trim().startsWith("filename")) {
+                String filename = cd.substring(cd.indexOf('=') + 1);
+                //remove extra file path in windows local machine
+                return filename.substring(filename.lastIndexOf("\\") + 1)
+                        .trim().replace("\"", "");
+            }
+        }
+        return null;
     }
 }
+
