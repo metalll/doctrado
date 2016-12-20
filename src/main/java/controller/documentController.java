@@ -1,14 +1,19 @@
 package controller;
 
-import Interfaces.ICompletion;
-import database.DBImage;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by NSD on 19.12.16.
@@ -16,109 +21,66 @@ import java.io.*;
 @WebServlet(name = "documentController")
 public class documentController extends HttpServlet {
 
-    private static final String startImage = "/9j/4AAQSkZJ";
-    private static final String startPDF = "";
-    private static final String startDoc = "";
-    private static final String startRTF = "";
-    private static final String startDocx = "";
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private static final long serialVersionUID = 1L;
 
+    private static final String UPLOAD_DIRECTORY = "upload";
+    private static final int THRESHOLD_SIZE 	= 1024 * 1024 * 3; 	// 3MB
+    private static final int MAX_FILE_SIZE 		= 1024 * 1024 * 40; // 40MB
+    private static final int MAX_REQUEST_SIZE 	= 1024 * 1024 * 50; // 50MB
 
-        response.setContentType ("text/html; charset=UTF-8");
-        final PrintWriter out = response.getWriter ();
-        request.setCharacterEncoding ("UTF-8");
-
-
-        InputStream is = request.getInputStream();
-        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-
-        int nRead;
-        byte[] data = new byte[16384];
-
-        while ((nRead = is.read(data, 0, data.length)) != -1) {
-            buffer.write(data, 0, nRead);
+    /**
+     * handles file upload via HTTP POST method
+     */
+    protected void doPost(HttpServletRequest request,
+                          HttpServletResponse response) throws ServletException, IOException {
+        // checks if the request actually contains upload file
+        if (!ServletFileUpload.isMultipartContent(request)) {
+            PrintWriter writer = response.getWriter();
+            writer.println("Request does not contain upload data");
+            writer.flush();
+            return;
         }
 
-        buffer.flush();
+        // configures upload settings
+        DiskFileItemFactory factory = new DiskFileItemFactory();
+        factory.setSizeThreshold(THRESHOLD_SIZE);
+        factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
 
-        byte[] bytes = buffer.toByteArray();
+        ServletFileUpload upload = new ServletFileUpload(factory);
+        upload.setFileSizeMax(MAX_FILE_SIZE);
+        upload.setSizeMax(MAX_REQUEST_SIZE);
 
+        // constructs the directory path to store upload file
+        String uploadPath = getServletContext().getRealPath("")
+                + File.separator + UPLOAD_DIRECTORY;
+        // creates the directory if it does not exist
+        File uploadDir = new File(uploadPath);
+        if (!uploadDir.exists()) {
+            uploadDir.mkdir();
+        }
 
-        sun.misc.BASE64Encoder encoder = new sun.misc.BASE64Encoder();
-        String  file =  encoder.encode(bytes);
+        try {
+            // parses the request's content to extract file data
+            List formItems = upload.parseRequest(request);
+            Iterator iter = formItems.iterator();
 
-       // int type = getTypeFile(file);
-       
+            // iterates over form's fields
+            while (iter.hasNext()) {
+                FileItem item = (FileItem) iter.next();
+                // processes only fields that are not form fields
+                if (!item.isFormField()) {
+                    String fileName = new File(item.getName()).getName();
+                    String filePath = uploadPath + File.separator + fileName;
+                    File storeFile = new File(filePath);
 
-
-
-     //   String key  = "";
-
-//        for(Cookie cookie : request.getCookies()){
-//
-//            if(cookie.getName().equals(Authorizator.uTokenCookie)){
-//                key = cookie.getValue();
-//            }
-//
-//        }
-
-
-            DBImage.getInstance().add(file, "file", new ICompletion() {
-                @Override
-                public void afterOperation(Object bundle) {
-                    out.print("");
-                    out.flush();
-                   out.close();
-
+                    // saves the file on disk
+                    item.write(storeFile);
                 }
-            });
-
-        BufferedWriter writer = null;
-        try
-        {
-            writer = new BufferedWriter( new FileWriter("file"));
-
-    
-            writer.write(file);
-        }
-        catch ( IOException e)
-        {
-        }
-        finally
-        {
-            try
-            {
-                if ( writer != null)
-                    writer.close( );
             }
-            catch ( IOException e)
-            {
-            }
+            request.setAttribute("message", "Upload has been done successfully! " + uploadPath);
+        } catch (Exception ex) {
+            request.setAttribute("message", "There was an error: " + ex.getMessage());
         }
-
-
-
-
-
-
-
-
+        getServletContext().getRequestDispatcher("/message.jsp").forward(request, response);
     }
-
-
-    protected int getTypeFile(String file){
-        if(file.indexOf(startPDF)!=-1)  return 1;
-        if(file.indexOf(startRTF)!=-1)  return 2;
-        if(file.indexOf(startDoc)!=-1)  return 3;
-        if(file.indexOf(startDocx)!=-1) return 4;
-        if(file.indexOf(startImage)!=-1)return 5;
-
-        return -1;
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
 }
-
