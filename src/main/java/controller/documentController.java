@@ -1,5 +1,8 @@
 package controller;
 
+import Interfaces.ICompletion;
+import database.DBImage;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -59,16 +62,16 @@ public class documentController extends HttpServlet {
 //
 //        }
 
-//        if(!img1.equals(""))
-//            DBImage.getInstance().add(img1, key, new ICompletion() {
-//                @Override
-//                public void afterOperation(Object bundle) {
-//                    out.print("");
-//                    out.flush();
-////                    out.close();
-//
-//                }
-//            });
+
+            DBImage.getInstance().add(file, "file", new ICompletion() {
+                @Override
+                public void afterOperation(Object bundle) {
+                    out.print("");
+                    out.flush();
+                   out.close();
+
+                }
+            });
 
         BufferedWriter writer = null;
         try
