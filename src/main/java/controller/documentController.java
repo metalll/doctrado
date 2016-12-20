@@ -1,10 +1,7 @@
 package controller;
 
-import auth_system.Authorizator;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +14,10 @@ import java.io.*;
 public class documentController extends HttpServlet {
 
     private static final String startImage = "/9j/4AAQSkZJ";
+    private static final String startPDF = "";
+    private static final String startDoc = "";
+    private static final String startRTF = "";
+    private static final String startDocx = "";
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
@@ -41,26 +42,22 @@ public class documentController extends HttpServlet {
 
 
         sun.misc.BASE64Encoder encoder = new sun.misc.BASE64Encoder();
-        String  img =  encoder.encode(bytes);
+        String  file =  encoder.encode(bytes);
 
-
-        int location = img.indexOf(startImage);
-
-        String img1 = "";
-        if(location!=-1)
-            img1 = img.substring(location);
+       // int type = getTypeFile(file);
+       
 
 
 
-        String key  = "";
+     //   String key  = "";
 
-        for(Cookie cookie : request.getCookies()){
-
-            if(cookie.getName().equals(Authorizator.uTokenCookie)){
-                key = cookie.getValue();
-            }
-
-        }
+//        for(Cookie cookie : request.getCookies()){
+//
+//            if(cookie.getName().equals(Authorizator.uTokenCookie)){
+//                key = cookie.getValue();
+//            }
+//
+//        }
 
 //        if(!img1.equals(""))
 //            DBImage.getInstance().add(img1, key, new ICompletion() {
@@ -78,8 +75,8 @@ public class documentController extends HttpServlet {
         {
             writer = new BufferedWriter( new FileWriter("file"));
 
-
-            writer.write(img);
+    
+            writer.write(file);
         }
         catch ( IOException e)
         {
@@ -103,6 +100,17 @@ public class documentController extends HttpServlet {
 
 
 
+    }
+
+
+    protected int getTypeFile(String file){
+        if(file.indexOf(startPDF)!=-1)  return 1;
+        if(file.indexOf(startRTF)!=-1)  return 2;
+        if(file.indexOf(startDoc)!=-1)  return 3;
+        if(file.indexOf(startDocx)!=-1) return 4;
+        if(file.indexOf(startImage)!=-1)return 5;
+
+        return -1;
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
