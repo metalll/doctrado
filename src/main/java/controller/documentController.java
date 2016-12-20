@@ -51,8 +51,7 @@ public class documentController extends HttpServlet {
         upload.setSizeMax(MAX_REQUEST_SIZE);
 
         // constructs the directory path to store upload file
-        String uploadPath = getServletContext().getRealPath("")
-                + File.separator + UPLOAD_DIRECTORY;
+        String uploadPath = "/var/lib/openshift/58512d040c1e66ad2d000024/jbossews/upload";
         // creates the directory if it does not exist
         File uploadDir = new File("/var/lib/openshift/58512d040c1e66ad2d000024/jbossews/upload");
         if (!uploadDir.exists()) {
