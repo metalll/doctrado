@@ -28,9 +28,7 @@ public class profile extends HttpServlet {
         try {
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals(Authorizator.uTypeCookie)) {
-                    if(cookie.getValue().equals("")){
 
-                    }
                     if (cookie.getValue().equals("a")) {
                         request.getRequestDispatcher("./profile/adminProfile.jsp").include(request, response);//рисуем jsp
 
