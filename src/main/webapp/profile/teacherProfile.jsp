@@ -263,7 +263,7 @@
                                 <a class="button creating success admin-success-button"><span class="class">разрешить быть преподавателем</span></a>
                             </div>
                             <div class="small-12 medium-4 columns end">
-                                <div class="user-avatar-container" style="text-align: center;"><img style="height: 200px;" src="img/camera.gif"></div>
+                                <div class="user-avatar-container" style="text-align: center;"><img style="height: 200px;" src="../img/camera.gif"></div>
                             </div>
                             <div class="small-12 medium-5 columns end">
                                 <div class="user-about-container">
