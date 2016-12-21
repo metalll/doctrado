@@ -11,6 +11,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="PmqcoaVVHEo1EAePF7l3MdIefiMZU9OwYtXlMQOf">
@@ -487,11 +491,14 @@
     </div>
 </footer>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/foundation.min.js"></script>
-<script src="js/jquery.matchHeight-min.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/app.js"></script>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../js/materialize.min.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/foundation.min.js"></script>
+<script src="../js/jquery.matchHeight-min.js"></script>
+<script src="../js/slick.min.js"></script>
+<script src="../js/app.js"></script>
 
 </body>
 </html>
