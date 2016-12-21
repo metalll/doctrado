@@ -56,8 +56,14 @@
             //  completion.afterOperation(new Teacher();
         }
 
+        rs = stmt.executeQuery("SELECT * FROM 'teacher' WHERE 'id'='"+uToken+"'");
+        while (rs.next()){
 
+            for(int i=1;i<=6;i++){
+                strings.add(rs.getString(i));
+            }
 
+        }
 
     }
     catch (SQLException e){ e.printStackTrace();  }
@@ -66,16 +72,6 @@
         if(conn != null) try {conn.close();} catch (Exception e){}
 
     }
-
-   // query = "SELECT * FROM 'teacher' WHERE 'id'='"+uToken+"'";
-    // String query =  "SELECT * FROM `users` WHERE `login` = '"+uName+"' AND `pass` ='"+uPass+"'";
-
-
-
-
-
-
-
 
 %>
     <meta charset="utf-8"/>
