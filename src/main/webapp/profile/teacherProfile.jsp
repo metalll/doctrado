@@ -203,22 +203,22 @@
                     <div class="top-bar-right">
                         <ul class="menu vertical large-horizontal">
                             <li>
-                                <a class="menu-elem" href="./#about">О проекте</a>
+                                <a class="menu-elem" href="../#about">О проекте</a>
                             </li>
                             <li>
-                                <a class="menu-elem" href="./#capabilities">Возможности</a>
+                                <a class="menu-elem" href="../#capabilities">Возможности</a>
                             </li>
                             <li>
-                                <a class="menu-elem" href="./certificates">Сертификаты</a>
+                                <a class="menu-elem" href="../certificates">Сертификаты</a>
                             </li>
                             <li>
-                                <a class="menu-elem" href="./webinar">Вебинары</a>
+                                <a class="menu-elem" href="../webinar">Вебинары</a>
                             </li>
                             <li>
-                                <a class="menu-elem" href="./course">Курсы</a>
+                                <a class="menu-elem" href="../course">Курсы</a>
                             </li>
                             <li>
-                                <a class="menu-elem" href="./#contacts">Контакты</a>
+                                <a class="menu-elem" href="../#contacts">Контакты</a>
                             </li>
                         </ul>
                     </div>
