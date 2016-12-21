@@ -138,6 +138,26 @@
         <url-pattern>/createCourse</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>createTheme</servlet-name>
+        <servlet-class>controller.createTheme</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createTheme</servlet-name>
+        <url-pattern>/createTheme</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>createFinalTest</servlet-name>
+        <servlet-class>controller.createFinalTest</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>createFinalTest</servlet-name>
+        <url-pattern>/createFinalTest</url-pattern>
+    </servlet-mapping>
+
     <context-param>
         <param-name>javax.servlet.jsp.jstl.fmt.request.charset</param-name>
         <param-value>UTF-8</param-value>
