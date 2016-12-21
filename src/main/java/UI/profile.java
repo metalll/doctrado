@@ -25,7 +25,7 @@ public class profile extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
 
-        try {
+
             for (Cookie cookie : cookies) {
                 if (cookie.getName().equals(Authorizator.uTypeCookie)) {
 
@@ -43,6 +43,6 @@ public class profile extends HttpServlet {
                 }
             }
 
-        } catch (Exception e){e.printStackTrace();}
+
     }
 }
