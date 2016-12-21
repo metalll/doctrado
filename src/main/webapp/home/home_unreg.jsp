@@ -15,7 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="PmqcoaVVHEo1EAePF7l3MdIefiMZU9OwYtXlMQOf">
     <title>Doctrado</title>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="../css/app.css">
+
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
     <style>
         .courses__img {
@@ -276,7 +277,7 @@
     <div class="row">
         <div class="small-12 medium-4 columns">
             <div class="pros__elem">
-                <img src="img/time.png" class="pros__img" alt="Быстро и удобно">
+                <img src="../img/time.png" class="pros__img" alt="Быстро и удобно">
                 <h3 class="pros__title">Быстро и удобно</h3>
                 <p class="pros__text">
                     Региструешься, находишь нужный курс, проходишь все темы и тесты после каждой из них - получаешь

@@ -11,7 +11,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
@@ -204,16 +203,16 @@
     </div>
 </div>
 <header class="header">
-    <nav class="header__top-bar">
-        <div class="row collapse">
-            <div class="small-12 columns">
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <div class="col s12">
                 <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
                     <button class="menu-icon" type="button" data-toggle></button>
                 </div>
                 <div class="top-bar" id="main-menu">
                     <div class="top-bar-left">
                         <h1 class="site-title">
-                            <a href="/">Doctrado</a>
+                            <a  href="/">Doctrado</a>
                         </h1>
                         <a href="profile" class="login-btn" id="profile-button" style="margin-right:10px;">Кабинет</a><a class="login-btn" href="logout">Выход</a>
                     </div>
