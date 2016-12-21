@@ -8,6 +8,11 @@ $(document).foundation();
 
 // Partners Slider
 $(document).ready(function() {
+    $('.red-button').on('click',function(){
+        $('#modal1').modal('open');
+    });
+
+
     $('.partners__slider').slick({
         dots: true,
         arrows: false,
