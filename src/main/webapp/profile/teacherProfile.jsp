@@ -55,6 +55,10 @@
 
             //  completion.afterOperation(new Teacher();
         }
+
+
+
+
     }
     catch (SQLException e){ e.printStackTrace();  }
     finally {
@@ -63,30 +67,9 @@
 
     }
 
-    query = "SELECT * FROM 'teacher' WHERE 'id'='"+uToken+"'";
+   // query = "SELECT * FROM 'teacher' WHERE 'id'='"+uToken+"'";
     // String query =  "SELECT * FROM `users` WHERE `login` = '"+uName+"' AND `pass` ='"+uPass+"'";
-    try{  Class.forName("com.mysql.jdbc.Driver"); }
-    catch(Exception e){ e.printStackTrace(); }
-    try{
-        conn = DriverManager.getConnection(databaseUrl, userName, password);
-        stmt =  (Statement) conn.createStatement();
-        ResultSet rs = stmt.executeQuery(query);
-        while(rs.next()){
-            isSuccess = true;
 
-            for(int i=1;i<=6;i++){
-                strings.add(rs.getString(i));
-            }
-
-            //  completion.afterOperation(new Teacher();
-        }
-    }
-    catch (SQLException e){ e.printStackTrace();  }
-    finally {
-        if(stmt != null) try {stmt.close();} catch (Exception e){}
-        if(conn != null) try {conn.close();} catch (Exception e){}
-
-    }
 
 
 
@@ -264,7 +247,7 @@
                                 <div class="user-about-container">
                                     <h2 class="info-about-user"> <%=strings.get(2)+" "+strings.get(3)+" "+strings.get(4)%></h2>
                                     <h2 class="info-about-user">Дата рождения: <%= strings.get(8) %></h2>
-                                    <h2 class="info-about-user">Преподавательский опыт: <%=strings.get(17)%></h2>
+                                    <h2 class="info-about-user">Преподавательский опыт: <%=strings.get(1)%></h2>
                                 </div>
                             </div>
                             <div class="small-12 medium-3 columns end">
