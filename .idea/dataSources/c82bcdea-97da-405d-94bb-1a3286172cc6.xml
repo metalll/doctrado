@@ -9,110 +9,165 @@
     <schema id="3" parent="1" name="information_schema"/>
     <schema id="4" parent="1" name="mysql"/>
     <schema id="5" parent="1" name="performance_schema"/>
-    <table id="6" parent="2" name="avatars"/>
-    <table id="7" parent="2" name="student"/>
-    <table id="8" parent="2" name="teacher"/>
-    <table id="9" parent="2" name="users"/>
-    <column id="10" parent="6" name="id">
+    <table id="6" parent="2" name="Razdel"/>
+    <table id="7" parent="2" name="avatars"/>
+    <table id="8" parent="2" name="category"/>
+    <table id="9" parent="2" name="course"/>
+    <table id="10" parent="2" name="student"/>
+    <table id="11" parent="2" name="teacher"/>
+    <table id="12" parent="2" name="users"/>
+    <column id="13" parent="6" name="id">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="14" parent="6" name="name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="15" parent="7" name="id">
       <Position>1</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="11" parent="6" name="avatar">
+    <column id="16" parent="7" name="avatar">
       <Position>2</Position>
       <DataType>longtext|0</DataType>
     </column>
-    <column id="12" parent="7" name="id">
+    <column id="17" parent="8" name="id">
       <Position>1</Position>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>text|0</DataType>
     </column>
-    <column id="13" parent="7" name="avatar">
+    <column id="18" parent="8" name="name">
       <Position>2</Position>
-      <DataType>varchar(10)|0</DataType>
+      <DataType>text|0</DataType>
     </column>
-    <column id="14" parent="8" name="id">
-      <Position>1</Position>
-      <DataType>varchar(50)|0</DataType>
-    </column>
-    <column id="15" parent="8" name="avatar">
-      <Position>2</Position>
-      <DataType>varchar(10)|0</DataType>
-    </column>
-    <column id="16" parent="8" name="teacherEdu">
+    <column id="19" parent="8" name="razdelID">
       <Position>3</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="17" parent="8" name="addEdu">
+    <column id="20" parent="9" name="id">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="21" parent="9" name="photo">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="22" parent="9" name="courseName">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="23" parent="9" name="createTime">
       <Position>4</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="18" parent="8" name="teacherExp">
+    <column id="24" parent="9" name="descr">
       <Position>5</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="19" parent="8" name="bankCard">
+    <column id="25" parent="9" name="price">
       <Position>6</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="20" parent="9" name="id">
+    <column id="26" parent="9" name="category">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="27" parent="9" name="author">
+      <Position>8</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="28" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="29" parent="10" name="avatar">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="30" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="31" parent="11" name="avatar">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="32" parent="11" name="teacherEdu">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="33" parent="11" name="addEdu">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="34" parent="11" name="teacherExp">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="35" parent="11" name="bankCard">
+      <Position>6</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="36" parent="12" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="21" parent="9" name="name">
+    <column id="37" parent="12" name="name">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="22" parent="9" name="second_name">
+    <column id="38" parent="12" name="second_name">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="23" parent="9" name="surname">
+    <column id="39" parent="12" name="surname">
       <Position>4</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="24" parent="9" name="email">
+    <column id="40" parent="12" name="email">
       <Position>5</Position>
       <DataType>varchar(40)|0</DataType>
     </column>
-    <column id="25" parent="9" name="password">
+    <column id="41" parent="12" name="password">
       <Position>6</Position>
       <DataType>varchar(40)|0</DataType>
     </column>
-    <column id="26" parent="9" name="telephone">
+    <column id="42" parent="12" name="telephone">
       <Position>7</Position>
       <DataType>varchar(40)|0</DataType>
     </column>
-    <column id="27" parent="9" name="born_date">
+    <column id="43" parent="12" name="born_date">
       <Position>8</Position>
       <DataType>varchar(10)|0</DataType>
     </column>
-    <column id="28" parent="9" name="edu_level">
+    <column id="44" parent="12" name="edu_level">
       <Position>9</Position>
       <DataType>varchar(50)|0</DataType>
     </column>
-    <column id="29" parent="9" name="work_location">
+    <column id="45" parent="12" name="work_location">
       <Position>10</Position>
       <DataType>varchar(40)|0</DataType>
     </column>
-    <column id="30" parent="9" name="lastUserToken">
+    <column id="46" parent="12" name="lastUserToken">
       <Position>11</Position>
       <DataType>varchar(60)|0</DataType>
     </column>
-    <column id="31" parent="9" name="type">
+    <column id="47" parent="12" name="type">
       <Position>12</Position>
       <DataType>varchar(3)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="32" parent="9" name="users_id_uindex">
+    <index id="48" parent="12" name="users_id_uindex">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="33" parent="9" name="PRIMARY">
+    <key id="49" parent="12" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="34" parent="9" name="users_id_uindex">
+    <key id="50" parent="12" name="users_id_uindex">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>users_id_uindex</UnderlyingIndexName>
     </key>
