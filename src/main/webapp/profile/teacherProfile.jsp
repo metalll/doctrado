@@ -56,7 +56,9 @@
             //  completion.afterOperation(new Teacher();
         }
 
-        rs = stmt.executeQuery("SELECT * FROM 'teacher' WHERE 'id'='"+uToken+"'");
+        rs = stmt.executeQuery("SELECT *\n" +
+                "FROM `teacher`\n" +
+                "WHERE `id` LIKE '"+uToken+"'");
         while (rs.next()){
 
             for(int i=1;i<=6;i++){
