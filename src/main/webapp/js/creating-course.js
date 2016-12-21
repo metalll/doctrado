@@ -655,7 +655,7 @@ function finishCourse() {
 							themes_created++;
                             $("#final-info-status").text("Создание финального теста: ГОТОВО");
 							if (files_uploaded==files_count&&themes_count==themes_created) {
-								window.location = "http://doctrado.me/course/id"+id;
+								window.location =  "http://doctrado-sviasy.rhcloud.com/course?id="+id;
 							}
                         }
                     });
@@ -676,7 +676,7 @@ function finishCourse() {
 								files_uploaded++;
                                 $("#course-photo-status").text("Загрузка изображения курса: ГОТОВО");
 								if (files_uploaded==files_count&&themes_count==themes_created) {
-									window.location = "http://doctrado.me/course/id"+id;
+									window.location = "http://doctrado-sviasy.rhcloud.com/course?id="+id;
 								}
                             }
                         });
@@ -700,7 +700,7 @@ function finishCourse() {
                                     themes_created++;
                                     $("#themes-info-status").text("Создание тем курса: " + themes_created + "/" + themes_count);
                                     if (files_uploaded==files_count&&themes_count==themes_created) {
-                                        window.location = "http://doctrado.me/course/id"+id;
+                                        window.location =  "http://doctrado-sviasy.rhcloud.com/course?id="+id;
                                     }
                                 }
                             });
@@ -743,7 +743,7 @@ function finishCourse() {
                                         files_uploaded++;
                                         $("#files-info-status").text("Загрузка файлов курса: " + files_uploaded + "/" + files_count);
                                         if (files_uploaded==files_count&&themes_count==themes_created) {
-                                            window.location = "http://doctrado.me/course/id"+id;
+                                            window.location =  "http://doctrado-sviasy.rhcloud.com/course?id="+id;
                                         }
                                     }
                                 });
