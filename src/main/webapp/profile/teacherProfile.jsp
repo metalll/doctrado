@@ -242,8 +242,8 @@
                             <div class="small-12 medium-5 columns end">
                                 <div class="user-about-container">
                                     <h2 class="info-about-user"> <%=strings.get(1)+" "+strings.get(2)+" "+strings.get(3)%></h2>
-                                    <h2 class="info-about-user">Дата рождения: <%= strings.get(8) %></h2>
-                                    <h2 class="info-about-user">Преподавательский опыт: <%=strings.get(4)%></h2>
+                                    <h2 class="info-about-user">Дата рождения: <%= strings.get(7) %></h2>
+                                    <h2 class="info-about-user">Преподавательский опыт: <%=strings.get(16)%></h2>
                                 </div>
                             </div>
                             <div class="small-12 medium-3 columns end">
