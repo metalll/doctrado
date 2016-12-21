@@ -142,31 +142,31 @@
                         <div class="row">
                             <div class="small-12 medium-6 columns">
                                 <fieldset form="full-about-form">
-                                    <input type="text" placeholder="Ваше имя" title="Ваше имя" name="name" value="Леша">
+                                    <input type="text" placeholder="Ваше имя" title="Ваше имя" name="name" value="<%= strings.get(1) %>">
                                     <p class="reg-alert" id="alert-0">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваше отчество" title="Ваше отчество" name="patronymic" value="Влад">
+                                    <input type="text" placeholder="Ваше отчество" title="Ваше отчество" name="patronymic" value="<%= strings.get(2) %>">
                                     <p class="reg-alert" id="alert-1">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваша фамилия" title="Ваша фамилия" name="surname" value="Петров">
+                                    <input type="text" placeholder="Ваша фамилия" title="Ваша фамилия" name="surname" value="<%= strings.get(3) %>">
                                     <p class="reg-alert" id="alert-2">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваш e-mail" title="Ваш e-mail" name="email" value="linuxoid6666@gmail.com">
+                                    <input type="text" placeholder="Ваш e-mail" title="Ваш e-mail" name="email" value="<%= strings.get(4) %>">
                                     <p class="reg-alert" id="alert-3">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваш преподавательский опыт" title="Ваш преподавательский опыт" name="experience" value="100">
+                                    <input type="text" placeholder="Ваш преподавательский опыт" title="Ваш преподавательский опыт" name="<%= strings.get(16) %>" value="100">
                                     <p class="reg-alert" id="alert-4">Заполните это поле</p>
-                                    <input type="text" placeholder="Номер банковской карты (для выплат)" title="Номер банковской карты (для выплат)" name="card" value="442423242343424143242" readonly>
+                                    <input type="text" placeholder="Номер банковской карты (для выплат)" title="Номер банковской карты (для выплат)" name="card" value="<%=strings.get(17)%>" readonly>
                                     <p class="reg-alert" id="alert-5">Заполните это поле</p>
                                 </fieldset>
                             </div>
                             <div class="small-12 medium-6 columns">
                                 <fieldset form="full-about-form">
-                                    <input type="text" placeholder="Ваш телефон" title="Ваш телефон" name="phone" value="0487043938">
+                                    <input type="text" placeholder="Ваш телефон" title="Ваш телефон" name="phone" value="<%= strings.get(6) %>">
                                     <p class="reg-alert" id="alert-6">Заполните это поле</p>
-                                    <input type="text" placeholder="Дата рождения" title="Дата рождения" name="birth_date" value="23.12.1991">
+                                    <input type="text" placeholder="Дата рождения" title="Дата рождения" name="birth_date" value="<%= strings.get(7) %>">
                                     <p class="reg-alert" id="alert-7">Заполните это поле</p>
-                                    <input type="text" placeholder="Уровень образования" title="Уровень образования" name="education" value="Макс">
+                                    <input type="text" placeholder="Уровень образования" title="Уровень образования" name="education" value="<%= strings.get(8) %>">
                                     <p class="reg-alert" id="alert-8">Заполните это поле</p>
-                                    <input type="text" title="Дополнительное образование" name="extra_graduate" value="Мин">
+                                    <input type="text" title="Дополнительное образование" name="extra_graduate" value="<%= strings.get(14) %>">
                                     <p class="reg-alert" id="alert-9">Заполните это поле</p>
-                                    <input type="text" placeholder="Место работы " name="work_place">
+                                    <input type="text" placeholder="Место работы " name="work_place" value="<%= strings.get(9) %>">
                                     <div class="small-12 medium-6 columns">
                                         <a class="creating success button save-changes" onclick="commitChanges()"><span class="class">сохранить</span></a>
                                     </div>
