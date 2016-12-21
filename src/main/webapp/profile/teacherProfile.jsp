@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="auth_system.Authorizator" %>
 <%@ page import="com.mysql.jdbc.Statement" %>
 <%@ page import="java.sql.Connection" %>
@@ -12,7 +13,7 @@
   Time: 10:19
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <%
 
     ArrayList<String> strings = new ArrayList<String>();
