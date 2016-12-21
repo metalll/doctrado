@@ -46,16 +46,17 @@ public class createCourse extends HttpServlet {
         for(Cookie cookie : request.getCookies()){
             if(cookie.getName().equals(Authorizator.uTokenCookie)){ userID = cookie.getValue(); }
         }
+        final String uuid = UUIDGenerator.Generate();
 
         String execute = "INSERT INTO `doctrado`.`course` " +
                 "(`id`, `photo`, `courseName`, `createTime`, `descr`, `price`, `category`, `author`) " +
-                "VALUES ('"+ UUIDGenerator.Generate()+"', '"+map.get("course[course_photo]")[0]+"', '"+map.get("course[course_name]")[0]+"', '"+map.get("course[course_time]")[0]+"'," +
+                "VALUES ('"+uuid+"', '"+map.get("course[course_photo]")[0]+"', '"+map.get("course[course_name]")[0]+"', '"+map.get("course[course_time]")[0]+"'," +
                 " '"+map.get("course[course_desc]")[0]+"', '"+map.get("course[course_price]")[0]+"', '"+map.get("course[category_id]")[0]+"', '"+userID+"');";
         setExecute(execute, new ICompletion() {
             @Override
             public void afterOperation(Object bundle) {
                 response.setStatus(HttpServletResponse.SC_OK);
-                out.write("");
+                out.write(uuid);
                 out.flush();
                 out.close();
 
