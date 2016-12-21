@@ -129,6 +129,14 @@
         <url-pattern>/uploadDocument</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>createCourse</servlet-name>
+        <servlet-class>controller.createCourse</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createCourse</servlet-name>
+        <url-pattern>/createCourse</url-pattern>
+    </servlet-mapping>
 
     <context-param>
         <param-name>javax.servlet.jsp.jstl.fmt.request.charset</param-name>
