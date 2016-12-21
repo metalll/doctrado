@@ -8,7 +8,7 @@
 
 nav ul a,
 nav .brand-logo {
-  color: #ffffff;
+  color: #444;
 }
 
 p {
@@ -16,7 +16,7 @@ p {
 }
 
 .button-collapse {
-  color: #ffffff;
+  color: #26a69a;
 }
 
 .parallax-container {
@@ -25,9 +25,9 @@ p {
   height: auto;
   color: rgba(255,255,255,.9);
 }
-  .parallax-container .section {
-    width: 100%;
-  }
+.parallax-container .section {
+  width: 100%;
+}
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
