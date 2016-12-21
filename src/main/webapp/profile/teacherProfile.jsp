@@ -104,9 +104,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="csrf-token" content="QztTeriVGADjqJNodjGXM9ch3ZdGO8dwteZkGZOd" />
     <title>Doctrado</title>
-    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/costume-decoration.css">
+    <link rel="stylesheet" type="text/css" href="../css/slick.css"/>
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/costume-decoration.css">
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
     <script>
         var user_id = 28;
