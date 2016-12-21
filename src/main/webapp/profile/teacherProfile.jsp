@@ -1,3 +1,10 @@
+<%@ page import="auth_system.Authorizator" %>
+<%@ page import="com.mysql.jdbc.Statement" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="java.util.ArrayList" %>
 <%--
   Created by IntelliJ IDEA.
   User: NSD
@@ -6,10 +13,92 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+
+    ArrayList<String> strings = new ArrayList<>();
+    final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
+    //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
+    final String userName = "adminsBmIZAN";
+    final String password = "qIqWymbbb-hk";
+    Connection conn = null;
+    Statement stmt = null;
+    String uToken = null;
+    for(Cookie cookie : request.getCookies()){
+        if(cookie.getName().equals(Authorizator.uTokenCookie))
+            uToken = cookie.getValue();
+    }
+
+
+    String query =  "SELECT * FROM `users` WHERE `lastUserToken` = '"+uToken+"'";
+
+
+
+    boolean isSuccess = false;
+    // String query =  "SELECT * FROM `users` WHERE `login` = '"+uName+"' AND `pass` ='"+uPass+"'";
+    try{  Class.forName("com.mysql.jdbc.Driver"); }
+    catch(Exception e){ e.printStackTrace(); }
+    try{
+        conn = DriverManager.getConnection(databaseUrl, userName, password);
+        stmt =  (Statement) conn.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
+        while(rs.next()){
+            isSuccess = true;
+
+            for(int i=1;i<=12;i++){
+                strings.add(rs.getString(i));
+            }
+
+            //  completion.afterOperation(new Teacher();
+        }
+    }
+    catch (SQLException e){ e.printStackTrace();  }
+    finally {
+        if(stmt != null) try {stmt.close();} catch (Exception e){}
+        if(conn != null) try {conn.close();} catch (Exception e){}
+
+    }
+
+    query = "SELECT * FROM 'teacher' WHERE 'id'='"+uToken+"'";
+    // String query =  "SELECT * FROM `users` WHERE `login` = '"+uName+"' AND `pass` ='"+uPass+"'";
+    try{  Class.forName("com.mysql.jdbc.Driver"); }
+    catch(Exception e){ e.printStackTrace(); }
+    try{
+        conn = DriverManager.getConnection(databaseUrl, userName, password);
+        stmt =  (Statement) conn.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
+        while(rs.next()){
+            isSuccess = true;
+
+            for(int i=1;i<=6;i++){
+                strings.add(rs.getString(i));
+            }
+
+            //  completion.afterOperation(new Teacher();
+        }
+    }
+    catch (SQLException e){ e.printStackTrace();  }
+    finally {
+        if(stmt != null) try {stmt.close();} catch (Exception e){}
+        if(conn != null) try {conn.close();} catch (Exception e){}
+
+    }
+
+
+
+
+
+
+
+%>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
+
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -177,9 +266,9 @@
                             </div>
                             <div class="small-12 medium-5 columns end">
                                 <div class="user-about-container">
-                                    <h2 class="info-about-user">Леша Влад Петров</h2>
-                                    <h2 class="info-about-user">Дата рождения: 23.12.1991</h2>
-                                    <h2 class="info-about-user">Преподавательский опыт: 100</h2>
+                                    <h2 class="info-about-user"> <%=strings.get(2)+" "+strings.get(3)+" "+strings.get(4)%></h2>
+                                    <h2 class="info-about-user">Дата рождения: <%= strings.get(8) %></h2>
+                                    <h2 class="info-about-user">Преподавательский опыт: <%=strings.get(17)%></h2>
                                 </div>
                             </div>
                             <div class="small-12 medium-3 columns end">
