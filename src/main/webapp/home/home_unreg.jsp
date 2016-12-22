@@ -144,7 +144,7 @@
                         <div class="row">
 
                             <div class="col s4">
-                                <a href="#!" class=" modal-action modal-close waves-effect waves-green">Отмена</a>
+                                <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
                             </div>
 
                             <div class="col s4">
