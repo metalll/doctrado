@@ -19,8 +19,6 @@
     <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-
-
     <script src="../js/materialize.min.js"></script>
 
 
