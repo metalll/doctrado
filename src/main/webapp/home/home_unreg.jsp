@@ -98,11 +98,51 @@
             <div id="test2" class="col s12">
 
                 <div class="row">
-                    <div class="for">
-            </div>
+                    <div class="form">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="nameR" type="text" class="validate">
+                                <label for="nameR" data-error="некорректный e-mail">Ваше имя</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="last_nameR" type="text" class="validate">
+                                <label for="last_nameR" data-error="некорректный e-mail">Ваше отчество</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="surnameR" type="text" class="validate">
+                                <label for="surnameR" data-error="некорректный e-mail">Ваша фамилия</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="emailR" type="email" class="validate">
+                                <label for="emailR" data-error="некорректный e-mail">Ваш email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="passwordR" type="password" class="validate">
+                                <label for="passwordR" data-error="некорректный e-mail">Ваш пароль</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="telephone" type="tel" class="validate">
+                                <label for="telephone" data-error="некорректный e-mail">Ваш телефон</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="born" type="date" class="validate">
+                                <label for="born" data-error="некорректный e-mail">Дата рождения</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="edu" type="text" class="validate">
+                                <label for="edu" data-error="некорректный e-mail">Образование</label>
+                            </div>
+                        </div>
 
-        </div>
-    </div>
+                    </div>
+                </div>
+            </div>
     <div class="modal-footer hide">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
@@ -120,7 +160,7 @@
 
 
     </div>
-    <div class="modal-footer">
+    <div class="modal-footer hide">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
     </div>
