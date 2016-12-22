@@ -40,7 +40,7 @@
             </div>
             <div id="test1" class="col s12">
                 <div class="row">
-                    <h6 class="center-align black-text" >вход</h6>
+                    <h5 class="center-align black-text" ></h5>
                 <form class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
