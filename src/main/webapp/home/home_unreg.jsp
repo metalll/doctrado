@@ -15,8 +15,8 @@
     <title>Doctrado</title>
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="./css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="./css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
 </head>
 <body>
@@ -42,7 +42,7 @@
 <nav class="white" role="navigation">
     <div class="nav-wrapper container">
 
-        <a id="logo-container" href="#" class="brand-logo "><img src="img/favicon.ico"></a>
+        <a id="logo-container" href="#" class="brand-logo "><img src="../img/favicon.ico"></a>
 
         <ul class="right hide-on-med-and-down">
 
@@ -91,7 +91,7 @@
 
         </div>
     </div>
-    <div class="parallax"><img src="./img/background.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="../img/background.jpg" alt="Unsplashed background img 1"></div>
 </div>
 
 
@@ -139,7 +139,7 @@
             </div>
         </div>
     </div>
-    <div class="parallax"><img src="./img/background.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="../img/background.jpg" alt="Unsplashed background img 2"></div>
 </div>
 
 <div class="container">
@@ -165,7 +165,7 @@
             </div>
         </div>
     </div>
-    <div class="parallax"><img src="img/background.jpg" alt="Unsplashed background img 3"></div>
+    <div class="parallax"><img src="../img/background.jpg" alt="Unsplashed background img 3"></div>
 </div>
 
 <div class="container">
@@ -217,14 +217,14 @@
 
 
 <!--  Scripts-->
-<script src="./js/jquery.min.js"></script>
-<script src="./js/materialize.js"></script>
-<script src="./js/init.js"></script>
-<script src="./js/jquery.min.js"></script>
-<script src="./js/foundation.min.js"></script>
-<script src="./js/jquery.matchHeight-min.js"></script>
-<script src="./js/slick.min.js"></script>
-<script src="./js/app.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/materialize.js"></script>
+<script src="../js/init.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/foundation.min.js"></script>
+<script src="../js/jquery.matchHeight-min.js"></script>
+<script src="../js/slick.min.js"></script>
+<script src="../js/app.js"></script>
 
 </body>
 </html>
