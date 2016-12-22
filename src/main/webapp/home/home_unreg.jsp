@@ -348,7 +348,7 @@
     $(document).ready(function () {
         $('.parallax').parallax();
     });
-œ
+
     $(document).ready(function(){
         $('ul.tabs').tabs();
         $('ul.tabs').active()
