@@ -136,7 +136,7 @@
                                 <label for="born" data-error="некорректный e-mail"></label>
                             </div>
 
-                            <p>
+                            <p class="col s12 center-align">
                                 <input type="checkbox" id="test5" />
                                 <label for="test5">Я согласен с условиями предоставления услуг</label>
                             </p>
