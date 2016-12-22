@@ -203,7 +203,7 @@
             <div class="col s12 center-align">
                 <h3><i class="mdi-content-send brown-text"></i></h3>
                 <p class="light center-align">Если у Вас нет времени на прохождение офф-лайн тренингов, тестирования, курсов и т.д. То зарегистрировавшись у нас - Вы получите возможность поиска курсов, которые окажуться Вам нужны или интересны. После их прохождения Вы сможете получить государственный сертификат, который поможет Вам - сразу получить более высокооплачиваемую работу</p>
-                <a class="waves-effect waves-light modal-trigger btn-large black white-text" href="#modal1">Регистрация</a>
+                <a class="waves-effect waves-light modal-trigger btn-large black white-text" href="#modal2">Регистрация</a>
             </div>
         </div>
 
