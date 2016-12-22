@@ -131,7 +131,7 @@
             <div class="col s12 m4">
                 <div class="icon-block">
                     <h2 class="center black-text"><i class="material-icons">group_work</i></h2>
-                    <h5 class="center">Командная <рœ></рœ>абота</h5>
+                    <h5 class="center">Командная работа</h5>
                     <p class="light center-align">Для развития сервиса мы добавили возможность каждому, у кого есть должный опыт, стать преподавателем</p>
                 </div>
             </div>
