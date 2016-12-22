@@ -91,7 +91,12 @@
                 </div>
             </div>
 
-            <div id="test2" class="col s12">Регистрация</div>
+            <div id="test2" class="col s12">
+
+                <div class="row">
+                    <div class="for">
+
+            </div>
 
         </div>
     </div>
@@ -103,8 +108,13 @@
 
 <div id="modal2" class="modal">
     <div class="modal-content">
-        <h4>Регистрация</h4>
-        <p>A bunch of text</p>
+        <h4 class="hide" >Регистрация</h4>
+        <div class="row">
+
+
+
+
+
     </div>
     <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -113,8 +123,31 @@
 
 <div id="modal3" class="modal">
     <div class="modal-content">
-        <h4>Вход</h4>
-        <p>A bunch of text</p>
+        <h4 class="center-align">Вход</h4>
+        <div class="row">
+            <h5 class="center-align black-text" ></h5>
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email1" type="email" data-error="некорректный e-mail" class="validate">
+                        <label for="email">e-mail</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password1" type="password" class="validate">
+                        <label for="password">Пароль</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Войти
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
     <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
