@@ -18,33 +18,13 @@
     <link href="../css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="../js/materialize.min.js"></script>
-
-
-    <script>
-
-        $(document).ready(function(){
-            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-            $('.modal').modal();
-            $('.modal-trigger').leanModal();
-            $('.parallax').parallax();
-        });
-
-    </script>
 
 
 </head>
 <body>
 
 
-<div class="row section">
-<div class="col">
-    <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-    <p>You have to include jQuery and Materialize JS + CSS for the modal to work. You can include it from <a href="http://materializecss.com/getting-started.html">CDN (getting started)</a>.
-</div>
-</div>
+
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
     <div class="modal-content">
@@ -202,7 +182,7 @@
             <div class="col s12 center-align">
                 <h3><i class="mdi-content-send brown-text"></i></h3>
                 <p class="light center-align">Если у Вас нет времени на прохождение офф-лайн тренингов, тестирования, курсов и т.д. То зарегистрировавшись у нас - Вы получите возможность поиска курсов, которые окажуться Вам нужны или интересны. После их прохождения Вы сможете получить государственный сертификат, который поможет Вам - сразу получить более высокооплачиваемую работу</p>
-                <a class="waves-effect waves-light btn-large black white-text" href="#modal1">Регистрация</a>
+                <a class="waves-effect waves-light modal-trigger btn-large black white-text" href="#modal1">Регистрация</a>
             </div>
         </div>
 
@@ -230,6 +210,22 @@
 
 
 
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="../js/materialize.min.js"></script>
+
+
+<script>
+
+    $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+        $('.modal-trigger').leanModal();
+        $('.parallax').parallax();
+
+
+    });
+
+</script>
 
 </body>
 </html>
