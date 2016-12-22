@@ -121,7 +121,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="passwordR" type="password" class="validate">
+                                <input id="passwordR" type="password" placeholder="Дата рождения" class="validate">
                                 <label for="passwordR" data-error="некорректный e-mail">Ваш пароль</label>
                             </div>
                             <div class="input-field col s12">
@@ -139,6 +139,7 @@
                                 <label for="edu" data-error="некорректный e-mail">Образование</label>
                             </div>
                         </div>
+
 
                     </div>
                 </div>
@@ -393,6 +394,7 @@
         $('ul.tabs').active()
     });
 
+  
 </script>
 
 </body>
