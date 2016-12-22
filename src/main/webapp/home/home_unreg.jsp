@@ -131,6 +131,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
+                                <p>Дата рождения</p>
                                 <input id="born" type="date" placeholder="Дата рождения" class="validate">
                                 <label for="born" data-error="некорректный e-mail"></label>
                             </div>
@@ -139,8 +140,6 @@
                                 <label for="edu" data-error="некорректный e-mail">Образование</label>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
