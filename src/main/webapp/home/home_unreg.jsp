@@ -31,7 +31,7 @@
         <h4 class="center-align">Вперед к работе</h4>
         <div class="row">
             <div class="col s12 black-text">
-                <ul class="tabs black">
+                <ul class="tabs black-text">
                     <li class="tab col s6"><a href="#test1">Вход</a></li>
                     <li class="tab col s6"><a class="active" href="#test2">Регистрация</a></li>
                 </ul>
