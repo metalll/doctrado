@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
@@ -30,15 +30,31 @@
     <div class="modal-content">
         <h4 class="center-align">Вперед к работе</h4>
         <div class="row">
-            <div class="col s12">
-                <ul class="tabs">
+            <div class="col s12 black-text">
+                <ul class="tabs black">
                     <li class="tab col s6"><a href="#test1">Вход</a></li>
                     <li class="tab col s6"><a class="active" href="#test2">Регистрация</a></li>
                 </ul>
             </div>
             <div id="test1" class="col s12">
-                Вход
+                <div class="row">
+                <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">e-mail</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Пароль</label>
+                    </div>
+                </div>
+                </form>
+                </div>
             </div>
+
             <div id="test2" class="col s12">Регистрация</div>
 
         </div>
