@@ -85,7 +85,10 @@
                     </div>
                 </div>
                     <div class="row">
-                        <div class="col s12 center-align">
+                        <div class="col s3 left-align">
+                            <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
+                        </div>
+                        <div class="col s9 center-align">
                         <button class="btn waves-effect waves-light" type="submit" name="action">Войти
                             <i class="material-icons right">send</i>
                         </button>
@@ -101,43 +104,43 @@
                     <div class="form">
                         <div class="row">
                             <div class="input-field col s6">
-                                <input id="nameR" type="text" class="validate">
-                                <label for="nameR" data-error="некорректный e-mail">Ваше имя</label>
+                                <input id="nameR1" type="text" class="validate">
+                                <label for="nameR1" data-error="некорректный e-mail">Ваше имя</label>
                             </div>
                             <div class="input-field col s6">
-                                <input id="last_nameR" type="text" class="validate">
-                                <label for="last_nameR" data-error="некорректный e-mail">Ваше отчество</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="surnameR" type="text" class="validate">
-                                <label for="surnameR" data-error="некорректный e-mail">Ваша фамилия</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="emailR" type="email" class="validate">
-                                <label for="emailR" data-error="некорректный e-mail">Ваш email</label>
+                                <input id="last_nameR1" type="text" class="validate">
+                                <label for="last_nameR1" data-error="некорректный e-mail">Ваше отчество</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s6">
-                                <input id="passwordR" type="password"  class="validate">
-                                <label for="passwordR" data-error="некорректный e-mail">Ваш пароль</label>
+                                <input id="surnameR1" type="text" class="validate">
+                                <label for="surnameR1" data-error="некорректный e-mail">Ваша фамилия</label>
                             </div>
                             <div class="input-field col s6">
-                                <input id="telephone" type="tel" class="validate">
-                                <label for="telephone" data-error="некорректный e-mail">Ваш телефон</label>
+                                <input id="emailR1" type="email" class="validate">
+                                <label for="emailR1" data-error="некорректный e-mail">Ваш email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="passwordR1" type="password"  class="validate">
+                                <label for="passwordR1" data-error="некорректный e-mail">Ваш пароль</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="telephone1" type="tel" class="validate">
+                                <label for="telephone1" data-error="некорректный e-mail">Ваш телефон</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <p>Дата рождения</p>
-                                <input id="born" type="date" placeholder="Дата рождения" class="validate">
-                                <label for="born" data-error="некорректный e-mail"></label>
+                                <input id="born1" type="date" placeholder="Дата рождения" class="validate">
+                                <label for="born1" data-error="некорректный e-mail"></label>
                             </div>
 
                             <p class="col s12 center-align">
-                                <input type="checkbox" id="test5" />
+                                <input type="checkbox" id="test51" />
                                 <label for="test5">Я согласен с условиями предоставления услуг</label>
                             </p>
                         </div>
@@ -171,6 +174,67 @@
     <div class="modal-content">
         <h4 class="hide" >Регистрация</h4>
         <div class="row">
+            <div class="form">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="nameR" type="text" class="validate">
+                        <label for="nameR" data-error="некорректный e-mail">Ваше имя</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_nameR" type="text" class="validate">
+                        <label for="last_nameR" data-error="некорректный e-mail">Ваше отчество</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="surnameR" type="text" class="validate">
+                        <label for="surnameR" data-error="некорректный e-mail">Ваша фамилия</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="emailR" type="email" class="validate">
+                        <label for="emailR" data-error="некорректный e-mail">Ваш email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="passwordR" type="password"  class="validate">
+                        <label for="passwordR" data-error="некорректный e-mail">Ваш пароль</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="telephone" type="tel" class="validate">
+                        <label for="telephone" data-error="некорректный e-mail">Ваш телефон</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <p>Дата рождения</p>
+                        <input id="born" type="date" placeholder="Дата рождения" class="validate">
+                        <label for="born" data-error="некорректный e-mail"></label>
+                    </div>
+
+                    <p class="col s12 center-align">
+                        <input type="checkbox" id="test5" />
+                        <label for="test5">Я согласен с условиями предоставления услуг</label>
+                    </p>
+                </div>
+                <div class="row">
+
+                    <div class="col s4 left-align">
+                        <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
+                    </div>
+
+                    <div class="col s4 center-align">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Я студент</button>
+                    </div>
+                    <div class="col s4 center-align">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Я преподаватель</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
 
 
 
@@ -202,7 +266,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col s12 center-align">
+                    <div class="col s3 left-align">
+                        <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
+                    </div>
+                    <div class="col s9 center-align">
                         <button class="btn waves-effect waves-light" type="submit" name="action">Войти
                             <i class="material-icons right">send</i>
                         </button>
