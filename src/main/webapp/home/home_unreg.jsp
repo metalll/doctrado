@@ -54,6 +54,13 @@
                         <label for="password">Пароль</label>
                     </div>
                 </div>
+                    <div class="row">
+                        <div class="col s12">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Войти
+                            <i class="material-icons right">send</i>
+                        </button>
+                        </div>
+                    </div>
                 </form>
                 </div>
             </div>
