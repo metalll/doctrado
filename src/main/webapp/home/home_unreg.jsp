@@ -34,12 +34,13 @@
                 <ul class="tabs black-text"style=".tabs .indicator {
     background-color: #000000;
 }">
-                    <li class="tab col s6 black-text" ><a href="#test1">Вход</a></li>
-                    <li class="tab col s6 black-text"><a class="active" href="#test2">Регистрация</a></li>
+                    <li class="tab col s6" ><a href="#test1">Вход</a></li>
+                    <li class="tab col s6"><a class="active" href="#test2">Регистрация</a></li>
                 </ul>
             </div>
             <div id="test1" class="col s12">
                 <div class="row">
+                    <h6 class="center-align black-text" >вход</h6>
                 <form class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
