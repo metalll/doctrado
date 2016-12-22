@@ -8,7 +8,10 @@ $(document).foundation();
 
 // Partners Slider
 $(document).ready(function() {
-    $('.red-button').on('click',function(){
+
+
+
+    $('.reg-button').on('click',function(){
         $('#modal1').modal('open');
     });
 
