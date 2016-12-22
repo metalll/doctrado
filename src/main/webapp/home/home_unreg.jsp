@@ -132,7 +132,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="born" type="date" class="validate">
-                                <label for="born" data-error="некорректный e-mail">Дата рождения</label>
+                                <label for="born" data-error="некорректный e-mail"></label>
                             </div>
                             <div class="input-field col s12">
                                 <input id="edu" type="text" class="validate">
