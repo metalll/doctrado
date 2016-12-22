@@ -64,6 +64,10 @@
                     <li class="tab col s6"><a class="active" href="#test2">Регистрация</a></li>
                 </ul>
             </div>
+
+
+
+            <!----->
             <div id="test1" class="col s12">
                 <div class="row">
                     <h5 class="center-align black-text" ></h5>
@@ -90,7 +94,7 @@
                 </form>
                 </div>
             </div>
-
+<!---------->
             <div id="test2" class="col s12">
 
                 <div class="row">
@@ -106,6 +110,7 @@
 </div>
 
 
+    <!----------->
 <div id="modal2" class="modal">
     <div class="modal-content">
         <h4 class="hide" >Регистрация</h4>
@@ -118,6 +123,7 @@
     </div>
     <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
     </div>
 </div>
 
@@ -149,7 +155,7 @@
             </form>
         </div>
     </div>
-    <div class="modal-footer">
+    <div class="modal-footer hide">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
 </div>
