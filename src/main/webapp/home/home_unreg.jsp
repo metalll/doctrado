@@ -30,10 +30,8 @@
     <div class="modal-content">
         <h4 class="center-align">Вперед к работе</h4>
         <div class="row">
-            <div class="col s12 black-text " >
-                <ul class="tabs black-text"style=".tabs .indicator {
-    background-color: #000000;
-}">
+            <div class="col s12 black-text ">
+                <ul class="tabs black-text">
                     <li class="tab col s6" ><a href="#test1">Вход</a></li>
                     <li class="tab col s6"><a class="active" href="#test2">Регистрация</a></li>
                 </ul>
@@ -44,7 +42,7 @@
                 <form class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
+                        <input id="email" type="email" data-error="некорректный e-mail" class="validate">
                         <label for="email">e-mail</label>
                     </div>
                 </div>
@@ -55,7 +53,7 @@
                     </div>
                 </div>
                     <div class="row">
-                        <div class="col s12">
+                        <div class="col s12 center-align">
                         <button class="btn waves-effect waves-light" type="submit" name="action">Войти
                             <i class="material-icons right">send</i>
                         </button>
@@ -283,6 +281,7 @@
 œ
     $(document).ready(function(){
         $('ul.tabs').tabs();
+        $('ul.tabs').active()
     });
 
 </script>
