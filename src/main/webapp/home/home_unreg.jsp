@@ -28,7 +28,7 @@
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
     <div class="modal-content">
-        <h4>Вперед к работе</h4>
+        <h4 class="center-align">Вперед к работе</h4>
         <div class="row">
             <div class="col s12">
                 <ul class="tabs">
