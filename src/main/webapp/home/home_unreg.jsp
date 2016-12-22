@@ -135,7 +135,14 @@
                                 <input id="born" type="date" placeholder="Дата рождения" class="validate">
                                 <label for="born" data-error="некорректный e-mail"></label>
                             </div>
+
+                            <p>
+                                <input type="checkbox" id="test5" />
+                                <label for="test5">Я согласен с условиями предоставления услуг</label>
+                            </p>
                         </div>
+
+
                     </div>
                 </div>
             </div>
