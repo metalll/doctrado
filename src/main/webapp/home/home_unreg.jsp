@@ -30,7 +30,9 @@
     <div class="modal-content">
         <h4 class="center-align">Вперед к работе</h4>
         <div class="row">
-            <div class="col s12 black-text">
+            <div class="col s12 black-text " style=".tabs .indicator {
+    color: #000000;
+}">
                 <ul class="tabs black-text">
                     <li class="tab col s6"><a href="#test1">Вход</a></li>
                     <li class="tab col s6"><a class="active" href="#test2">Регистрация</a></li>
@@ -273,7 +275,7 @@
     $(document).ready(function () {
         $('.parallax').parallax();
     });
-
+œ
     $(document).ready(function(){
         $('ul.tabs').tabs();
     });
