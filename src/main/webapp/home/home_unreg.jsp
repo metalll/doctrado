@@ -31,11 +31,11 @@
         <h4 class="center-align">Вперед к работе</h4>
         <div class="row">
             <div class="col s12 black-text " style=".tabs .indicator {
-    color: #000000;
+    background-color: #000000;
 }">
                 <ul class="tabs black-text">
-                    <li class="tab col s6"><a href="#test1">Вход</a></li>
-                    <li class="tab col s6"><a class="active" href="#test2">Регистрация</a></li>
+                    <li class="tab col s6 black-text" ><a href="#test1">Вход</a></li>
+                    <li class="tab col s6 black-text"><a class="active" href="#test2">Регистрация</a></li>
                 </ul>
             </div>
             <div id="test1" class="col s12">
