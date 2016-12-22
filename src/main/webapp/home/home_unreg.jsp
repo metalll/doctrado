@@ -10,6 +10,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
+
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <title>Doctrado</title>
@@ -218,20 +222,22 @@
 
 
 
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
 
+<script src="../js/materialize.min.js"></script>
 
 
+<script>
 
-<!--  Scripts-->
-<script src="../js/jquery.min.js"></script>
-<script src="../js/materialize.js"></script>
-<script src="../js/init.js"></script>
-<script src="../js/jquery.min.js"></script>
-<script src="../js/foundation.min.js"></script>
-<script src="../js/jquery.matchHeight-min.js"></script>
-<script src="../js/slick.min.js"></script>
-<script src="../js/app.js"></script>
+    $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+    });
+
+</script>
+
+
 
 </body>
 </html>
