@@ -143,7 +143,7 @@
                         </div>
                         <div class="row">
 
-                            <div class="col s4 center-align">
+                            <div class="col s4 left-align">
                                 <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
                             </div>
 
