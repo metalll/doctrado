@@ -100,42 +100,42 @@
                 <div class="row">
                     <div class="form">
                         <div class="row">
-                            <div class="input-field col s12">
+                            <div class="input-field col s6">
                                 <input id="nameR" type="text" class="validate">
                                 <label for="nameR" data-error="некорректный e-mail">Ваше имя</label>
                             </div>
-                            <div class="input-field col s12">
+                            <div class="input-field col s6">
                                 <input id="last_nameR" type="text" class="validate">
                                 <label for="last_nameR" data-error="некорректный e-mail">Ваше отчество</label>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="input-field col s12">
+                            <div class="input-field col s6">
                                 <input id="surnameR" type="text" class="validate">
                                 <label for="surnameR" data-error="некорректный e-mail">Ваша фамилия</label>
                             </div>
-                            <div class="input-field col s12">
+                            <div class="input-field col s6">
                                 <input id="emailR" type="email" class="validate">
                                 <label for="emailR" data-error="некорректный e-mail">Ваш email</label>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="input-field col s12">
+                            <div class="input-field col s6">
                                 <input id="passwordR" type="password"  class="validate">
                                 <label for="passwordR" data-error="некорректный e-mail">Ваш пароль</label>
                             </div>
-                            <div class="input-field col s12">
+                            <div class="input-field col s6">
                                 <input id="telephone" type="tel" class="validate">
                                 <label for="telephone" data-error="некорректный e-mail">Ваш телефон</label>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="input-field col s12">
+                            <div class="input-field col s6">
                                 <p>Дата рождения</p>
                                 <input id="born" type="date" placeholder="Дата рождения" class="validate">
                                 <label for="born" data-error="некорректный e-mail"></label>
                             </div>
-                            <div class="input-field col s12">
+                            <div class="input-field col s6">
                                 <input id="edu" type="text" class="validate">
                                 <label for="edu" data-error="некорректный e-mail">Образование</label>
                             </div>
