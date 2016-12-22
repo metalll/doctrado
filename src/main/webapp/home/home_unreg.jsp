@@ -121,7 +121,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="passwordR" type="password" placeholder="Дата рождения" class="validate">
+                                <input id="passwordR" type="password"  class="validate">
                                 <label for="passwordR" data-error="некорректный e-mail">Ваш пароль</label>
                             </div>
                             <div class="input-field col s12">
@@ -131,7 +131,7 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="born" type="date" class="validate">
+                                <input id="born" type="date" placeholder="Дата рождения" class="validate">
                                 <label for="born" data-error="некорректный e-mail"></label>
                             </div>
                             <div class="input-field col s12">
