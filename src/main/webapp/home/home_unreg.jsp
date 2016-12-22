@@ -141,7 +141,21 @@
                                 <label for="test5">Я согласен с условиями предоставления услуг</label>
                             </p>
                         </div>
+                        <div class="row">
 
+                            <div class="col s4">
+                                <a href="#!" class=" modal-action modal-close waves-effect waves-green">Отмена</a>
+                            </div>
+
+                            <div class="col s4">
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Я студент</button>
+                            </div>
+                            <div class="col s4">
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Я преподаватель</button>
+                            </div>
+
+
+                        </div>
 
                     </div>
                 </div>
