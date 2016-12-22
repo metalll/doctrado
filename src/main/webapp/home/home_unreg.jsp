@@ -28,7 +28,28 @@
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
     <div class="modal-content">
-        <h4>Modal Header</h4>
+        <h4>Вперед к работе</h4>
+        <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>
+
+
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <h4>Регистрация</h4>
+        <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>
+
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <h4>Вход</h4>
         <p>A bunch of text</p>
     </div>
     <div class="modal-footer">
@@ -82,7 +103,7 @@
                 <h5 class="header col s12 light grey-text darken-4">Обретай новые знания сейчас! Каждый день! Вместе с Doctrado.</h5>
             </div>
             <div class="row center">
-                <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light grey darken-3">Приступить к работе</a>
+                <a href="#modal1" id="download-button" class="btn-large modal-trigger waves-effect waves-light grey darken-3">Приступить к работе</a>
             </div>
             <br><br>
 
@@ -215,13 +236,11 @@
 
 
 <script>
-
     $(document).ready(function(){
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal').modal();
 
     });
-
     $(document).ready(function () {
         $('.parallax').parallax();
     });
