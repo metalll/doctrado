@@ -122,7 +122,7 @@
             <div class="col s12 m4">
                 <div class="icon-block">
                     <h2 class="center black-text"><i class="material-icons">schedule</i></h2>
-                    <h4 class="center">Быстро и удобно</h4>
+                    <h5 class="center">Быстро и удобно</h5>
 
                     <p class="light center-align">Региструешься, находишь нужный курс, проходишь все темы и тесты после каждой из них - получаешь сертификат</p>
                 </div>
@@ -131,7 +131,7 @@
             <div class="col s12 m4">
                 <div class="icon-block">
                     <h2 class="center black-text"><i class="material-icons">group_work</i></h2>
-                    <h4 class="center">Командная работа</h4>
+                    <h5 class="center">Командная работа</h5>
                     <p class="light center-align">Для развития сервиса мы добавили возможность каждому, у кого есть должный опыт, стать преподавателем</p>
                 </div>
             </div>
@@ -139,7 +139,7 @@
             <div class="col s12 m4">
                 <div class="icon-block">
                     <h2 class="center black-text"><i class="material-icons">work</i></h2>
-                    <h4 class="center">Приступай к работе</h4>
+                    <h5 class="center">Приступай к работе</h5>
 
                     <p class="light center-align">Пройдя какой-либо курс, получив сертификат - Вы тут же можете приступить к роботе по полученной специальности </p>
                 </div>
