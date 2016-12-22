@@ -74,8 +74,8 @@
                 <form class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" data-error="некорректный e-mail" class="validate">
-                        <label for="email">e-mail</label>
+                        <input id="email" type="email" class="validate">
+                        <label for="email" data-error="некорректный e-mail">e-mail</label>
                     </div>
                 </div>
                 <div class="row">
@@ -99,7 +99,6 @@
 
                 <div class="row">
                     <div class="for">
-
             </div>
 
         </div>
@@ -108,7 +107,7 @@
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
 </div>
-
+    </div></div>
 
     <!----------->
 <div id="modal2" class="modal">
