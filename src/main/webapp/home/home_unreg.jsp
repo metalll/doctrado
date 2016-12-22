@@ -29,7 +29,19 @@
 <div id="modal1" class="modal">
     <div class="modal-content">
         <h4>Вперед к работе</h4>
-        <p>A bunch of text</p>
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab col s6"><a href="#test1">Вход</a></li>
+                    <li class="tab col s6"><a class="active" href="#test2">Регистрация</a></li>
+                </ul>
+            </div>
+            <div id="test1" class="col s12">
+                Вход
+            </div>
+            <div id="test2" class="col s12">Регистрация</div>
+
+        </div>
     </div>
     <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
