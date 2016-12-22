@@ -141,7 +141,7 @@
 
                             <p class="col s12 center-align">
                                 <input type="checkbox" id="test51" />
-                                <label for="test5">Я согласен с условиями предоставления услуг</label>
+                                <label for="test51">Я согласен с условиями предоставления услуг</label>
                             </p>
                         </div>
                         <div class="row">
