@@ -27,7 +27,35 @@
 
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
-    <div class="modal-content">
+    <div class="modal-content" style="
+       .input-field label {
+     color: #000;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #000;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #65ae00;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #c60000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #000;
+   }
+
+" >
         <h4 class="center-align">Вперед к работе</h4>
         <div class="row">
             <div class="col s12 black-text ">
@@ -66,6 +94,9 @@
             <div id="test2" class="col s12">Регистрация</div>
 
         </div>
+    </div>
+    <div class="modal-footer hide">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
 </div>
 
