@@ -64,6 +64,7 @@
 
         <ul class="right hide-on-med-and-down">
 
+            <li><a class="waves-effect waves-light black white-text btn-large">Вход</a></li>
             <li>
                 <a class="menu-elem" data-anchor="#about">О проекте</a>
             </li>
