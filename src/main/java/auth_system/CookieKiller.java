@@ -1,5 +1,7 @@
 package auth_system;
 
+import NSD.NSDConstants;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -14,6 +16,7 @@ import java.io.IOException;
 @WebServlet(name = "CookieKiller",urlPatterns = "/logout")
 public class CookieKiller extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if(!request.isSecure())response.sendRedirect(NSDConstants.HOST+"/logout");
         finishHim(request,response);
         response.sendRedirect("/");
     }

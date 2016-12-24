@@ -6807,7 +6807,7 @@ input[type=range]:focus{
 /* STYLES FOR THE SPINNER */
 /**************************/
 /*
- * Constants:
+ * NSD.NSDConstants:
  *      STROKEWIDTH = 3px
  *      ARCSIZE     = 270 degrees (amount of circle the arc takes up)
  *      ARCTIME     = 1333ms (time it takes to expand and contract arc)

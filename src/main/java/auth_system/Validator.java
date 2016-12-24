@@ -1,5 +1,6 @@
 package auth_system;
 
+import NSD.NSDConstants;
 import utils.BodyGetter;
 
 import javax.servlet.ServletException;
@@ -20,7 +21,7 @@ import java.util.Map;
 @WebServlet("/validate_user")
 public class Validator extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        if(!request.isSecure())response.sendRedirect(NSDConstants.HOST+"/validate_user");
         response.setContentType ("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter ();
         request.setCharacterEncoding ("UTF-8");

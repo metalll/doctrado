@@ -1,7 +1,7 @@
 package controller;
 
 import Interfaces.ICompletion;
-import auth_system.Authorizator;
+import NSD.NSDConstants;
 import auth_system.UUIDGenerator;
 import com.mysql.jdbc.Statement;
 
@@ -22,9 +22,10 @@ import java.util.Properties;
 /**
  * Created by NSD on 21.12.16.
  */
-@WebServlet(name = "createCourse")
+@WebServlet(name = "createCourse",urlPatterns = "/createCourse")
 public class createCourse extends HttpServlet {
     //DBParams
+
 
     protected static final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
     //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
@@ -36,6 +37,7 @@ public class createCourse extends HttpServlet {
 
 
     protected void doPost(final HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
+        if(!request.isSecure())response.sendRedirect(NSDConstants.HOST+"/createCourse");
         response.setContentType ("text/html; charset=UTF-8");
         final PrintWriter out = response.getWriter ();
         request.setCharacterEncoding ("UTF-8");
@@ -44,7 +46,7 @@ public class createCourse extends HttpServlet {
         String userID = "";
 
         for(Cookie cookie : request.getCookies()){
-            if(cookie.getName().equals(Authorizator.uTokenCookie)){ userID = cookie.getValue(); }
+            if(cookie.getName().equals(NSDConstants.uTokenCookie)){ userID = cookie.getValue(); }
         }
         final String uuid = UUIDGenerator.Generate();
 
@@ -67,7 +69,7 @@ public class createCourse extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        if(!request.isSecure())response.sendRedirect(NSDConstants.HOST+"/createCourse");
     }
 
 

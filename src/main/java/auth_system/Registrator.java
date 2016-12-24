@@ -1,7 +1,7 @@
 package auth_system;
 
 import Interfaces.ICompletion;
-import database.User.DBBaseUser;
+import NSD.NSDConstants;
 import database.User.DBStudent;
 import database.User.DBTeacher;
 import model.Users.BaseUser;
@@ -21,9 +21,10 @@ import java.util.Map;
 /**
  * Created by NSD on 16.12.16.
  */
-@WebServlet(name = "Registrator")
+@WebServlet(name = "Registrator",urlPatterns = "/register")
 public class Registrator extends HttpServlet {
     protected void doPost(HttpServletRequest request,final HttpServletResponse response) throws ServletException, IOException {
+        if(!request.isSecure())response.sendRedirect(NSDConstants.HOST+"/register");
         response.setContentType ("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter ();
         request.setCharacterEncoding ("UTF-8");
@@ -34,9 +35,9 @@ public class Registrator extends HttpServlet {
             @Override
             public void afterOperation(Object bundle) {
                 if(bundle != null){
-                    Cookie cookie = new Cookie(Authorizator.uTokenCookie,((BaseUser)bundle).getLastUserToken());
+                    Cookie cookie = new Cookie(NSDConstants.uTokenCookie,((BaseUser)bundle).getLastUserToken());
                     cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
-                    Cookie cookie1 = new Cookie(Authorizator.uTypeCookie,((BaseUser)bundle).getUserType());
+                    Cookie cookie1 = new Cookie(NSDConstants.uTypeCookie,((BaseUser)bundle).getUserType());
                     cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
 
 

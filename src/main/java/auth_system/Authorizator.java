@@ -1,6 +1,7 @@
 package auth_system;
 
 import Interfaces.ICompletion;
+import NSD.NSDConstants;
 import database.User.DBBaseUser;
 import model.Users.BaseUser;
 
@@ -19,11 +20,14 @@ import java.util.Map;
  */
 @WebServlet("/login")
 public class Authorizator extends HttpServlet {
-    public static final String uTypeCookie = "UType";
-    public static final String uTokenCookie = "Token";
+
 
 
     protected void doPost(HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
+        if(!request.isSecure())response.sendRedirect(NSDConstants.HOST+"/login");
+
+
+
         response.setContentType ("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter ();
         request.setCharacterEncoding ("UTF-8");
@@ -92,9 +96,9 @@ public class Authorizator extends HttpServlet {
                 }
                 else {
                     try {
-                        Cookie cookie = new Cookie(uTokenCookie,((BaseUser)bundle).getLastUserToken());
+                        Cookie cookie = new Cookie(NSDConstants.uTokenCookie,((BaseUser)bundle).getLastUserToken());
                         cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
-                        Cookie cookie1 = new Cookie(uTypeCookie,((BaseUser)bundle).getUserType());
+                        Cookie cookie1 = new Cookie(NSDConstants.uTypeCookie,((BaseUser)bundle).getUserType());
                         cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
 
 

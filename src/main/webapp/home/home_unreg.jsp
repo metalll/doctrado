@@ -9,6 +9,9 @@
 
 <!DOCTYPE html>
 <html lang="ru">
+
+
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
@@ -17,15 +20,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
-
-
 </head>
 <body>
 
-
-
-<!-- Modal Structure -->
+<!-- Вперед к работе -->
 <div id="modal1" class="modal">
     <div class="modal-content" style="
        .input-field label {
@@ -64,10 +62,7 @@
                     <li class="tab col s6"><a class="active" href="#test2">Регистрация</a></li>
                 </ul>
             </div>
-
-
-
-            <!----->
+<!-- Вперед к работе - > Регистрация --------------------------------->
             <div id="test1" class="col s12">
                 <div class="row">
                     <h5 class="center-align black-text" ></h5>
@@ -97,7 +92,7 @@
                 </form>
                 </div>
             </div>
-<!---------->
+<!----- Вперед к работе -> регистрация --------------->
             <div id="test2" class="col s12">
 
                 <div class="row">
