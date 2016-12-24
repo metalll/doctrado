@@ -1,9 +1,8 @@
 package controller;
 
 
-
 import Interfaces.ICompletion;
-import auth_system.Authorizator;
+import NSD.NSDConstants;
 import database.DBImage;
 
 import javax.servlet.ServletException;
@@ -12,7 +11,10 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.PrintWriter;
 
 
 /**
@@ -64,7 +66,7 @@ public class photoController extends HttpServlet {
 
         for(Cookie cookie : request.getCookies()){
 
-            if(cookie.getName().equals(Authorizator.uTokenCookie)){
+            if(cookie.getName().equals(NSDConstants.uTokenCookie)){
                 key = cookie.getValue();
             }
 

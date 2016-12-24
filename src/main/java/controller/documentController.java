@@ -1,6 +1,6 @@
 package controller;
 
-import auth_system.Authorizator;
+import NSD.NSDConstants;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -47,7 +47,7 @@ public class documentController extends HttpServlet {
 
         for(Cookie cookie : request.getCookies()){
 
-            if(cookie.getName().equals(Authorizator.uTokenCookie)){
+            if(cookie.getName().equals(NSDConstants.uTokenCookie)){
                 key = cookie.getValue();
             }
 

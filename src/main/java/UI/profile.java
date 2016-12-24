@@ -1,6 +1,6 @@
 package UI;
 
-import auth_system.Authorizator;
+import NSD.NSDConstants;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,7 +27,7 @@ public class profile extends HttpServlet {
 
 
             for (Cookie cookie : cookies) {
-                if (cookie.getName().equals(Authorizator.uTypeCookie)) {
+                if (cookie.getName().equals(NSDConstants.uTypeCookie)) {
 
                     if (cookie.getValue().equals("a")) {
                         request.getRequestDispatcher("./profile/adminProfile.jsp").include(request, response);//рисуем jsp
