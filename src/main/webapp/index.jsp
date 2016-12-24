@@ -8,7 +8,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%@ page import="auth_system.Authorizator" %>
+<%@ page import="NSD.NSDConstants" %>
 <%@ page import="javax.servlet.http.Cookie" %>
 <%
 
@@ -24,7 +24,7 @@
     boolean auth = false;
     try{
     for (Cookie cookie:cookies) {
-        if(cookie.getName().equals(Authorizator.uTokenCookie)&&!cookie.getValue().equals("")){
+        if(cookie.getName().equals(NSDConstants.uTokenCookie)&&!cookie.getValue().equals("")){
             auth = true;
         }}} catch (Exception e){ e.printStackTrace(); }
     response.setContentType("text/html;charset=UTF-8");
