@@ -31,47 +31,11 @@ public class Authorizator extends HttpServlet {
         response.setContentType ("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter ();
         request.setCharacterEncoding ("UTF-8");
-     //if auth
+
 
 
 
         Map<String, String[]> map = request.getParameterMap();
-            //Reading the Map
-            //Works for GET && POST Method
-
-//        BufferedWriter writer = null;
-//        try
-//        {
-//            writer = new BufferedWriter( new FileWriter("file"));
-//            String str = "";
-//            for(String paramName:map.keySet()) {
-//                String[] paramValues = map.get(paramName);
-//
-//                //Get Values of Param Name
-//                for(String valueOfParam:paramValues) {
-//                    //Output the Value
-//                     str += "Value of Param with Name "+paramName+": "+valueOfParam + "\n";
-//
-//                }
-//            }
-//            writer.write(str);
-//        }
-//        catch ( IOException e)
-//        {
-//        }
-//        finally
-//        {
-//            try
-//            {
-//                if ( writer != null)
-//                    writer.close( );
-//            }
-//            catch ( IOException e)
-//            {
-//            }
-//        }
-
-
         final String login =  map.get("email")[0];
         String password = map.get("password")[0];
 
@@ -84,15 +48,8 @@ public class Authorizator extends HttpServlet {
                         response.getWriter().write("-1");
                         response.getWriter().flush();
                         response.getWriter().close();
-
-
-
-
-
                     }
-                    catch (Exception e){
-
-                    }
+                    catch (Exception e){}
                 }
                 else {
                     try {
@@ -100,8 +57,6 @@ public class Authorizator extends HttpServlet {
                         cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
                         Cookie cookie1 = new Cookie(NSDConstants.uTypeCookie,((BaseUser)bundle).getUserType());
                         cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
-
-
                         response.addCookie(cookie);
                         response.addCookie(cookie1);
                         response.setStatus(HttpServletResponse.SC_OK);
@@ -115,17 +70,5 @@ public class Authorizator extends HttpServlet {
                 }
             }
         });
-
-
-
-
-         //if dont auth
-
     }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-
 }

@@ -1,5 +1,7 @@
 package UI;
 
+import NSD.NSDConstants;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,6 +19,7 @@ public class course extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if(!request.isSecure())response.sendRedirect(NSDConstants.HOST+"/register");
         response.setContentType("text/html;charset=UTF-8");
         request.getRequestDispatcher("./course.jsp").include(request, response);//рисуем jsp
     }

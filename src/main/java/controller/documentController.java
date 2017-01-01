@@ -24,33 +24,26 @@ import java.util.List;
 public class documentController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-
-    private static final String UPLOAD_DIRECTORY = "/var/lib/openshift/58512d040c1e66ad2d000024/jbossews/upload";
+    private static final String UPLOAD_DIRECTORY = NSDConstants.UPLOAD_DIR + "/documents";
     private static final int THRESHOLD_SIZE 	= 1024 * 1024 * 3; 	// 3MB
     private static final int MAX_FILE_SIZE 		= 1024 * 1024 * 40; // 40MB
     private static final int MAX_REQUEST_SIZE 	= 1024 * 1024 * 50; // 50MB
 
-    /**
-     * handles file upload via HTTP POST method
-     */
+
+
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
-        // checks if the request actually contains upload file
         if (!ServletFileUpload.isMultipartContent(request)) {
             PrintWriter writer = response.getWriter();
             writer.println("Request does not contain upload data");
             writer.flush();
             return;
         }
-
         String key = "";
-
         for(Cookie cookie : request.getCookies()){
-
             if(cookie.getName().equals(NSDConstants.uTokenCookie)){
                 key = cookie.getValue();
             }
-
         }
 
         // configures upload settings
@@ -63,9 +56,9 @@ public class documentController extends HttpServlet {
         upload.setSizeMax(MAX_REQUEST_SIZE);
 
         // constructs the directory path to store upload file
-        String uploadPath = "/var/lib/openshift/58512d040c1e66ad2d000024/jbossews/upload";
+        String uploadPath = UPLOAD_DIRECTORY;
         // creates the directory if it does not exist
-        File uploadDir = new File("/var/lib/openshift/58512d040c1e66ad2d000024/jbossews/upload");
+        File uploadDir = new File(UPLOAD_DIRECTORY);
         if (!uploadDir.exists()) {
             uploadDir.mkdir();
         }
@@ -92,7 +85,7 @@ public class documentController extends HttpServlet {
         } catch (Exception ex) {
             request.setAttribute("message", "There was an error: " + ex.getMessage());
         }
-        getServletContext().getRequestDispatcher("/message.jsp").forward(request, response);
+
     }
 
 

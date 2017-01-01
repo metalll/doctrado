@@ -11,12 +11,8 @@
 <%@ page import="NSD.NSDConstants" %>
 <%@ page import="javax.servlet.http.Cookie" %>
 <%
+    if (!request.isSecure()) response.sendRedirect("https://doctrado-sviasy.rhcloud.com");
 
-
-    if (!request.isSecure())
-    {
-        response.sendRedirect("https://doctrado-sviasy.rhcloud.com");
-    }
 
 
 

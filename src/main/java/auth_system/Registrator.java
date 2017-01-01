@@ -28,9 +28,7 @@ public class Registrator extends HttpServlet {
         response.setContentType ("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter ();
         request.setCharacterEncoding ("UTF-8");
-
         Map<String,String[]> paramMap = request.getParameterMap();
-
         ICompletion completion = new ICompletion() {
             @Override
             public void afterOperation(Object bundle) {
@@ -39,8 +37,6 @@ public class Registrator extends HttpServlet {
                     cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
                     Cookie cookie1 = new Cookie(NSDConstants.uTypeCookie,((BaseUser)bundle).getUserType());
                     cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
-
-
                     response.addCookie(cookie);
                     response.addCookie(cookie1);
                     response.setStatus(HttpServletResponse.SC_OK);
@@ -51,10 +47,7 @@ public class Registrator extends HttpServlet {
                     }catch (Exception e){
                         e.printStackTrace();
                     }
-
                 }
-
-
             }
         };
 
@@ -120,13 +113,5 @@ public class Registrator extends HttpServlet {
                 completion.afterOperation(student);
             }
         });
-
-
-
-    }
-
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

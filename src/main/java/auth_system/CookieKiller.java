@@ -18,7 +18,7 @@ public class CookieKiller extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(!request.isSecure())response.sendRedirect(NSDConstants.HOST+"/logout");
         finishHim(request,response);
-        response.sendRedirect("/");
+        response.sendRedirect(NSDConstants.HOST);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

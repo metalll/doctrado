@@ -315,11 +315,11 @@
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
 </nav>
-
+<div> </div>
 <div id="index-banner" class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
         <div class="container">
-            <br><br>
+
             <h1 class="header center black-text">Doctrado</h1>
             <div class="row center">
                 <h5 class="header col s12 light grey-text darken-4">Обретай новые знания сейчас! Каждый день! Вместе с Doctrado.</h5>
@@ -327,7 +327,7 @@
             <div class="row center">
                 <a href="#modal1" id="download-button" class="btn-large modal-trigger waves-effect waves-light grey darken-3">Приступить к работе</a>
             </div>
-            <br><br>
+
 
         </div>
     </div>
