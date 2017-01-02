@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Material Design Lite</title>
-
+    <title>Doctrado</title>
+x
     <!-- Add to homescreen -->
     <link rel="manifest" href="manifest.json">
 
@@ -37,6 +37,33 @@
     <link rel="stylesheet" href="./NSDcss/styles.css">
     <link rel="stylesheet" href="./NSDcss/material.min.css">
     <link rel="stylesheet" href="./NSDcss/main.css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+
+    <style type="text/css">
+        .uiid{
+
+
+            background:url("NSDcss/header.png");
+            background-size: auto;       /* For flexibility */
+
+        }
+
+        .no-text{
+
+            color:#cccccc;
+
+        }
+
+
+        .nsd-btn{
+
+
+            background: #e16b6b;
+            color: #ffffff;
+        }
+    </style>
+
+
 
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' rel='stylesheet' type='text/css'>
@@ -64,7 +91,7 @@
     }
     // }
 
-    // Setup error tracking before anything else runs.
+    // Setup error tgeracking before anything else runs.
     window.onerror = function(message, file, lineNumber, columnNumber, error) {
         try {
             if (error !== undefined) {
@@ -80,25 +107,20 @@
 <div class="docs-layout mdl-layout mdl-js-layout">
     <header class="docs-layout-header mdl-layout__header">
         <div class="mdl-layout__header-row">
-            <span class="docs-layout-title mdl-layout-title"><a href="./">Material<br>Design<br>Lite</a></span>
+            <span class="docs-layout-title mdl-layout-title"><a href="./">Doctrado</a></span>
         </div>
         <div class="docs-navigation__container">
             <nav class="docs-navigation mdl-navigation">
-                <a href="./index.html" class="mdl-navigation__link about">About</a>
-                <a href="./started/index.html" class="mdl-navigation__link started">Getting Started</a>
-                <a href="./templates/index.html" class="mdl-navigation__link templates">Templates</a>
-                <a href="./components/index.html" class="mdl-navigation__link components">Components</a>
-                <a href="./styles/index.html" class="mdl-navigation__link styles">Styles</a>
-                <a href="./customize/index.html" class="mdl-navigation__link customize">Customize</a>
-                <a href="./showcase/index.html" class="mdl-navigation__link showcase">Showcase</a>
-                <a href="./faq/index.html" class="mdl-navigation__link faq">FAQ</a>
+                <a href="./index.html" class="mdl-navigation__link about">О проекте</a>
+                <a href="./started/index.html" class="mdl-navigation__link started">Возможности</a>
+                <a href="./templates/index.html" class="mdl-navigation__link templates">Сертификаты</a>
+                <a href="./components/index.html" class="mdl-navigation__link components">Вебинары</a>
+                <a href="./styles/index.html" class="mdl-navigation__link styles">Курсы</a>
+                <a href="./customize/index.html" class="mdl-navigation__link customize">Контакты</a>
                 <div class="spacer"></div>
-                <a href="https://github.com/google/material-design-lite" class="mdl-navigation__link mdl-navigation__link--icon github"><i class="material-icons">link</i><span>GitHub</span></a>
-                <a href="./started/index.html#download" class="mdl-navigation__link mdl-navigation__link--icon download">
-                    <i class="material-icons">&#xE2C4;</i><span>Download</span>
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-button--mini-fab mdl-color--lime-A200">
-                        <i class="material-icons">&#xE2C4;</i>
-                    </button>
+                <a href="https://github.com/google/material-design-lite" class="mdl-navigation__link mdl-navigation__link--icon"><span>Вход</span></a>
+                <a href="./started/index.html#download" class="mdl-navigation__link mdl-navigation__link--icon ">
+                   <span>Регистрация</span>
                 </a>
             </nav>
         </div>
@@ -112,32 +134,79 @@
             <!-- TODO: Try to separate markup and content -->
             <section class="docs-text-styling about-panel about-panel--text mdl-cell mdl-cell--12-col">
                 <dl>
-                    <dt>Material Design Lite</dt>
-                    <dd>
-                        Material Design Lite lets you add a <a href="http://google.com/design/spec">Material Design</a> look and feel to your websites. It doesn’t rely on any JavaScript frameworks and aims to optimize for cross-device use, gracefully degrade in older browsers, and offer an experience that is immediately accessible. <a href="started/index.html">Get started now</a>.
-                    </dd>
+                    <dt><h5> Doctrado</h5> </dt>
+                    <dd> <h2> Однажды, проснувшись утром, ты задумаешься Насколько много разных вещей тебе неизвестно? В современном мире наши знания - наша сила! Обретай новые знания сейчас! Каждый день! Вместе с Doctrado.
+                    </h2> </dd>
                 </dl>
+
+                <div class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--4-col-phone mdl-cell--8-col-tablet">
+
+                    <button class="mdl-button mdl-js-button mdl-button--raised  mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--3-offset-desktop mdl-cell--6-col-desktop nsd-btn" onclick="">
+                        Вперед к работе!
+                    </button>
+
+                </div>
             </section>
 
-            <section class="about-panel about-panel--templates mdl-cell mdl-cell--12-col" data-target="templates/index.html">
-                Templates
+
+
+
+            <div class="uiid no-text">
+            <section class="docs-text-styling about-panel about-panel--text mdl-cell mdl-cell--12-col">
+
+                <!--   Icon Section   -->
+                <div class="mdl-grid no">
+                    <div class="mdl-cell mdl-cell--4-col no no-text">
+                        <div class="mdl-layout-icon no ">
+                            <h1 class="mdl-typography--text-center "><i class="material-icons no-text">schedule</i></h1>
+                            <h5 class="mdl-typography--text-center">Быстро и удобно</h5>
+                            <h6 class="mdl-typography--text-center ">Региструешься, находишь нужный курс, проходишь все темы и тесты после каждой из них - получаешь сертификат</h6>
+                        </div>
+                    </div>
+
+                    <div class="mdl-cell mdl-cell--4-col no no-text">
+                        <div class="mdl-layout-icon no">
+                            <h1 class="mdl-typography--text-center"><i class="material-icons no-text">group_work</i></h1>
+                            <h5 class="mdl-typography--text-center">Командная работа</h5>
+                            <h6 class="mdl-typography--text-center">Для развития сервиса мы добавили возможность каждому, у кого есть должный опыт, стать преподавателем</h6>
+                        </div>
+                    </div>
+
+                    <div class="mdl-cell mdl-cell--4-col no no-text">
+                        <div class="mdl-layout-icon no">
+                            <h1 class="mdl-typography--text-center"><i class="material-icons no-text">work</i></h1>
+                            <h5 class="mdl-typography--text-center">Приступай к работе</h5>
+                            <h6 class="mdl-typography--text-center">Пройдя какой-либо курс, получив сертификат - Вы тут же можете приступить к роботе по полученной специальности </h6>
+                        </div>
+
+
+                    </div>
+                </div>
+
             </section>
+            </div>
+
 
             <section class="docs-text-styling about-panel about-panel--text mdl-cell mdl-cell--12-col">
-                <p>
-                    The MDL components are created with CSS, JavaScript, and HTML. You can use the components to construct web pages and web apps that are attractive, consistent, and functional. Pages developed with MDL will adhere to modern web design principles like browser portability, device independence, and graceful degradation.
-                </p>
+                <div class="mdl-grid">
+                <h2 class="mdl-typography--text-center mdl-cell  mdl-cell--12-col" > Кто и почему?</h2>
+                    <h6>Мы - команда из людей разных специальностей, и каждый из нас сталкивался с проблемой поиска информации, для улучшения своих навыков, либо же не хватало времени, чтобы закончить курсы и получить нужный сертификат. Сейчас мы решили создать сервис, где каждый человек, который занят своей работой, может не тратив свое время на лишние путешествия в учебные центры - быстро, легко, а главное 100% пройти нужный ему курс онлайн и получить государственный сертификат. </h6>
+                </div>
+                <div class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--4-col-phone mdl-cell--8-col-tablet">
+
+                    <button class="mdl-button mdl-js-button mdl-button--raised  mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--3-offset-desktop mdl-cell--6-col-desktop nsd-btn" onclick="">
+                        Подробнее
+                    </button>
+
+                </div>
             </section>
 
-            <section class="about-panel about-panel--components mdl-color-text--white mdl-cell mdl-cell--6-col" data-target="components/index.html">
-                Components
+            <section class="docs-text-styling about-panel about-panel--text mdl-cell mdl-cell--12-col uiid no-text">
+
+                <h1 class=" mdl-typography--text-center no no-text " style="color:#cccccc"> ВОЗМОЖНОСТИ</h1>
+
             </section>
-            <section class="about-panel about-panel--styles mdl-color-text--white mdl-cell mdl-cell--6-col" data-target="styles/index.html">
-                Styles
-            </section>
-            <section class="about-panel about-panel--customize mdl-color-text--white mdl-cell mdl-cell--12-col" data-target="customize/index.html">
-                Customize
-            </section>
+
 
             <p><section class="docs-text-styling about-panel about-panel--text mdl-cell mdl-cell--12-col">
             <p>
