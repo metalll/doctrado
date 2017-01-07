@@ -39,37 +39,7 @@
 
 <!-- Вперед к работе -->
 <div id="modal1" class="modal">
-    <div class="modal-content" style="
-       .input-field label {
-     color: #000;
-   }
-   /* label focus color */
-   .input-field input[type=text]:focus + label {
-     color: #000;
-   }
-   /* label underline focus color */
-   .input-field input[type=text]:focus {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* valid color */
-   .input-field input[type=text].valid {
-     border-bottom: 1px solid #65ae00;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* invalid color */
-   .input-field input[type=text].invalid {
-     border-bottom: 1px solid #c60000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-   /* icon prefix focus color */
-   .input-field .prefix.active {
-     color: #000;
-   }
-
-" >
-        <div class="row">
-            <div class="container">
+        <div class="container col s12">
                 <div class="card"></div>
                 <div class="card">
                     <h1 class="title">Вход</h1>
@@ -118,7 +88,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
 </div>
 
     <!----------->
