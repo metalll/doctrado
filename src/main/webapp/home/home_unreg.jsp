@@ -116,13 +116,13 @@
                             <h1 class="title">Login</h1>
                             <form>
                                 <div class="input-container">
-                                    <input type="#{type}" id="#{label}" required="required"/>
-                                    <label for="#{label}">Username</label>
+                                    <input type="email" id="login" required="required"/>
+                                    <label for="login">Username</label>
                                     <div class="bar"></div>
                                 </div>
                                 <div class="input-container">
-                                    <input type="#{type}" id="#{label}" required="required"/>
-                                    <label for="#{label}">Password</label>
+                                    <input type="password" id="passwordL" required="required"/>
+                                    <label for="passwordL">Password</label>
                                     <div class="bar"></div>
                                 </div>
                                 <div class="button-container">
@@ -138,18 +138,18 @@
                             </h1>
                             <form>
                                 <div class="input-container">
-                                    <input type="#{type}" id="#{label}" required="required"/>
-                                    <label for="#{label}">Username</label>
+                                    <input type="text" id="unameReg" required="required"/>
+                                    <label for="unameReg">Username</label>
                                     <div class="bar"></div>
                                 </div>
                                 <div class="input-container">
-                                    <input type="#{type}" id="#{label}" required="required"/>
-                                    <label for="#{label}">Password</label>
+                                    <input type="password" id="passwordReg" required="required"/>
+                                    <label for="passwordReg">Password</label>
                                     <div class="bar"></div>
                                 </div>
                                 <div class="input-container">
-                                    <input type="#{type}" id="#{label}" required="required"/>
-                                    <label for="#{label}">Repeat Password</label>
+                                    <input type="password" id="passwordRegRepeat" required="required"/>
+                                    <label for="passwordRegRepeat">Repeat Password</label>
                                     <div class="bar"></div>
                                 </div>
                                 <div class="button-container">
