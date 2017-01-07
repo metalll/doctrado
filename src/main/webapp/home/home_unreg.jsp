@@ -24,7 +24,7 @@
     <title>Doctrado</title>
 
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
-
+    <link rel="stylesheet" href="../NSDcss/login.css">
     <style type="text/css">
         .parallax-container {
             height: 400px;
@@ -110,65 +110,53 @@
             <div id="test2" class="col s12">
 
                 <div class="row">
-                    <div class="form">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="nameR1" type="text" class="validate">
-                                <label for="nameR1" data-error="некорректный e-mail">Ваше имя</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="last_nameR1" type="text" class="validate">
-                                <label for="last_nameR1" data-error="некорректный e-mail">Ваше отчество</label>
-                            </div>
+                    <div class="container">
+                        <div class="card"></div>
+                        <div class="card">
+                            <h1 class="title">Login</h1>
+                            <form>
+                                <div class="input-container">
+                                    <input type="#{type}" id="#{label}" required="required"/>
+                                    <label for="#{label}">Username</label>
+                                    <div class="bar"></div>
+                                </div>
+                                <div class="input-container">
+                                    <input type="#{type}" id="#{label}" required="required"/>
+                                    <label for="#{label}">Password</label>
+                                    <div class="bar"></div>
+                                </div>
+                                <div class="button-container">
+                                    <button><span>Go</span></button>
+                                </div>
+                                <div class="footer"><a href="#">Forgot your password?</a></div>
+                            </form>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="surnameR1" type="text" class="validate">
-                                <label for="surnameR1" data-error="некорректный e-mail">Ваша фамилия</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="emailR1" type="email" class="validate">
-                                <label for="emailR1" data-error="некорректный e-mail">Ваш email</label>
-                            </div>
+                        <div class="card alt">
+                            <div class="toggle"></div>
+                            <h1 class="title">Register
+                                <div class="close"></div>
+                            </h1>
+                            <form>
+                                <div class="input-container">
+                                    <input type="#{type}" id="#{label}" required="required"/>
+                                    <label for="#{label}">Username</label>
+                                    <div class="bar"></div>
+                                </div>
+                                <div class="input-container">
+                                    <input type="#{type}" id="#{label}" required="required"/>
+                                    <label for="#{label}">Password</label>
+                                    <div class="bar"></div>
+                                </div>
+                                <div class="input-container">
+                                    <input type="#{type}" id="#{label}" required="required"/>
+                                    <label for="#{label}">Repeat Password</label>
+                                    <div class="bar"></div>
+                                </div>
+                                <div class="button-container">
+                                    <button><span>Next</span></button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="passwordR1" type="password"  class="validate">
-                                <label for="passwordR1" data-error="некорректный e-mail">Ваш пароль</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="telephone1" type="tel" class="validate">
-                                <label for="telephone1" data-error="некорректный e-mail">Ваш телефон</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <p>Дата рождения</p>
-                                <input id="born1" type="date" placeholder="Дата рождения" class="validate">
-                                <label for="born1" data-error="некорректный e-mail"></label>
-                            </div>
-
-                            <p class="col s12 center-align">
-                                <input type="checkbox" id="test51" />
-                                <label for="test51">Я согласен с условиями предоставления услуг</label>
-                            </p>
-                        </div>
-                        <div class="row">
-
-                            <div class="col s4 left-align">
-                                <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
-                            </div>
-
-                            <div class="col s4 center-align">
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Я студент</button>
-                            </div>
-                            <div class="col s4 center-align">
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Я преподаватель</button>
-                            </div>
-
-
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -468,7 +456,15 @@
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="../js/materialize.min.js"></script>
+<script type="application/javascript" >
+    $('.toggle').on('click', function() {
+        $('.container').stop().addClass('active');
+    });
 
+    $('.close').on('click', function() {
+        $('.container').stop().removeClass('active');
+    });
+</script>
 
 <script>
     $(document).ready(function(){
