@@ -329,8 +329,8 @@
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
 </nav>
-<div> </div>
-<div class="parallax-container valign-wrapper">
+<br>
+<div class="parallax-container valign-wrapper col s12">
     <div class="section no-pad-bot">
         <div class="container">
 
