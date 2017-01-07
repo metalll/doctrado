@@ -330,7 +330,7 @@
     </div>
 </nav>
 <div> </div>
-<div id="index-banner" class="parallax-container valign-wrapper">
+<div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
         <div class="container">
 
