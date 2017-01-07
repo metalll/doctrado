@@ -16,11 +16,7 @@
     <title>Doctrado</title>
     <link rel="stylesheet" href="https://doctrado.me/css/app.css">
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
-    <style>
-        .courses__img {
-            height: 200px;
-        }
-    </style>
+
 </head>
 <body>
 <div class="reg-popup">
