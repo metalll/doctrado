@@ -85,7 +85,7 @@
                             <div class="bar"></div>
                         </div>
                         <div class="button-container">
-                            <button><span>Go</span></button>
+                            <button><span>Войти</span></button>
                         </div>
                         <div class="footer"><a href="#">Забыли пароль?</a></div>
                     </form>
@@ -112,7 +112,7 @@
                             <div class="bar"></div>
                         </div>
                         <div class="button-container">
-                            <button><span>Next</span></button>
+                            <button><span>Далее</span></button>
                         </div>
                     </form>
                 </div>
