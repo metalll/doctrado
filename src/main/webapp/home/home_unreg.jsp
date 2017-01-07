@@ -25,9 +25,9 @@
     <link rel="stylesheet" href="https://doctrado.me/css/app.css">
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
 
-    <style>
+    <style type="text/css">
         .parallax-container {
-            height: 150px;
+            height: 400px;
         }
 
     </style>
@@ -398,7 +398,6 @@
 
 <div class="container">
     <div class="section">
-
         <div class="row">
             <div class="col s12 center">
                 <h3><i class="mdi-content-send brown-text"></i></h3>
