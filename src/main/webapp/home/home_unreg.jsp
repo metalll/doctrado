@@ -39,7 +39,7 @@
 
 <!-- Вперед к работе -->
 <div id="overlay"></div><!-- Пoдлoжкa -->
-<div id="modal_form">
+<div id="modal_form login_pop">
     <span id="modal_close">X</span> <!-- Кнoпкa зaкрыть -->
     <div class="container">
                 <div class="card"></div>
