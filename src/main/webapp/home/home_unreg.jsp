@@ -41,7 +41,7 @@
 <div id="modal1" class="modal" >
         <div class="row">
             <div class="container">
-                <div class="card"></div>
+
                 <div class="card">
                     <h1 class="title">Вход</h1>
                     <form>
