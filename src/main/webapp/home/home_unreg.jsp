@@ -47,8 +47,8 @@
                     <h1 class="title">Вход</h1>
                     <form>
                         <div class="input-container">
-                            <input type="email" id="login" required="required"/>
-                            <label for="login">Ваш e-mail</label>
+                            <input type="email" id="loginIN" required="required"/>
+                            <label for="loginIN">Ваш e-mail</label>
                             <div class="bar"></div>
                         </div>
                         <div class="input-container">
