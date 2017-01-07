@@ -57,7 +57,7 @@
                             <div class="bar"></div>
                         </div>
                         <div class="button-container">
-                            <button id="go"><span>Войти</span></button>
+                            <button ><span>Войти</span></button>
                         </div>
                         <div class="footer"><a href="#">Забыли пароль?</a></div>
                     </form>
@@ -254,7 +254,7 @@
                 <h5 class="header col s12 light grey-text darken-4">Обретай новые знания сейчас! Каждый день! Вместе с Doctrado.</h5>
             </div>
             <div class="row center">
-                <a href="#modal1" id="download-button" class="btn-large modal-trigger waves-effect waves-light grey darken-3">Приступить к работе</a>
+                <a id="go" class="btn-large modal-trigger waves-effect waves-light grey darken-3">Приступить к работе</a>
             </div>
 
 
