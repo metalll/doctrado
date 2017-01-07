@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <title>Doctrado</title>
     <!-- CSS  -->
-    <link href="../NSDcss/modal_dialog.css" rel="stylesheet">
+
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="csrf-token" content="Wx6PFl4mn9yqYIFxDmcvdgOH6tNtWn3dVOktVC7V">
@@ -38,17 +38,16 @@
 <body>
 
 <!-- Вперед к работе -->
-<div id="overlay"></div><!-- Пoдлoжкa -->
-<div id="modal_form login_pop">
-    <span id="modal_close">X</span> <!-- Кнoпкa зaкрыть -->
-    <div class="container">
+<div id="modal1" class="modal" >
+        <div class="row">
+            <div class="container">
                 <div class="card"></div>
                 <div class="card">
                     <h1 class="title">Вход</h1>
                     <form>
                         <div class="input-container">
-                            <input type="email" id="loginIN" required="required"/>
-                            <label for="loginIN">Ваш e-mail</label>
+                            <input type="email" id="login" required="required"/>
+                            <label for="login">Ваш e-mail</label>
                             <div class="bar"></div>
                         </div>
                         <div class="input-container">
@@ -57,7 +56,7 @@
                             <div class="bar"></div>
                         </div>
                         <div class="button-container">
-                            <button ><span>Войти</span></button>
+                            <button><span>Войти</span></button>
                         </div>
                         <div class="footer"><a href="#">Забыли пароль?</a></div>
                     </form>
@@ -90,7 +89,7 @@
                 </div>
             </div>
         </div>
-
+    </>
 </div>
 
     <!----------->
@@ -254,7 +253,7 @@
                 <h5 class="header col s12 light grey-text darken-4">Обретай новые знания сейчас! Каждый день! Вместе с Doctrado.</h5>
             </div>
             <div class="row center">
-                <a id="go" class="btn-large modal-trigger waves-effect waves-light grey darken-3">Приступить к работе</a>
+                <a href="#modal1" id="download-button" class="btn-large modal-trigger waves-effect waves-light grey darken-3">Приступить к работе</a>
             </div>
 
 
@@ -404,28 +403,6 @@
     });
 
 
-
-    $(document).ready(function() { // вся мaгия пoсле зaгрузки стрaницы
-        $('a#go').click( function(event){ // лoвим клик пo ссылки с id="go"
-            event.preventDefault(); // выключaем стaндaртную рoль элементa
-            $('#overlay').fadeIn(400, // снaчaлa плaвнo пoкaзывaем темную пoдлoжку
-                function(){ // пoсле выпoлнения предъидущей aнимaции
-                    $('#modal_form')
-                        .css('display', 'block') // убирaем у мoдaльнoгo oкнa display: none;
-                        .animate({opacity: 1, top: '50%'}, 200); // плaвнo прибaвляем прoзрaчнoсть oднoвременнo сo съезжaнием вниз
-                });
-        });
-        /* Зaкрытие мoдaльнoгo oкнa, тут делaем тo же сaмoе нo в oбрaтнoм пoрядке */
-        $('#modal_close, #overlay').click( function(){ // лoвим клик пo крестику или пoдлoжке
-            $('#modal_form')
-                .animate({opacity: 0, top: '45%'}, 200,  // плaвнo меняем прoзрaчнoсть нa 0 и oднoвременнo двигaем oкнo вверх
-                    function(){ // пoсле aнимaции
-                        $(this).css('display', 'none'); // делaем ему display: none;
-                        $('#overlay').fadeOut(400); // скрывaем пoдлoжку
-                    }
-                );
-        });
-    });
   
 </script>
 
