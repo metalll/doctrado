@@ -22,7 +22,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="csrf-token" content="Wx6PFl4mn9yqYIFxDmcvdgOH6tNtWn3dVOktVC7V">
     <title>Doctrado</title>
-    <link rel="stylesheet" href="https://doctrado.me/css/app.css">
+
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
 
     <style type="text/css">
@@ -480,10 +480,6 @@
         $('.parallax').parallax();
     });
 
-    $(document).ready(function(){
-        $('ul.tabs').tabs('select_tab','test2');
-        $('ul.tabs').active();
-    });
 
   
 </script>
