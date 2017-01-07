@@ -57,7 +57,7 @@
                             <div class="bar"></div>
                         </div>
                         <div class="button-container">
-                            <button><span>Войти</span></button>
+                            <button id="go"><span>Войти</span></button>
                         </div>
                         <div class="footer"><a href="#">Забыли пароль?</a></div>
                     </form>
@@ -402,6 +402,8 @@
     $(document).ready(function () {
         $('.parallax').parallax();
     });
+
+
 
     $(document).ready(function() { // вся мaгия пoсле зaгрузки стрaницы
         $('a#go').click( function(event){ // лoвим клик пo ссылки с id="go"
