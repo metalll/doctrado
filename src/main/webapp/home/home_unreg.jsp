@@ -25,7 +25,12 @@
     <link rel="stylesheet" href="https://doctrado.me/css/app.css">
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
 
+    <style>
+        .parallax-container {
+            height: 150px;
+        }
 
+    </style>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -340,7 +345,7 @@
 
         </div>
     </div>
-    <div class="parallax"><img src="../img/background.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax "><img src="../img/background.jpg" alt="Unsplashed background img 1"></div>
 </div>
 
 
