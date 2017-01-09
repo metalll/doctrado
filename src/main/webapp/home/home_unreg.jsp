@@ -517,7 +517,7 @@
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
-    });
+    };
 </script>
 
 <script>
