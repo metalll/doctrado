@@ -79,7 +79,7 @@
             <div id="test1" class="col s12">
                 <div class="row">
                     <h5 class="center-align black-text" ></h5>
-                    <form class="col s12" name="login-form1" id="login-form1">
+                    <form class="col s12" name="login-form1" id="login-form1" action="">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="email" type="email" class="validate">
@@ -97,7 +97,7 @@
                                 <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
                             </div>
                             <div class="col s9 center-align">
-                                <button class="btn waves-effect waves-light" type="submit">Войти
+                                <button class="btn waves-effect waves-light" type="submit" >Войти
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
@@ -254,7 +254,7 @@
         <h4 class="center-align">Вход</h4>
         <div class="row">
             <h5 class="center-align black-text" ></h5>
-            <form class="col s12" type="POST" name="login-form" id="login-form">
+            <form class="col s12" type="POST" name="login-form" id="login-form" action="">
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="email1" type="email" data-error="некорректный e-mail" class="validate">
