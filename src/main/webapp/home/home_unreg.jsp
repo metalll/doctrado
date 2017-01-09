@@ -508,8 +508,19 @@
 <script src="../js/materialize.min.js"></script>
 <script type="application/javascript" >
 
+
+
     function call() {
-        $('#progress_bar').modal('open');
+        $('#progress_bar').modal({
+            dismissible: true, // Modal can be dismissed by clicking outside of the modal
+            opacity: .5, // Opacity of modal background
+            in_duration: 10, // Transition in duration
+            out_duration: 10, // Transition out duration
+            ready: function() { alert('Ready'); }, // Callback for Modal open
+            complete: function() { alert('Closed'); } // Callback for Modal close
+
+
+        },'open');
         var email = document.getElementById('email1').value;
         var password = document.getElementById('password1').value;
         var errors = false;
