@@ -403,7 +403,7 @@
 </div>
 
 <div id="progress_bar" class="modal">
-    <div class="modal-content">
+    <div style="background: transparent">
         <div class="preloader-wrapper big active">
             <div class="spinner-layer spinner-blue">
                 <div class="circle-clipper left">
