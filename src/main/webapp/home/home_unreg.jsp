@@ -464,8 +464,8 @@
 <script type="application/javascript" >
 
     function call() {
-        var email = email.value;
-        var password = password.value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
         var errors = false;
         if (email == "") {
             Materialize.toast('Введите ваш email',4000);
@@ -494,8 +494,8 @@
 
     function call1() {
 
-        var email = email1.value;
-        var password = password1.value;
+        var email = document.getElementById('email1').value
+        var password = document.getElementById('password1').value;
         var errors = false;
         if (email == "") {
             Materialize.toast('Введите ваш email',4000);
