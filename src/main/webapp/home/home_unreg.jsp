@@ -311,7 +311,8 @@
             <li>
                 <a class="menu-elem" data-anchor="#contacts">Контакты</a>
             </li>
-
+            <li><a href="/signup.php" class="green-text text-darken-3" >Регистрация</a></li>
+            <li><a href="/login.php" class="orange-text text-darken-3" >Вход</a></li>
 
 
         </ul>
