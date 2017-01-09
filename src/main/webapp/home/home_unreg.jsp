@@ -501,7 +501,7 @@
                 password:password
             },
             success: function(data) {
-                if (data==-1) Materialize.toast('<div class="red-text text-darken-3">Неверный логин<br> или пароль</div>',4000,'rounded');
+                if (data==-1) Materialize.toast('<div class="red-text text-darken-3">Неверный логин <br> или пароль</div>',4000,'rounded');
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
@@ -546,7 +546,7 @@
                 password:password
             },
             success: function(data) {
-                if (data==-1) Materialize.toast('<div class="red-text text-darken-3">Неверный логин<br>  или пароль</div>',4000,'rounded');
+                if (data==-1) Materialize.toast('<div class="red-text text-darken-3">Неверный логин <br>  или пароль</div>',4000,'rounded');
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
