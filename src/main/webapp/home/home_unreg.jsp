@@ -402,6 +402,51 @@
     </div>
 </div>
 
+<div id="progress_bar" class="modal">
+    <div class="modal-content">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
@@ -464,6 +509,7 @@
 <script type="application/javascript" >
 
     function call() {
+        $('#progress_bar').modal('open');
         var email = document.getElementById('email1').value;
         var password = document.getElementById('password1').value;
         var errors = false;
@@ -483,6 +529,7 @@
         }
         if(errEmail&&errPass){
             Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>',4000,'rounded');
+            $('#progress_bar').modal('close');
             return;
         }
         if(errEmail){
@@ -492,7 +539,9 @@
             Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>',4000,'rounded');
         }
 
-        if (errors) return;
+        if (errors) {
+            $('#progress_bar').modal('close');
+            return;}
         $.ajax({
             type: 'post',
             url: 'https://doctrado-sviasy.rhcloud.com/login',
@@ -501,14 +550,16 @@
                 password:password
             },
             success: function(data) {
-                if (data==-1) Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
+                if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
+                    $('#progress_bar').modal('close');
+                }
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
     };
 
     function call1() {
-
+        $('#progress_bar').modal('open');
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
         var errors = false;
@@ -528,6 +579,7 @@
         }
         if(errEmail&&errPass){
             Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>',4000,'rounded');
+            $('#progress_bar').modal('close');
             return;
         }
         if(errEmail){
@@ -537,7 +589,9 @@
             Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>',4000,'rounded');
         }
 
-        if (errors) return;
+        if (errors) {
+            $('#progress_bar').modal('close');
+            return;}
         $.ajax({
             type: 'post',
             url: 'https://doctrado-sviasy.rhcloud.com/login',
@@ -546,7 +600,9 @@
                 password:password
             },
             success: function(data) {
-                if (data==-1) Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
+                if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
+                    $('#progress_bar').modal('close');
+                }
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
