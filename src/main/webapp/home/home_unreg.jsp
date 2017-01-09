@@ -520,7 +520,9 @@
             complete: function() { alert('Closed'); } // Callback for Modal close
 
 
-        },'open');
+        });
+        $('#progress_bar').modal('open');
+
         var email = document.getElementById('email1').value;
         var password = document.getElementById('password1').value;
         var errors = false;
