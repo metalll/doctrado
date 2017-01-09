@@ -509,7 +509,7 @@
 
     function call1() {
 
-        var email = document.getElementById('email').value
+        var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
         var errors = false;
         var errEmail = false;
@@ -546,7 +546,7 @@
                 password:password
             },
             success: function(data) {
-                if (data==-1) Materialize.toast('<div class="red-text text-darken-3">Неверный логин<br> или пароль</div>',4000,'rounded');
+                if (data==-1) Materialize.toast('<div class="red-text text-darken-3">Неверный логин<br>  или пароль</div>',4000,'rounded');
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
