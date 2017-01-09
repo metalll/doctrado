@@ -31,8 +31,6 @@
         }
 
         #progress {
-            margin-left: 100%/2-100px;
-            margin-top: 100%/2-100px;
             width: 200px;
             height: 200px;
         }
@@ -257,7 +255,7 @@
 </div>
 
 <div id="modal3" class="modal">
-    <div id="progress">
+
     <div class="modal-content">
         <h4 class="center-align">Вход</h4>
         <div class="row">
@@ -288,7 +286,7 @@
             </form>
         </div>
     </div>
-    </div>
+
     <div class="modal-footer hide">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
@@ -522,7 +520,7 @@
     function call() {
 
        // $('#progress_bar').modal('open');
-        var bar = new ProgressBar.Circle(container, {
+        var bar = new ProgressBar.Circle(document.getElementById('modal3'), {
             color: '#FFEA82',
             trailColor: '#eee',
             trailWidth: 1,
