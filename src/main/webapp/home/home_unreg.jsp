@@ -476,12 +476,12 @@
             }
             else user[key]=value;
         }
-        $.ajax({
-            type: 'POST',
-            url:'validate_user',
-            data:msg,
-            success:
-        })
+//        $.ajax({
+//            type: 'POST',
+//            url:'validate_user',
+//            data:msg,
+//            success:
+//        })
     }
 </script>
 
