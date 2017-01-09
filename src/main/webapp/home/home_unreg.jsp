@@ -467,14 +467,29 @@
         var email = document.getElementById('email1').value;
         var password = document.getElementById('password1').value;
         var errors = false;
+        var errEmail = false;
+        var errPass = false;
         if (email == "") {
-            Materialize.toast('Введите ваш email',4000);
+            //Materialize.toast('Введите ваш email',4000,'rounded');
+            errEmail = true;
             errors = true;
+
         }
 
         if (password == "") {
-            Materialize.toast('Введите ваш пароль',4000);
+            //Materialize.toast('Введите ваш пароль',4000,'rounded');
+            errPass = true;
             errors = true;
+        }
+        if(errEmail&&errPass){
+            Materialize.toast('<div class="red-text text-darken-3">Введите ваш email <br> и пароль</div>',4000,'rounded');
+            return;
+        }
+        if(errEmail){
+            Materialize.toast('<div class="red-text text-darken-3">Введите ваш email</div>',4000,'rounded');
+        }
+        if(errPass){
+            Materialize.toast('<div class="red-text text-darken-3">Введите ваш пароль</div>',4000,'rounded');
         }
 
         if (errors) return;
@@ -486,7 +501,7 @@
                 password:password
             },
             success: function(data) {
-                if (data==-1) Materialize.toast('Неверный логин/пароль',4000);
+                if (data==-1) Materialize.toast('<div class="red-text text-darken-3">Неверный логин<br> или пароль</div>',4000);
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
@@ -497,14 +512,29 @@
         var email = document.getElementById('email').value
         var password = document.getElementById('password').value;
         var errors = false;
+        var errEmail = false;
+        var errPass = false;
         if (email == "") {
-            Materialize.toast('Введите ваш email',4000);
+            //Materialize.toast('Введите ваш email',4000,'rounded');
+            errEmail = true;
             errors = true;
+
         }
 
         if (password == "") {
-            Materialize.toast('Введите ваш пароль',4000);
+            //Materialize.toast('Введите ваш пароль',4000,'rounded');
+            errPass = true;
             errors = true;
+        }
+        if(errEmail&&errPass){
+            Materialize.toast('<div class="red-text text-darken-3">Введите ваш email <br> и пароль</div>',4000,'rounded');
+            return;
+        }
+        if(errEmail){
+            Materialize.toast('<div class="red-text text-darken-3">Введите ваш email</div>',4000,'rounded');
+        }
+        if(errPass){
+            Materialize.toast('<div class="red-text text-darken-3">Введите ваш пароль</div>',4000,'rounded');
         }
 
         if (errors) return;
@@ -516,7 +546,7 @@
                 password:password
             },
             success: function(data) {
-                if (data==-1) Materialize.toast('Неверный логин или пароль',4000);
+                if (data==-1) Materialize.toast('<div class="red-text text-darken-3">Неверный логин<br> или пароль</div>',4000,'rounded');
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
