@@ -38,59 +38,138 @@
 <body>
 
 <!-- Вперед к работе -->
-<div id="modal1" class="modal" >
+<div id="modal1" class="modal">
+    <div class="modal-content" style="
+       .input-field label {
+     color: #000;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #000;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #65ae00;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #c60000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #000;
+   }
+" >
+        <h4 class="center-align">Вперед к работе</h4>
         <div class="row">
-            <div class="container">
-
-                <div class="card">
-                    <h1 class="title">Вход</h1>
-                    <form>
-                        <div class="input-container">
-                            <input type="email" id="login" required="required"/>
-                            <label for="login">Ваш e-mail</label>
-                            <div class="bar"></div>
+            <div class="col s12 black-text ">
+                <ul class="tabs black-text">
+                    <li class="tab col s6" ><a href="#test1">Вход</a></li>
+                    <li class="tab col s6"><a class="active" href="#test2">Регистрация</a></li>
+                </ul>
+            </div>
+            <!-- Вперед к работе - > Регистрация --------------------------------->
+            <div id="test1" class="col s12">
+                <div class="row">
+                    <h5 class="center-align black-text" ></h5>
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" type="email" class="validate">
+                                <label for="email" data-error="некорректный e-mail">e-mail</label>
+                            </div>
                         </div>
-                        <div class="input-container">
-                            <input type="password" id="passwordL" required="required"/>
-                            <label for="passwordL">Ваш Пароль</label>
-                            <div class="bar"></div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="password" type="password" class="validate">
+                                <label for="password">Пароль</label>
+                            </div>
                         </div>
-                        <div class="button-container">
-                            <button><span>Войти</span></button>
-                        </div>
-                        <div class="footer"><a href="#">Забыли пароль?</a></div>
-                    </form>
-                </div>
-                <div class="card alt">
-                    <div class="toggle"></div>
-                    <h1 class="title">Регистрация
-                        <div class="close"></div>
-                    </h1>
-                    <form>
-                        <div class="input-container">
-                            <input type="text" id="unameReg" required="required"/>
-                            <label for="unameReg">Вас зовут</label>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="input-container">
-                            <input type="password" id="passwordReg" required="required"/>
-                            <label for="passwordReg">Ваш e-mail</label>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="input-container">
-                            <input type="password" id="passwordRegRepeat" required="required"/>
-                            <label for="passwordRegRepeat">Ваш пароль</label>
-                            <div class="bar"></div>
-                        </div>
-                        <div class="button-container">
-                            <button><span>Далее</span></button>
+                        <div class="row">
+                            <div class="col s3 left-align">
+                                <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
+                            </div>
+                            <div class="col s9 center-align">
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Войти
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>
             </div>
+            <!----- Вперед к работе -> регистрация --------------->
+            <div id="test2" class="col s12">
+                <div class="row">
+                    <div class="form">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="nameR1" type="text" class="validate">
+                                <label for="nameR1" data-error="некорректный e-mail">Ваше имя</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="last_nameR1" type="text" class="validate">
+                                <label for="last_nameR1" data-error="некорректный e-mail">Ваше отчество</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="surnameR1" type="text" class="validate">
+                                <label for="surnameR1" data-error="некорректный e-mail">Ваша фамилия</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="emailR1" type="email" class="validate">
+                                <label for="emailR1" data-error="некорректный e-mail">Ваш email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="passwordR1" type="password"  class="validate">
+                                <label for="passwordR1" data-error="некорректный e-mail">Ваш пароль</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="telephone1" type="tel" class="validate">
+                                <label for="telephone1" data-error="некорректный e-mail">Ваш телефон</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <p>Дата рождения</p>
+                                <input id="born1" type="date" placeholder="Дата рождения" class="validate">
+                                <label for="born1" data-error="некорректный e-mail"></label>
+                            </div>
+                            <p class="col s12 center-align">
+                                <input type="checkbox" id="test51" />
+                                <label for="test51">Я согласен с условиями предоставления услуг</label>
+                            </p>
+                        </div>
+                        <div class="row">
+                            <div class="col s4 left-align">
+                                <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
+                            </div>
+                            <div class="col s4 center-align">
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Я студент</button>
+                            </div>
+                            <div class="col s4 center-align">
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Я преподаватель</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer hide">
+                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
         </div>
-    </>
-</div>
+    </div></div>
+
 
     <!----------->
 <div id="modal2" class="modal">
