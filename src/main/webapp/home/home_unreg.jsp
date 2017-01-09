@@ -258,13 +258,13 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="email1" type="email" data-error="некорректный e-mail" class="validate">
-                        <label for="email">e-mail</label>
+                        <label for="email1">e-mail</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="password1" type="password" class="validate">
-                        <label for="password">Пароль</label>
+                        <label for="password1">Пароль</label>
                     </div>
                 </div>
                 <div class="row">
@@ -464,14 +464,15 @@
 <script type="text/javascript" language="javascript" >
 
     function call() {
-        var form = $('#login_form').serializeArray();
+        var email = document.getElementById('email');
+        var password = document.getElementById('password');
         var errors = false;
-        if (form[0]["value"] == "") {
+        if (email == "") {
             Materialize.toast('Введите ваш email',4000);
             errors = true;
         }
 
-        if (form[1]["value"] == "") {
+        if (password == "") {
             Materialize.toast('Введите ваш пароль',4000);
             errors = true;
         }
@@ -481,8 +482,8 @@
             type: 'post',
             url: 'https://doctrado-sviasy.rhcloud.com/login',
             data: {
-                email: form[0]['value'],
-                password: form[1]['value']
+                email: email,
+                password:password
             },
             success: function(data) {
                 if (data==-1) Materialize.toast('Неверный логин или пароль',4000);
@@ -492,14 +493,15 @@
     };
     function call1() {
 
-        var form = $(this).serializeArray();
+        var email = document.getElementById('email1');
+        var password = document.getElementById('password1');
         var errors = false;
-        if (form[0]["value"] == "") {
+        if (email == "") {
             Materialize.toast('Введите ваш email',4000);
             errors = true;
         }
 
-        if (form[1]["value"] == "") {
+        if (password == "") {
             Materialize.toast('Введите ваш пароль',4000);
             errors = true;
         }
@@ -509,8 +511,8 @@
             type: 'post',
             url: 'https://doctrado-sviasy.rhcloud.com/login',
             data: {
-                email: form[0]['value'],
-                password: form[1]['value']
+                email: email,
+                password:password
             },
             success: function(data) {
                 if (data==-1) Materialize.toast('Неверный логин или пароль',4000);
