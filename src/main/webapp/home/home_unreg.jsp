@@ -79,7 +79,7 @@
             <div id="test1" class="col s12">
                 <div class="row">
                     <h5 class="center-align black-text" ></h5>
-                    <form class="col s12" type="POST"  name="login-form1" id="login-form1">
+                    <form class="col s12" name="login-form1" id="login-form1">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="email" type="email" class="validate">
