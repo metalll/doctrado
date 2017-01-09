@@ -302,9 +302,7 @@
             <li>
                 <a class="menu-elem" href="./certificates">Сертификаты</a>
             </li>
-            <li>
-                <a class="menu-elem" href="./webinar">Вебинары</a>
-            </li>
+
             <li>
                 <a class="menu-elem" data-anchor="#courses">Курсы</a>
             </li>
