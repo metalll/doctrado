@@ -79,7 +79,7 @@
             <div id="test1" class="col s12">
                 <div class="row">
                     <h5 class="center-align black-text" ></h5>
-                    <form class="col s12">
+                    <form class="col s12" type="POST" id="signIn1" action="javascript:void(null);" onsubmit="callSingIn1()">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="email" type="email" class="validate">
@@ -108,7 +108,7 @@
             <!----- Вперед к работе -> регистрация --------------->
             <div id="test2" class="col s12">
                 <div class="row">
-                    <div class="form">
+                    <div class="form" type="POST" id="reg1" action="javascript:void(null);" onsubmit="callReg1()">
                         <div class="row">
                             <div class="input-field col s6">
                                 <input id="nameR1" type="text" class="validate">
@@ -461,14 +461,28 @@
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="../js/materialize.min.js"></script>
-<script type="application/javascript" >
-    $('.toggle').on('click', function() {
-        $('.container').stop().addClass('active');
-    });
-
-    $('.close').on('click', function() {
-        $('.container').stop().removeClass('active');
-    });
+<script type="text/javascript" language="javascript" >
+    function callReg1() {
+        var form = $('#reg1').serialize();
+        var errors = false;
+        for (var i=0; i<form.length-1; i++) {
+            var alert_c = $('#alert-'+i);
+            var key = form[i]['name'];
+            var value = form[i]['value'];
+            alert_c.fadeOut();
+            if (value=="") {
+                alert_c.text('Заполните это поле').fadeIn();
+                errors = true;
+            }
+            else user[key]=value;
+        }
+        $.ajax({
+            type: 'POST',
+            url:'validate_user',
+            data:msg,
+            success:
+        })
+    }
 </script>
 
 <script>
