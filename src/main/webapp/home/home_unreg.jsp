@@ -255,7 +255,7 @@
 </div>
 
 <div id="modal3" class="modal">
-
+    <div id="progress" class="center center-block"></div>
     <div class="modal-content">
         <h4 class="center-align">Вход</h4>
         <div class="row">
@@ -520,7 +520,7 @@
     function call() {
 
        // $('#progress_bar').modal('open');
-        var bar = new ProgressBar.Circle(document.getElementById('modal3'), {
+        var bar = new ProgressBar.Circle(progress, {
             color: '#FFEA82',
             trailColor: '#eee',
             trailWidth: 1,
