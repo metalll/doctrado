@@ -309,8 +309,8 @@
             <li>
                 <a class="menu-elem" data-anchor="#contacts">Контакты</a>
             </li>
-            <li><a href="/signup.php" class="menu-elem waves-effect waves-light btn white-text green darken-3" >Регистрация</a></li>
-            <li><a href="/login.php" class="menu-elem waves-effect waves-light orange btn white-text darken-3" >Вход</a></li>
+            <li><a href="#modal3" class="menu-elem modal-trigger waves-effect waves-light btn white-text green darken-3" >Регистрация</a></li>
+            <li><a href="#modal2" class="menu-elem modal-trigger waves-effect waves-light orange btn white-text darken-3" >Вход</a></li>
 
 
         </ul>
