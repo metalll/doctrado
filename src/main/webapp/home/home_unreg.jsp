@@ -482,14 +482,14 @@
             errors = true;
         }
         if(errEmail&&errPass){
-            Materialize.toast('<div class="red-text text-darken-3">Введите ваш email <br> и пароль</div>',4000,'rounded');
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>',4000,'rounded');
             return;
         }
         if(errEmail){
-            Materialize.toast('<div class="red-text text-darken-3">Введите ваш email</div>',4000,'rounded');
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email </b></div>',4000,'rounded');
         }
         if(errPass){
-            Materialize.toast('<div class="red-text text-darken-3">Введите ваш пароль</div>',4000,'rounded');
+            Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>',4000,'rounded');
         }
 
         if (errors) return;
@@ -501,7 +501,7 @@
                 password:password
             },
             success: function(data) {
-                if (data==-1) Materialize.toast('<div class="red-text text-darken-3">Неверный логин <br> или пароль</div>',4000,'rounded');
+                if (data==-1) Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
@@ -527,14 +527,14 @@
             errors = true;
         }
         if(errEmail&&errPass){
-            Materialize.toast('<div class="red-text text-darken-3">Введите ваш email <br> и пароль</div>',4000,'rounded');
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>',4000,'rounded');
             return;
         }
         if(errEmail){
-            Materialize.toast('<div class="red-text text-darken-3">Введите ваш email</div>',4000,'rounded');
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email </b></div>',4000,'rounded');
         }
         if(errPass){
-            Materialize.toast('<div class="red-text text-darken-3">Введите ваш пароль</div>',4000,'rounded');
+            Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>',4000,'rounded');
         }
 
         if (errors) return;
@@ -546,11 +546,11 @@
                 password:password
             },
             success: function(data) {
-                if (data==-1) Materialize.toast('<div class="red-text text-darken-3">Неверный логин <br>  или пароль</div>',4000,'rounded');
+                if (data==-1) Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
-    };
+    }
 </script>
 
 <script>
