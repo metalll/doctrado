@@ -403,7 +403,7 @@
 </div>
 
 <div id="progress_bar" class="modal">
-    <div style="background: transparent">
+    <div style=".div.parentElem *{filter:inherit;}">
         <div class="preloader-wrapper big active">
             <div class="spinner-layer spinner-blue">
                 <div class="circle-clipper left">
@@ -513,7 +513,7 @@
     function call() {
         $('#progress_bar').modal({
             dismissible: false, // Modal can be dismissed by clicking outside of the modal
-            opacity: 50, // Opacity of modal background
+            opacity: 1, // Opacity of modal background
             in_duration: 10, // Transition in duration
             out_duration: 10, // Transition out duration
           //  ready: function() { alert('Ready'); }, // Callback for Modal open
