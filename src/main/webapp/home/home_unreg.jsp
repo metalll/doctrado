@@ -513,7 +513,7 @@
     function call() {
         $('#progress_bar').modal({
             dismissible: true, // Modal can be dismissed by clicking outside of the modal
-            opacity: 1, // Opacity of modal background
+            opacity: 0, // Opacity of modal background
             in_duration: 10, // Transition in duration
             out_duration: 10, // Transition out duration
           //  ready: function() { alert('Ready'); }, // Callback for Modal open
