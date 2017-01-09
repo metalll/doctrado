@@ -151,13 +151,13 @@
                             </p>
                         </div>
                         <div class="row">
-                            <div class="col s4 left-align">
+                            <div class="col s3 left-align">
                                 <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
                             </div>
                             <div class="col s4 center-align">
                                 <button class="btn waves-effect waves-light" type="submit" name="action">Я студент</button>
                             </div>
-                            <div class="col s4 center-align">
+                            <div class="col s5 center-align">
                                 <button class="btn waves-effect waves-light" type="submit" name="action">Я преподаватель</button>
                             </div>
                         </div>
