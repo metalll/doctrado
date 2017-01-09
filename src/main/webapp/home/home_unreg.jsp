@@ -31,7 +31,8 @@
         }
 
         #progress {
-            margin: 20px;
+            margin-left: 100%/2-100px;
+            margin-top: 100%/2-100px;
             width: 200px;
             height: 200px;
         }
