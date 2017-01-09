@@ -97,11 +97,11 @@
                                 <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
                             </div>
                             <div class="col s9 center-align">
-                                <button class="btn waves-effect waves-light" type="submit" >Войти
+                                <button class="btn waves-effect waves-light" type="submit" value="Войти" >Войти
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
-                        </div>
+                         </div>
                     </form>
                 </div>
             </div>
