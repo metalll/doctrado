@@ -30,6 +30,12 @@
             height: 400px;
         }
 
+        #progress {
+            margin: 20px;
+            width: 200px;
+            height: 200px;
+        }
+
     </style>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -250,6 +256,7 @@
 </div>
 
 <div id="modal3" class="modal">
+    <div id="progress">
     <div class="modal-content">
         <h4 class="center-align">Вход</h4>
         <div class="row">
@@ -279,6 +286,7 @@
                 </div>
             </form>
         </div>
+    </div>
     </div>
     <div class="modal-footer hide">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
@@ -403,7 +411,7 @@
 </div>
 
 <div id="progress_bar" class="modal">
-    <div style=".div.parentElem *{filter:inherit;}">
+    <div style="background: transparent">
         <div class="preloader-wrapper big active">
             <div class="spinner-layer spinner-blue">
                 <div class="circle-clipper left">
@@ -511,18 +519,24 @@
 
 
     function call() {
-        $('#progress_bar').modal({
-            dismissible: false, // Modal can be dismissed by clicking outside of the modal
-            opacity: 1, // Opacity of modal background
-            in_duration: 10, // Transition in duration
-            out_duration: 10, // Transition out duration
-          //  ready: function() { alert('Ready'); }, // Callback for Modal open
-          //  complete: function() { alert('Closed'); } // Callback for Modal close
 
-
-        });
        // $('#progress_bar').modal('open');
+        var bar = new ProgressBar.Circle(container, {
+            color: '#FFEA82',
+            trailColor: '#eee',
+            trailWidth: 1,
+            duration: 1400,
+            easing: 'bounce',
+            strokeWidth: 6,
+            from: {color: '#FFEA82', a:0},
+            to: {color: '#ED6A5A', a:1},
+            // Set default step function for all animate calls
+            step: function(state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+            }
+        });
 
+        bar.animate(1.0);
         var email = document.getElementById('email1').value;
         var password = document.getElementById('password1').value;
         var errors = false;
@@ -542,7 +556,7 @@
         }
         if(errEmail&&errPass){
             Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>',4000,'rounded');
-            $('#progress_bar').modal('close');
+           bar.hide();
             return;
         }
         if(errEmail){
@@ -553,7 +567,7 @@
         }
 
         if (errors) {
-            $('#progress_bar').modal('close');
+            bar.hide();
             return;}
         $.ajax({
             type: 'post',
@@ -564,7 +578,7 @@
             },
             success: function(data) {
                 if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
-                    $('#progress_bar').modal('close');
+                    bar.hide();
                 }
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
