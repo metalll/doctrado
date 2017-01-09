@@ -284,7 +284,7 @@
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
 </div>
-
+<div class="navbar-fixed">
 <nav class="white darken-4 grey-text text-darken-4" role="navigation">
     <div class="nav-wrapper container">
 
@@ -322,6 +322,7 @@
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
 </nav>
+</div>
 <br>
 <div class="parallax-container valign-wrapper col s12">
     <div class="section no-pad-bot">
