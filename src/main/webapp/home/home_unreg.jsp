@@ -79,7 +79,7 @@
             <div id="test1" class="col s12">
                 <div class="row">
                     <h5 class="center-align black-text" ></h5>
-                    <form class="col s12" name="login-form1" id="login-form1" action="">
+                    <form class="col s12" name="login-form1" id="login-form1" method="post" action="javascript:void(null);" onsubmit="call1()">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="email" type="email" class="validate">
@@ -254,7 +254,7 @@
         <h4 class="center-align">Вход</h4>
         <div class="row">
             <h5 class="center-align black-text" ></h5>
-            <form class="col s12" type="POST" name="login-form" id="login-form" action="">
+            <form class="col s12" name="login-form" id="login-form" method="post" action="javascript:void(null);" onsubmit="call()">
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="email1" type="email" data-error="некорректный e-mail" class="validate">
@@ -463,9 +463,8 @@
 <script src="../js/materialize.min.js"></script>
 <script type="text/javascript" language="javascript" >
 
-    $('#login-form').submit(function (event) {
-        event.preventDefault();
-        var form = $(this).serializeArray();
+    function call() {
+        var form = $('#login_form').serializeArray();
         var errors = false;
         if (form[0]["value"] == "") {
             Materialize.toast('Введите ваш email',4000);
@@ -490,9 +489,9 @@
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
-    });
-    $('#login-form1').submit(function (event) {
-        event.preventDefault();
+    };
+    function call1() {
+
         var form = $(this).serializeArray();
         var errors = false;
         if (form[0]["value"] == "") {
