@@ -79,7 +79,7 @@
             <div id="test1" class="col s12">
                 <div class="row">
                     <h5 class="center-align black-text" ></h5>
-                    <form class="col s12" type="POST" id="signIn1" action="javascript:void(null);" onsubmit="callSingIn1()">
+                    <form class="col s12" type="POST"  name="login-form1" id="login-form1">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="email" type="email" class="validate">
@@ -89,7 +89,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <input id="password" type="password" class="validate">
-                                <label for="password">Пароль</label>
+                                <label for="password"  >Пароль</label>
                             </div>
                         </div>
                         <div class="row">
@@ -97,7 +97,7 @@
                                 <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
                             </div>
                             <div class="col s9 center-align">
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Войти
+                                <button class="btn waves-effect waves-light" type="submit">Войти
                                     <i class="material-icons right">send</i>
                                 </button>
                             </div>
@@ -254,7 +254,7 @@
         <h4 class="center-align">Вход</h4>
         <div class="row">
             <h5 class="center-align black-text" ></h5>
-            <form class="col s12">
+            <form class="col s12" type="POST" name="login-form" id="login-form">
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="email1" type="email" data-error="некорректный e-mail" class="validate">
@@ -272,7 +272,7 @@
                         <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
                     </div>
                     <div class="col s9 center-align">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Войти
+                        <button class="btn waves-effect waves-light" type="submit" name="signIn">Войти
                             <i class="material-icons right">send</i>
                         </button>
                     </div>
@@ -462,27 +462,63 @@
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="../js/materialize.min.js"></script>
 <script type="text/javascript" language="javascript" >
-    function callReg1() {
-        var form = $('#reg1').serialize();
+
+    $('#login-form').submit(function (event) {
+        event.preventDefault();
+        var form = $(this).serializeArray();
         var errors = false;
-        for (var i=0; i<form.length-1; i++) {
-            var alert_c = $('#alert-'+i);
-            var key = form[i]['name'];
-            var value = form[i]['value'];
-            alert_c.fadeOut();
-            if (value=="") {
-                alert_c.text('Заполните это поле').fadeIn();
-                errors = true;
-            }
-            else user[key]=value;
+        if (form[0]["value"] == "") {
+            Materialize.toast('Введите ваш email',4000);
+            errors = true;
         }
-//        $.ajax({
-//            type: 'POST',
-//            url:'validate_user',
-//            data:msg,
-//            success:
-//        })
-    }
+
+        if (form[1]["value"] == "") {
+            Materialize.toast('Введите ваш пароль',4000);
+            errors = true;
+        }
+
+        if (errors) return;
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/login',
+            data: {
+                email: form[0]['value'],
+                password: form[1]['value']
+            },
+            success: function(data) {
+                if (data==-1) Materialize.toast('Неверный логин или пароль',4000);
+                else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
+            }
+        });
+    });
+    $('#login-form1').submit(function (event) {
+        event.preventDefault();
+        var form = $(this).serializeArray();
+        var errors = false;
+        if (form[0]["value"] == "") {
+            Materialize.toast('Введите ваш email',4000);
+            errors = true;
+        }
+
+        if (form[1]["value"] == "") {
+            Materialize.toast('Введите ваш пароль',4000);
+            errors = true;
+        }
+
+        if (errors) return;
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/login',
+            data: {
+                email: form[0]['value'],
+                password: form[1]['value']
+            },
+            success: function(data) {
+                if (data==-1) Materialize.toast('Неверный логин или пароль',4000);
+                else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
+            }
+        });
+    });
 </script>
 
 <script>
