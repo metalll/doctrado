@@ -292,7 +292,7 @@
 
         <ul class="right hide-on-med-and-down">
 
-            <li><a class="waves-effect waves-light black modal-trigger white-text" href="#modal3">Вход</a></li>
+            <!--<li><a class="waves-effect waves-light black modal-trigger white-text" href="#modal3">Вход</a></li>-->
             <li>
                 <a class="menu-elem" data-anchor="#about">О проекте</a>
             </li>
@@ -311,8 +311,8 @@
             <li>
                 <a class="menu-elem" data-anchor="#contacts">Контакты</a>
             </li>
-            <li><a href="/signup.php" class="green-text text-darken-3" >Регистрация</a></li>
-            <li><a href="/login.php" class="orange-text text-darken-3" >Вход</a></li>
+            <li><a href="/signup.php" class="waves-effect waves-light green darken-3" >Регистрация</a></li>
+            <li><a href="/login.php" class="waves-effect waves-light orange darken-3" >Вход</a></li>
 
 
         </ul>
