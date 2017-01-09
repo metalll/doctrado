@@ -464,8 +464,8 @@
 <script type="application/javascript" >
 
     function call() {
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('password').value;
+        var email = document.getElementById('email1').value;
+        var password = document.getElementById('password1').value;
         var errors = false;
         if (email == "") {
             Materialize.toast('Введите ваш email',4000);
@@ -486,7 +486,7 @@
                 password:password
             },
             success: function(data) {
-                if (data==-1) Materialize.toast('Неверный логин или пароль',4000);
+                if (data==-1) Materialize.toast('Неверный логин/пароль',4000);
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
@@ -494,8 +494,8 @@
 
     function call1() {
 
-        var email = document.getElementById('email1').value
-        var password = document.getElementById('password1').value;
+        var email = document.getElementById('email').value
+        var password = document.getElementById('password').value;
         var errors = false;
         if (email == "") {
             Materialize.toast('Введите ваш email',4000);
