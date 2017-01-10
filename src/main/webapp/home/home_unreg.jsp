@@ -255,7 +255,7 @@
 </div>
 
 <div id="modal3" class="modal">
-    <div id="progress" class="center center-block"></div>
+   <!-- <div id="progress" class="center center-block"></div>-->
     <div class="modal-content">
         <h4 class="center-align">Вход</h4>
         <div class="row">
@@ -635,6 +635,5 @@
 
   
 </script>
-
 </body>
 </html>
