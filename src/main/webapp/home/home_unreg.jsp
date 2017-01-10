@@ -519,23 +519,10 @@
 
     function call() {
 
-       // $('#progress_bar').modal('open');
-        var bar = new ProgressBar.Circle(progress, {
-            color: '#FFEA82',
-            trailColor: '#eee',
-            trailWidth: 1,
-            duration: 1400,
-            easing: 'bounce',
-            strokeWidth: 6,
-            from: {color: '#FFEA82', a:0},
-            to: {color: '#ED6A5A', a:1},
-            // Set default step function for all animate calls
-            step: function(state, circle) {
-                circle.path.setAttribute('stroke', state.color);
-            }
-        });
+       //$('#progress_bar').modal('open');
 
-        bar.animate(1.0);
+
+      //  bar.animate(1.0);
         var email = document.getElementById('email1').value;
         var password = document.getElementById('password1').value;
         var errors = false;
@@ -555,7 +542,7 @@
         }
         if(errEmail&&errPass){
             Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>',4000,'rounded');
-           bar.hide();
+    //       bar.hide();
             return;
         }
         if(errEmail){
@@ -566,7 +553,7 @@
         }
 
         if (errors) {
-            bar.hide();
+  //          bar.hide();
             return;}
         $.ajax({
             type: 'post',
@@ -585,7 +572,7 @@
     };
 
     function call1() {
-        $('#progress_bar').modal('open');
+//        $('#progress_bar').modal('open');
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
         var errors = false;
@@ -605,7 +592,7 @@
         }
         if(errEmail&&errPass){
             Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>',4000,'rounded');
-            $('#progress_bar').modal('close');
+  //          $('#progress_bar').modal('close');
             return;
         }
         if(errEmail){
@@ -616,7 +603,7 @@
         }
 
         if (errors) {
-            $('#progress_bar').modal('close');
+//            $('#progress_bar').modal('close');
             return;}
         $.ajax({
             type: 'post',
@@ -627,7 +614,7 @@
             },
             success: function(data) {
                 if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
-                    $('#progress_bar').modal('close');
+                  //  $('#progress_bar').modal('close');
                 }
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
