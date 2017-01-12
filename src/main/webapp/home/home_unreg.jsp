@@ -179,7 +179,15 @@
 <div id="modal4" class="modal">
 
 
-    modal 4
+    modal 4 student
+
+
+</div>
+
+<div id="modal5" class="modal">
+
+
+    modal 5 teacher
 
 
 </div>
@@ -708,7 +716,10 @@
                     $('#modal1').modal('close');
                     $('#modal2').modal('close');
 
-                    $('#modal4').modal('open');
+
+                    if(accept=='s') $('#modal4').modal('open');
+
+                    if(accept=='t') $('#modal5').modal('open');
                 }
 
             }
@@ -798,7 +809,12 @@
                     $('#modal1').modal('close');
                     $('#modal2').modal('close');
 
-                    $('#modal4').modal('open');
+                    if(accept=='s') $('#modal4').modal('open');
+
+                    if(accept=='t') $('#modal5').modal('open');
+
+
+
 
                     //  $('#progress_bar').modal('close');
                 }
