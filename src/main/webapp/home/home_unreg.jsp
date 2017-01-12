@@ -113,7 +113,7 @@
             <!----- Вперед к работе -> регистрация --------------->
             <div id="test2" class="col s12">
                 <div class="row">
-                    <div class="form" type="POST" id="reg-form1" action="javascript:void(null);" onsubmit="callReg1()">
+                    <div class="form" type="post" name="reg-form1" id="reg-form1" action="javascript:void(null);" onsubmit="callReg1()">
                         <div class="row">
                             <div class="input-field col s6">
                                 <input id="nameR1" type="text" class="validate">
@@ -160,10 +160,10 @@
                                 <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
                             </div>
                             <div class="col s4 center-align">
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Я студент</button>
+                                <button class="btn waves-effect waves-light" type="submit" value="s">Я студент</button>
                             </div>
                             <div class="col s5 center-align">
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Я преподаватель</button>
+                                <button class="btn waves-effect waves-light" type="submit" value="t">Я преподаватель</button>
                             </div>
                         </div>
                     </div>
@@ -181,7 +181,7 @@
     <div class="modal-content">
         <h4 class="center-align col s12" >Регистрация</h4>
         <div class="row">
-            <div class="form">
+            <div class="form" type="post" name="reg-form" id="reg-form" action="javascript:void(null);" onsubmit="callReg()">
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="nameR" type="text" class="validate">
@@ -231,10 +231,10 @@
                     </div>
 
                     <div class="col s4 center-align">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Я студент</button>
+                        <button class="btn waves-effect waves-light" type="submit" value="s">Я студент</button>
                     </div>
                     <div class="col s5 center-align">
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Я преподаватель</button>
+                        <button class="btn waves-effect waves-light" type="submit" value="t">Я преподаватель</button>
                     </div>
 
 
@@ -707,7 +707,85 @@
 
 
     function callReg() {
+        var nameR = document.getElementById('nameR').value;
+        var last_nameR = document.getElementById('last_nameR').value;
+        var surnameR = document.getElementById('surnameR').value;
+        var emailR = document.getElementById('emailR').value;
+        var passwordR = document.getElementById('passwordR').value;
+        var telephone = document.getElementById('telephone').value;
+        var born = document.getElementById('born').value;
+        var test5 = document.getElementById('test5').value;
 
+        var error = false;
+
+        var nameREr = false;
+        var last_nameREr = false;
+        var surnameREr = false;
+        var emailREr = false;
+        var passwordREr = false;
+        var telephoneEr = false;
+        var bornEr = false;
+        var testEr = false;
+
+        if(nameR==""){
+            error = true;
+            nameREr = true;
+        }
+        if(last_nameR==""){
+            error = true;
+            last_nameREr = true;
+        }
+        if(surnameR==""){
+            error = true;
+            surnameREr = true;
+        }
+        if(emailR==""){
+            error = true;
+            emailREr = true;
+        }
+        if(passwordR==""){
+            error = true;
+            passwordREr = true;
+        }
+        if(telephone==""){
+            error = true;
+            telephoneEr = true;
+        }
+        if(born==""){
+            error = true;
+            bornEr = true;
+        }
+        if(test5==""){
+            error = true;
+            testEr = true;
+        }
+        alert(test5);
+        if(error){
+            if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
+                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
+                alert(test5);
+                return;
+            }
+        }
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/validate_user',
+            data: {
+                email: emailR,
+                password:passwordR,
+                name:nameR,
+                last_name:last_nameR,
+                surname:surnameR,
+                telephone:telephone,
+                born:born
+            },
+            success: function(data) {
+                if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
+                    //  $('#progress_bar').modal('close');
+                }
+
+            }
+        });
     }
 </script>
 
