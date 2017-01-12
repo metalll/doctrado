@@ -674,7 +674,7 @@
             error = true;
             testEr = true;
         }
-
+        alert(test5);
         if(error){
             if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
                 Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
