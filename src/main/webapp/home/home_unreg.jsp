@@ -113,7 +113,7 @@
             <!----- Вперед к работе -> регистрация --------------->
             <div id="test2" class="col s12">
                 <div class="row">
-                    <div class="form" type="post" name="reg-form1" id="reg-form1" action="javascript:void(null);" onsubmit="callReg1()">
+                    <form class="form" type="post" name="reg-form1" id="reg-form1" action="javascript:void(null);" onsubmit="callReg1()">
                         <div class="row">
                             <div class="input-field col s6">
                                 <input id="nameR1" type="text" class="validate">
@@ -166,7 +166,7 @@
                                 <button class="btn waves-effect waves-light" type="submit" value="t">Я преподаватель</button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="modal-footer hide">
@@ -759,7 +759,7 @@
             error = true;
             testEr = true;
         }
-        alert(test5);
+
         if(error){
             if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
                 Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
