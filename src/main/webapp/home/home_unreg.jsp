@@ -113,7 +113,7 @@
             <!----- Вперед к работе -> регистрация --------------->
             <div id="test2" class="col s12">
                 <div class="row">
-                    <form class="form" type="post" name="reg-form1" id="reg-form1" action="javascript:void(null);" onsubmit="callReg1()">
+                    <form class="form" type="post" name="reg-form1" id="reg-form1" action="javascript:void(null);">
                         <div class="row">
                             <div class="input-field col s6">
                                 <input id="nameR1" type="text" class="validate">
@@ -160,10 +160,10 @@
                                 <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
                             </div>
                             <div class="col s4 center-align">
-                                <button class="btn waves-effect waves-light" type="submit" value="s">Я студент</button>
+                                <button class="btn waves-effect waves-light" type="submit" value="s" onclick="callReg1(this.value)">Я студент</button>
                             </div>
                             <div class="col s5 center-align">
-                                <button class="btn waves-effect waves-light" type="submit" value="t">Я преподаватель</button>
+                                <button class="btn waves-effect waves-light" type="submit" value="t"  onclick="callReg1(this.value)">Я преподаватель</button>
                             </div>
                         </div>
                     </form>
@@ -181,7 +181,7 @@
     <div class="modal-content">
         <h4 class="center-align col s12" >Регистрация</h4>
         <div class="row">
-            <div class="form" type="post" name="reg-form" id="reg-form" action="javascript:void(null);" onsubmit="callReg()">
+            <div class="form" type="post" name="reg-form" id="reg-form" action="javascript:void(null);">
                 <div class="row">
                     <div class="input-field col s6">
                         <input id="nameR" type="text" class="validate">
@@ -231,10 +231,10 @@
                     </div>
 
                     <div class="col s4 center-align">
-                        <button class="btn waves-effect waves-light" type="submit" value="s">Я студент</button>
+                        <button class="btn waves-effect waves-light" type="submit" value="s" onclick="callReg(this.value)">Я студент</button>
                     </div>
                     <div class="col s5 center-align">
-                        <button class="btn waves-effect waves-light" type="submit" value="t">Я преподаватель</button>
+                        <button class="btn waves-effect waves-light" type="submit" value="t" onclick="callReg(this.value)" >Я преподаватель</button>
                     </div>
 
 
@@ -621,7 +621,7 @@
         });
     }
 
-    function callReg1() {
+    function callReg1(accept) {
         var nameR = document.getElementById('nameR1').value;
         var last_nameR = document.getElementById('last_nameR1').value;
         var surnameR = document.getElementById('surnameR1').value;
@@ -674,7 +674,7 @@
             error = true;
             testEr = true;
         }
-        alert(test5);
+
         if(error){
             if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
                 Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
@@ -692,7 +692,8 @@
                 last_name:last_nameR,
                 surname:surnameR,
                 telephone:telephone,
-                born:born
+                born:born,
+                type:accept
             },
             success: function(data) {
                 if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
@@ -706,7 +707,7 @@
     }
 
 
-    function callReg() {
+    function callReg(accept) {
         var nameR = document.getElementById('nameR').value;
         var last_nameR = document.getElementById('last_nameR').value;
         var surnameR = document.getElementById('surnameR').value;
@@ -715,6 +716,7 @@
         var telephone = document.getElementById('telephone').value;
         var born = document.getElementById('born').value;
         var test5 = document.getElementById('test5').value;
+
 
         var error = false;
 
@@ -763,7 +765,6 @@
         if(error){
             if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
                 Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
-                alert(test5);
                 return;
             }
         }
@@ -777,7 +778,8 @@
                 last_name:last_nameR,
                 surname:surnameR,
                 telephone:telephone,
-                born:born
+                born:born,
+                type:accept
             },
             success: function(data) {
                 if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
