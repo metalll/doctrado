@@ -176,6 +176,14 @@
     </div></div>
 
 
+<div id="modal4" class="modal">
+
+
+    modal 4
+
+
+</div>
+
     <!----------->
 <div id="modal2" class="modal">
     <div class="modal-content">
@@ -678,7 +686,7 @@
         if(error){
             if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
                 Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
-                alert(test5);
+
                 return;
             }
         }
@@ -696,8 +704,11 @@
                 type:accept
             },
             success: function(data) {
-                if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
-                    //  $('#progress_bar').modal('close');
+                if (data==0){    $('#modal3').modal('close');
+                    $('#modal1').modal('close');
+                    $('#modal2').modal('close');
+
+                    $('#modal4').modal('open');
                 }
 
             }
@@ -782,7 +793,13 @@
                 type:accept
             },
             success: function(data) {
-                if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
+                if (data==0){
+                    $('#modal3').modal('close');
+                    $('#modal1').modal('close');
+                    $('#modal2').modal('close');
+
+                    $('#modal4').modal('open');
+
                     //  $('#progress_bar').modal('close');
                 }
 
