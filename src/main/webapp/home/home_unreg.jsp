@@ -113,7 +113,7 @@
             <!----- Вперед к работе -> регистрация --------------->
             <div id="test2" class="col s12">
                 <div class="row">
-                    <div class="form" type="POST" id="reg1" action="javascript:void(null);" onsubmit="callReg1()">
+                    <div class="form" type="POST" id="reg-form1" action="javascript:void(null);" onsubmit="callReg1()">
                         <div class="row">
                             <div class="input-field col s6">
                                 <input id="nameR1" type="text" class="validate">
@@ -619,6 +619,95 @@
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
+    }
+
+    function callReg1() {
+        var nameR = document.getElementById('nameR1').value;
+        var last_nameR = document.getElementById('last_nameR1').value;
+        var surnameR = document.getElementById('surnameR1').value;
+        var emailR = document.getElementById('emailR1').value;
+        var passwordR = document.getElementById('passwordR1').value;
+        var telephone = document.getElementById('telephone1').value;
+        var born = document.getElementById('born1').value;
+        var test5 = document.getElementById('test51').value;
+
+        var error = false;
+
+        var nameREr = false;
+        var last_nameREr = false;
+        var surnameREr = false;
+        var emailREr = false;
+        var passwordREr = false;
+        var telephoneEr = false;
+        var bornEr = false;
+        var testEr = false;
+
+        if(nameR==""){
+            error = true;
+            nameREr = true;
+        }
+        if(last_nameR==""){
+            error = true;
+            last_nameREr = true;
+        }
+        if(surnameR==""){
+            error = true;
+            surnameREr = true;
+        }
+        if(emailR==""){
+            error = true;
+            emailREr = true;
+        }
+        if(passwordR==""){
+            error = true;
+            passwordREr = true;
+        }
+        if(telephone==""){
+            error = true;
+            telephoneEr = true;
+        }
+        if(born==""){
+            error = true;
+            bornEr = true;
+        }
+        if(test5==""){
+            error = true;
+            testEr = true;
+        }
+
+        if(error){
+            if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
+                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
+                alert(test5);
+                return;
+            }
+        }
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/validate_user',
+            data: {
+                email: emailR,
+                password:passwordR,
+                name:nameR,
+                last_name:last_nameR,
+                surname:surnameR,
+                telephone:telephone,
+                born:born
+            },
+            success: function(data) {
+                if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
+                    //  $('#progress_bar').modal('close');
+                }
+
+            }
+        });
+
+
+    }
+
+
+    function callReg() {
+
     }
 </script>
 
