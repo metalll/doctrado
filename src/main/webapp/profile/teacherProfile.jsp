@@ -6,6 +6,7 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="NSD.NSDConstants" %>
 <%--
   Created by IntelliJ IDEA.
   User: NSD
@@ -29,7 +30,7 @@
     Statement stmt = null;
     String uToken = null;
     for(Cookie cookie : request.getCookies()){
-        if(cookie.getName().equals(Authorizator.uTokenCookie))
+        if(cookie.getName().equals(NSDConstants.uTokenCookie))
             uToken = cookie.getValue();
     }
 
