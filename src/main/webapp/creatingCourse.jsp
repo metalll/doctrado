@@ -94,24 +94,20 @@
 
 
 
-
     <div class="input-field col s12">
-        <select multiple>
-            <optgroup label="Охрана труда">
-                <option value="1">Трансформаторы</option>
-                <option value="2">ОБХН</option>
-                    <optgroup label="Охрана труда">
-                        <option value="1a">Трансформаторы1</option>
-                        <option value="21">ОБХН1</option>
-                    </optgroup>
-            </optgroup>
-            <optgroup label="Пожарная безопасность">
-                <option value="3">ИТР</option>
-                <option value="4">Аутсорсинг</option>
-            </optgroup>
+        <select>
+            <option value="12" disabled selected>Выберите категорию</option>
+            <option value="1">&nbsp&nbspКатегория 1</option>
+            <option value="2">&nbsp&nbspКатегория 2</option>
+
+            <option value="3">&nbsp&nbspКатегория 3</option>
+                <option value="3.1">&nbsp&nbsp&nbsp&nbsp Категория 3.1</option>
+                <option value="3.2">&nbsp&nbsp&nbsp&nbsp Категория 3.2</option>
+            <option value="3">&nbsp&nbspКатегория 4</option>
         </select>
-        <label>Выберите категорию курса</label>
+        <label>Категория курса</label>
     </div>
+
 
 
 
