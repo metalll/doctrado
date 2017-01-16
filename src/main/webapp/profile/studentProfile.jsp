@@ -140,7 +140,7 @@
 
 
 </div>
-
+<div class="container">
 <div class="row">
     <div class="col s4 ">
         <div class="card">
@@ -172,6 +172,7 @@
             </div>
         </div>
     </div>
+
     <div class="col s4 ">
         <div class="card">
             <div class="card-image">
@@ -187,9 +188,10 @@
             </div>
         </div>
     </div>
+
 </div>
 
-
+</div>
 
 
 <footer class="page-footer center-align grey darken-4 white-text">
