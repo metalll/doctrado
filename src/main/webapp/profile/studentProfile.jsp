@@ -127,7 +127,7 @@
 <div class="row">
 
     <div class="col s4 col push-s4 center-align">
-        <a class="waves-effect col s12 waves-light orange btn">Создать курс</a>
+        <a class="waves-effect col s12 waves-light orange btn" href="<%= NSDConstants.HOST+"/creating-course" %>" >Создать курс</a>
     </div>
 
 
