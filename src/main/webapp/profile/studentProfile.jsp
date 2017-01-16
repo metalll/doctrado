@@ -146,7 +146,7 @@
     <div class="col s12 ">
         <div class="card">
             <div class="card-image">
-                <img height="30" width="30" src="../img/file.png">
+                <img src="../img/file.png">
                 <span class="card-title">Card Title</span>
             </div>
             <div class="card-content">
@@ -163,7 +163,7 @@
         <div class="col s12 ">
         <div class="card">
             <div class="card-image">
-                <img height="30" width="30" src="../img/file.png">
+                <img src="../img/file.png">
                 <span class="card-title">Card Title</span>
             </div>
             <div class="card-content">
@@ -181,7 +181,7 @@
         <div class="col s12 ">
         <div class="card">
             <div class="card-image">
-                <img height="30" width="30" src="../img/file.png">
+                <img src="../img/file.png">
                 <span class="card-title">Card Title</span>
             </div>
             <div class="card-content">
