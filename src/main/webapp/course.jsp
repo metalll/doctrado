@@ -1,373 +1,409 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: NSD
-  Date: 14.12.16
-  Time: 23:10
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="NSD.NSDConstants" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Doctrado</title>
+    <!-- CSS  -->
+
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="csrf-token" content="Wx6PFl4mn9yqYIFxDmcvdgOH6tNtWn3dVOktVC7V">
     <title>Doctrado</title>
-    <link rel="stylesheet" href="https://doctrado.me/css/app.css">
+
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
+    <link rel="stylesheet" href="../NSDcss/login.css">
+    <style type="text/css">
+        .parallax-container {
+            height: 400px;
+        }
 
+        #progress {
+            width: 200px;
+            height: 200px;
+        }
+
+    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
-<body>
-<div class="reg-popup">
-    <div class="reg-popup__bg"></div>
-    <div class="reg-popup__wrapper">
-        <div class="row">
-            <div class="small-12 columns">
-                <div class="reg-popup__wrapper-form">
-                    <div class="reg-popup__close-button">
-                        <i class="fa fa-times"></i>
-                    </div>
-                    <p class="reg-popup__title">Добро пожаловать</p>
-                    <p class="reg-popup__subtitle">Заполните, пожалуйста, все поля.</p>
-                    <form class="registration-form" name="registration-form" id="registration-form">
-                        <div class="row">
-                            <div class="small-12 medium-6 columns">
-                                <fieldset form="registration-form">
-                                    <input type="text" placeholder="Ваше имя" name="name">
-                                    <p class="reg-alert" id="alert-name">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваша фамилия" name="surname">
-                                    <p class="reg-alert" id="alert-surname">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваше отчество" name="patronymic">
-                                    <p class="reg-alert" id="alert-patronymic">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваш e-mail" name="email">
-                                    <p class="reg-alert" id="alert-email">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваш пароль" name="password">
-                                    <p class="reg-alert" id="alert-password">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваш телефон" name="phone">
-                                    <p class="reg-alert" id="alert-phone">Заполните это поле</p>
+<body >
 
-                                </fieldset>
-                            </div>
-                            <div class="small-12 medium-6 columns">
-                                <fieldset form="registration-form">
-                                    <input type="text" placeholder="Дата рождения" name="birth-date">
-                                    <p class="reg-alert" id="alert-date">Заполните это поле</p>
-                                    <input type="text" placeholder="Уровень образования" name="graduate">
-                                    <p class="reg-alert" id="alert-graduate">Заполните это поле</p>
-                                    <input type="text" placeholder="Место работы *" name="experience">
-                                </fieldset>
-                                <p class="reg-popup__condition">* При условии, что Вы регистрируетесь от юр. лица в ином
-                                    случае - можете оставить это поле пустым</p>
-                                <fieldset form="registration-form">
-                                    <input type="checkbox"><span class="reg-popup__checkbox-text">Я согласен с условиями предоставления услуг</span>
-                                </fieldset>
-                                <p class="reg-popup__who">Кто Вы?</p>
-                                <fieldset form="registration-form" class="reg-popup__buttons">
-                                    <button class="reg-popup__teacher-submit">Преподаватель</button>
-                                    <input class="reg-popup__student-submit" type="submit" value="Студент">
-                                </fieldset>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+
+
+<div class="navbar-fixed">
+    <nav class="white darken-4 grey-text text-darken-4" role="navigation">
+        <div class="nav-wrapper container">
+
+            <a id="logo-container" href="#" class="brand-logo "><img src="../img/favicon.ico"></a>
+
+            <ul class="right hide-on-med-and-down">
+
+                <!--<li><a class="waves-effect waves-light black modal-trigger white-text" href="#modal3">Вход</a></li>-->
+                <li>
+                    <a class="menu-elem" data-anchor="#about">О проекте</a>
+                </li>
+                <li>
+                    <a class="menu-elem" data-anchor="#capabilities">Возможности</a>
+                </li>
+                <li>
+                    <a class="menu-elem" href="./certificates">Сертификаты</a>
+                </li>
+
+                <li>
+                    <a class="menu-elem" data-anchor="#courses">Курсы</a>
+                </li>
+                <li>
+                    <a class="menu-elem" data-anchor="#contacts">Контакты</a>
+                </li>
+                <li><a href="<%=NSDConstants.HOST+"/logout"%>" class="menu-elem waves-effect waves-light red btn white-text darken-3" >Выход</a></li>
+
+
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
-    </div>
+    </nav>
 </div>
+<br>
 
-<div class="reg-popup-second">
-    <div class="reg-popup__bg"></div>
-    <div class="reg-popup__wrapper">
-        <div class="row">
-            <div class="small-12 columns">
-                <div class="reg-popup__wrapper-form">
-                    <div class="reg-popup__close-button">
-                        <i class="fa fa-times"></i>
-                    </div>
-                    <p class="reg-popup__title">Регистрация преподавателя</p>
-                    <form class="registration-form" name="registration-form-2" id="registration-form-2">
-                        <div class="row">
-                            <div class="small-12 medium-6 columns">
-                                <fieldset class="text-center" form="registration-form-2">
-                                    <input type="text" placeholder="Ваше образование" name="graduate">
-                                    <p class="reg-alert" id="alert-graduate-2">Заполните это поле</p>
-                                    <input type="text" placeholder="Дополнительное образование" name="extra graduate">
-                                    <p class="reg-alert" id="alert-graduate-extra">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваш преподавательский опыт" name="experience">
-                                    <p class="reg-alert" id="alert-experience">Заполните это поле</p>
-                                    <p class="reg-popup__condition">* Добавьте, пожалуйста, копии подтверждающих
-                                        документов</p>
-                                    <button class="reg-popup__upload">
-                                        <input class="reg-upload" type="file">
-                                        Загрузить
-                                    </button>
-                                    <input class="reg-popup__ready" type="submit" value="Готово">
-                                    <input type="text" placeholder="Номер банковской карты (для выплат)" name="card">
-                                    <p class="reg-alert" id="alert-card">Заполните это поле</p>
-                                </fieldset>
-                            </div>
-                            <div class="small-12 medium-6 columns">
-                                <fieldset class="text-center" form="registration-form-2">
-                                    <button class="reg-popup__upload-avatar">
-                                        <img src="/img/camera.png" alt="">
-                                        <input class="reg-upload" type="file">
-                                    </button>
-                                    <p>Ваш аватар для сайта</p>
-                                    <p>
-                                        <input type="checkbox"><span class="reg-popup__checkbox-text">Я согласен с условиям предоставления данных</span>
-                                    </p>
-                                    <button class="reg-popup__back">Вернуться</button>
-                                    <input class="reg-popup__ready" type="submit" value="Готово">
-                                </fieldset>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="../js/materialize.min.js"></script>
+<script type="application/javascript" >
+
+
+
+    function call() {
+
+        //$('#progress_bar').modal('open');
+
+
+        //  bar.animate(1.0);
+        var email = document.getElementById('email1').value;
+        var password = document.getElementById('password1').value;
+        var errors = false;
+        var errEmail = false;
+        var errPass = false;
+        if (email == "") {
+            //Materialize.toast('Введите ваш email',4000,'rounded');
+            errEmail = true;
+            errors = true;
+
+        }
+
+        if (password == "") {
+            //Materialize.toast('Введите ваш пароль',4000,'rounded');
+            errPass = true;
+            errors = true;
+        }
+        if(errEmail&&errPass){
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>',4000,'rounded');
+            //       bar.hide();
+            return;
+        }
+        if(errEmail){
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email </b></div>',4000,'rounded');
+        }
+        if(errPass){
+            Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>',4000,'rounded');
+        }
+
+        if (errors) {
+            //          bar.hide();
+            return;}
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/login',
+            data: {
+                email: email,
+                password:password
+            },
+            success: function(data) {
+                if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
+                    bar.hide();
+                }
+                else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
+            }
+        });
+    };
+
+    function call1() {
+//        $('#progress_bar').modal('open');
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var errors = false;
+        var errEmail = false;
+        var errPass = false;
+        if (email == "") {
+            //Materialize.toast('Введите ваш email',4000,'rounded');
+            errEmail = true;
+            errors = true;
+
+        }
+
+        if (password == "") {
+            //Materialize.toast('Введите ваш пароль',4000,'rounded');
+            errPass = true;
+            errors = true;
+        }
+        if(errEmail&&errPass){
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>',4000,'rounded');
+            //          $('#progress_bar').modal('close');
+            return;
+        }
+        if(errEmail){
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email </b></div>',4000,'rounded');
+        }
+        if(errPass){
+            Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>',4000,'rounded');
+        }
+
+        if (errors) {
+//            $('#progress_bar').modal('close');
+            return;}
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/login',
+            data: {
+                email: email,
+                password:password
+            },
+            success: function(data) {
+                if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
+                    //  $('#progress_bar').modal('close');
+                }
+                else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
+            }
+        });
+    }
+
+    function callReg1(accept) {
+        var nameR = document.getElementById('nameR1').value;
+        var last_nameR = document.getElementById('last_nameR1').value;
+        var surnameR = document.getElementById('surnameR1').value;
+        var emailR = document.getElementById('emailR1').value;
+        var passwordR = document.getElementById('passwordR1').value;
+        var telephone = document.getElementById('telephone1').value;
+        var born = document.getElementById('born1').value;
+        var test5 = document.getElementById('test51').value;
+
+        var error = false;
+
+        var nameREr = false;
+        var last_nameREr = false;
+        var surnameREr = false;
+        var emailREr = false;
+        var passwordREr = false;
+        var telephoneEr = false;
+        var bornEr = false;
+        var testEr = false;
+
+        if(nameR==""){
+            error = true;
+            nameREr = true;
+        }
+        if(last_nameR==""){
+            error = true;
+            last_nameREr = true;
+        }
+        if(surnameR==""){
+            error = true;
+            surnameREr = true;
+        }
+        if(emailR==""){
+            error = true;
+            emailREr = true;
+        }
+        if(passwordR==""){
+            error = true;
+            passwordREr = true;
+        }
+        if(telephone==""){
+            error = true;
+            telephoneEr = true;
+        }
+        if(born==""){
+            error = true;
+            bornEr = true;
+        }
+        if(test5==""){
+            error = true;
+            testEr = true;
+        }
+
+        if(error){
+            if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
+                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
+
+                return;
+            }
+        }
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/validate_user',
+            data: {
+                email: emailR,
+                password:passwordR,
+                name:nameR,
+                last_name:last_nameR,
+                surname:surnameR,
+                telephone:telephone,
+                born:born,
+                type:accept
+            },
+            success: function(data) {
+                if (data==0){    $('#modal3').modal('close');
+                    $('#modal1').modal('close');
+                    $('#modal2').modal('close');
+
+
+                    if(accept=='s') $('#modal4').modal('open');
+
+                    if(accept=='t') $('#modal5').modal('open');
+                }
+
+            }
+        });
+
+
+    }
+
+
+    function callReg(accept) {
+        var nameR = document.getElementById('nameR').value;
+        var last_nameR = document.getElementById('last_nameR').value;
+        var surnameR = document.getElementById('surnameR').value;
+        var emailR = document.getElementById('emailR').value;
+        var passwordR = document.getElementById('passwordR').value;
+        var telephone = document.getElementById('telephone').value;
+        var born = document.getElementById('born').value;
+        var test5 = document.getElementById('test5').value;
+
+
+        var error = false;
+
+        var nameREr = false;
+        var last_nameREr = false;
+        var surnameREr = false;
+        var emailREr = false;
+        var passwordREr = false;
+        var telephoneEr = false;
+        var bornEr = false;
+        var testEr = false;
+
+        if(nameR==""){
+            error = true;
+            nameREr = true;
+        }
+        if(last_nameR==""){
+            error = true;
+            last_nameREr = true;
+        }
+        if(surnameR==""){
+            error = true;
+            surnameREr = true;
+        }
+        if(emailR==""){
+            error = true;
+            emailREr = true;
+        }
+        if(passwordR==""){
+            error = true;
+            passwordREr = true;
+        }
+        if(telephone==""){
+            error = true;
+            telephoneEr = true;
+        }
+        if(born==""){
+            error = true;
+            bornEr = true;
+        }
+        if(test5==""){
+            error = true;
+            testEr = true;
+        }
+
+        if(error){
+            if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
+                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
+                return;
+            }
+        }
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/validate_user',
+            data: {
+                email: emailR,
+                password:passwordR,
+                name:nameR,
+                last_name:last_nameR,
+                surname:surnameR,
+                telephone:telephone,
+                born:born,
+                type:accept
+            },
+            success: function(data) {
+                if (data==0){
+                    $('#modal3').modal('close');
+                    $('#modal1').modal('close');
+                    $('#modal2').modal('close');
+
+                    if(accept=='s') $('#modal4').modal('open');
+
+                    if(accept=='t') $('#modal5').modal('open');
+
+
+
+
+                    //  $('#progress_bar').modal('close');
+                }
+
+            }
+        });
+    }
+</script>
+
+<script>
+    $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+
+    });
+    $(document).ready(function () {
+        $('.parallax').parallax();
+    });
+
+
+
+</script>
+
+
+<div>
+    <footer class="page-footer center-align grey darken-4 white-text">
+        <div class="container">
+            <div class="footer-copyright">
+                <div class="container">Doctrado © 2016</div>
             </div>
         </div>
-    </div>
+    </footer>
 </div>
-<div class="login-popup" id="login-popup">
-    <div class="login-popup__bg"></div>
-    <div class="login-popup__wrapper">
-        <div class="row">
-            <div class="small-12 columns">
-                <div class="login-popup__close-button">
-                    <i class="fa fa-times"></i>
-                </div>
-                <p class="login-popup__title">
-                    Форма входа
-                </p>
-            </div>
-        </div>
-        <form name="login-form" id="login-form">
-            <div class="row">
-                <div class="small-12 columns">
-                    <fieldset form="login-form">
-                        <input type="text" placeholder="E-mail" name="email">
-                        <p class="login-alert" id="alert-login">Введите ваш e-mail</p>
-                        <input type="password" placeholder="Пароль" name="pass">
-                        <p class="login-alert" id="alert-login-password">Введите ваш пароль</p>
-                        <input class="login-popup__submit" type="submit" value="Войти">
-                    </fieldset>
-                    <a class="lost-your-password" href="https://doctrado.me/restore">Забыли ваш пароль?</a>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
-<nav class="header__top-bar">
-    <div class="row collapse">
-        <div class="small-12 columns">
-            <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
-                <button class="menu-icon" type="button" data-toggle></button>
-            </div>
-            <div class="top-bar" id="main-menu">
-                <div class="top-bar-left">
-                    <h1 class="site-title">
-                        <a href="/">Doctrado</a>
-                    </h1>
-                    <a href="https://doctrado.me/profile" class="login-btn" id="profile-button" style="margin-right:10px;">Кабинет</a><a class="login-btn" href="https://doctrado.me/logout">Выход</a>
-                </div>
-                <div class="top-bar-right">
-                    <ul class="menu vertical large-horizontal">
-                        <li>
-                            <a class="menu-elem" href="https://doctrado.me/#about">О проекте</a>
-                        </li>
-                        <li>
-                            <a class="menu-elem" href="https://doctrado.me/#capabilities">Возможности</a>
-                        </li>
-                        <li>
-                            <a class="menu-elem" href="https://doctrado.me/certificates">Сертификаты</a>
-                        </li>
-                        <li>
-                            <a class="menu-elem" href="https://doctrado.me/webinar">Вебинары</a>
-                        </li>
-                        <li>
-                            <a class="menu-elem" href="https://doctrado.me/course">Курсы</a>
-                        </li>
-                        <li>
-                            <a class="menu-elem" href="https://doctrado.me/#contacts">Контакты</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
-
-<section class="courses" style="min-height:100vh;">
-    <div class="row">
-        <div class="small-12 columns">
-            <h2 class="courses__title">
-                Список курсов
-            </h2>
-        </div>
-        <section class="content__search-container">
-            <div class="small-up-12 columns">
-                <form id="search_form">
-                    <div class="row">
-                        <div class="small-12 columns">
-                            <div class="row collapse">
-                                <div class="small-8 medium-9 columns search-field">
-                                    <input type="text" placeholder="Поиск по курсам" id="search-text" >
-                                </div>
-                                <div class="small-2 columns categories-change">
-                                    <select class="categories" id="search-category">
-                                        <option class="button" value="0">Все категории <i class="icon-caret-down"></i></option>
-                                        <option class="button"  value="35"></option>
-                                        <option class="button"  value="11">Security</option>
-                                        <option class="button"  value="30">Охорона праці</option>
-                                        <option class="button"  value="32">Охорона праці</option>
-                                        <option class="button"  value="24">Охорона праці ІТР</option>
-                                        <option class="button"  value="25">ОХОРОНА ПРАЦІ ІТР</option>
-                                        <option class="button"  value="16">Охорона праці ІТР &quot; Лакофарба &quot;</option>
-                                        <option class="button"  value="18">Охорона праці автонавантажувачі &quot; Лакофарба&quot;</option>
-                                        <option class="button"  value="19">Охорона праці лабораторія &quot; Лакофарба&quot;</option>
-                                        <option class="button"  value="17">Охорона праці працівників &quot;Лакофарба&quot;</option>
-                                        <option class="button"  value="13">Проф.тех. образование</option>
-                                        <option class="button"  value="9">Прочее</option>
-                                        <option class="button"  value="37">Техника Безопасности</option>
-                                    </select>
-                                </div>
-                                <div class="small-2 medium-1 columns search-button">
-                                    <a onclick="searchCourses()" style="line-height: 95%;" class="button postfix search-start"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </div>
-    <div class="row small-up-1 medium-up-3">
-        <div class="column">
-            <div class="courses__elem">
-                <a href="https://doctrado.me/course/id64">
-                    <img src="https://doctrado.me/img/course.jpg" class="courses__img">
-                </a>
-                <h4 style="word-wrap: break-word;" class="courses__name">Охорона праці під час роботи з інструментами та пристроями</h4>
-                <p class="courses__time">Время на изучение: 5 днів</p>
-                <a href="https://doctrado.me/course/id64" class="courses__link">Подробнее</a>
-            </div>
-        </div>
-        <div class="column">
-            <div class="courses__elem">
-                <a href="https://doctrado.me/course/id63">
-                    <img src="https://doctrado.me/img/course.jpg" class="courses__img">
-                </a>
-                <h4 style="word-wrap: break-word;" class="courses__name">Охорона праці ІТР</h4>
-                <p class="courses__time">Время на изучение: 5 днів</p>
-                <a href="https://doctrado.me/course/id63" class="courses__link">Подробнее</a>
-            </div>
-        </div>
-        <div class="column">
-            <div class="courses__elem">
-                <a href="https://doctrado.me/course/id62">
-                    <img src="https://doctrado.me/img/course.jpg" class="courses__img">
-                </a>
-                <h4 style="word-wrap: break-word;" class="courses__name">Здания и сооружения. Общие требования</h4>
-                <p class="courses__time">Время на изучение: 5 дней</p>
-                <a href="https://doctrado.me/course/id62" class="courses__link">Подробнее</a>
-            </div>
-        </div>
-        <div class="column">
-            <div class="courses__elem">
-                <a href="https://doctrado.me/course/id59">
-                    <img src="https://doctrado.me/img/course.jpg" class="courses__img">
-                </a>
-                <h4 style="word-wrap: break-word;" class="courses__name">Здания и сооружения</h4>
-                <p class="courses__time">Время на изучение: 12 дней</p>
-                <a href="https://doctrado.me/course/id59" class="courses__link">Подробнее</a>
-            </div>
-        </div>
-        <div class="column">
-            <div class="courses__elem">
-                <a href="https://doctrado.me/course/id58">
-                    <img src="https://doctrado.me/img/course.jpg" class="courses__img">
-                </a>
-                <h4 style="word-wrap: break-word;" class="courses__name">Охорона праці</h4>
-                <p class="courses__time">Время на изучение: 14 днів</p>
-                <a href="https://doctrado.me/course/id58" class="courses__link">Подробнее</a>
-            </div>
-        </div>
-        <div class="column">
-            <div class="courses__elem">
-                <a href="https://doctrado.me/course/id55">
-                    <img src="https://doctrado.me/img/course.jpg" class="courses__img">
-                </a>
-                <h4 style="word-wrap: break-word;" class="courses__name">рмптм</h4>
-                <p class="courses__time">Время на изучение: 9</p>
-                <a href="https://doctrado.me/course/id55" class="courses__link">Подробнее</a>
-            </div>
-        </div>
-        <div class="column">
-            <div class="courses__elem">
-                <a href="https://doctrado.me/course/id53">
-                    <img src="https://doctrado.me/img/course.jpg" class="courses__img">
-                </a>
-                <h4 style="word-wrap: break-word;" class="courses__name">огнетушитель</h4>
-                <p class="courses__time">Время на изучение: 2</p>
-                <a href="https://doctrado.me/course/id53" class="courses__link">Подробнее</a>
-            </div>
-        </div>
-        <div class="column">
-            <div class="courses__elem">
-                <a href="https://doctrado.me/course/id51">
-                    <img src="https://doctrado.me/courses/course-51/photo.jpg" class="courses__img">
-                </a>
-                <h4 style="word-wrap: break-word;" class="courses__name">Пожарно-технический минимум </h4>
-                <p class="courses__time">Время на изучение: 3 дня</p>
-                <a href="https://doctrado.me/course/id51" class="courses__link">Подробнее</a>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="small-12 columns">
-            <div class="pagination">
-                <ul class="pagination__list">
-                    <li class="arrow"><a>&laquo;</a></li>
-                    <li class="pagination__elem active"><a href="https://doctrado.me/course/1">1</a></li>
-                    <li class="arrow"><a>&raquo;</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<footer class="footer">
-    <div class="row">
-        <div class="small-6 medium-4 columns">
-            <div class="footer__social">
-                <a class="footer__social-item social-facebook" href="#">
-                    <i class="fa fa-facebook"></i>
-                </a>
-                <a class="footer__social-item social-twitter" href="#">
-                    <i class="fa fa-twitter"></i>
-                </a>
-            </div>
-        </div>
-        <div class="small-6 medium-4 columns">
-            <div class="footer__copyright">
-                Doctrado ©
-            </div>
-        </div>
-        <div class="small-12 medium-4 columns">
-            <a href="//elegance.od.ua" class="footer_logo">
-                <img src="https://doctrado.me/img/elegance.png" class="elegance-logo" alt="">
-            </a>
-        </div>
-    </div>
-</footer>
-
-<script src="https://doctrado.me/js/jquery.min.js"></script>
-<script src="https://doctrado.me/js/foundation.min.js"></script>
-<script src="https://doctrado.me/js/slick.min.js"></script>
-<script src="https://doctrado.me/js/app.js"></script>
-<script src="https://doctrado.me/js/courses.js"></script>
-
 </body>
 </html>
+

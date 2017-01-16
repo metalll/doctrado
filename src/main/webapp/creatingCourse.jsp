@@ -1,411 +1,409 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: NSD
-  Date: 15.12.16
-  Time: 11:16
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="NSD.NSDConstants" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<html>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="csrf-token" content="wb8DCE4voP8NZqb4mACe0iFTsDe6uaspkdsg3zui" />
-    <title>Doctrado</title>
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
-</head>
-<style type="text/css">
-    textarea::-webkit-input-placeholder {text-align: center;font-family: "Panton", sans-serif;font-weight:800;}
-    input::-webkit-input-placeholder {text-align: center;font-family: "Panton", sans-serif;font-weight:800;}
-    #third_step_form input {
-        min-height: 50px;
-    }
-</style>
-<body>
-<div id="loading-bg" style="display:none;">
-    <div style="position: fixed;  background: rgba(0, 0, 0, 0.6);  width: 100%;  height: 100%;z-index: 1001;"></div>
-    <div style="position: fixed; z-index: 1001; left: 50%; top: 50%; transform: translate(-50%, -50%);text-align:center;font-family: 'Panton', sans-serif; font-weight: 600; color: rgb(255, 253, 255);">
-        <img src="css/ajax-loader.gif" style="max-width:200px; max-height: 200px;margin-bottom: 20px;">
-        <p>Создание курса<br>Пожалуйста, не закрывайте страницу до окончания создания курса!</p>
-        <p id="course-info-status">Создание информации о курсе: ...</p>
-        <p id="course-photo-status">Загрузка изображения курса: ...</p>
-        <p id="final-info-status">Создание финального теста: ...</p>
-        <p id="themes-info-status">Создание тем курса: 0/0</p>
-        <p id="files-info-status">Загрузка файлов курса: 0/0</p>
-    </div>
-</div>
-<style>
-    .head:before {
-        content: ' ';
-        background-color:rgba(255,255,255,0.35);
-        position: absolute;
-        top:0;
-        bottom:0;
-        left:0;
-        right:0;
-    }
-</style>
-<header class="head">
-    <nav class="header__top-bar" style="position: absolute; z-index:2; width:100%;">
-        <div class="row collapse">
-            <div class="small-12 columns">
-                <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
-                    <button class="menu-icon" type="button" data-toggle></button>
-                </div>
-                <div class="top-bar" id="main-menu">
-                    <div class="top-bar-left">
-                        <h1 class="site-title">
-                            <a href="/">Doctrado</a>
-                        </h1>
-                        <a class="login-btn" id="profile-button" href="profile" style="margin-right:10px;">Кабинет</a><a class="login-btn" href="logout">Выход</a>
-                    </div>
-                    <div class="top-bar-right">
-                        <ul class="menu vertical large-horizontal">
-                            <li>
-                                <a class="menu-elem" href="./#about">О проекте</a>
-                            </li>
-                            <li>
-                                <a class="menu-elem" href="./#capabilities">Возможности</a>
-                            </li>
-                            <li>
-                                <a class="menu-elem" href="./certificates">Сертификаты</a>
-                            </li>
-                            <li>
-                                <a class="menu-elem" href="./webinar">Вебинары</a>
-                            </li>
-                            <li>
-                                <a class="menu-elem" href="./course">Курсы</a>
-                            </li>
-                            <li>
-                                <a class="menu-elem" href="./#contacts">Контакты</a>
-                            </li>
-                        </ul>
-                    </div>
+<html lang="ru">
 
-                </div>
-            </div>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Doctrado</title>
+    <!-- CSS  -->
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="csrf-token" content="Wx6PFl4mn9yqYIFxDmcvdgOH6tNtWn3dVOktVC7V">
+    <title>Doctrado</title>
+
+    <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
+    <link rel="stylesheet" href="../NSDcss/login.css">
+    <style type="text/css">
+        .parallax-container {
+            height: 400px;
+        }
+
+        #progress {
+            width: 200px;
+            height: 200px;
+        }
+
+    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body >
+
+
+
+<div class="navbar-fixed">
+    <nav class="white darken-4 grey-text text-darken-4" role="navigation">
+        <div class="nav-wrapper container">
+
+            <a id="logo-container" href="#" class="brand-logo "><img src="../img/favicon.ico"></a>
+
+            <ul class="right hide-on-med-and-down">
+
+                <!--<li><a class="waves-effect waves-light black modal-trigger white-text" href="#modal3">Вход</a></li>-->
+                <li>
+                    <a class="menu-elem" data-anchor="#about">О проекте</a>
+                </li>
+                <li>
+                    <a class="menu-elem" data-anchor="#capabilities">Возможности</a>
+                </li>
+                <li>
+                    <a class="menu-elem" href="./certificates">Сертификаты</a>
+                </li>
+
+                <li>
+                    <a class="menu-elem" data-anchor="#courses">Курсы</a>
+                </li>
+                <li>
+                    <a class="menu-elem" data-anchor="#contacts">Контакты</a>
+                </li>
+                <li><a href="<%=NSDConstants.HOST+"/logout"%>" class="menu-elem waves-effect waves-light red btn white-text darken-3" >Выход</a></li>
+
+
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
     </nav>
-    <section class="head__headofcreating">
-        <div class="row">
-            <div class="small-12 columns">
-                <h2 class="creating-course__title-header">
-                    Приумножай свой опыт с каждым днем
-                </h2>
-                <p class="creating-course__text">
-                    Создание курса
-                </p>
+</div>
+<br>
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="../js/materialize.min.js"></script>
+<script type="application/javascript" >
+
+
+
+    function call() {
+
+        //$('#progress_bar').modal('open');
+
+
+        //  bar.animate(1.0);
+        var email = document.getElementById('email1').value;
+        var password = document.getElementById('password1').value;
+        var errors = false;
+        var errEmail = false;
+        var errPass = false;
+        if (email == "") {
+            //Materialize.toast('Введите ваш email',4000,'rounded');
+            errEmail = true;
+            errors = true;
+
+        }
+
+        if (password == "") {
+            //Materialize.toast('Введите ваш пароль',4000,'rounded');
+            errPass = true;
+            errors = true;
+        }
+        if(errEmail&&errPass){
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>',4000,'rounded');
+            //       bar.hide();
+            return;
+        }
+        if(errEmail){
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email </b></div>',4000,'rounded');
+        }
+        if(errPass){
+            Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>',4000,'rounded');
+        }
+
+        if (errors) {
+            //          bar.hide();
+            return;}
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/login',
+            data: {
+                email: email,
+                password:password
+            },
+            success: function(data) {
+                if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
+                    bar.hide();
+                }
+                else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
+            }
+        });
+    };
+
+    function call1() {
+//        $('#progress_bar').modal('open');
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var errors = false;
+        var errEmail = false;
+        var errPass = false;
+        if (email == "") {
+            //Materialize.toast('Введите ваш email',4000,'rounded');
+            errEmail = true;
+            errors = true;
+
+        }
+
+        if (password == "") {
+            //Materialize.toast('Введите ваш пароль',4000,'rounded');
+            errPass = true;
+            errors = true;
+        }
+        if(errEmail&&errPass){
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>',4000,'rounded');
+            //          $('#progress_bar').modal('close');
+            return;
+        }
+        if(errEmail){
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email </b></div>',4000,'rounded');
+        }
+        if(errPass){
+            Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>',4000,'rounded');
+        }
+
+        if (errors) {
+//            $('#progress_bar').modal('close');
+            return;}
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/login',
+            data: {
+                email: email,
+                password:password
+            },
+            success: function(data) {
+                if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
+                    //  $('#progress_bar').modal('close');
+                }
+                else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
+            }
+        });
+    }
+
+    function callReg1(accept) {
+        var nameR = document.getElementById('nameR1').value;
+        var last_nameR = document.getElementById('last_nameR1').value;
+        var surnameR = document.getElementById('surnameR1').value;
+        var emailR = document.getElementById('emailR1').value;
+        var passwordR = document.getElementById('passwordR1').value;
+        var telephone = document.getElementById('telephone1').value;
+        var born = document.getElementById('born1').value;
+        var test5 = document.getElementById('test51').value;
+
+        var error = false;
+
+        var nameREr = false;
+        var last_nameREr = false;
+        var surnameREr = false;
+        var emailREr = false;
+        var passwordREr = false;
+        var telephoneEr = false;
+        var bornEr = false;
+        var testEr = false;
+
+        if(nameR==""){
+            error = true;
+            nameREr = true;
+        }
+        if(last_nameR==""){
+            error = true;
+            last_nameREr = true;
+        }
+        if(surnameR==""){
+            error = true;
+            surnameREr = true;
+        }
+        if(emailR==""){
+            error = true;
+            emailREr = true;
+        }
+        if(passwordR==""){
+            error = true;
+            passwordREr = true;
+        }
+        if(telephone==""){
+            error = true;
+            telephoneEr = true;
+        }
+        if(born==""){
+            error = true;
+            bornEr = true;
+        }
+        if(test5==""){
+            error = true;
+            testEr = true;
+        }
+
+        if(error){
+            if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
+                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
+
+                return;
+            }
+        }
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/validate_user',
+            data: {
+                email: emailR,
+                password:passwordR,
+                name:nameR,
+                last_name:last_nameR,
+                surname:surnameR,
+                telephone:telephone,
+                born:born,
+                type:accept
+            },
+            success: function(data) {
+                if (data==0){    $('#modal3').modal('close');
+                    $('#modal1').modal('close');
+                    $('#modal2').modal('close');
+
+
+                    if(accept=='s') $('#modal4').modal('open');
+
+                    if(accept=='t') $('#modal5').modal('open');
+                }
+
+            }
+        });
+
+
+    }
+
+
+    function callReg(accept) {
+        var nameR = document.getElementById('nameR').value;
+        var last_nameR = document.getElementById('last_nameR').value;
+        var surnameR = document.getElementById('surnameR').value;
+        var emailR = document.getElementById('emailR').value;
+        var passwordR = document.getElementById('passwordR').value;
+        var telephone = document.getElementById('telephone').value;
+        var born = document.getElementById('born').value;
+        var test5 = document.getElementById('test5').value;
+
+
+        var error = false;
+
+        var nameREr = false;
+        var last_nameREr = false;
+        var surnameREr = false;
+        var emailREr = false;
+        var passwordREr = false;
+        var telephoneEr = false;
+        var bornEr = false;
+        var testEr = false;
+
+        if(nameR==""){
+            error = true;
+            nameREr = true;
+        }
+        if(last_nameR==""){
+            error = true;
+            last_nameREr = true;
+        }
+        if(surnameR==""){
+            error = true;
+            surnameREr = true;
+        }
+        if(emailR==""){
+            error = true;
+            emailREr = true;
+        }
+        if(passwordR==""){
+            error = true;
+            passwordREr = true;
+        }
+        if(telephone==""){
+            error = true;
+            telephoneEr = true;
+        }
+        if(born==""){
+            error = true;
+            bornEr = true;
+        }
+        if(test5==""){
+            error = true;
+            testEr = true;
+        }
+
+        if(error){
+            if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
+                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
+                return;
+            }
+        }
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/validate_user',
+            data: {
+                email: emailR,
+                password:passwordR,
+                name:nameR,
+                last_name:last_nameR,
+                surname:surnameR,
+                telephone:telephone,
+                born:born,
+                type:accept
+            },
+            success: function(data) {
+                if (data==0){
+                    $('#modal3').modal('close');
+                    $('#modal1').modal('close');
+                    $('#modal2').modal('close');
+
+                    if(accept=='s') $('#modal4').modal('open');
+
+                    if(accept=='t') $('#modal5').modal('open');
+
+
+
+
+                    //  $('#progress_bar').modal('close');
+                }
+
+            }
+        });
+    }
+</script>
+
+<script>
+    $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+
+    });
+    $(document).ready(function () {
+        $('.parallax').parallax();
+    });
+
+
+
+</script>
+
+
+<div>
+    <footer class="page-footer center-align grey darken-4 white-text">
+        <div class="container">
+            <div class="footer-copyright">
+                <div class="container">Doctrado © 2016</div>
             </div>
         </div>
-    </section>
-</header>
-<section class="main-container">
-    <section class="content__firststep">
-        <form id="first_step_form">
-            <div class="row">
-                <div style="margin:80px 0 0;" class="small-12 medium-12 columns end">
-                    <h1 class="creating-course__title" style="margin:0 auto;width:200px;">шаг 1</h1>
-                    <div class="row" style="margin-top:30px;">
-                        <div class="medium-3 columns">
-                            <p style="text-align:center;line-height: 2.4375rem;font-weight: 800;font-family: 'Panton', sans-serif;">Выберите категорию:</p>
-                        </div>
-                        <div class="medium-9 columns">
-                            <select id="category-select" style="font-weight: 800;font-family: 'Panton', sans-serif;border: 1px solid black;">
-                                <option selected disabled>Выберите категорию</option>
-                                <option disabled value="35"></option>
-                                <option disabled value="11">Security</option>
-                                <option disabled value="30">Охорона праці</option>
-                                <option value="33">- Охорона праці ІТР</option>
-                                <option value="31">- Охорона праці при роботі з інструментами та пристроями</option>
-                                <option value="34">- Правила охорони праці під час виконання робіт на висоті</option>
-                                <option disabled value="32">Охорона праці</option>
-                                <option disabled value="24">Охорона праці ІТР</option>
-                                <option disabled value="25">ОХОРОНА ПРАЦІ ІТР</option>
-                                <option disabled value="16">Охорона праці ІТР &quot; Лакофарба &quot;</option>
-                                <option value="21">- Охорона праці ІТР &quot; Лакофарба&quot;</option>
-                                <option disabled value="18">Охорона праці автонавантажувачі &quot; Лакофарба&quot;</option>
-                                <option disabled value="19">Охорона праці лабораторія &quot; Лакофарба&quot;</option>
-                                <option disabled value="17">Охорона праці працівників &quot;Лакофарба&quot;</option>
-                                <option disabled value="13">Проф.тех. образование</option>
-                                <option value="14">- Пожарная безопасность</option>
-                                <option disabled value="9">Прочее</option>
-                                <option value="10">- Другое</option>
-                                <option disabled value="37">Техника Безопасности</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-12 medium-6 columns">
-                            <label><input type="text" name="course_name" placeholder="Название Вашего курса" onkeydown="$('#alert-0').fadeOut();"></label>
-                            <p class="reg-alert" id="alert-0">Заполните это поле</p>
-                        </div>
-                        <div class="small-12 medium-6 columns">
-                            <label><input type="text" name="course_time" placeholder="Время на прохождения курса*" onkeydown="$('#alert-1').fadeOut();"></label>
-                            <p class="reg-alert" id="alert-1">Заполните это поле</p>
-                        </div>
-                        <div class="small-12 medium-6 columns show-for-small-only" style="height:3rem;margin-bottom: 25px;text-align:center;">
-                            <p style="font-weight: 800;font-family: 'Panton', sans-serif;">*Указывайте полностью (например "12 дней")</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-12 medium-6 columns">
-                            <label><textarea style="height:120px;" name="course_desc" placeholder="Описание Вашего курса (задачи, цели, польза и прочее)" onkeydown="$('#alert-2').fadeOut();"></textarea></label>
-                            <p class="reg-alert" id="alert-2">Заполните это поле</p>
-                        </div>
-                        <div class="small-12 medium-6 columns hide-for-small-only" style="height:3rem;margin-bottom: 25px;text-align:center;">
-                            <p style="font-weight: 800;font-family: 'Panton', sans-serif;">*Указывайте полностью (напр. "12 дней")</p>
-                        </div>
-                        <div class="medium-6 columns">
-                            <button type="button" class="file-upload-2" onclick="$('#course-photo-input').click()">
-                                ДОБАВИТЬ ИЗОБРАЖЕНИЯ КУРСА
-                            </button>
-                        </div>
-                        <input type="file" style="display: none;" id="course-photo-input">
-                    </div>
-                    <div class="row" style="margin-bottom: 150px;">
-                        <div class="small-12 medium-6 columns">
-                            <label>
-                                <input class="for-centered-text" type="text" name="course_price" placeholder="Цена за прохождение (в грн.)**" onkeydown="$('#alert-3').fadeOut();">
-                                <p class="reg-alert" id="alert-3">Цена должна быть указана в цифрах</p>
-                                <p style="font-size:1rem;font-weight: 800;font-family: 'Panton', sans-serif;text-align:center;">**Оставьте это поле пустым, если Ваш курс бесплатен</p>
-                            </label>
-                        </div>
-                        <div class="small-6 medium-3 columns">
-                            <a class="creating button secondary"><span class="class">отмена</span></a>
-                        </div>
-                        <div class="small-6 medium-3 columns">
-                            <a class="creating button success" onclick="$('#first_step_form').submit();"><span class="class">далее</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </section>
-
-    <section class="content__secondstep" style="display:none;">
-        <form id="second_step_form">
-            <div class="add-link-popout">
-                <div class="video-link-container">
-                    <div class="video-link-wrapper">
-                        <div class="row">
-                            <div class="small-12 medium-6 medium-offset-3 columns">
-                                <div class="row">
-                                    <div class="add-link">
-                                        <input type="text" placeholder="Вставьте ссылку на видео с youtube" name="theme_video">
-                                        <p class="reg-alert" id="alert-video">Неправильный формат ссылки Youtube!</p>
-                                        <div class="add-video-link-buttons">
-                                            <div class="row">
-                                                <div class="small-6 medium-6 columns">
-                                                    <a onclick="cancellationButton()" class="creating button success "><span class="class">Отменить</span></a>
-                                                </div><div class="small-6 medium-6 columns">
-                                                <a class="creating button success" onclick="saveVideoLink()"><span class="class">Сохранить</span></a>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="theme-creating" class="row content-container" style="margin-top:0;">
-                <div id="creating-theme" class="small-12 medium-12 columns end" style="display:block;">
-
-                    <h1 class="creating-course__title" style="margin:0 auto;margin-top:50px;width:200px;">шаг 2</h1>
-                    <p class="creating-theme__text">Создание тем курса</p>
-
-                    <p id="about-second-step" class="creating-theme__text" style="font-size: 1.3rem;">Тема номер: 1</p>
-                    <div class="row">
-                        <div class="small-12 medium-6 columns"><a id="prev-theme-button" class="creating button non-active-button success" onclick="prevTheme()" style="font-size:1rem;"><span class="class"><i class="fa fa-long-arrow-left"></i></span></a></div>
-                        <div class="small-12 medium-6 columns"><a id="next-theme-button" class="creating button non-active-button success" onclick="nextTheme()" style="font-size:1rem;"><span class="class"><i class="fa fa-long-arrow-right"></i></span></a></div>
-                    </div>
-
-                    <div class="row">
-                        <div class="small-12 medium-6 columns">
-                            <label>
-                                <input type="text" placeholder="Название темы" name="theme_name">
-                            </label>
-                        </div>
-                        <div class="small-12 medium-6 columns">
-                            <div class="add-files title-files" style="margin-top:0;background-color: #2980b9;border: 0;">Добавление материалов</div>
-                        </div>
-                    </div>
-                    <div class="row" style="text-align: center;">
-                        <div class="small-12 medium-6 columns">
-                            <label>
-                                <textarea style="height:220px;" placeholder="Описание темы" name="theme_desc"></textarea>
-                            </label>
-                        </div>
-                        <div class="small-12 medium-6 columns">
-                            <div class="row">
-                                <div class="small-12 medium-6 columns">
-                                    <div class="hidden-add-files hidden-title-files" style="margin-top:0;background-color: #2980b9;border: 0;">Добавление материалов</div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="small-12 medium-4 columns end">
-                                    <button type="button" class="file-upload" onclick="$('#theme_presentation').click()">
-                                        <img src="img/picture.png" alt="">
-                                    </button>
-                                    <input type="file" accept="application/pdf" class="file-input" id="theme_presentation" style="display: none;">
-                                    <label class="about-button">Презентация</label>
-                                    <p class="reg-alert" style="font-size: 0.7rem;" id="alert-theme-presentation"></p>
-                                </div>
-                                <div class="small-12 medium-4 columns end">
-                                    <button type="button" class="file-upload" onclick="$('#theme_file').click()">
-                                        <img src="img/file.png" alt="">
-                                    </button>
-                                    <input type="file" accept="application/pdf" class="file-input" id="theme_file" style="display: none;">
-                                    <label class="about-button">Файл</label>
-                                    <p class="reg-alert" style="font-size: 0.7rem;" id="alert-theme-file"></p>
-                                </div>
-                                <div class="small-12 medium-4 columns end">
-                                    <button type="button" onclick="addVideoLink()" class="file-upload"><img src="img/video.png" alt="">
-                                    </button>
-                                    <label class="about-button">Видео</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="small-6 medium-6 columns">
-                                    <a onclick="newSubTheme()"  class="creating button secondary"><span class="class">добавить подтему</span></a>
-                                </div>
-                                <div class="small-6 medium-6 columns">
-                                    <a onclick="addTest()" class="creating button success"><span class="class">добавить тест</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="small-6 medium-6 columns">
-                            <a onclick="deleteTheme()" class="creating button secondary"><span class="class">удалить тему</span></a>
-                        </div>
-                        <div class="small-6 medium-6 columns">
-                            <a onclick="newTheme()" class="creating button success"><span class="class">добавить тему</span></a>
-                        </div>
-                    </div>
-                    <p class="creating-theme__text">Завершение создания курса</p>
-                    <div class="row" id="finish-row">
-                        <div class="small-4 columns" style="margin-bottom: 100px;">
-                            <a onclick="goStepOne()" class="creating button success"><span class="class">Вернуться к шагу 1</span></a>
-                        </div>
-                        <div class="small-4 columns">
-                            <a onclick="addFinalTest()" class="creating button secondary"><span class="class">добавить итоговый тест</span></a>
-                            <p class="reg-alert" id="alert-final">Наличие финального теста обязательно</p>
-                        </div>
-                        <div class="small-4 columns">
-                            <a onclick="finishCourse()" class="creating button success"><span class="class">завершить</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-
-        <form id="third_step_form" style="display:none;">
-            <div class="row">
-                <div class="small-12 medium-12 columns end" style="margin-bottom:100px;">
-                    <h1 class="creating-course__title" style="margin:0 auto;margin-top:50px;width:200px;">шаг 3</h1>
-                    <p class="creating-theme__text">Создание теста для темы</p>
-                    <div class="row final-type-select" style="display:none;">
-                        <div class="small-12 medium-6 columns">
-                            <a class="creating button secondary" onclick="setAutoFinal()" id="autoFinal"><span class="class">Автоматическое создание теста (из тестов тем)</span></a>
-                        </div>
-                        <div class="small-12 medium-6 columns">
-                            <a class="creating button success" onclick="setManualFinal()" id="manualFinal"><span class="class">Ручное создание теста</span></a>
-                        </div>
-                    </div>
-                    <div class="small-12 columns">
-                        <p class="reg-alert auto-alert" style="position: static;">Тесты тем отсутствуют. Автоматическое создание невозможно.</p>
-                    </div>
-                    <div class="row  non-auto-questions">
-                        <p id="qNumber" class="creating-theme__text" style="margin-top:50px;font-size: 1.3rem;"></p>
-                    </div>
-                    <div class="row  non-auto-questions">
-                        <div class="small-12 medium-6 columns">
-                            <a class="creating button non-active-button success" onclick="prevQuestion()" id="prevQuestion" style="font-size:1rem;"><span class="class"><i class="fa fa-long-arrow-left"></i></span></a>
-                        </div>
-                        <div class="small-12 medium-6 columns">
-                            <a class="creating button non-active-button success" onclick="nextQuestion()" id="nextQuestion" style="font-size:1rem;"><span class="class"><i class="fa fa-long-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                    <div id="start-of-questions" class="row  non-auto-questions" style="margin-top:30px;">
-                        <div class="small-12 medium-6 columns">
-                            <label><textarea id="question-text" placeholder="Ваш вопрос" style="min-height: 7rem;"></textarea></label>
-                        </div>
-                        <div class="small-12 medium-6 columns">
-                            <div class="row">
-                                <div class="medium-12 columns">
-                                    <div class="add-files title-files" style="margin-top:0;margin-bottom: 1rem;background-color: #2980b9;border: 0;">Тип вопроса</div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="small-12 medium-6 columns">
-                                    <a id="question-open" class="creating button secondary" onclick="setOpenQuestion()" style="min-height:3rem;"><span class="class">открытый вопрос</span></a>
-                                </div>
-                                <div class="small-12 medium-6 columns">
-                                    <a id="question-options" class="creating button switch-success" onclick="setOptionQuestion()" style="min-height:3rem;"><span class="class">варианты ответа</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="answers" class="non-auto-questions">
-                    </div>
-                </div>
-                <div class="row  non-auto-questions" style="margin:0 auto 120px;">
-                    <div class="small-6 medium-4 columns">
-                        <a class="creating button secondary" onclick="deleteQuestion()"><span class="class">Удалить вопрос</span></a>
-                    </div>
-
-                    <div class="small-6 medium-4 columns">
-                        <a class="creating button secondary" onclick="finishTest()"><span class="class">завершить создание теста</span></a>
-                    </div>
-                    <div class="small-6 medium-4 columns">
-                        <a class="creating button success" onclick="newQuestion()"><span class="class">новый вопрос</span></a>
-                    </div>
-                </div>
-                <div class="row auto-questions" style="display:none; margin:0 auto 120px;">
-                    <div class="small-12 medium-12 columns">
-                        <a class="creating button secondary" onclick="finishTest()"><span class="class">завершить создание теста</span></a>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </section>
-</section>
-
-<footer class="footer">
-    <div class="row">
-        <div class="small-6 medium-4 columns">
-            <div class="footer__social">
-                <a class="footer__social-item social-facebook" href="#">
-                    <i class="fa fa-facebook"></i>
-                </a>
-                <a class="footer__social-item social-twitter" href="#">
-                    <i class="fa fa-twitter"></i>
-                </a>
-            </div>
-        </div>
-        <div class="small-6 medium-4 columns">
-            <div class="footer__copyright">
-                Doctrado ©
-            </div>
-        </div>
-        <div class="small-12 medium-4 columns">
-            <a href="//elegance.od.ua" class="footer_logo">
-                <img src="img/elegance.png" class="elegance-logo" alt="">
-            </a>
-        </div>
-    </div>
-</footer>
-<script src="js/jquery.min.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/foundation.min.js"></script>
-<script src="js/creating-course.js"></script>
+    </footer>
+</div>
 </body>
 </html>
+
