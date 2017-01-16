@@ -132,7 +132,14 @@
 
 
 </div>
+<div class="row">
 
+    <div class="col s4 col push-s4 center-align">
+        <h3> Ваши курсы: </h3>
+    </div>
+
+
+</div>
 
 <footer class="page-footer center-align grey darken-4 white-text">
     <div class="container">
