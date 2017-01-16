@@ -114,7 +114,7 @@
 
     <div class="row col s10 push-s1">
 
-        <p> <a  class="waves-effect col s4 waves-light btn">Созданные курсы<span class="badge white">0</span></a>  </p>
+        <p> <a  class="waves-effect col s4 waves-light btn">Созданные курсы<span class="badge pink darken-4">0</span></a>  </p>
 
         <p> <a class="waves-effect col s4 waves-light green btn">Купленые курсы</a> <span class="badge white">0</span> </p>
 
