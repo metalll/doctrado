@@ -85,14 +85,15 @@
 <div class="row">
 
     <div class="col s4">
-        <img src="../img/camera.gif">
+
+        <img class="col s4 center center-align" src="../img/camera.gif">
     </div>
 
     <div class="col s4">
 
-            <h5> Леша Влад Петров </h5>
-            <h5> Дата рождения: 23.12.1991 </h5>
-            <h5> Преподавательский опыт: 100 </h5>
+            <h3> Леша Влад Петров </h3>
+            <h3> Дата рождения: 23.12.1991 </h3>
+            <h3> Преподавательский опыт: 100 </h3>
 
     </div>
 
