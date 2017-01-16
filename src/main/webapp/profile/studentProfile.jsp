@@ -194,13 +194,7 @@
 </div>
 
 
-<footer class="page-footer center-align grey darken-4 white-text">
-    <div class="container">
-        <div class="footer-copyright">
-            <div class="container">Doctrado © 2016</div>
-        </div>
-    </div>
-</footer>
+
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="../js/materialize.min.js"></script>
