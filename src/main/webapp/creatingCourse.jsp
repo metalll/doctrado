@@ -92,13 +92,7 @@
 
 <div class="row">
 
-    <label>Категория курса</label>
-    <select class="browser-default">
-        <option value="" disabled selected>Выберите категорию</option>
-        <option value="1">Охрана труда</option>
-        <option value="2">Пожарная безопасность</option>
-        <option value="3">Аутсорсинг</option>
-    </select>
+
 
 
     <div class="input-field col s12">
@@ -106,6 +100,10 @@
             <optgroup label="Охрана труда">
                 <option value="1">Трансформаторы</option>
                 <option value="2">ОБХН</option>
+                    <optgroup label="Охрана труда">
+                        <option value="1a">Трансформаторы1</option>
+                        <option value="21">ОБХН1</option>
+                    </optgroup>
             </optgroup>
             <optgroup label="Пожарная безопасность">
                 <option value="3">ИТР</option>
@@ -431,7 +429,7 @@
         $('.parallax').parallax();
     });
     $(document).ready(function() {
-        $('select').material_select();
+        $('.select').material_select();
     });
 
 
