@@ -150,9 +150,11 @@
                 <div class="medium card">
                     <div class="card-image">
                         <img src="../img/course.jpg">
-                        <span class="card-title flow-text">Здания и сооружения</span>
+                        <span class="card-title flow-text"></span>
                     </div>
                     <div class="card-content">
+                        <p> ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ
+                        </p>
                         <p>Время на изучение: 5 дней</p>
                     </div>
                     <div class="card-action center-align">
