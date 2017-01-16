@@ -80,166 +80,29 @@
     </nav>
 </div>
 <br>
-<div class="parallax-container valign-wrapper col s12">
-    <div class="section no-pad-bot">
-        <div class="container">
-
-            <h1 class="header center black-text">Doctrado</h1>
-            <div class="row center">
-                <h5 class="header col s12 light grey-text darken-4">Обретай новые знания сейчас! Каждый день! Вместе с Doctrado.</h5>
-            </div>
-            <div class="row center">
-                <a href="#modal1" id="download-button" class="btn-large modal-trigger waves-effect waves-light grey darken-3">Приступить к работе</a>
-            </div>
 
 
-        </div>
+<div class="row">
+
+    <div class="col s4">
+        <img src="../img/camera.gif">
     </div>
-    <div class="parallax "><img src="../img/background.jpg" alt="Unsplashed background img 1"></div>
-</div>
 
+    <div class="col s4">
 
-<div class="container" style="{height: 160px; }">
-    <div class="section">
-
-        <!--   Icon Section   -->
-        <div class="row">
-            <div class="col s12 m4">
-                <div class="icon-block">
-                    <h2 class="center black-text"><i class="material-icons">schedule</i></h2>
-                    <h5 class="center">Быстро и удобно</h5>
-
-                    <p class="light center-align">Региструешься, находишь нужный курс, проходишь все темы и тесты после каждой из них - получаешь сертификат</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block">
-                    <h2 class="center black-text"><i class="material-icons">group_work</i></h2>
-                    <h5 class="center">Командная работа</h5>
-                    <p class="light center-align">Для развития сервиса мы добавили возможность каждому, у кого есть должный опыт, стать преподавателем</p>
-                </div>
-            </div>
-
-            <div class="col s12 m4">
-                <div class="icon-block">
-                    <h2 class="center black-text"><i class="material-icons">work</i></h2>
-                    <h5 class="center">Приступай к работе</h5>
-
-                    <p class="light center-align">Пройдя какой-либо курс, получив сертификат - Вы тут же можете приступить к роботе по полученной специальности </p>
-                </div>
-            </div>
-        </div>
+            <h2> Леша Влад Петров </h2>
+            <h2> Дата рождения: 23.12.1991 </h2>
+            <h2> Преподавательский опыт: 100 </h2>
 
     </div>
-</div>
 
+    <div class="col s4">
 
-<div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-        <div class="container">
-            <div class="row center">
-                <h4 class="header col s12 light black-text">КТО И ПОЧЕМУ</h4>
-            </div>
-        </div>
-    </div>
-    <div class="parallax"><img src="../img/background.jpg" alt="Unsplashed background img 2"></div>
-</div>
-
-<div class="container">
-    <div class="section">
-        <div class="row">
-            <div class="col s12 center">
-                <h3><i class="mdi-content-send brown-text"></i></h3>
-
-                <p class="left-align light">Мы - команда из людей разных специальностей, и каждый из нас сталкивался с проблемой поиска информации, для улучшения своих навыков, либо же не хватало времени, чтобы закончить курсы и получить нужный сертификат. Сейчас мы решили создать сервис, где каждый человек, который занят своей работой, может не тратив свое время на лишние путешествия в учебные центры - быстро, легко, а главное 100% пройти нужный ему курс онлайн и получить государственный сертификат.</p>
-            </div>
-        </div>
 
     </div>
+
+
 </div>
-
-<div id="progress_bar" class="modal">
-    <div style="background: transparent">
-        <div class="preloader-wrapper big active">
-            <div class="spinner-layer spinner-blue">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div><div class="gap-patch">
-                <div class="circle"></div>
-            </div><div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
-            </div>
-
-            <div class="spinner-layer spinner-red">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div><div class="gap-patch">
-                <div class="circle"></div>
-            </div><div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
-            </div>
-
-            <div class="spinner-layer spinner-yellow">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div><div class="gap-patch">
-                <div class="circle"></div>
-            </div><div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
-            </div>
-
-            <div class="spinner-layer spinner-green">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div><div class="gap-patch">
-                <div class="circle"></div>
-            </div><div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-        <div class="container">
-            <div class="row center">
-                <h4 class="header col s12 black-text light">ВОЗМОЖНОСТИ</h4>
-            </div>
-        </div>
-    </div>
-    <div class="parallax"><img src="../img/background.jpg" alt="Unsplashed background img 3"></div>
-</div>
-
-<div class="container">
-    <div class="section">
-
-        <div class="row">
-            <div class="col s12 m6 center">
-                <h3><i class="mdi-content-send brown-text"></i></h3>
-                <h5>БЫТЬ СТУДЕНТОМ</h5>
-            </div>
-            <div class="col s12 m6 center">
-                <h3><i class="mdi-content-send brown-text"></i></h3>
-                <h5>БЫТЬ ПРЕПОДАВАТЕЛЕМ</h5>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12 center-align">
-                <h3><i class="mdi-content-send brown-text"></i></h3>
-                <p class="light center-align">Если у Вас нет времени на прохождение офф-лайн тренингов, тестирования, курсов и т.д. То зарегистрировавшись у нас - Вы получите возможность поиска курсов, которые окажуться Вам нужны или интересны. После их прохождения Вы сможете получить государственный сертификат, который поможет Вам - сразу получить более высокооплачиваемую работу</p>
-                <a class="waves-effect waves-light modal-trigger btn-large black white-text" href="#modal2">Регистрация</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-
 
 
 
