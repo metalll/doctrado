@@ -146,7 +146,7 @@
 
 
     <div class="row">
-        <div class="col s12 m6">
+        <div class="col s4 m6">
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
                     <span class="card-title">Card Title</span>
@@ -158,11 +158,11 @@
                     <a href="#">This is a link</a>
                 </div>
             </div>
-        </div>
+
     </div>
 
-    <div class="row">
-        <div class="col s12 m6">
+
+        <div class="col s4 m6">
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
                     <span class="card-title">Card Title</span>
@@ -174,11 +174,11 @@
                     <a href="#">This is a link</a>
                 </div>
             </div>
-        </div>
+
     </div>
 
-    <div class="row">
-        <div class="col s12 m6">
+
+        <div class="col s4 m6">
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
                     <span class="card-title">Card Title</span>
@@ -190,9 +190,9 @@
                     <a href="#">This is a link</a>
                 </div>
             </div>
-        </div>
-    </div>
 
+    </div>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
