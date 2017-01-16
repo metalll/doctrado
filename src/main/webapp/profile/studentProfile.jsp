@@ -113,13 +113,13 @@
 <div class="row">
 
     <div class="row col s10 push-s1">
+        <ul>
+        <li> <a  class="waves-effect col s4 waves-light btn">Созданные курсы<span class="badge white">1</span></a>  </li>
 
-        <p> <a  class="waves-effect col s4 waves-light btn">Созданные курсы<span class="badge white">1</span></a>  </p>
+        <li> <a class="waves-effect col s4 waves-light green btn">Купленые курсы</a>  </li>
 
-        <p> <a class="waves-effect col s4 waves-light green btn">Купленые курсы</a>  </p>
-
-        <p>   <a class="waves-effect col s4 waves-light orange btn">Оповещения</a>  </p>
-
+        <li>   <a class="waves-effect col s4 waves-light orange btn">Оповещения</a>  </li>
+        </ul>
     </div>
 
 </div>
