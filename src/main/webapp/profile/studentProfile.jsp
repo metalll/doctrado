@@ -99,11 +99,11 @@
 
     <div class="col s4">
         <div class="row">
-       <p> <a  class="waves-effect col s12 waves-light btn">Преподователь</a>  </p>
+       <p> <a  class="waves-effect col s12 waves-light btn disabled">Преподователь</a>  </p>
 
-            <p> <a class="waves-effect col s12 waves-light btn">Подробнее</a>  </p>
+            <p> <a class="waves-effect col s12 waves-light green btn">Подробнее</a>  </p>
 
-         <p>   <a class="waves-effect col s12 waves-light btn">Ваша статистика</a>  </p>
+         <p>   <a class="waves-effect col s12 waves-light orange btn">Ваша статистика</a>  </p>
         </div>
 
     </div>
