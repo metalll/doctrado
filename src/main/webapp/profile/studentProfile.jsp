@@ -110,7 +110,19 @@
 
 
 </div>
+<div class="row">
 
+    <div class="row col s10 pull-s1">
+
+        <p> <a  class="waves-effect col s4 waves-light btn disabled">Созданные курсы</a>  </p>
+
+        <p> <a class="waves-effect col s4 waves-light green btn">Купленые курсы</a>  </p>
+
+        <p>   <a class="waves-effect col s4 waves-light orange btn">Оповещения</a>  </p>
+
+    </div>
+
+</div>
 
 
 
