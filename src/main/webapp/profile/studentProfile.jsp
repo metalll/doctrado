@@ -98,10 +98,11 @@
     </div>
 
     <div class="col s4">
-        <a class="waves-effect waves-light btn">Преподователь</a>
-        <a class="waves-effect waves-light btn">Подробнее</a>
-        <a class="waves-effect waves-light btn">Ваша статистика</a>
-
+        <div class="row">
+        <a  class="waves-effect col s12 waves-light btn">Преподователь</a>
+        <a class="waves-effect col s12 waves-light btn">Подробнее</a>
+        <a class="waves-effect col s12 waves-light btn">Ваша статистика</a>
+        </div>
 
     </div>
 
