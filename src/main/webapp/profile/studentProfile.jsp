@@ -127,11 +127,12 @@
 <div class="row">
 
     <div class="col s4 col push-s4 center-align">
-        <a class="waves-effect col s4 waves-light orange btn">Создать курс</a>
+        <a class="waves-effect col s12 waves-light orange btn">Создать курс</a>
     </div>
 
 
 </div>
+
 
 <footer class="page-footer center-align grey darken-4 white-text">
     <div class="container">
