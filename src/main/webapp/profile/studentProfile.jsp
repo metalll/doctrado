@@ -212,7 +212,7 @@
                         <span class="card-title flow-text"></span>
                     </div>
                     <div class="card-content">
-                        <p> ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ
+                        <p class="center-align"> ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ
                         </p><br>
                         <p>Время на изучение: 5 дней</p>
                     </div>
