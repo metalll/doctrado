@@ -1,300 +1,566 @@
-<%--
+<%@ page import="NSD.NSDConstants" %><%--
   Created by IntelliJ IDEA.
   User: NSD
-  Date: 15.12.16
-  Time: 10:19
+  Date: 16.12.16
+  Time: 11:14
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Doctrado</title>
+    <!-- CSS  -->
+
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="csrf-token" content="QztTeriVGADjqJNodjGXM9ch3ZdGO8dwteZkGZOd" />
+    <meta name="csrf-token" content="Wx6PFl4mn9yqYIFxDmcvdgOH6tNtWn3dVOktVC7V">
     <title>Doctrado</title>
-    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/costume-decoration.css">
+
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
-    <script>
-        var user_id = 29;
-        var user_type = 's';
-    </script>
-    <style>
-        .courses__img {
+    <link rel="stylesheet" href="../NSDcss/login.css">
+    <style type="text/css">
+        .parallax-container {
+            height: 400px;
+        }
+
+        #progress {
+            width: 200px;
             height: 200px;
         }
+
     </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
-<div id="loading-bg" style="display:none;">
-    <div style="position: fixed;  background: rgba(0, 0, 0, 0.3);  width: 100%;  height: 100%;z-index: 1001;"></div>
-    <img src="css/ajax-loader.gif" style="position: fixed; z-index: 1000; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width:200px; max-height: 200px;">
-</div>
-<div class="login-popup" id="login-popup">
-    <div class="login-popup__bg"></div>
-    <div class="login-popup__wrapper">
-        <div class="row">
-            <div class="small-12 columns">
-                <div class="login-popup__close-button">
-                    <i class="fa fa-times"></i>
-                </div>
-                <p class="login-popup__title">
-                    Форма входа
-                </p>
-            </div>
-        </div>
-        <form name="login-form" id="login-form">
-            <div class="row">
-                <div class="small-12 columns">
-                    <fieldset form="login-form">
-                        <input type="text" placeholder="E-mail" name="email">
-                        <p class="login-alert" id="alert-login">Введите ваш e-mail</p>
-                        <input type="text" placeholder="Пароль" name="pass">
-                        <p class="login-alert" id="alert-login-password">Введите ваш пароль</p>
-                        <input class="login-popup__submit" type="submit" value="Войти">
-                    </fieldset>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-<div class="reg-popup-second">
-    <div class="reg-popup__bg"></div>
-    <div class="reg-popup__wrapper">
-        <div class="row">
-            <div class="small-12 columns">
-                <div class="reg-popup__wrapper-form">
-                    <div class="reg-popup__close-button">
-                        <i class="fa fa-times"></i>
-                    </div>
-                    <p class="reg-popup__title" id="reg-second-title">Становление<br>преподавателем</p>
-                    <form class="registration-form" name="registration-form-2" id="registration-form-2">
-                        <div class="row">
-                            <div class="small-12 medium-6 columns" id="reg-second-column1">
-                                <fieldset class="text-center" form="registration-form-2">
-                                    <input type="text" placeholder="Ваше образование" name="graduate_t" onkeydown="$('#alert-2-0').fadeOut()">
-                                    <p class="reg-alert" id="alert-2-0">Заполните это поле</p>
-                                    <input type="text" placeholder="Дополнительное образование" name="extra_graduate" onkeydown="$('#alert-2-1').fadeOut()">
-                                    <p class="reg-alert" id="alert-2-1">Заполните это поле</p>
-                                    <button type="button" class="reg-popup__upload" onclick="$('#document-input').click()">
-                                        Выбрать
-                                    </button>
-                                    <p class="reg-popup__condition">* Пожалуйста, выберите копию подтверждающих
-                                        документов для загрузки</p>
-                                    <p class="reg-alert" id="alert-2-confirmation">Для регистрации профиля преподавателя необходимо предоставить подтверждающие документы</p>
-                                    <input class="reg-upload" type="file" style="display:none;" id="document-input">
-                                </fieldset>
-                            </div>
-                            <div class="small-12 medium-6 columns" id="reg-second-column2">
-                                <fieldset class="text-center" form="registration-form-2">
-                                    <input type="text" placeholder="Ваш преподавательский опыт" name="experience" onkeydown="$('#alert-2-2').fadeOut()">
-                                    <p class="reg-alert" id="alert-2-2">Заполните это поле</p>
-                                    <input type="text" placeholder="Номер банковской карты (для выплат)" name="card" style="font-size:0.9rem;" onkeydown="$('#alert-2-3').fadeOut()">
-                                    <p class="reg-alert" id="alert-2-3">Заполните это поле</p>
-                                    <input type="checkbox" id="terms-2-checkbox" onchange="$('#alert-2-terms').fadeOut()"><span class="reg-popup__checkbox-text">Я согласен с условиям предоставления данных</span>
-                                    <p class="reg-alert" id="alert-2-terms">Для регистрации необходимо согласиться с условиями</p>
-                                    </p>
-                                    <div class="row">
-                                        <div class="medium-12 large-6 columns">
-                                            <input style="min-width:100%;" class="reg-popup__back" type="button" value="Вернуться">
-                                        </div>
-                                        <div class="medium-12 large-6 columns">
-                                            <input style="min-width:100%;" class="reg-popup__ready" type="button" value="Готово" onclick="convertToTeacher()">
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="full-about-popup">
-    <div class="full-about-popup__bg"></div>
-    <div class="full-about-popup__wrapper">
-        <div class="row">
-            <div class="small-12  columns">
-                <div class="full-about-popup__wrapper-form ">
-                    <div class="full-about-popup__close-button">
-                        <i class="fa fa-times"></i>
-                    </div>
 
-                    <p class="full-about-popup__subtitle">Полная информация о пользователе</p>
-                    <form name="full-about-form" id="full-about-form">
-                        <div class="row">
-                            <div class="small-12 medium-6 columns">
-                                <fieldset form="full-about-form">
-                                    <input type="text" placeholder="Ваше имя" name="name" value="Леша">
-                                    <p class="reg-alert" id="alert-0">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваше отчество" name="patronymic" value="Владимирович">
-                                    <p class="reg-alert" id="alert-1">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваша фамилия" name="surname" value="Петров">
-                                    <p class="reg-alert" id="alert-2">Заполните это поле</p>
-                                    <input type="text" placeholder="Ваш e-mail" name="email" value="metall112@bk.ru" readonly>
-                                    <p class="reg-alert" id="alert-3">Заполните это поле</p>
-                                </fieldset>
-                            </div>
-                            <div class="small-12 medium-6 columns">
-                                <fieldset form="full-about-form">
-                                    <input type="text" placeholder="Ваш телефон" name="phone" value="0652183554">
-                                    <p class="reg-alert" id="alert-4">Заполните это поле</p>
-                                    <input type="text" placeholder="Дата рождения" name="birth_date" value="08.08.91">
-                                    <p class="reg-alert" id="alert-5">Заполните это поле</p>
-                                    <input type="text" placeholder="Уровень образования" name="education" value="низко">
-                                    <p class="reg-alert" id="alert-6">Заполните это поле</p>
-                                    <input type="text" placeholder="Место работы " name="work_place" value="нет">
-                                    <div class="small-12 medium-6 columns">
-                                        <a class="creating success button save-changes" onclick="commitChanges()"><span class="class">сохранить</span></a>
-                                    </div>
-                                    <div class="small-12 medium-6 columns">
-                                        <button class="file-upload-2" type="button" onclick="$('#photo-input').click()">
-                                            сменить фото
-                                        </button>
-                                    </div>
-                                    <input type="file" class="file-input new-avatar-button" style="display:none;" id="photo-input">
-                                </fieldset>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<header class="profile-header">
 
-    <nav class="header__top-bar">
-        <div class="row collapse">
-            <div class="small-12 columns">
-                <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
-                    <button class="menu-icon" type="button" data-toggle></button>
-                </div>
-                <div class="top-bar" id="main-menu">
-                    <div class="top-bar-left">
-                        <h1 class="site-title">
-                            <a href="/">Doctrado</a>
-                        </h1>
-                        <a class="login-btn" id="profile-button" style="margin-right:10px;">Кабинет</a><a class="login-btn" href="logout">Выход</a>
-                    </div>
-                    <div class="top-bar-right">
-                        <ul class="menu vertical large-horizontal">
-                            <li>
-                                <a class="menu-elem" href="./#about">О проекте</a>
-                            </li>
-                            <li>
-                                <a class="menu-elem" href="./#capabilities">Возможности</a>
-                            </li>
-                            <li>
-                                <a class="menu-elem" href="./certificates">Сертификаты</a>
-                            </li>
-                            <li>
-                                <a class="menu-elem" href="./webinar">Вебинары</a>
-                            </li>
-                            <li>
-                                <a class="menu-elem" href="./course">Курсы</a>
-                            </li>
-                            <li>
-                                <a class="menu-elem" href="./#contacts">Контакты</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+
+<div class="navbar-fixed">
+    <nav class="white darken-4 grey-text text-darken-4" role="navigation">
+        <div class="nav-wrapper container">
+
+            <a id="logo-container" href="#" class="brand-logo "><img src="../img/favicon.ico"></a>
+
+            <ul class="right hide-on-med-and-down">
+
+                <!--<li><a class="waves-effect waves-light black modal-trigger white-text" href="#modal3">Вход</a></li>-->
+                <li>
+                    <a class="menu-elem" data-anchor="#about">О проекте</a>
+                </li>
+                <li>
+                    <a class="menu-elem" data-anchor="#capabilities">Возможности</a>
+                </li>
+                <li>
+                    <a class="menu-elem" href="./certificates">Сертификаты</a>
+                </li>
+
+                <li>
+                    <a class="menu-elem" data-anchor="#courses">Курсы</a>
+                </li>
+                <li>
+                    <a class="menu-elem" data-anchor="#contacts">Контакты</a>
+                </li>
+                <li><a href="<%=NSDConstants.HOST+"/logout"%>" class="menu-elem waves-effect waves-light red btn white-text darken-3" >Выход</a></li>
+
+
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
     </nav>
-</header>
-<section class="global-container">
-    <section class="content__teacher-profile">
+</div>
+<br>
+<div class="parallax-container valign-wrapper col s12">
+    <div class="section no-pad-bot">
+        <div class="container">
+
+            <h1 class="header center black-text">Doctrado</h1>
+            <div class="row center">
+                <h5 class="header col s12 light grey-text darken-4">Обретай новые знания сейчас! Каждый день! Вместе с Doctrado.</h5>
+            </div>
+            <div class="row center">
+                <a href="#modal1" id="download-button" class="btn-large modal-trigger waves-effect waves-light grey darken-3">Приступить к работе</a>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="parallax "><img src="../img/background.jpg" alt="Unsplashed background img 1"></div>
+</div>
+
+
+<div class="container" style="{height: 160px; }">
+    <div class="section">
+
+        <!--   Icon Section   -->
         <div class="row">
-            <div class="small-12 columns">
-                <div class="user-profile-container">
-                    <div class="information-about-user-container" style="margin-top:20px;">
-                        <div class="row">
-                            <div class="small-12 medium-4 columns end">
-                                <div class="user-avatar-container" style="text-align: center;"><img style="height: 200px;" src="img/camera.gif"></div>
-                            </div>
-                            <div class="small-12 medium-5 columns end">
-                                <div class="user-about-container">
-                                    <h2 class="info-about-user">Леша Владимирович Петров</h2>
-                                    <h2 class="info-about-user">Дата рождения: 08.08.91</h2>
-                                </div>
-                            </div>
-                            <div class="small-12 medium-3 columns end">
-                                <div class="user-profile-buttons">
-                                    <p class="user-rank"><span class="class">Студент</span></p>
-                                    <a class="creating button secondary look-more"><span class="class">подробнее</span></a>
-                                    <a href="my-tests" class="creating button secondary "><span class="class">Мои успехи</span></a>
-                                    <a class="creating button secondary" onclick="becomeTeacher()"><span class="class">Стать преподавателем</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="delimiter-buttons">
-                            <div class="small-12 medium-6 columns"><a id="user-courses-all" class="button success creating"><span class="class">мои курсы (0)</span></a></div>
-                            <div class="small-12 medium-6 columns"><a id="user-notifications" class="button secondary creating"><span class="class">оповещения (0)</span></a></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="user-courses-container-all">
-                            <div class="row">
-                                <div class="small-12 columns">
-                                    <h2 class="info-about-courses-title">Ваши курсы:</h2>
-                                </div>
-                                <div class="small-12 medium-6 medium-centered columns" style="float:none;">
-                                    <p class="user-notification-content" style="text-align: center; margin-top: 50px;">У Вас ещё не приобретён ни один курс</p>
-                                    <a href="course" class="creating button success"><span class="class">Приобрести курс</span></a>
-                                </div>
-                                <div class="row small-up-1 medium-up-3">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="user-notifications-container for-teacher">
-                            <div class="small-12 columns">
-                                <p class="user-notification-content">Новых оповещений нет.</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center black-text"><i class="material-icons">schedule</i></h2>
+                    <h5 class="center">Быстро и удобно</h5>
+
+                    <p class="light center-align">Региструешься, находишь нужный курс, проходишь все темы и тесты после каждой из них - получаешь сертификат</p>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center black-text"><i class="material-icons">group_work</i></h2>
+                    <h5 class="center">Командная работа</h5>
+                    <p class="light center-align">Для развития сервиса мы добавили возможность каждому, у кого есть должный опыт, стать преподавателем</p>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center black-text"><i class="material-icons">work</i></h2>
+                    <h5 class="center">Приступай к работе</h5>
+
+                    <p class="light center-align">Пройдя какой-либо курс, получив сертификат - Вы тут же можете приступить к роботе по полученной специальности </p>
                 </div>
             </div>
         </div>
-    </section>
-</section>
 
-<footer class="footer">
-    <div class="row">
-        <div class="small-6 medium-4 columns">
-            <div class="footer__social">
-                <a class="footer__social-item social-facebook" href="#">
-                    <i class="fa fa-facebook"></i>
-                </a>
-                <a class="footer__social-item social-twitter" href="#">
-                    <i class="fa fa-twitter"></i>
-                </a>
+    </div>
+</div>
+
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h4 class="header col s12 light black-text">КТО И ПОЧЕМУ</h4>
             </div>
         </div>
-        <div class="small-6 medium-4 columns">
-            <div class="footer__copyright">
-                Doctrado ©
+    </div>
+    <div class="parallax"><img src="../img/background.jpg" alt="Unsplashed background img 2"></div>
+</div>
+
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s12 center">
+                <h3><i class="mdi-content-send brown-text"></i></h3>
+
+                <p class="left-align light">Мы - команда из людей разных специальностей, и каждый из нас сталкивался с проблемой поиска информации, для улучшения своих навыков, либо же не хватало времени, чтобы закончить курсы и получить нужный сертификат. Сейчас мы решили создать сервис, где каждый человек, который занят своей работой, может не тратив свое время на лишние путешествия в учебные центры - быстро, легко, а главное 100% пройти нужный ему курс онлайн и получить государственный сертификат.</p>
             </div>
         </div>
-        <div class="small-12 medium-4 columns">
-            <a href="//elegance.od.ua" class="footer_logo">
-                <img src="img/elegance.png" class="elegance-logo" alt="">
-            </a>
+
+    </div>
+</div>
+
+<div id="progress_bar" class="modal">
+    <div style="background: transparent">
+        <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+
+            <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+
+            <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+
+            <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row center">
+                <h4 class="header col s12 black-text light">ВОЗМОЖНОСТИ</h4>
+            </div>
+        </div>
+    </div>
+    <div class="parallax"><img src="../img/background.jpg" alt="Unsplashed background img 3"></div>
+</div>
+
+<div class="container">
+    <div class="section">
+
+        <div class="row">
+            <div class="col s12 m6 center">
+                <h3><i class="mdi-content-send brown-text"></i></h3>
+                <h5>БЫТЬ СТУДЕНТОМ</h5>
+            </div>
+            <div class="col s12 m6 center">
+                <h3><i class="mdi-content-send brown-text"></i></h3>
+                <h5>БЫТЬ ПРЕПОДАВАТЕЛЕМ</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                <h3><i class="mdi-content-send brown-text"></i></h3>
+                <p class="light center-align">Если у Вас нет времени на прохождение офф-лайн тренингов, тестирования, курсов и т.д. То зарегистрировавшись у нас - Вы получите возможность поиска курсов, которые окажуться Вам нужны или интересны. После их прохождения Вы сможете получить государственный сертификат, который поможет Вам - сразу получить более высокооплачиваемую работу</p>
+                <a class="waves-effect waves-light modal-trigger btn-large black white-text" href="#modal2">Регистрация</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<footer class="page-footer center-align grey darken-4 white-text">
+    <div class="container">
+        <div class="footer-copyright">
+            <div class="container">Doctrado © 2016</div>
         </div>
     </div>
 </footer>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/foundation.min.js"></script>
-<script src="js/app.js"></script>
-<script src="js/profile.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="../js/materialize.min.js"></script>
+<script type="application/javascript" >
+
+
+
+    function call() {
+
+        //$('#progress_bar').modal('open');
+
+
+        //  bar.animate(1.0);
+        var email = document.getElementById('email1').value;
+        var password = document.getElementById('password1').value;
+        var errors = false;
+        var errEmail = false;
+        var errPass = false;
+        if (email == "") {
+            //Materialize.toast('Введите ваш email',4000,'rounded');
+            errEmail = true;
+            errors = true;
+
+        }
+
+        if (password == "") {
+            //Materialize.toast('Введите ваш пароль',4000,'rounded');
+            errPass = true;
+            errors = true;
+        }
+        if(errEmail&&errPass){
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>',4000,'rounded');
+            //       bar.hide();
+            return;
+        }
+        if(errEmail){
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email </b></div>',4000,'rounded');
+        }
+        if(errPass){
+            Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>',4000,'rounded');
+        }
+
+        if (errors) {
+            //          bar.hide();
+            return;}
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/login',
+            data: {
+                email: email,
+                password:password
+            },
+            success: function(data) {
+                if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
+                    bar.hide();
+                }
+                else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
+            }
+        });
+    };
+
+    function call1() {
+//        $('#progress_bar').modal('open');
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var errors = false;
+        var errEmail = false;
+        var errPass = false;
+        if (email == "") {
+            //Materialize.toast('Введите ваш email',4000,'rounded');
+            errEmail = true;
+            errors = true;
+
+        }
+
+        if (password == "") {
+            //Materialize.toast('Введите ваш пароль',4000,'rounded');
+            errPass = true;
+            errors = true;
+        }
+        if(errEmail&&errPass){
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>',4000,'rounded');
+            //          $('#progress_bar').modal('close');
+            return;
+        }
+        if(errEmail){
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email </b></div>',4000,'rounded');
+        }
+        if(errPass){
+            Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>',4000,'rounded');
+        }
+
+        if (errors) {
+//            $('#progress_bar').modal('close');
+            return;}
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/login',
+            data: {
+                email: email,
+                password:password
+            },
+            success: function(data) {
+                if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
+                    //  $('#progress_bar').modal('close');
+                }
+                else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
+            }
+        });
+    }
+
+    function callReg1(accept) {
+        var nameR = document.getElementById('nameR1').value;
+        var last_nameR = document.getElementById('last_nameR1').value;
+        var surnameR = document.getElementById('surnameR1').value;
+        var emailR = document.getElementById('emailR1').value;
+        var passwordR = document.getElementById('passwordR1').value;
+        var telephone = document.getElementById('telephone1').value;
+        var born = document.getElementById('born1').value;
+        var test5 = document.getElementById('test51').value;
+
+        var error = false;
+
+        var nameREr = false;
+        var last_nameREr = false;
+        var surnameREr = false;
+        var emailREr = false;
+        var passwordREr = false;
+        var telephoneEr = false;
+        var bornEr = false;
+        var testEr = false;
+
+        if(nameR==""){
+            error = true;
+            nameREr = true;
+        }
+        if(last_nameR==""){
+            error = true;
+            last_nameREr = true;
+        }
+        if(surnameR==""){
+            error = true;
+            surnameREr = true;
+        }
+        if(emailR==""){
+            error = true;
+            emailREr = true;
+        }
+        if(passwordR==""){
+            error = true;
+            passwordREr = true;
+        }
+        if(telephone==""){
+            error = true;
+            telephoneEr = true;
+        }
+        if(born==""){
+            error = true;
+            bornEr = true;
+        }
+        if(test5==""){
+            error = true;
+            testEr = true;
+        }
+
+        if(error){
+            if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
+                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
+
+                return;
+            }
+        }
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/validate_user',
+            data: {
+                email: emailR,
+                password:passwordR,
+                name:nameR,
+                last_name:last_nameR,
+                surname:surnameR,
+                telephone:telephone,
+                born:born,
+                type:accept
+            },
+            success: function(data) {
+                if (data==0){    $('#modal3').modal('close');
+                    $('#modal1').modal('close');
+                    $('#modal2').modal('close');
+
+
+                    if(accept=='s') $('#modal4').modal('open');
+
+                    if(accept=='t') $('#modal5').modal('open');
+                }
+
+            }
+        });
+
+
+    }
+
+
+    function callReg(accept) {
+        var nameR = document.getElementById('nameR').value;
+        var last_nameR = document.getElementById('last_nameR').value;
+        var surnameR = document.getElementById('surnameR').value;
+        var emailR = document.getElementById('emailR').value;
+        var passwordR = document.getElementById('passwordR').value;
+        var telephone = document.getElementById('telephone').value;
+        var born = document.getElementById('born').value;
+        var test5 = document.getElementById('test5').value;
+
+
+        var error = false;
+
+        var nameREr = false;
+        var last_nameREr = false;
+        var surnameREr = false;
+        var emailREr = false;
+        var passwordREr = false;
+        var telephoneEr = false;
+        var bornEr = false;
+        var testEr = false;
+
+        if(nameR==""){
+            error = true;
+            nameREr = true;
+        }
+        if(last_nameR==""){
+            error = true;
+            last_nameREr = true;
+        }
+        if(surnameR==""){
+            error = true;
+            surnameREr = true;
+        }
+        if(emailR==""){
+            error = true;
+            emailREr = true;
+        }
+        if(passwordR==""){
+            error = true;
+            passwordREr = true;
+        }
+        if(telephone==""){
+            error = true;
+            telephoneEr = true;
+        }
+        if(born==""){
+            error = true;
+            bornEr = true;
+        }
+        if(test5==""){
+            error = true;
+            testEr = true;
+        }
+
+        if(error){
+            if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
+                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
+                return;
+            }
+        }
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/validate_user',
+            data: {
+                email: emailR,
+                password:passwordR,
+                name:nameR,
+                last_name:last_nameR,
+                surname:surnameR,
+                telephone:telephone,
+                born:born,
+                type:accept
+            },
+            success: function(data) {
+                if (data==0){
+                    $('#modal3').modal('close');
+                    $('#modal1').modal('close');
+                    $('#modal2').modal('close');
+
+                    if(accept=='s') $('#modal4').modal('open');
+
+                    if(accept=='t') $('#modal5').modal('open');
+
+
+
+
+                    //  $('#progress_bar').modal('close');
+                }
+
+            }
+        });
+    }
+</script>
+
+<script>
+    $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal();
+
+    });
+    $(document).ready(function () {
+        $('.parallax').parallax();
+    });
+
+
+
+</script>
 </body>
 </html>
