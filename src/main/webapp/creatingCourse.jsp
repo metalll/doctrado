@@ -100,9 +100,11 @@
             <option value="1">&nbsp&nbspКатегория 1</option>
             <option value="2">&nbsp&nbspКатегория 2</option>
             <option value="3">&nbsp&nbspКатегория 3</option>
-                <option value="3.1">&nbsp&nbsp&nbsp&nbsp Категория 3.1</option>
-                         <option value="3.1.1">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Категория 3.1.1</option>
-                <option value="3.2">&nbsp&nbsp&nbsp&nbsp Категория 3.2</option>
+                <option value="3.1">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Категория 3.1</option>
+                         <option value="3.1.1">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Категория 3.1.1</option>
+            <option value="3.1.1">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Категория 3.1.1.1</option>
+                         <option value="3.1.1">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Категория 3.1.2</option>
+                <option value="3.2">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Категория 3.2</option>
             <option value="4">&nbsp&nbspКатегория 4</option>
         </select>
         <label>Категория курса</label>
