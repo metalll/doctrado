@@ -142,7 +142,8 @@
 </div>
 <div class="container">
 <div class="row">
-    <div class="col s4 ">
+    <div class="row col s4">
+    <div class="col s12 ">
         <div class="card">
             <div class="card-image">
                 <img height="30" width="30" src="../img/file.png">
@@ -157,7 +158,9 @@
             </div>
         </div>
     </div>
-    <div class="col s4 ">
+    </div>
+    <div class="row col s4">
+        <div class="col s12 ">
         <div class="card">
             <div class="card-image">
                 <img height="30" width="30" src="../img/file.png">
@@ -171,9 +174,11 @@
                 <a href="#">This is a link</a>
             </div>
         </div>
+    </div>
     </div>
 
-    <div class="col s4 ">
+    <div class="row col s4">
+        <div class="col s12 ">
         <div class="card">
             <div class="card-image">
                 <img height="30" width="30" src="../img/file.png">
@@ -187,6 +192,7 @@
                 <a href="#">This is a link</a>
             </div>
         </div>
+    </div>
     </div>
 
 </div>
