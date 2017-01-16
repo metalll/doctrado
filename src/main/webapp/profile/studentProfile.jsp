@@ -145,7 +145,7 @@
 <div class="container">
     <div class="row">
 
-        <div class="row s4">
+        <div class="row col s4">
             <div class="col s12 m12 l12">
                 <div class="medium card">
                     <div class="card-image">
@@ -163,7 +163,7 @@
             </div>
         </div>
 
-        <div class="row s4">
+        <div class="row col s4">
             <div class="col s12 m12 l12">
                 <div class="medium card">
                     <div class="card-image">
@@ -181,7 +181,7 @@
             </div>
         </div>
 
-        <div class="row s4">
+        <div class="row col s4">
             <div class="col s12 m12 l12">
                 <div class="medium card">
                     <div class="card-image">
