@@ -124,7 +124,22 @@
 
 </div>
 
+<div class="row">
 
+    <div class="col s4 col push-s4 center-align">
+        <a class="waves-effect col s12 waves-light orange btn">Создать курс</a>
+    </div>
+
+
+</div>
+<div class="row">
+
+    <div class="col s4 col push-s4 center-align">
+        <h3> Ваши курсы: </h3>
+    </div>
+
+
+</div>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="../js/materialize.min.js"></script>
