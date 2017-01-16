@@ -512,5 +512,15 @@
 
 
 </script>
+
+
+
+<footer class="page-footer center-align grey darken-4 white-text">
+    <div class="container">
+        <div class="footer-copyright">
+            <div class="container">Doctrado © 2016</div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
