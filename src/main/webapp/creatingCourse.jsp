@@ -16,7 +16,7 @@
     <title>Doctrado</title>
 
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
-    <link rel="stylesheet" href="../NSDcss/login.css">
+    <link rel="stylesheet" href="./NSDcss/login.css">
     <style type="text/css">
         .parallax-container {
             height: 400px;
@@ -29,8 +29,8 @@
 
     </style>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="../css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="./css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="./css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body >
 
@@ -74,17 +74,40 @@
     </nav>
 </div>
 <br>
+<!-- TODO content is here -->
+
+<div class="row">
+
+    <h1 class="center-align center">ПРИУМНОЖАЙ СВОЙ ОПЫТ С КАЖДЫМ ДНЕМ</h1>
+    <h6 class="center-align center">Создание курса</h6>
 
 
 
 
+
+</div>
+
+
+<div class="row">
+
+    <label>Категория курса</label>
+    <select class="browser-default">
+        <option value="" disabled selected>Выберите категорию</option>
+        <option value="1">Охрана труда</option>
+        <option value="2">Пожарная безопасность</option>
+        <option value="3">Аутсорсинг</option>
+    </select>
+
+
+
+</div>
 
 
 
 
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="../js/materialize.min.js"></script>
+<script src="./js/materialize.min.js"></script>
 <script type="application/javascript" >
 
 
