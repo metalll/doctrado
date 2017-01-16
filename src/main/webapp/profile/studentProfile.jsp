@@ -100,8 +100,10 @@
     <div class="col s4">
         <div class="row">
         <a  class="waves-effect col s12 waves-light btn">Преподователь</a>
+            <br>
         <a class="waves-effect col s12 waves-light btn">Подробнее</a>
-        <a class="waves-effect col s12 waves-light btn">Ваша статистика</a>
+            <br>
+            <a class="waves-effect col s12 waves-light btn">Ваша статистика</a>
         </div>
 
     </div>
