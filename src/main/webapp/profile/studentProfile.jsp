@@ -190,7 +190,7 @@
 </div>
 
 
-</div>
+
 
 <footer class="page-footer center-align grey darken-4 white-text">
     <div class="container">
