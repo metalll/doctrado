@@ -32,15 +32,7 @@
             width: 200px;
             height: 200px;
         }
-        body {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
-        }
 
-        main {
-            flex: 1 0 auto;
-        }
     </style>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -522,7 +514,7 @@
 </script>
 
 
-
+<div>
 <footer class="page-footer center-align grey darken-4 white-text">
     <div class="container">
         <div class="footer-copyright">
@@ -530,5 +522,6 @@
         </div>
     </div>
 </footer>
+</div>
 </body>
 </html>
