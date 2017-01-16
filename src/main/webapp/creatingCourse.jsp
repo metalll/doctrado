@@ -76,6 +76,8 @@
 <br>
 <!-- TODO content is here -->
 
+
+<div class="container">
 <div class="row">
 
     <h1 class="center-align center">ПРИУМНОЖАЙ СВОЙ ОПЫТ С КАЖДЫМ ДНЕМ</h1>
@@ -104,7 +106,7 @@
 
 
 
-
+</div>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="./js/materialize.min.js"></script>
