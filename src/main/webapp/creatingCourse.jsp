@@ -101,6 +101,22 @@
     </select>
 
 
+    <div class="input-field col s12">
+        <select multiple>
+            <optgroup label="Охрана труда">
+                <option value="1">Трансформаторы</option>
+                <option value="2">ОБХН</option>
+            </optgroup>
+            <optgroup label="Пожарная безопасность">
+                <option value="3">ИТР</option>
+                <option value="4">Аутсорсинг</option>
+            </optgroup>
+        </select>
+        <label>Выберите категорию курса</label>
+    </div>
+
+
+
 
 </div>
 
@@ -414,7 +430,9 @@
     $(document).ready(function () {
         $('.parallax').parallax();
     });
-
+    $(document).ready(function() {
+        $('select').material_select();
+    });
 
 
 </script>
