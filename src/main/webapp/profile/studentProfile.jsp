@@ -150,7 +150,7 @@
                 <div class="medium card">
                     <div class="card-image">
                         <img src="../img/course.jpg">
-                        <span class="card-title">ЗДАНИЯ И СООРУЖЕНИЯ. ОБЩИЕ ТРЕБОВАНИЯ</span>
+                        <span class="card-title flow-text">ЗДАНИЯ И СООРУЖЕНИЯ. ОБЩИЕ ТРЕБОВАНИЯ</span>
                     </div>
                     <div class="card-content">
                         <p>Время на изучение: 5 дней</p>
