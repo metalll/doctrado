@@ -149,15 +149,14 @@
             <div class="col s12 m12 l12">
                 <div class="medium card">
                     <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
+                        <img src="../img/course.jpg">
+                        <span class="card-title">ЗДАНИЯ И СООРУЖЕНИЯ. ОБЩИЕ ТРЕБОВАНИЯ</span>
                     </div>
                     <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
+                        <p>Время на изучение: 5 дней</p>
                     </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
+                    <div class="card-action center-align">
+                        <p> <a class="waves-effect col s12 waves-light green btn">Подробнее</a>  </p>
                     </div>
                 </div>
             </div>
