@@ -112,7 +112,7 @@
 </div>
 <div class="row">
 
-    <div class="row col s10 pull-s1">
+    <div class="row col s10 push-s1">
 
         <p> <a  class="waves-effect col s4 waves-light btn disabled">Созданные курсы</a>  </p>
 
