@@ -86,7 +86,7 @@
 
     <div class="col s4">
 
-        <img class="col s4 center center-align" src="../img/camera.gif">
+        <img class="col offset-s4 s4 center center-align" src="../img/camera.gif">
     </div>
 
     <div class="col s4">
