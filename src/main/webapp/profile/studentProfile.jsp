@@ -118,7 +118,7 @@
 
         <p> <a class="waves-effect col s4 waves-light green btn">Купленые курсы</a> <span class="badge white">0</span> </p>
 
-        <p>   <a class="waves-effect col s4 waves-light orange btn">Оповещения</a> <span class="badge white">0</span> </p>
+        <p> <a class="waves-effect col s4 waves-light orange btn">Оповещения</a> <span class="badge white">0</span> </p>
 
     </div>
 
@@ -145,7 +145,7 @@
     <div class="col s4 ">
         <div class="card">
             <div class="card-image">
-                <img src="../img/file.png">
+                <img height="30" width="30" src="../img/file.png">
                 <span class="card-title">Card Title</span>
             </div>
             <div class="card-content">
@@ -160,7 +160,7 @@
     <div class="col s4 ">
         <div class="card">
             <div class="card-image">
-                <img src="../img/file.png">
+                <img height="30" width="30" src="../img/file.png">
                 <span class="card-title">Card Title</span>
             </div>
             <div class="card-content">
@@ -175,7 +175,7 @@
     <div class="col s4 ">
         <div class="card">
             <div class="card-image">
-                <img src="../img/file.png">
+                <img height="30" width="30" src="../img/file.png">
                 <span class="card-title">Card Title</span>
             </div>
             <div class="card-content">
