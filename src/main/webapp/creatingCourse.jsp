@@ -136,10 +136,10 @@
         <div class="file-field input-field">
             <div class="btn">
                 <span>Фоновое изображение курса</span>
-                <input id = "file" type="file">
+                <input name="file" type="file">
             </div>
             <div class="file-path-wrapper">
-                <input id = "file1" class="file-path validate" type="text">
+                <input class="file-path validate" type="text">
             </div>
         </div>
     </form>
@@ -196,15 +196,20 @@
 
             ,
             success:function(data) {
-            var fd = new FormData();
-            fd.append('file',fuckingImage);
+            var fd = new FormData($('#form_file')[0]);
+
               $.ajax( {
                     type: 'post',
                     url: 'uploadData?set='+fuckingImageUUID,
                     data:fd,
-                success:function (data) {
-                    alert("success");
-                }
+                      async: false,
+                      cache: false,
+                      contentType: false,
+                      enctype: 'multipart/form-data',
+                      processData: false,
+                      success: function (response) {
+                          alert(response);
+                      }
               }
                 
               );
