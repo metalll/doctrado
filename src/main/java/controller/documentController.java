@@ -40,7 +40,7 @@ public class documentController extends HttpServlet {
             return;
         }
         String key1 = request.getQueryString();
-        int range = key1.indexOf('=');
+        int range = key1.indexOf('=')+1;
         String key = key1.substring(range);
 
         PrintWriter writer = response.getWriter();
