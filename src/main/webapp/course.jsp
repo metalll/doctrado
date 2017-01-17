@@ -646,26 +646,6 @@ z-index:1001;
     }
 </script>
 
-<script>
-    $(document).ready(function(){
-        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-
-        $('input.autocomplete').autocomplete({
-            data: {
-                "Apple": null,
-                "Microsoft": null,
-                "Google": 'http://placehold.it/250x250'
-            }
-        });
-        $('.modal').modal();
-
-
-
-    });
-
-
-
-</script>
 
 
 <div>
