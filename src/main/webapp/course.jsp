@@ -278,7 +278,9 @@
 
     </div></div>
 
-<div class="container">
+<div class="container" style=".ui-front {
+z-index:1001;
+}">
     <div class="row">
 
         <div class="row col s4">
