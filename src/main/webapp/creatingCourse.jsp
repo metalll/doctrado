@@ -138,7 +138,7 @@
                 <input id = "file" type="file">
             </div>
             <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
+                <input id = "file1" class="file-path validate" type="text">
             </div>
         </div>
     </form>
@@ -167,7 +167,7 @@
         var course_cost = document.getElementById('course_cost').value;
         var dayOfTheDead = document.getElementById('testa').value;
         var fuckingImage = document.getElementById('file').value;
-
+        var fuckingImage1 = document.getElementById('file1').value;
 
 
 
@@ -181,8 +181,8 @@
         course_descr:course_descr,
       course_cost: course_cost,
        testa: dayOfTheDead,
-        file: fuckingImage
-
+        file: fuckingImage,
+                file1: fuckingImage1
 
 
 
