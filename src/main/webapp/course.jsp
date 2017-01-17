@@ -397,23 +397,17 @@
     $(document).ready(function(){
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal').modal();
+        $('input.autocomplete').autocomplete({
+            data: {
+                "Apple": null,
+                "Microsoft": null,
+                "Google": 'http://placehold.it/250x250'
+            }
+        });
+
 
     });
 
-    $('input.autocomplete').autocomplete({
-        data: {
-            "рмптм": null,
-            "охорона праці": null,
-            "пожарно-технический минимум": null,
-            "огнетушитель":null,
-            "здания и сооружения":null,
-            "здания и сооружения. общие требования":null,
-            "охорона праці ітр":null,
-            "охорона праці під час роботи з інструментами та пристроями":null,
-            "google":null
-
-        }
-    });
 
 
 </script>
