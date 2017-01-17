@@ -29,13 +29,6 @@
 
     </style>
 
-    <script  type="application/javascript"  >  $('input.autocomplete').autocomplete({
-        data: {
-            "Apple": null,
-            "Microsoft": null,
-            "Google": 'http://placehold.it/250x250'
-        }
-    });</script>
 
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -90,8 +83,9 @@
         <div class="col s12">
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" id="autocomplete-input" class="autocomplete">
-                    <label for="autocomplete-input">Поиск по курсам</label>
+                    <input type="text" id="autocomplete-input" class="autocomplete" type="search">
+                    <label for="autocomplete-input"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
                 </div>
             </div>
         </div>
@@ -645,6 +639,14 @@
 <script>
     $(document).ready(function(){
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+
+        $('input.autocomplete').autocomplete({
+            data: {
+                "Apple": null,
+                "Microsoft": null,
+                "Google": 'http://placehold.it/250x250'
+            }
+        });
         $('.modal').modal();
 
 
