@@ -124,8 +124,8 @@
         <label for="course_cost">Цена за прохождение курса</label>
     </div>
     <form action="#">
-    <p class="range-field">
         <h6>Время на прохождение курса(дни)</h6>
+    <p class="range-field">
         <input type="range" id="test5" min="0" max="100" />
     </p>
     </form>
