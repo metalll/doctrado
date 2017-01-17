@@ -28,6 +28,16 @@
         }
 
     </style>
+
+    <script  type="application/javascript"  >  $('input.autocomplete').autocomplete({
+        data: {
+            "Apple": null,
+            "Microsoft": null,
+            "Google": 'http://placehold.it/250x250'
+        }
+    });</script>
+
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="./css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="./css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -642,13 +652,7 @@
     $(document).ready(function(){
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal').modal();
-        $('input.autocomplete').autocomplete({
-            data: {
-                "Apple": null,
-                "Microsoft": null,
-                "Google": 'http://placehold.it/250x250'
-            }
-        });
+
 
 
     });
