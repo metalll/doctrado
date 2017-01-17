@@ -144,7 +144,7 @@
     </form>
 </div>
     <br>
-    <a class="waves-effect col s12 m12 l12 waves-light green btn">Создать курс</a>
+    <a class="waves-effect col s12 m12 l12 center center-align waves-light green btn">Создать курс</a>
     <br>
     <br>
 </div>
