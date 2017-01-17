@@ -43,9 +43,6 @@ public class documentController extends HttpServlet {
         int range = key1.indexOf('=')+1;
         String key = key1.substring(range);
 
-        PrintWriter writer = response.getWriter();
-        writer.println(key);
-        writer.flush();
 
 
         // configures upload settings
@@ -76,6 +73,7 @@ public class documentController extends HttpServlet {
                 // processes only fields that are not form fields
                 if (!item.isFormField()) {
                     String fileName =  FileNameConsructor(new File(item.getName()).getName(),key);
+                    key = fileName;
                     String filePath = uploadPath + File.separator + fileName;
                     File storeFile = new File(filePath);
 
@@ -83,7 +81,10 @@ public class documentController extends HttpServlet {
                     item.write(storeFile);
                 }
             }
-            request.setAttribute("message", "Upload has been done successfully! " + uploadPath);
+            PrintWriter writer = response.getWriter();
+            writer.println(key);
+            writer.flush();
+
         } catch (Exception ex) {
             request.setAttribute("message", "There was an error: " + ex.getMessage());
         }
