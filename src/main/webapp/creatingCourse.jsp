@@ -169,7 +169,7 @@
         var dayOfTheDead = document.getElementById('testa').value;
         var fuckingImage = document.getElementById('file');
 
-        var fuckingImageUUID = <%= UUIDGenerator.Generate() %>;
+        var fuckingImageUUID = "<%= UUIDGenerator.Generate() %>";
 
 
 
