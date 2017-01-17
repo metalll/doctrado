@@ -39,8 +39,9 @@ public class documentController extends HttpServlet {
             writer.flush();
             return;
         }
-        String key = request.getQueryString();
-
+        String key1 = request.getQueryString();
+        int range = key1.indexOf('=');
+        String key = key1.substring(range);
 
         PrintWriter writer = response.getWriter();
         writer.println(key);
