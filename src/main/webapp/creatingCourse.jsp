@@ -169,7 +169,7 @@
 
 
         var formData = new FormData();
-        formData.append('file',$('#file').file);
+        formData.append('file',$('#file').val);
         formData.append( 'category',course_category);
         formData.append( 'course_name',course_name);
         formData.append('course_descr', course_descr);
