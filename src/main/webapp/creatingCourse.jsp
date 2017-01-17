@@ -111,8 +111,24 @@
     </div>
 
 
-
-
+    <div class="input-field col s12">
+        <input placeholder="Название курса" id="course_name" type="text" class="validate">
+        <label for="course_name">Название курса</label>
+    </div>
+    <div class="input-field col s12">
+        <input placeholder="Описание курса" id="course_descr" type="text" class="validate">
+        <label for="course_descr">Описание курса</label>
+    </div>
+    <div class="input-field col s12">
+        <input placeholder="Цена за прохождение курса" id="course_cost" type="text" class="validate">
+        <label for="course_cost">Цена за прохождение курса</label>
+    </div>
+    <form action="#">
+    <p class="range-field">
+        <h6>Время на прохождение курса(дни)</h6>
+        <input type="range" id="test5" min="0" max="100" />
+    </p>
+    </form>
 
 </div>
 
