@@ -37,6 +37,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
 </head>
 <body >
 
@@ -85,24 +86,13 @@
     <div class="col s12">
         <div class="row">
             <div class="input-field col s12">
-                <input class="autocomplete" id="autocomplete-input" type="search">
-                <label for="autocomplete-input"><i class="material-icons">search</i></label>
-                <i class="material-icons">close</i>
+                <i class="material-icons prefix">textsms</i>
+                <input type="text" id="autocomplete-input" class="autocomplete">
+                <label for="autocomplete-input">Autocomplete</label>
             </div>
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function(){
-        $('input.autocomplete').autocomplete({
-            data: {
-                "Apple": null,
-                "Microsoft": null,
-                "Google": 'http://placehold.it/250x250'
-            }
-        });
-    });
-</script>
 
 
 
@@ -354,6 +344,15 @@
 
 <script type="application/javascript" >
 
+        $(document).ready(function(){
+            $('input.autocomplete').autocomplete({
+                data: {
+                    "Apple": null,
+                    "Microsoft": null,
+                    "Google": 'http://placehold.it/250x250'
+                }
+            });
+        });
 
 
     function call() {
