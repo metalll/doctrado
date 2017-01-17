@@ -95,7 +95,7 @@
 
 
     <div class="input-field col s12">
-        <select>
+        <select id="category">
             <option value="12" disabled selected>Выберите категорию</option>
             <option value="1">&nbsp&nbspКатегория 1</option>
             <option value="2">&nbsp&nbspКатегория 2</option>
@@ -112,7 +112,7 @@
 
 
     <div class="input-field col s12">
-        <input placeholder="Название курса" id="course_name" type="text" class="validate">
+        <input id="course_name" type="text" class="validate">
         <label for="course_name">Название курса</label>
     </div>
     <div class="input-field col s12">
@@ -126,7 +126,7 @@
     <form action="#">
         <h6>Время на прохождение курса(дни)</h6>
     <p class="range-field">
-        <input type="range" id="test5" min="1" max="100" />
+        <input type="range" id="testa" min="1" max="100" />
     </p>
     </form>
 
@@ -135,7 +135,7 @@
         <div class="file-field input-field">
             <div class="btn">
                 <span>Фоновое изображение курса</span>
-                <input type="file">
+                <input id = "file" type="file">
             </div>
             <div class="file-path-wrapper">
                 <input class="file-path validate" type="text">
@@ -150,7 +150,7 @@
 <div class="row">
 
     <br>
-    <a class="waves-effect col s12 m12 l12 center center-align waves-light green btn">Создать курс</a>
+    <a href="#" id="submit" class="waves-effect col s12 m12 l12 center center-align waves-light green btn">Создать курс</a>
     <br>
     <br>
 
@@ -160,7 +160,40 @@
 <script src="./js/materialize.min.js"></script>
 <script type="application/javascript" >
 
+    $("#submit").on('click', function() {
+       var course_category = document.getElementById('category').value;
+       var course_name = document.getElementById('course_name').value;
+        var course_descr = document.getElementById('course_descr').value;
+        var course_cost = document.getElementById('course_cost').value;
+        var dayOfTheDead = document.getElementById('testa').value;
+        var fuckingImage = document.getElementById('file').value;
 
+
+
+
+
+        $.ajax({
+            type: 'post',
+            url: 'validate_course',
+            data: {
+              category:course_category,
+      course_name:course_name,
+        course_descr:course_descr,
+      course_cost: course_cost,
+       testa: dayOfTheDead,
+        file: fuckingImage
+
+
+
+
+
+
+
+
+
+            }
+        });
+    });
 
     function call() {
 
