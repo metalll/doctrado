@@ -88,7 +88,7 @@
 <div class="container">
 
     <div class="row">
-        <div class="col s10">
+        <div class="col s12">
             <div class="row">
                 <div class="input-field col s12">
                     <input type="text" id="autocomplete-input" class="autocomplete">
@@ -96,11 +96,7 @@
                 </div>
             </div>
         </div>
-        <div class="col s2">
 
-
-            <a class="waves-effect waves-light btn-large"><i class="material-icons center center-align">search</i></a>
-        </div>
     </div>
 
 </div>
