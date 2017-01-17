@@ -143,7 +143,7 @@
         </div>
     </form>
 </div>
-    <a class="waves-effect col s4 waves-light  green btn">Создать курс</a>
+    <a class="waves-effect col s12 waves-light  green btn">Создать курс</a>
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
