@@ -80,7 +80,7 @@
 <div class="container">
 <div class="row">
 
-    <h1 class="center-align center">ПРИУМНОЖАЙ СВОЙ ОПЫТ С КАЖДЫМ ДНЕМ</h1>
+    <h2 class="center-align center">ПРИУМНОЖАЙ СВОЙ ОПЫТ С КАЖДЫМ ДНЕМ</h2>
     <h6 class="center-align center">Создание курса</h6>
 
 
@@ -130,6 +130,18 @@
     </p>
     </form>
 
+
+    <form action="#">
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>Фоновое изображение курса</span>
+                <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+        </div>
+    </form>
 </div>
 
 
