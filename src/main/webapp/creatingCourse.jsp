@@ -1,4 +1,5 @@
 <%@ page import="NSD.NSDConstants" %>
+<%@ page import="auth_system.UUIDGenerator" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -166,9 +167,9 @@
         var course_descr = document.getElementById('course_descr').value;
         var course_cost = document.getElementById('course_cost').value;
         var dayOfTheDead = document.getElementById('testa').value;
-        var fuckingImage = document.getElementById('file').value;
-        var fuckingImage1 = document.getElementById('file1').value;
+        var fuckingImage = document.getElementById('file');
 
+        var fuckingImageUUID = <%= UUIDGenerator.Generate() %>;
 
 
 
@@ -181,8 +182,7 @@
         course_descr:course_descr,
       course_cost: course_cost,
        testa: dayOfTheDead,
-        file: fuckingImage,
-                file1: fuckingImage1
+        file: fuckingImageUUID,
 
 
 
@@ -191,6 +191,22 @@
 
 
 
+
+            }
+
+            ,
+            success:function(data) {
+            var fd = new FormData();
+            fd.append('file',fuckingImage);
+              $.ajax( {  type: 'post',
+                    url: 'uploadData?set='+fuckingImageUUID,
+                    data:fd,
+                success:function (data) {
+                    alert("success");
+                }
+              }
+                
+              );
             }
         });
     });
