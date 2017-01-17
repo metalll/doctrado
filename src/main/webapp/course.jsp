@@ -75,12 +75,29 @@
 </div>
 <br>
 
-<div class="row">
+<div class="container">
+
+    <div class="row">
+
+        <div class="row">
+            <div class="col s10">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" id="autocomplete-input" class="autocomplete">
+                        <label for="autocomplete-input">Поиск по курсам</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col s2">
+                <a class="waves-effect waves-light btn"><i class="material-icons right">search</i></a>
 
 
+            </div>
+        </div>
+
+    </div>
 
 </div>
-
 
 
 
@@ -394,6 +411,19 @@
         $('.parallax').parallax();
     });
 
+    $('input.autocomplete').autocomplete({
+        data: {
+            "РМПТМ": null,
+            "ОХОРОНА ПРАЦІ": null,
+            "ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ": null,
+            "ОГНЕТУШИТЕЛЬ":null,
+            "ЗДАНИЯ И СООРУЖЕНИЯ":null,
+            "ЗДАНИЯ И СООРУЖЕНИЯ. ОБЩИЕ ТРЕБОВАНИЯ":null,
+            "ОХОРОНА ПРАЦІ ІТР":null,
+            "ОХОРОНА ПРАЦІ ПІД ЧАС РОБОТИ З ІНСТРУМЕНТАМИ ТА ПРИСТРОЯМИ":null
+
+        }
+    });
 
 
 </script>

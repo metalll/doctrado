@@ -199,7 +199,7 @@
             ,
             success:function(data) {
             var fd = new FormData();
-            fd.append("fileToUpload",fuckingImage);
+            fd.append("",fuckingImage);
 
               $.ajax( {
                     type: 'post',
