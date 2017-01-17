@@ -132,11 +132,13 @@
     </form>
 
 
+
+
     <form action="#" id="file_form">
         <div class="file-field input-field">
             <div class="btn">
                 <span>Фоновое изображение курса</span>
-                <input name="file" id = "file_choose" type="file">
+                <input type="file" multiple id="file_choose">
             </div>
             <div class="file-path-wrapper">
                 <input class="file-path validate" type="text">
