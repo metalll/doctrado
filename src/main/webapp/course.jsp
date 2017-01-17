@@ -76,21 +76,30 @@
         </div>
     </nav>
 </div>
-<br>
 
 
-    <div class="row">
-        <div class="col s12">
-            <div class="row">
-                <div class="input-field col s12">
-                    <input type="text" id="autocomplete-input" class="autocomplete" type="search">
-                    <label for="autocomplete-input"><i class="material-icons">search</i></label>
-                    <i class="material-icons">close</i>
-                </div>
+<div class="row">
+    <div class="col s12">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">textsms</i>
+                <input type="text" id="autocomplete-input" class="autocomplete">
+                <label for="autocomplete-input">Autocomplete</label>
             </div>
         </div>
-
     </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $('input.autocomplete').autocomplete({
+            data: {
+                "Apple": null,
+                "Microsoft": null,
+                "Google": 'http://placehold.it/250x250'
+            }
+        });
+    });
+</script>
 
 
 
