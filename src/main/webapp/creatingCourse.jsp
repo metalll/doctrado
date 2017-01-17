@@ -136,7 +136,7 @@
         <div class="file-field input-field">
             <div class="btn">
                 <span>Фоновое изображение курса</span>
-                <input name="file" type="file">
+                <input name="file" id = "file_choose" type="file">
             </div>
             <div class="file-path-wrapper">
                 <input class="file-path validate" type="text">
@@ -167,7 +167,7 @@
         var course_descr = document.getElementById('course_descr').value;
         var course_cost = document.getElementById('course_cost').value;
         var dayOfTheDead = document.getElementById('testa').value;
-        var fuckingImage = document.getElementById('file_form');
+        var fuckingImage = $('#file_choose').files[0];
 
         var fuckingImageUUID = "<%= UUIDGenerator.Generate() %>";
 
@@ -196,16 +196,15 @@
 
             ,
             success:function(data) {
-            var fd = new FormData($('#form_file')[0]);
+            var fd = new FormData();
+            fd.append("fileToUpload",fuckingImage);
 
               $.ajax( {
                     type: 'post',
                     url: 'uploadDocument?set='+fuckingImageUUID,
                     data:fd,
-                      async: false,
-                      cache: false,
                       contentType: false,
-                      enctype: 'multipart/form-data',
+
                       processData: false,
                       success: function (response) {
                           alert(response);
