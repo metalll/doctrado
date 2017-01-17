@@ -82,9 +82,9 @@
     <div class="col s12">
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">textsms</i>
-                <input type="text" id="autocomplete-input" class="autocomplete">
-                <label for="autocomplete-input">Autocomplete</label>
+                <input class="purple darken-4 autocomplete" id="autocomplete-input" type="search">
+                <label for="autocomplete-input"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
             </div>
         </div>
     </div>
