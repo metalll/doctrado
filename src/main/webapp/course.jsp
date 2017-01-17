@@ -73,9 +73,8 @@
     </nav>
 </div>
 
-<div class="container " style=".ui-front {
-z-index:1001;
-}">
+
+<p></p>
 <div class="row">
     <div class="col s12">
         <div class="row">
@@ -87,9 +86,7 @@ z-index:1001;
         </div>
     </div>
 </div>
-</div>
-
-
+<p></p>
 
 
 <div class="container">
@@ -338,12 +335,10 @@ z-index:1001;
 
 <script type="application/javascript" >
 
-    $(document).ready(function () {$('input.autocomplete').autocomplete({
-        data: {
-            "Apple": null,
-            "Microsoft": null,
-            "Google": null
-        }});});
+    $('input.autocomplete').autocomplete({
+        data: {"Apple": null, "Microsoft": null, "Google": 'http://placehold.it/250x250'}
+    });
+
 
 
 
