@@ -344,15 +344,13 @@
 
 <script type="application/javascript" >
 
-        $(document).ready(function(){
-            $('input.autocomplete').autocomplete({
-                data: {
-                    "Apple": null,
-                    "Microsoft": null,
-                    "Google": 'http://placehold.it/250x250'
-                }
-            });
-        });
+    $(document).ready(function () {$('input.autocomplete').autocomplete({
+        data: {
+            "Apple": null,
+            "Microsoft": null,
+            "Google": null
+        }});});
+
 
 
     function call() {
