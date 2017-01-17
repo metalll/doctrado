@@ -78,23 +78,15 @@
 <div class="container">
 
     <div class="row">
-
-        <div class="row">
-            <div class="col s10">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" id="autocomplete-input" class="autocomplete">
-                        <label for="autocomplete-input">Поиск по курсам</label>
-                    </div>
+        <div class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" id="autocomplete-input" class="autocomplete">
+                    <label for="autocomplete-input">Autocomplete</label>
                 </div>
             </div>
-            <div class="col s2">
-                <a class="waves-effect waves-light btn"><i class="material-icons right">search</i></a>
-
-
-            </div>
         </div>
-
     </div>
 
 </div>
