@@ -31,9 +31,12 @@
 
 
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <link href="./css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="./css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 </head>
 <body >
 
@@ -82,7 +85,7 @@
     <div class="col s12">
         <div class="row">
             <div class="input-field col s12">
-                <input class="purple darken-4 autocomplete" id="autocomplete-input" type="search">
+                <input class="autocomplete" id="autocomplete-input" type="search">
                 <label for="autocomplete-input"><i class="material-icons">search</i></label>
                 <i class="material-icons">close</i>
             </div>
@@ -348,8 +351,7 @@
 
 
 
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="./js/materialize.min.js"></script>
+
 <script type="application/javascript" >
 
 
