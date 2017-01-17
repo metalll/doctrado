@@ -17,17 +17,9 @@
 
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
     <link rel="stylesheet" href="./NSDcss/login.css">
-    <style type="text/css">
-        .parallax-container {
-            height: 400px;
-        }
 
-        #progress {
-            width: 200px;
-            height: 200px;
-        }
 
-    </style>
+
 
 
 
@@ -81,7 +73,9 @@
     </nav>
 </div>
 
-<div class="container">
+<div class="container " style=".ui-front {
+z-index:1001;
+}">
 <div class="row">
     <div class="col s12">
         <div class="row">
@@ -278,9 +272,7 @@
 
     </div></div>
 
-<div class="container" style=".ui-front {
-z-index:1001;
-}">
+<div class="container">
     <div class="row">
 
         <div class="row col s4">
