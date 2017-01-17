@@ -166,7 +166,7 @@
         var course_descr = document.getElementById('course_descr').value;
         var course_cost = document.getElementById('course_cost').value;
         var dayOfTheDead = document.getElementById('testa').value;
-        var fuckingImage = document.getElementById('file').value;
+        var fuckingImage = $('#file')[0].files[0];
 
 
 
