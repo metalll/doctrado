@@ -200,7 +200,7 @@
 
               $.ajax( {
                     type: 'post',
-                    url: 'uploadData?set='+fuckingImageUUID,
+                    url: 'uploadDocument?set='+fuckingImageUUID,
                     data:fd,
                       async: false,
                       cache: false,

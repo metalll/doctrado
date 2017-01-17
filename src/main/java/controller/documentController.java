@@ -39,12 +39,13 @@ public class documentController extends HttpServlet {
             writer.flush();
             return;
         }
-        String key = "";
-        for(Cookie cookie : request.getCookies()){
-            if(cookie.getName().equals(NSDConstants.uTokenCookie)){
-                key = cookie.getValue();
-            }
-        }
+        String key = request.getQueryString();
+
+
+        PrintWriter writer = response.getWriter();
+        writer.println(key);
+        writer.flush();
+
 
         // configures upload settings
         DiskFileItemFactory factory = new DiskFileItemFactory();
