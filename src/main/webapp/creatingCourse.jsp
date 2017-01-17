@@ -166,21 +166,32 @@
         var course_descr = document.getElementById('course_descr').value;
         var course_cost = document.getElementById('course_cost').value;
         var dayOfTheDead = document.getElementById('testa').value;
+        var fuckingImage = document.getElementById('file').val;
 
 
-        var formData = new FormData();
-        formData.append('file',$('#file').val);
-        formData.append( 'category',course_category);
-        formData.append( 'course_name',course_name);
-        formData.append('course_descr', course_descr);
-        formData.append('course_cost',course_cost);
-        formData.append('testa',dayOfTheDead);
+
 
 
         $.ajax({
             type: 'post',
             url: 'validate_course',
-            data: formData
+            data: {
+              category:course_category,
+      course_name:course_name,
+        course_descr:course_descr,
+      course_cost: course_cost,
+       testa: dayOfTheDead,
+        file: fuckingImage
+
+
+
+
+
+
+
+
+
+            }
         });
     });
 
