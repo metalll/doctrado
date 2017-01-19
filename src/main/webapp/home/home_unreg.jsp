@@ -184,8 +184,8 @@
                        background: #ffffff;
                        background-color: #ffffff;
                        width: 100%;
-                       max-width: 271px;
-                       height: 190px;
+                       max-width: 220px;
+                       height: 220px;
                        display: block;
                        border: none;
                        margin: 0 auto;"
