@@ -778,7 +778,7 @@
 
 
     function finishReqS() {
-        alert("st");
+        alert("st /n "+Gemail);
 
     }
 
