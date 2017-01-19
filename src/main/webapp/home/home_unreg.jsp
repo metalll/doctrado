@@ -201,7 +201,7 @@
 
 
         <div class="row col s12">
-            <h5 class="center-align center col s12">Ваш аватар для сайта</h5>
+            <h6 class="center-align center col s12">Ваш аватар для сайта</h6>
 
             <a class="center center-align col s12 waves-effect waves-light btn" onclick="">Зарегестрироваться</a>
 
