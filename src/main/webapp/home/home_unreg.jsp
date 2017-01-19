@@ -202,7 +202,7 @@
         <div class="row col s12">
 
 
-            <a class="waves-effect waves-light btn" onclick="">Зарегестрироваться</a>
+            <a class="center center-align col s12 waves-effect waves-light btn" onclick="">Зарегестрироваться</a>
 
 
 
