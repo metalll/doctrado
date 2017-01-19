@@ -835,6 +835,28 @@
     }
 
 
+    $("#avatar-input").change(function() {
+        is_photo = false;
+        var file, img;
+        var _URL = window.URL || window.webkitURL;
+        if ((file = this.files[0])) {
+            if (this.files[0].size > 5242880) {
+                document.getElementById("avatar-input").value = "";
+                alert("Размер картинки не должен превышать 5Мб");
+                return;
+            }
+            img = new Image();
+            img.onload = function() {
+                is_photo = true;
+                $("#avatar-img").css('width', '100%').css('height', '100%');
+                document.getElementById('avatar-img').src = img.src;
+            };
+            img.onerror = function() {
+                alert("Выбранный файл не является картинкой!");
+            };
+            img.src = _URL.createObjectURL(file);
+        }
+    });
 
     function uploadPhoto() {
         $("#avatar-input").click();
