@@ -181,7 +181,8 @@
     <div class="modal-content">
 
         <button style="position: relative;
-                       background: #dcdbdb;
+                       background: #ffffff;
+                       background-color: #ffffff;
                        width: 100%;
                        max-width: 271px;
                        height: 190px;
@@ -197,6 +198,15 @@
         <input accept="image/*" style="display: none;" id="avatar-input" type="file">
 
 
+
+        <div class="row col s12">
+
+
+            <a class="waves-effect waves-light btn" onclick="">Зарегестрироваться</a>
+
+
+
+        </div>
 
     </div>
 
@@ -740,6 +750,10 @@
     }
 
 
+
+
+
+
     function callReg(accept) {
         var nameR = document.getElementById('nameR').value;
         var last_nameR = document.getElementById('last_nameR').value;
@@ -833,6 +847,9 @@
             }
         });
     }
+
+
+
 
 
     $("#avatar-input").change(function() {
