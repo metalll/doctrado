@@ -561,6 +561,7 @@
     var Gborn = null;
     var Gtest5 = null;
     var GuType = null;
+    var hasPhoto = false;
     function call() {
 
        //$('#progress_bar').modal('open');
@@ -778,7 +779,59 @@
 
 
     function finishReqS() {
-        alert("st /n "+Gemail);
+        //  alert("st /n "+Gemail);
+
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/register',
+            data: {
+                name: Gname,
+                last_name: Glast_name,
+                surname: Gsurname,
+                email: Gemail,
+                password: Gpassword,
+                telephone: Gtelephone,
+                born: Gborn,
+                ifAccept: Gtest5,
+                uType: GuType
+
+            },
+            success: function (data) {
+                if(data == 0){
+                    if(hasPhoto == true){
+                        var form = new FormData();
+                        var photo = $('#avatar-input').prop('files')[0]
+                        form.append( "photo",photo_data.append('photo', photo));
+                        form.append( "id","1231" );
+                        $.ajax({
+
+                            type: 'post',
+                            url: 'uploadPhoto',
+                            processData: false,
+                            contentType: false,
+                            cache: false,
+                            data: form,
+
+
+
+
+
+
+
+
+                        })
+
+
+                    }
+
+
+                }
+            }
+
+
+
+
+        });
 
     }
 
@@ -901,7 +954,7 @@
 
 
     $("#avatar-input").change(function() {
-        is_photo = false;
+        hasPhoto = false;
         var file, img;
         var _URL = window.URL || window.webkitURL;
         if ((file = this.files[0])) {
@@ -912,7 +965,7 @@
             }
             img = new Image();
             img.onload = function() {
-                is_photo = true;
+                hasPhoto = true;
                 $("#avatar-img").css('width', '100%').css('height', '100%');
                 document.getElementById('avatar-img').src = img.src;
             };
