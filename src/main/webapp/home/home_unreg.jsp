@@ -187,6 +187,7 @@
                        max-width: 271px;
                        height: 190px;
                        display: block;
+                       border: none;
                        margin: 0 auto;"
                        type="button"
                 onclick="uploadPhoto()">
