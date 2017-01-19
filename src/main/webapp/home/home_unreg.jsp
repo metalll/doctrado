@@ -178,8 +178,28 @@
 
 <div id="modal4" class="modal">
 
+    <div class="modal-content">
 
-    modal 4 student
+        <button style="position: relative;
+                       background: #dcdbdb;
+                       width: 100%;
+                       max-width: 271px;
+                       height: 190px;
+                       display: block;
+                       margin: 0 auto;"
+                       type="button"
+                onclick="uploadPhoto()">
+
+
+            <img src="/img/camera.png" id="avatar-img">
+
+        </button>
+        <input accept="image/*" style="display: none;" id="avatar-input" type="file">
+
+
+
+    </div>
+
 
 
 </div>
@@ -812,6 +832,12 @@
 
             }
         });
+    }
+
+
+
+    function uploadPhoto() {
+        $("#avatar-input").click();
     }
 </script>
 
