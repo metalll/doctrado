@@ -193,7 +193,7 @@
                 onclick="uploadPhoto()">
 
 
-            <img src="/img/camera.png" id="avatar-img">
+            <img class="responsive-img circle" src="/img/camera.png" id="avatar-img">
 
         </button>
         <input accept="image/*" style="display: none;" id="avatar-input" type="file">
