@@ -203,7 +203,7 @@
         <div class="row col s12">
             <h6 class="center-align center col s12">Ваш аватар для сайта</h6>
 
-            <a class="center center-align col s12 waves-effect waves-light btn" onclick="">Зарегестрироваться</a>
+            <a class="center center-align col s12 waves-effect waves-light btn" onclick="finishReqS()">Зарегестрироваться</a>
 
 
 
@@ -552,9 +552,15 @@
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="../js/materialize.min.js"></script>
 <script type="application/javascript" >
-
-
-
+    var Gname = null;
+    var Glast_name = null;
+    var Gsurname = null;
+    var Gemail = null;
+    var Gpassword = null;
+    var Gtelephone = null;
+    var Gborn = null;
+    var Gtest5 = null;
+    var GuType = null;
     function call() {
 
        //$('#progress_bar').modal('open');
@@ -734,14 +740,33 @@
                 type:accept
             },
             success: function(data) {
-                if (data==0){    $('#modal3').modal('close');
+                if (data==0){
+                    $('#modal3').modal('close');
                     $('#modal1').modal('close');
                     $('#modal2').modal('close');
 
+                    if(accept=='s'){ $('#modal4').modal('open');
 
-                    if(accept=='s') $('#modal4').modal('open');
+                        GuType = "s";
+                    }
 
-                    if(accept=='t') $('#modal5').modal('open');
+                    if(accept=='t') $('#modal5').modal('open');{
+
+                        GuType = "t";
+                    }
+
+
+                    Gname = nameR;
+                    Glast_name = last_nameR ;
+                    Gsurname = surnameR ;
+                    Gemail = emailR ;
+                    Gpassword = passwordR ;
+                    Gtelephone = telephone ;
+                    Gborn = born ;
+                    Gtest5=  test5 ;
+
+
+                    //  $('#progress_bar').modal('close');
                 }
 
             }
@@ -752,7 +777,15 @@
 
 
 
+    function finishReqS() {
+        alert("st");
 
+    }
+
+    function finishReqT() {
+
+        alert("te");
+    }
 
 
     function callReg(accept) {
@@ -835,11 +868,25 @@
                     $('#modal1').modal('close');
                     $('#modal2').modal('close');
 
-                    if(accept=='s') $('#modal4').modal('open');
+                    if(accept=='s'){ $('#modal4').modal('open');
 
-                    if(accept=='t') $('#modal5').modal('open');
+                    GuType = "s";
+                    }
+
+                    if(accept=='t') $('#modal5').modal('open');{
+
+                        GuType = "t";
+                    }
 
 
+                    Gname = nameR;
+                    Glast_name = last_nameR ;
+                    Gsurname = surnameR ;
+                    Gemail = emailR ;
+                    Gpassword = passwordR ;
+                    Gtelephone = telephone ;
+                    Gborn = born ;
+                    Gtest5=  test5 ;
 
 
                     //  $('#progress_bar').modal('close');
