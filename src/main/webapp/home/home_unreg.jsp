@@ -796,7 +796,7 @@
                 telephone: Gtelephone,
                 born: Gborn,
                 ifAccept: Gtest5,
-                uType: "s",
+                Type: 's',
                 hasPhoto:hasPhoto
             },
             success: function (data) {
