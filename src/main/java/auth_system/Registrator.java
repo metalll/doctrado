@@ -56,10 +56,10 @@ public class Registrator extends HttpServlet {
 
         if (paramMap.get("Type")[0].equals("s"))
         {
-            this.reg_student(paramMap,null);// completion);
+            this.reg_student(paramMap, completion);
         }
         else{
-            this.reg_teacher(paramMap,null);//completion);
+            this.reg_teacher(paramMap, completion);
         }
     }
 
