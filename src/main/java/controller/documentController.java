@@ -23,7 +23,7 @@ public class documentController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     // location to store file uploaded
-    private static final String UPLOAD_DIRECTORY = NSDConstants.UPLOAD_DIR + "/NSDuploadDIR";
+    private static final String UPLOAD_DIRECTORY = NSDConstants.UPLOAD_DIR;
 
     // upload settings
     private static final int MEMORY_THRESHOLD = 1024 * 1024 * 3;  // 3MB
