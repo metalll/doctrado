@@ -49,7 +49,7 @@ public class documentController extends HttpServlet {
         // sets memory threshold - beyond which files are stored in disk
         factory.setSizeThreshold(MEMORY_THRESHOLD);
         // sets temporary location to store files
-        factory.setRepository(new File(UPLOAD_DIRECTORY));
+        factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
 
         ServletFileUpload upload = new ServletFileUpload(factory);
 
@@ -61,8 +61,7 @@ public class documentController extends HttpServlet {
 
         // constructs the directory path to store upload file
         // this path is relative to application's directory
-        String uploadPath = getServletContext().getRealPath("")
-                + File.separator + UPLOAD_DIRECTORY;
+        String uploadPath = UPLOAD_DIRECTORY;
 
         // creates the directory if it does not exist
         File uploadDir = new File(uploadPath);
