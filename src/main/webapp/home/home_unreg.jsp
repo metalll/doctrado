@@ -829,7 +829,7 @@
             },
             success: function (data) {
 
-                if (hasPhoto) {
+                if (data == 0) {
                         var form = new FormData();
                         var photo = $('#avatar-input').prop('files')[0];
                     form.append("photo", photo.append('photo', photo));
@@ -841,7 +841,14 @@
                             processData: false,
                             contentType: false,
                             cache: false,
-                            data: form
+                            data: form,
+                            success: function (data) {
+
+                                alert("error");
+
+                            }
+
+
 
 
                         });
