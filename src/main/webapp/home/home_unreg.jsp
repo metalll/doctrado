@@ -828,8 +828,8 @@
                 hasPhoto: hasPhoto
             },
             success: function (data) {
-                if (data == 0) {
-                    if (hasPhoto == true) {
+
+                if (hasPhoto == "true") {
                         var form = new FormData();
                         var photo = $('#avatar-input').prop('files')[0];
                         form.append("photo", photo_data.append('photo', photo));
@@ -837,21 +837,16 @@
                         $.ajax({
 
                             type: 'post',
-                            url: 'uploadPhoto',
+                            url: 'uploadDocument',
                             processData: false,
                             contentType: false,
                             cache: false,
                             data: form
 
 
-                        })
-
-
+                        });
                     }
-
-
                 }
-            }
 
 
         });
