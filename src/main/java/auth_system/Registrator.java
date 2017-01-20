@@ -50,7 +50,7 @@ public class Registrator extends HttpServlet {
             }
         };*/
 
-        if(paramMap.get("uType")[0].equals("s"))
+        if (paramMap.get("Type")[0].equals("s"))
         {
             this.reg_student(paramMap,null);// completion);
         }
