@@ -2,16 +2,11 @@ package auth_system;
 
 import Interfaces.ICompletion;
 import NSD.NSDConstants;
-import com.sun.deploy.nativesandbox.comm.Response;
-import database.User.DBStudent;
 import database.User.DBTeacher;
-import model.Users.BaseUser;
-import model.Users.Student;
 import model.Users.Teacher;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,7 +19,7 @@ import java.util.Map;
  */
 @WebServlet(name = "Registrator",urlPatterns = "/register")
 public class Registrator extends HttpServlet {
-    HttpServletResponse responseA;
+    private HttpServletResponse responseA;
 
     protected void doPost(HttpServletRequest request,final HttpServletResponse response) throws ServletException, IOException {
         if(!request.isSecure())response.sendRedirect(NSDConstants.HOST+"/register");
