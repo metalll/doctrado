@@ -104,8 +104,8 @@ public class Registrator extends HttpServlet {
                 paramMap.get("password")[0],
                 paramMap.get("telephone")[0],
                 paramMap.get("born")[0],
-                "",
-                "",
+                "No",
+                "No",
                         UUIDGenerator.Generate(),
                         "s",
                 paramMap.get("hasPhoto")[0].equals("true") ? "YES" : "NO");
