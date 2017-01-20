@@ -33,7 +33,7 @@ public class Registrator extends HttpServlet {
         responseA=response;
         request.setCharacterEncoding ("UTF-8");
         Map<String,String[]> paramMap = request.getParameterMap();
-        ICompletion completion = new ICompletion() {
+       /* ICompletion completion = new ICompletion() {
             @Override
             public void afterOperation(Object bundle) {
                 if(bundle != null){
@@ -53,14 +53,14 @@ public class Registrator extends HttpServlet {
                     }
                 }
             }
-        };
+        };*/
 
         if(paramMap.get("uType")[0].equals("s"))
         {
-            this.reg_student(paramMap,completion);
+            this.reg_student(paramMap,null);// completion);
         }
         else{
-            this.reg_teacher(paramMap,completion);
+            this.reg_teacher(paramMap,null);//completion);
         }
     }
 

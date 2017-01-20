@@ -727,6 +727,9 @@
                 return;
             }
         }
+
+        GuType = accept;
+
         $.ajax({
             type: 'post',
             url: 'https://doctrado-sviasy.rhcloud.com/validate_user',
@@ -793,7 +796,7 @@
                 telephone: Gtelephone,
                 born: Gborn,
                 ifAccept: Gtest5,
-                uType: GuType,
+                uType: "s",
                 hasPhoto:hasPhoto
             },
             success: function (data) {
