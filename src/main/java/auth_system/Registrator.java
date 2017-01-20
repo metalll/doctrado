@@ -23,13 +23,13 @@ import java.util.Map;
  */
 @WebServlet(name = "Registrator",urlPatterns = "/register")
 public class Registrator extends HttpServlet {
-    private HttpServletResponse responseA;
+
 
     protected void doPost(HttpServletRequest request,final HttpServletResponse response) throws ServletException, IOException {
         if(!request.isSecure())response.sendRedirect(NSDConstants.HOST+"/register");
         response.setContentType ("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter ();
-        responseA=response;
+
         request.setCharacterEncoding ("UTF-8");
         Map<String,String[]> paramMap = request.getParameterMap();
         ICompletion completion = new ICompletion() {
