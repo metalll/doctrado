@@ -829,7 +829,7 @@
             },
             success: function (data) {
 
-                if (hasPhoto == "true") {
+                if (hasPhoto) {
                         var form = new FormData();
                         var photo = $('#avatar-input').prop('files')[0];
                     form.append("photo", photo.append('photo', photo));
