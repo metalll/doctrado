@@ -803,7 +803,7 @@
                 if(data == 0){
                     if(hasPhoto == true){
                         var form = new FormData();
-                        var photo = $('#avatar-input').prop('files')[0]
+                        var photo = $('#avatar-input').prop('files')[0];
                         form.append( "photo",photo_data.append('photo', photo));
                         form.append( "id","1231" );
                         $.ajax({
