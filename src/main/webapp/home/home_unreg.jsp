@@ -793,8 +793,8 @@
                 telephone: Gtelephone,
                 born: Gborn,
                 ifAccept: Gtest5,
-                uType: GuType
-
+                uType: GuType,
+                hasPhoto:hasPhoto
             },
             success: function (data) {
                 if(data == 0){
