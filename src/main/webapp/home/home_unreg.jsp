@@ -614,8 +614,7 @@
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
-    };
-
+    }
     function call1() {
 //        $('#progress_bar').modal('open');
         var email = document.getElementById('email').value;
@@ -665,7 +664,6 @@
             }
         });
     }
-
     function callReg1(accept) {
         var nameR = document.getElementById('nameR1').value;
         var last_nameR = document.getElementById('last_nameR1').value;
@@ -778,9 +776,6 @@
 
 
     }
-
-
-
     function finishReqS() {
         //  alert("st /n "+Gemail);
 
@@ -837,13 +832,10 @@
         });
 
     }
-
     function finishReqT() {
 
         alert("te");
     }
-
-
     function callReg(accept) {
         var nameR = document.getElementById('nameR').value;
         var last_nameR = document.getElementById('last_nameR').value;
@@ -951,11 +943,6 @@
             }
         });
     }
-
-
-
-
-
     $("#avatar-input").change(function() {
         hasPhoto = false;
         var file, img;
@@ -978,7 +965,6 @@
             img.src = _URL.createObjectURL(file);
         }
     });
-
     function uploadPhoto() {
         $("#avatar-input").click();
     }
