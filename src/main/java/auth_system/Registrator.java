@@ -2,11 +2,15 @@ package auth_system;
 
 import Interfaces.ICompletion;
 import NSD.NSDConstants;
+import database.User.DBStudent;
 import database.User.DBTeacher;
+import model.Users.BaseUser;
+import model.Users.Student;
 import model.Users.Teacher;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,7 +32,7 @@ public class Registrator extends HttpServlet {
         responseA=response;
         request.setCharacterEncoding ("UTF-8");
         Map<String,String[]> paramMap = request.getParameterMap();
-       /* ICompletion completion = new ICompletion() {
+        ICompletion completion = new ICompletion() {
             @Override
             public void afterOperation(Object bundle) {
                 if(bundle != null){
@@ -48,7 +52,7 @@ public class Registrator extends HttpServlet {
                     }
                 }
             }
-        };*/
+        };
 
         if (paramMap.get("Type")[0].equals("s"))
         {
@@ -91,40 +95,27 @@ public class Registrator extends HttpServlet {
     }
 
     private void reg_student(Map<String,String[]> paramMap, final ICompletion completion){
-                /*final Student student = new Student(
+        final Student student = new Student(
                         1,
-                        paramMap.get("")[0],
-                        paramMap.get("user[patronymic]")[0],
-                        paramMap.get("user[surname]")[0],
-                        paramMap.get("user[email]")[0],
-                        paramMap.get("user[password]")[0],
-                        paramMap.get("user[phone]")[0],
-                        paramMap.get("user[birth_date]")[0],
-                        paramMap.paget("user[education]")[0],
-                        paramMap.get("user[work_place]")[0],
+                paramMap.get("name")[0],
+                paramMap.get("last_name")[0],
+                paramMap.get("surname")[0],
+                paramMap.get("email")[0],
+                paramMap.get("password")[0],
+                paramMap.get("telephone")[0],
+                paramMap.get("born")[0],
+                "",
+                "",
                         UUIDGenerator.Generate(),
                         "s",
-                        paramMap.get("user[photo]")[0].equals("true")?"YES":"NO");*/
+                paramMap.get("hasPhoto")[0].equals("true") ? "YES" : "NO");
 
-        try {
-            PrintWriter out = responseA.getWriter ();
-            for (String key:paramMap.keySet()) {
-                out.write(key + " "+ paramMap.get(key)[0] + "\n");
 
+        DBStudent.getInstance().add(student, new ICompletion() {
+            @Override
+            public void afterOperation(Object bundle) {
+                completion.afterOperation(student);
             }
-            out.flush();
-            out.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-
-//        DBStudent.getInstance().add(student, new ICompletion() {
-//            @Override
-//            public void afterOperation(Object bundle) {
-//                completion.afterOperation(student);
-//            }
-//        });
+        });
     }
 }
