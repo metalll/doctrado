@@ -44,7 +44,7 @@ public class Registrator extends HttpServlet {
                     response.addCookie(cookie1);
                     response.setStatus(HttpServletResponse.SC_OK);
                     try {
-                        response.getWriter().write("");
+                        response.getWriter().write("0");
                         response.getWriter().flush();
                         response.getWriter().close();
                     }catch (Exception e){
