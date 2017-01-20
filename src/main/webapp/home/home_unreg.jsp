@@ -833,8 +833,8 @@
                         var form = new FormData();
                         var photo = $('#avatar-input').prop('files')[0];
                     form.append('photo', photo);
-                        form.append("id", "1231");
-                        $.ajax({
+
+                    $.ajax({
 
                             type: 'post',
                             url: 'https://doctrado-sviasy.rhcloud.com/uploadDocument',
