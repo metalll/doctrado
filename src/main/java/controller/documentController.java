@@ -1,6 +1,5 @@
 package controller;
 
-import NSD.NSDConstants;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -23,7 +22,7 @@ public class documentController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     // location to store file uploaded
-    private static final String UPLOAD_DIRECTORY = NSDConstants.UPLOAD_DIR;
+    private static final String UPLOAD_DIRECTORY = "/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload";
 
     // upload settings
     private static final int MEMORY_THRESHOLD = 1024 * 1024 * 3;  // 3MB
