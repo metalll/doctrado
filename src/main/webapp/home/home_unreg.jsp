@@ -858,8 +858,9 @@
                 if (data == 0) {
                         var form = new FormData();
                         var photo = $('#avatar-input').prop('files')[0];
-                    form.append('photo', photo);
                     form.append('type', 'avatar');
+                    form.append('photo', photo);
+
                     $.ajax({
 
                             type: 'post',
