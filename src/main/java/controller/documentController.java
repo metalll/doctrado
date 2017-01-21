@@ -93,7 +93,7 @@ public class documentController extends HttpServlet {
                         request.setAttribute("message",
                                 "Upload has been done successfully!");
                     } else {
-
+                        item.getName().equals("type");
                         ByteArrayOutputStream result = new ByteArrayOutputStream();
                         byte[] buffer = new byte[1024];
                         int length;
