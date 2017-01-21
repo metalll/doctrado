@@ -79,21 +79,7 @@ public class documentController extends HttpServlet {
             if (formItems != null && formItems.size() > 0) {
                 // iterates over form's fields
                 for (FileItem item : formItems) {
-
-
-                    // processes only fields that are not form fields
-                    if (!item.isFormField()) {
-                        String fileName = new File(item.getName()).getName();
-                        String filePath = uploadPath + File.separator + fileName;
-                        File storeFile = new File(filePath);
-
-
-                        // saves the file on disk
-                        item.write(storeFile);
-                        request.setAttribute("message",
-                                "Upload has been done successfully!");
-                    } else {
-                        item.getName().equals("type");
+                    if (item.getName().equals("type")) {
                         ByteArrayOutputStream result = new ByteArrayOutputStream();
                         byte[] buffer = new byte[1024];
                         int length;
@@ -107,7 +93,23 @@ public class documentController extends HttpServlet {
                         out.write(str + " has worked");
                         out.flush();
                         out.close();
+                        continue;
                     }
+
+
+                    // processes only fields that are not form fields
+                    if (!item.isFormField()) {
+                        String fileName = new File(item.getName()).getName();
+                        String filePath = uploadPath + File.separator + fileName;
+                        File storeFile = new File(filePath);
+
+
+                        // saves the file on disk
+                        item.write(storeFile);
+                        request.setAttribute("message",
+                                "Upload has been done successfully!");
+                    }
+
                 }
             }
         } catch (Exception ex) {
