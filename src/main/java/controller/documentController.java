@@ -111,7 +111,7 @@ public class documentController extends HttpServlet {
             }
         } catch (Exception ex) {
             request.setAttribute("message",
-                    "There was an error: " + ex.getMessage());
+                    "There was an error: " + ex.getMessage() + " " + ex.fillInStackTrace());
         }
         // redirects client to message page
         getServletContext().getRequestDispatcher("/message.jsp").forward(
