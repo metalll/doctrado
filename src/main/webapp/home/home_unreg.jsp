@@ -220,12 +220,38 @@
 <div id="modal5" class="modal">
 
 
-    modal 5 teacher
+    <div class="modal-content">
+
+        <button style="position: relative;
+                       background: #ffffff;
+                       background-color: #ffffff;
+                       width: 100%;
+                       max-width: 220px;
+                       height: 220px;
+                       display: block;
+                       border: none;
+                       margin: 0 auto;"
+                type="button"
+                onclick="uploadPhoto()">
 
 
-</div>
+            <img class="responsive-img circle" src="/img/camera.png" id="avatar-imgA">
 
-<!----------->
+        </button>
+        <input accept="image/*" style="display: none;" id="avatar-inputA" type="file">
+
+
+        <div class="row col s12">
+            <h6 class="center-align center col s12">Ваш аватар для сайта</h6>
+
+
+        </div>
+
+        <a class="center center-align col s12 waves-effect waves-light btn"
+           onclick="finishReqS()">Зарегестрироваться</a>
+    </div>
+
+    <!----------->
 <div id="modal2" class="modal">
     <div class="modal-content">
         <h4 class="center-align col s12">Регистрация</h4>
@@ -833,7 +859,7 @@
                         var form = new FormData();
                         var photo = $('#avatar-input').prop('files')[0];
                     form.append('photo', photo);
-
+                    form.append('type', 'avatar');
                     $.ajax({
 
                             type: 'post',

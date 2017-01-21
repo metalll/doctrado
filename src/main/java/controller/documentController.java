@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -78,6 +79,8 @@ public class documentController extends HttpServlet {
             if (formItems != null && formItems.size() > 0) {
                 // iterates over form's fields
                 for (FileItem item : formItems) {
+
+
                     // processes only fields that are not form fields
                     if (!item.isFormField()) {
                         String fileName = new File(item.getName()).getName();
@@ -89,6 +92,21 @@ public class documentController extends HttpServlet {
                         item.write(storeFile);
                         request.setAttribute("message",
                                 "Upload has been done successfully!");
+                    } else {
+
+                        ByteArrayOutputStream result = new ByteArrayOutputStream();
+                        byte[] buffer = new byte[1024];
+                        int length;
+                        while ((length = item.getInputStream().read(buffer)) != -1) {
+                            result.write(buffer, 0, length);
+                        }
+                        String str = result.toString("UTF-8");
+
+                        response.setContentType("text/html; charset=UTF-8");
+                        PrintWriter out = response.getWriter();
+                        out.write(str + " has worked");
+                        out.flush();
+                        out.close();
                     }
                 }
             }
