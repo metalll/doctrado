@@ -10,7 +10,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -79,18 +78,8 @@ public class documentController extends HttpServlet {
             if (formItems != null && formItems.size() > 0) {
                 // iterates over form's fields
                 for (FileItem item : formItems) {
-                    if (item.getName().equals("type")) {
-                        ByteArrayOutputStream result = new ByteArrayOutputStream();
-                        byte[] buffer = new byte[1024];
-                        int length;
-                        while ((length = item.getInputStream().read(buffer)) != -1) {
-                            result.write(buffer, 0, length);
-                        }
-                        str = result.toString("UTF-8");
-
-
-
-                        continue;
+                    if (item.getFieldName().equals("type")) {
+                        str = item.getString();
                     }
 
 
