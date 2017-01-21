@@ -74,12 +74,14 @@ public class documentController extends HttpServlet {
             // parses the request's content to extract file data
             @SuppressWarnings("unchecked")
             List<FileItem> formItems = upload.parseRequest(request);
-            String str = "";
+            String str = "-1";
             if (formItems != null && formItems.size() > 0) {
                 // iterates over form's fields
                 for (FileItem item : formItems) {
-                    if (item.getFieldName().equals("type")) {
+                    if (item.isFormField()) {
                         str = item.getString();
+                        str += " " + item.getFieldName();
+                        str += " " + item.getName();
                     }
 
 
