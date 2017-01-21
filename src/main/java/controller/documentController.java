@@ -93,6 +93,9 @@ public class documentController extends HttpServlet {
 
                             writer.write(str);
                         } catch (IOException e) {
+                            request.setAttribute("message",
+                                    "There was an error: " + e.getMessage());
+
                         } finally {
                             try {
                                 if (writer != null)
