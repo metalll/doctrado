@@ -10,7 +10,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -72,7 +75,7 @@ public class documentController extends HttpServlet {
             // parses the request's content to extract file data
             @SuppressWarnings("unchecked")
             List<FileItem> formItems = upload.parseRequest(request);
-
+            String str = "";
             if (formItems != null && formItems.size() > 0) {
                 // iterates over form's fields
                 for (FileItem item : formItems) {
@@ -83,26 +86,8 @@ public class documentController extends HttpServlet {
                         while ((length = item.getInputStream().read(buffer)) != -1) {
                             result.write(buffer, 0, length);
                         }
-                        String str = result.toString("UTF-8");
+                        str = result.toString("UTF-8");
 
-                        BufferedWriter writer = null;
-                        try {
-
-                            writer = new BufferedWriter(new FileWriter("file"));
-
-
-                            writer.write(str);
-                        } catch (IOException e) {
-                            request.setAttribute("message",
-                                    "There was an error: " + e.getMessage());
-
-                        } finally {
-                            try {
-                                if (writer != null)
-                                    writer.close();
-                            } catch (IOException e) {
-                            }
-                        }
 
 
                         continue;
@@ -119,7 +104,7 @@ public class documentController extends HttpServlet {
                         // saves the file on disk
                         item.write(storeFile);
                         request.setAttribute("message",
-                                "Upload has been done successfully!");
+                                "Upload has been done successfully!   " + str);
                     }
 
                 }
