@@ -111,8 +111,9 @@ public class documentController extends HttpServlet {
                     if (!item.isFormField()) {
                         String fileName = new File(item.getName()).getName();
                         String filePath = uploadPath + File.separator + fileName;
-                        File storeFile = new File(filePath);
                         GenfilePath = filePath;
+                        File storeFile = new File(filePath);
+
 
                         // saves the file on disk
                         item.write(storeFile);
@@ -133,6 +134,18 @@ public class documentController extends HttpServlet {
 
                 }
 
+                if (type == null) {
+                    type = "NULL";
+                }
+                if (uuid == null) {
+                    uuid = "NULL";
+                }
+                if (GenfilePath == null) {
+                    GenfilePath = "NULL";
+                }
+                if (userInfo == null) {
+                    userInfo = "NULL";
+                }
 
                 //Write res info to DB
                 setExecuteDB("INSERT INTO  `doctrado`.`resourses` (" +
