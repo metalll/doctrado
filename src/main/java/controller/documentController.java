@@ -127,7 +127,7 @@ public class documentController extends HttpServlet {
                 for (Cookie cookie : cookies) {
 
                     if (cookie.getName().equals(NSDConstants.uTokenCookie)) {
-                        userInfo = cookie.getName();
+                        userInfo = cookie.getValue();
                     }
 
 
