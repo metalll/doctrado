@@ -148,7 +148,7 @@ public class documentController extends HttpServlet {
                 }
 
                 //Write res info to DB
-                setExecuteDB("INSERT INTO  `doctrado`.`resourses` (`type` ,`uuid` ,`path` ,`userInfo)VALUES ('" + type + "','" + uuid + "','" + GenfilePath + "','" + userInfo + "'" + ");", new ICompletion() {
+                setExecuteDB("INSERT INTO `doctrado`.`resourses` (`type`, `uuid`, `path`, `userInfo`) VALUES (\'dwede\', \'esffse\', \'fsefsefesf\', \'esfesfse\');", new ICompletion() {
                     @Override
                     public void afterOperation(Object bundle) {
                         try {
