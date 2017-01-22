@@ -148,21 +148,13 @@ public class documentController extends HttpServlet {
                 }
 
                 //Write res info to DB
-                setExecuteDB("INSERT INTO  `doctrado`.`resourses` (" +
-                        "`type` ," +
-                        "`uuid` ," +
-                        "`path` ," +
-                        "`userInfo" +
-                        ")" +
-                        "VALUES (" +
-                        "'" + type + "',  '" + uuid + "',  '" + GenfilePath + "',  '" + userInfo + "'" +
-                        ");", new ICompletion() {
+                setExecuteDB("INSERT INTO  `doctrado`.`resourses` (`type` ,`uuid` ,`path` ,`userInfo)VALUES ('" + type + "','" + uuid + "','" + GenfilePath + "','" + userInfo + "'" + ");", new ICompletion() {
                     @Override
                     public void afterOperation(Object bundle) {
                         try {
                             int errors = 0;
 
-
+                            response.setStatus(HttpServletResponse.SC_OK);
                             response.getWriter().write("" + errors);
                             response.getWriter().flush();
                             response.getWriter().close();
