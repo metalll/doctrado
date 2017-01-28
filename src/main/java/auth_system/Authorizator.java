@@ -22,23 +22,19 @@ import java.util.Map;
 public class Authorizator extends HttpServlet {
 
 
+    public static void addAuthSession(String[] session) {
 
-    protected void doPost(HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    protected void doPost(final HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
         if(!request.isSecure())response.sendRedirect(NSDConstants.HOST+"/login");
-
-
-
-        response.setContentType ("text/html; charset=UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
         PrintWriter out = response.getWriter ();
         request.setCharacterEncoding ("UTF-8");
-
-
-
-
         Map<String, String[]> map = request.getParameterMap();
         final String login =  map.get("email")[0];
         String password = map.get("password")[0];
-
         DBBaseUser.getInstance().getUserWithEmailAndPass(login, password, new ICompletion() {
             @Override
             public void afterOperation(Object bundle) {
@@ -57,6 +53,20 @@ public class Authorizator extends HttpServlet {
                         cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
                         Cookie cookie1 = new Cookie(NSDConstants.uTypeCookie,((BaseUser)bundle).getUserType());
                         cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
+
+                        Cookie[] cookie2 = request.getCookies();
+
+                        for (Cookie tempCookie : cookie2) {
+                            if (tempCookie.getName().equals("JSESSIONID")) {
+
+
+                            }
+
+
+                        }
+
+
+
                         response.addCookie(cookie);
                         response.addCookie(cookie1);
                         response.setStatus(HttpServletResponse.SC_OK);

@@ -137,7 +137,7 @@ public class documentController extends HttpServlet {
                 if (type == null) {
                     type = "NULL";
                 }
-                if (uuid == null) {
+                if (uuid == null || uuid.equals("")) {
                     uuid = "NULL";
                 }
                 if (GenfilePath == null) {
