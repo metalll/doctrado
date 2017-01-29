@@ -38,6 +38,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <script charset="UTF-8"
+            src="//cdn.sendpulse.com/28edd3380a1c17cf65b137fe96516659/js/push/819b89976985b49b08b2d06dbbf60964_1.js"
+            async></script>
 </head>
 <body>
 
