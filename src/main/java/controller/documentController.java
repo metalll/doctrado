@@ -111,13 +111,13 @@ public class documentController extends HttpServlet {
                     if (!item.isFormField()) {
                         String fileName = new File(item.getName()).getName();
                         String filePath = uploadPath + File.separator + fileName;
-                        GenfilePath = filePath;
+
                         File storeFile = new File(filePath);
                         storeFile.setReadable(true, false);
                         storeFile.setWritable(true, false);
                         // saves the file on disk
                         item.write(storeFile);
-
+                        GenfilePath = storeFile.getCanonicalPath();
                     }
 
                 }
