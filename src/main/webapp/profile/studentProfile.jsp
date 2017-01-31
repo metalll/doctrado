@@ -163,7 +163,9 @@
 
     <div class="col s4">
 
-        <img class="col offset-s4 s4 center center-align" src="<%=avatarPath.toString()%>">
+        <img class="col offset-s4 s4 center center-align" src="<%=avatarPath%>">
+
+
     </div>
 
     <div class="col s4">
@@ -637,6 +639,8 @@
     });
     $(document).ready(function () {
         $('.parallax').parallax();
+        alert(<%= avatarPath %>);
+
     });
 
 
