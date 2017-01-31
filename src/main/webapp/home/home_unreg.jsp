@@ -183,9 +183,7 @@
     </div>
 </div>
 
-
 <div id="modal4" class="modal">
-
     <div class="modal-content">
 
         <button style="position: relative;
@@ -253,6 +251,7 @@
         <a class="center center-align col s12 waves-effect waves-light btn"
            onclick="finishReqS()">Зарегестрироваться</a>
     </div>
+</div>
 
     <!----------->
 <div id="modal2" class="modal">
