@@ -21,7 +21,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="csrf-token" content="Wx6PFl4mn9yqYIFxDmcvdgOH6tNtWn3dVOktVC7V">
     <title>Doctrado</title>
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
     <link rel="stylesheet" href="../NSDcss/login.css">
     <style type="text/css">
