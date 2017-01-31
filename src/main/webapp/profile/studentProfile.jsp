@@ -98,7 +98,7 @@
 
     for (int i12 = 0; i12 < avatarPath.size(); i12++) {
 
-<%= avatarPath.get(i12) %>
+        response.getWriter().append("  " + avatarPath.get(i12) + "   ");
 
 }
 %>
