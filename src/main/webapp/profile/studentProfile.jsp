@@ -67,7 +67,7 @@
 
         }
 
-        if (strings.get(12).equals("YES")) {
+        // if (strings.get(12).equals("YES")) {
             rs = stmt.executeQuery("SELECT * FROM `resourses` WHERE `userInfo` LIKE '" + uToken + "' AND `type` LIKE 'avatar'");
             rs.next();
             while (rs.next()) {
@@ -79,7 +79,7 @@
             }
 
 
-        }
+        //}
 
     } catch (SQLException e) {
         e.printStackTrace();
