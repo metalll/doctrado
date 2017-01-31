@@ -3,6 +3,7 @@
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.SQLException" %>
 <%@ page import="java.util.ArrayList" %>
 <%--
   Created by IntelliJ IDEA.
@@ -33,7 +34,7 @@
 
     String query = "SELECT * FROM `users` WHERE `lastUserToken` = '" + uToken + "'";
 
-    ArrayList<String> avatarPath = new ArrayList<S>();  // "/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/Hydrangeas.jpg";
+    ArrayList<String> avatarPath = new ArrayList<String>();  // "/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/Hydrangeas.jpg";
     boolean isSuccess = false;
     // String query =  "SELECT * FROM `users` WHERE `login` = '"+uName+"' AND `pass` ='"+uPass+"'";
     try {
@@ -72,7 +73,7 @@
             while (rs.next()) {
 
                 for (int i = 1; i <= 5; i++) {
-                    avatarPath.add(rs.getString(i));  <%=avatarPath.get(i)%>
+                    avatarPath.add(rs.getString(i));
 }
 
             }
@@ -94,6 +95,12 @@
 
     }
 
+
+    for (int i12 = 0; i12 < avatarPath.size(); i12++) {
+
+<%= avatarPath.get(i12) %>
+
+}
 %>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
