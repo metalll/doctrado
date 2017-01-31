@@ -221,6 +221,7 @@ public class documentController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+
         OutputStream out = resp.getOutputStream();
         FileInputStream in = new FileInputStream("/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/Chrysanthemum.jpg");
         byte[] buffer = new byte[4096];
