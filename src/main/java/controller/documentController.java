@@ -113,8 +113,8 @@ public class documentController extends HttpServlet {
                         String filePath = uploadPath + File.separator + fileName;
                         GenfilePath = filePath;
                         File storeFile = new File(filePath);
-
-
+                        storeFile.setReadable(true, false);
+                        storeFile.setWritable(true, false);
                         // saves the file on disk
                         item.write(storeFile);
 
