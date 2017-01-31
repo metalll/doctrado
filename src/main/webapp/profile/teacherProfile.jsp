@@ -1,12 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="auth_system.Authorizator" %>
+<%@ page import="NSD.NSDConstants" %>
 <%@ page import="com.mysql.jdbc.Statement" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="NSD.NSDConstants" %>
 <%--
   Created by IntelliJ IDEA.
   User: NSD
@@ -246,13 +245,13 @@
                                 <div class="user-about-container">
                                     <h2 class="info-about-user"> <%=strings.get(1)+" "+strings.get(2)+" "+strings.get(3)%></h2>
                                     <h2 class="info-about-user">Дата рождения: <%= strings.get(7) %></h2>
-                                    <h2 class="info-about-user">Преподавательский опыт: <%=strings.get(16)%></h2>
+
                                 </div>
                             </div>
                             <div class="small-12 medium-3 columns end">
                                 <div class="user-profile-buttons">
-                                    <p class="user-rank"><span class="class">Преподаватель</span></p>
-                                    <a class="creating button secondary look-more"><span class="class">подробнее</span></a>
+                                    <p class="user-rank"><span class="class">Студент</span></p>
+                                    <a class="creating button secondary look-more"><span class="class">Подробнее</span></a>
                                     <!-- Должно быть спрятано при условии, что не твой профиль. А кто-то другой просматривает его -->
                                     <a href="statistic" class="creating button secondary "><span class="class">ваша статистика</span></a>
                                 </div>

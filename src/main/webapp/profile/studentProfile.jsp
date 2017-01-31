@@ -1,4 +1,11 @@
-<%@ page import="NSD.NSDConstants" %><%--
+<%@ page import="NSD.NSDConstants" %>
+<%@ page import="com.mysql.jdbc.Statement" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="java.util.ArrayList" %>
+<%--
   Created by IntelliJ IDEA.
   User: NSD
   Date: 16.12.16
@@ -9,7 +16,72 @@
 
 <!DOCTYPE html>
 <html lang="ru">
+<%
 
+    ArrayList<String> strings = new ArrayList<String>();
+    final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
+    //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
+    final String userName = "adminsBmIZAN";
+    final String password = "qIqWymbbb-hk";
+    Connection conn = null;
+    Statement stmt = null;
+    String uToken = null;
+    for (Cookie cookie : request.getCookies()) {
+        if (cookie.getName().equals(NSDConstants.uTokenCookie))
+            uToken = cookie.getValue();
+    }
+
+
+    String query = "SELECT * FROM `users` WHERE `lastUserToken` = '" + uToken + "'";
+
+
+    boolean isSuccess = false;
+    // String query =  "SELECT * FROM `users` WHERE `login` = '"+uName+"' AND `pass` ='"+uPass+"'";
+    try {
+        Class.forName("com.mysql.jdbc.Driver");
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    try {
+        conn = DriverManager.getConnection(databaseUrl, userName, password);
+        stmt = (Statement) conn.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
+        while (rs.next()) {
+            isSuccess = true;
+
+            for (int i = 1; i <= 12; i++) {
+                strings.add(rs.getString(i));
+            }
+
+            //  completion.afterOperation(new Teacher();
+        }
+
+        rs = stmt.executeQuery("SELECT *\n" +
+                "FROM `student`\n" +
+                "WHERE `id` LIKE '" + uToken + "'");
+        while (rs.next()) {
+
+            for (int i = 1; i <= 1; i++) {
+                strings.add(rs.getString(i));
+            }
+
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        if (stmt != null) try {
+            stmt.close();
+        } catch (Exception e) {
+        }
+        if (conn != null) try {
+            conn.close();
+        } catch (Exception e) {
+        }
+
+    }
+
+%>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
@@ -68,8 +140,6 @@
                     <a class="menu-elem" data-anchor="#contacts">Контакты</a>
                 </li>
                 <li><a href="<%=NSDConstants.HOST+"/logout"%>" class="menu-elem waves-effect waves-light red btn white-text darken-3" >Выход</a></li>
-
-
             </ul>
 
             <ul id="nav-mobile" class="side-nav">
@@ -85,21 +155,23 @@
 <div class="row">
 
     <div class="col s4">
-
-        <img class="col offset-s4 s4 center center-align" src="../img/camera.gif">
+        <% %>
+        <img class="col offset-s4 s4 center center-align" src="">
     </div>
 
     <div class="col s4">
 
-            <h5 class="center-align"> Леша Влад Петров </h5>
-            <h5 class="center-align"> Дата рождения: 23.12.1991 </h5>
-            <h5 class="center-align"> Преподавательский опыт: 100 </h5>
+        <h5 class="center-align"><%=strings.get(1) + " " + strings.get(2) + " " + strings.get(3)%>
+        </h5>
+        <h5 class="center-align"> Дата рождения: <%= strings.get(7) %>
+        </h5>
+
 
     </div>
 
     <div class="col s4">
         <div class="row">
-       <p> <a  class="waves-effect col s12 waves-light btn disabled">Преподователь</a>  </p>
+            <p><a class="waves-effect col s12 waves-light btn disabled">Студент</a></p>
 
             <p> <a class="waves-effect col s12 waves-light green btn">Подробнее</a>  </p>
 
@@ -114,24 +186,17 @@
 
     <div class="row col s10 push-s1">
 
-        <p> <a  class="waves-effect col s4 waves-light btn">Созданные курсы<span class="badge pink white-text darken-2">0</span></a>  </p>
 
-        <p> <a class="waves-effect col s4 waves-light  green btn">Купленые курсы <span class="badge new pink darken-2">0</span> </a></p>
+        <p><a class="waves-effect col s4 waves-light  green btn">Мои курсы<span class="badge new pink darken-2">0</span>
+        </a></p>
 
-        <p> <a class="waves-effect col s4 waves-light orange btn">Оповещения <span class="badge white">0</span> </a></p>
+        <p><a class="waves-effect col s4 waves-light orange btn">Оповещения<span class="badge white">0</span> </a></p>
 
     </div>
 
 </div>
 
-<div class="row">
 
-    <div class="col s4 col push-s4 center-align">
-        <a class="waves-effect col s12 waves-light orange btn" href="<%= NSDConstants.HOST+"/creating-course" %>" >Создать курс</a>
-    </div>
-
-
-</div>
 <div class="row">
 
     <div class="col s4 col push-s4 center-align">
@@ -319,8 +384,7 @@
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
-    };
-
+    }
     function call1() {
 //        $('#progress_bar').modal('open');
         var email = document.getElementById('email').value;
