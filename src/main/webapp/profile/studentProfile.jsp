@@ -34,7 +34,7 @@
 
     String query = "SELECT * FROM `users` WHERE `lastUserToken` = '" + uToken + "'";
 
-    String avatarPath = "";
+    String avatarPath = "/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/Hydrangeas.jpg";
     boolean isSuccess = false;
     // String query =  "SELECT * FROM `users` WHERE `login` = '"+uName+"' AND `pass` ='"+uPass+"'";
     try {
