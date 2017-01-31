@@ -95,12 +95,15 @@
 
     }
 
-
+    String savatarPath = "";
     for (int i12 = 0; i12 < avatarPath.size(); i12++) {
 
-        response.getWriter().append("  " + avatarPath.get(i12) + "   ");
+        savatarPath += avatarPath.get(i12) + "     ";
+
+
 
 }
+    response.getWriter().write(savatarPath);
 %>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
