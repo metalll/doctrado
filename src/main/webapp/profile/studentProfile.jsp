@@ -69,6 +69,7 @@
 
         if (strings.get(12).equals("YES")) {
             rs = stmt.executeQuery("SELECT * FROM `resourses` WHERE `userInfo` LIKE '" + uToken + "' AND `type` LIKE 'avatar'");
+            rs.next();
             avatarPath = rs.getString(4);
 
         }
