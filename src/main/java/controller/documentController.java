@@ -14,9 +14,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -35,7 +33,7 @@ public class documentController extends HttpServlet {
     protected static final String password = "qIqWymbbb-hk";
     private static final long serialVersionUID = 1L;
     // location to store file uploaded
-    private static final String UPLOAD_DIRECTORY = "/var/lib/openshift/58512d040c1e66ad2d000024/app-root/runtime/repo/target/doctrado/img";
+    private static final String UPLOAD_DIRECTORY = "/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload";
     // upload settings
     private static final int MEMORY_THRESHOLD = 1024 * 1024 * 3;  // 3MB
     private static final int MAX_FILE_SIZE = 1024 * 1024 * 40; // 40MB
@@ -220,5 +218,18 @@ public class documentController extends HttpServlet {
     }
 
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        OutputStream out = resp.getOutputStream();
+        FileInputStream in = new FileInputStream("/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/Chrysanthemum.jpg");
+        byte[] buffer = new byte[4096];
+        int length;
+        while ((length = in.read(buffer)) > 0) {
+            out.write(buffer, 0, length);
+        }
+        in.close();
+        out.flush();
+    }
 }
+
