@@ -34,7 +34,7 @@
 
     String query = "SELECT * FROM `users` WHERE `lastUserToken` = '" + uToken + "'";
 
-
+    String avatarPath = "";
     boolean isSuccess = false;
     // String query =  "SELECT * FROM `users` WHERE `login` = '"+uName+"' AND `pass` ='"+uPass+"'";
     try {
@@ -64,6 +64,12 @@
             for (int i = 1; i <= 1; i++) {
                 strings.add(rs.getString(i));
             }
+
+        }
+
+        if (strings.get(12).equals("YES")) {
+            rs = stmt.executeQuery("SELECT * FROM `resourses` WHERE `userInfo` LIKE '" + uToken + "' AND `type` LIKE 'avatar'");
+            avatarPath = rs.getString("path");
 
         }
 
@@ -156,7 +162,7 @@
 
     <div class="col s4">
         <% %>
-        <img class="col offset-s4 s4 center center-align" src="">
+        <img class="col offset-s4 s4 center center-align" src="<%=avatarPath%>">
     </div>
 
     <div class="col s4">
