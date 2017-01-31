@@ -33,7 +33,7 @@
 
     String query = "SELECT * FROM `users` WHERE `lastUserToken` = '" + uToken + "'";
 
-    ArrayList<String> avatarPath = new ArrayList<>();  // "/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/Hydrangeas.jpg";
+    ArrayList<String> avatarPath = new ArrayList<S>();  // "/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/Hydrangeas.jpg";
     boolean isSuccess = false;
     // String query =  "SELECT * FROM `users` WHERE `login` = '"+uName+"' AND `pass` ='"+uPass+"'";
     try {
@@ -72,8 +72,8 @@
             while (rs.next()) {
 
                 for (int i = 1; i <= 5; i++) {
-                    avatarPath.add(rs.getString(i));
-<%=rs.getArray(i)%>}
+                    avatarPath.add(rs.getString(i));  <%=avatarPath.get(i)%>
+}
 
             }
 
