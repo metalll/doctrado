@@ -161,8 +161,8 @@
 <div class="row">
 
     <div class="col s4">
-        <% %>
-        <img class="col offset-s4 s4 center center-align" src="<%=avatarPath%>">
+
+        <img class="col offset-s4 s4 center center-align" src="<%=avatarPath.toString()%>">
     </div>
 
     <div class="col s4">
