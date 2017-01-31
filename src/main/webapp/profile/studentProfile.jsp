@@ -68,7 +68,7 @@
         }
 
         // if (strings.get(12).equals("YES")) {
-            rs = stmt.executeQuery("SELECT * FROM `resourses` WHERE `userInfo` LIKE '" + uToken + "' AND `type` LIKE 'avatar'");
+        rs = stmt.executeQuery("SELECT * FROM `resourses` WHERE `userInfo` = '" + uToken + "' AND `type` = 'avatar'");
 
         while (rs.next()) {
 
