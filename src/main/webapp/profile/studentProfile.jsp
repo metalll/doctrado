@@ -176,7 +176,7 @@
 
 <div class="row">
 
-    <div class="col s4">
+    <div class="col s5">
 
         <img class="col s12 center-block responsive-img circle  center center-align"
              src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath.get(3)%>">
@@ -191,7 +191,7 @@
 
     </div>
 
-    <div class="col s4">
+<div class="col s3">
         <div class="row">
             <p><a class="waves-effect col s12 waves-light btn disabled">Студент</a></p>
 
