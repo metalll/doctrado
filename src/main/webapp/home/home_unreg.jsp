@@ -1,4 +1,4 @@
-<%@ page import="NSD.NSDConstants" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: NSD
   Date: 16.12.16
@@ -407,8 +407,13 @@
                 <li>
                     <a class="menu-elem" data-anchor="#contacts">Контакты</a>
                 </li>
-                <li><a href="<%=NSDConstants.HOST+"/logout"%>"
-                       class="menu-elem waves-effect waves-light red btn white-text darken-3">Выход</a></li>
+                <li><a href="#modal2"
+                       class="menu-elem modal-trigger waves-effect waves-light btn white-text green darken-3">Регистрация</a>
+                </li>
+                <li><a href="#modal3"
+                       class="menu-elem modal-trigger waves-effect waves-light orange btn white-text darken-3">Вход</a>
+                </li>
+
             </ul>
 
             <ul id="nav-mobile" class="side-nav">
