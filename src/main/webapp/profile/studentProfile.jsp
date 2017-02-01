@@ -193,27 +193,32 @@
 
     </div>
 
-<div class="col s12">
+<div class="container">
+
+    <div class="col s12">
         <div class="row">
             <p><a class="waves-effect col s12 waves-light btn disabled">Студент</a></p>
         </div>
 </div>
 
-<div class="col s12">
-    <div class="row">
-        <p> <a class="waves-effect col s12 waves-light green btn">Подробнее</a>  </p>
+    <div class="col s12">
+        <div class="row">
+            <p> <a class="waves-effect col s12 waves-light green btn">Подробнее</a>  </p>
+        </div>
+</div>
+
+    <div class="col s12">
+        <div class="row">
+            <p><a claocss="waves-effect col s12 waves-light orange btn">Ваша статистика</a></p>
+        </div>
+
     </div>
-</div>
-
-<div class="col s12">
-    <div class="row">
-        <p>   <a class="waves-effect col s12 waves-light orange btn">Ваша статистика</a>  </p>
-    </div>
-
-</div>
 
 
 </div>
+
+</div>
+
 <div class="row">
 
     <div class="row col s10 push-s1">
