@@ -227,7 +227,7 @@ public class documentController extends HttpServlet {
         File file = new File(path);
 
 
-        resp.setHeader("Content-Disposition", "inline; filename=\"foo.lnk\"");
+        resp.setHeader("Content-Disposition", "inline; filename=\".\"");
         resp.setHeader("Content-Type", getServletContext().getMimeType(file.getName()));
         resp.setHeader("Content-Length", String.valueOf(file.length()));
         if (!path.equals("") && path != null) {
