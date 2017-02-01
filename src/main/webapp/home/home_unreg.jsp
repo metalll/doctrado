@@ -1,4 +1,4 @@
-<%--
+<%@ page import="NSD.NSDConstants" %><%--
   Created by IntelliJ IDEA.
   User: NSD
   Date: 16.12.16
@@ -383,7 +383,6 @@
     </div>
 </div>
 
-
 <div class="navbar-fixed">
     <nav class="white darken-4 grey-text text-darken-4" role="navigation">
         <div class="nav-wrapper container">
@@ -396,33 +395,27 @@
                 <li>
                     <a class="menu-elem" data-anchor="#about">О проекте</a>
                 </li>
-                <li>
-                    <a class="menu-elem" data-anchor="#capabilities">Возможности</a>
-                </li>
+                <%--<li>--%>
+                <%--<a class="menu-elem" data-anchor="#capabilities">Возможности</a>--%>
+                <%--</li>--%>
                 <li>
                     <a class="menu-elem" href="./certificates">Сертификаты</a>
                 </li>
-
                 <li>
                     <a class="menu-elem" data-anchor="#courses">Курсы</a>
                 </li>
                 <li>
                     <a class="menu-elem" data-anchor="#contacts">Контакты</a>
                 </li>
-                <li><a href="#modal2"
-                       class="menu-elem modal-trigger waves-effect waves-light btn white-text green darken-3">Регистрация</a>
-                </li>
-                <li><a href="#modal3"
-                       class="menu-elem modal-trigger waves-effect waves-light orange btn white-text darken-3">Вход</a>
-                </li>
-
-
+                <li><a href="<%=NSDConstants.HOST+"/logout"%>"
+                       class="menu-elem waves-effect waves-light red btn white-text darken-3">Выход</a></li>
             </ul>
 
             <ul id="nav-mobile" class="side-nav">
                 <li><a href="#">Navbar Link</a></li>
             </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a href="#" data-activates="nav-mobile" class="button-collapse black-text"><i
+                    class="material-icons">menu</i></a>
         </div>
     </nav>
 </div>
@@ -516,59 +509,6 @@
     </div>
 </div>
 
-<div id="progress_bar" class="modal">
-    <div style="background: transparent">
-        <div class="preloader-wrapper big active">
-            <div class="spinner-layer spinner-blue">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div>
-                <div class="gap-patch">
-                    <div class="circle"></div>
-                </div>
-                <div class="circle-clipper right">
-                    <div class="circle"></div>
-                </div>
-            </div>
-
-            <div class="spinner-layer spinner-red">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div>
-                <div class="gap-patch">
-                    <div class="circle"></div>
-                </div>
-                <div class="circle-clipper right">
-                    <div class="circle"></div>
-                </div>
-            </div>
-
-            <div class="spinner-layer spinner-yellow">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div>
-                <div class="gap-patch">
-                    <div class="circle"></div>
-                </div>
-                <div class="circle-clipper right">
-                    <div class="circle"></div>
-                </div>
-            </div>
-
-            <div class="spinner-layer spinner-green">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div>
-                <div class="gap-patch">
-                    <div class="circle"></div>
-                </div>
-                <div class="circle-clipper right">
-                    <div class="circle"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
