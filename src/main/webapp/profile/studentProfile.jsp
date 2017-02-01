@@ -179,7 +179,7 @@
     <div class="col s12">
 
         <p class="center-block center-align center"><img
-                class="col s12 center-block responsive-img circle  center center-align"
+                class="col s6 center-block responsive-img circle  center center-align"
                 src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath.get(3)%>"></p>
     </div>
 
