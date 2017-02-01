@@ -35,6 +35,8 @@
         }
 
     </style>
+
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -475,6 +477,13 @@
 <iframe src="<%=NSDConstants.HOST+"/uploadDocument?path=/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/document.pdf"%>"
         style="width: 600px; height: 600px;" frameborder="0">Ваш браузер не поддерживает фреймы
 </iframe>
+
+
+<iframe
+        src="http://docs.google.com/gview?url=<%=NSDConstants.HOST+"/uploadDocument?path=/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/document.pdf"%>"
+        style="width:600px; height:500px;"
+        frameborder="0"
+></iframe>
 
 <div class="container" style="{height: 160px; }">
     <div class="section">
