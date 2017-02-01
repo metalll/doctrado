@@ -225,6 +225,7 @@ public class documentController extends HttpServlet {
         Map<String, String[]> map = req.getParameterMap();
         String path = map.get("path")[0];
 
+
         if (!path.equals("") && path != null) {
             OutputStream out = resp.getOutputStream();
             FileInputStream in = new FileInputStream(path);

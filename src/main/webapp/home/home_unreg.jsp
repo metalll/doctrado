@@ -1,4 +1,4 @@
-<%--
+<%@ page import="NSD.NSDConstants" %><%--
   Created by IntelliJ IDEA.
   User: NSD
   Date: 16.12.16
@@ -447,6 +447,12 @@
     </div>
     <div class="parallax "><img src="../img/background.jpg" alt="Unsplashed background img 1"></div>
 </div>
+
+
+<object data="<%=NSDConstants.HOST+"/uploadDocument?path=/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload"%>"
+        type="application/pdf" width="90%" height="450px">
+    alt: <a href="http://azbukaweb.ru/pdfs/eatc.pdf">Доп. услуги телефонки</a>
+</object>
 
 
 <div class="container" style="{height: 160px; }">
