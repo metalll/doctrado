@@ -179,9 +179,8 @@
 
     <div class="col s12">
 
-        <p class="center-block center-align center" style=" background: 50% 50% no-repeat; /* 50% 50% centers image in div */
-width: 250px;
-height: 250px;"><img
+        <p class="center-block center-align center"
+           style=" background: 50% 50% no-repeat; /* 50% 50% centers image in div */"><img
                 class="col s6 push-s3 pull-s3  center-block responsive-img circle  center center-align"
                 src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath.get(3)%>"></p>
     </div>
