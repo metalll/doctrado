@@ -668,7 +668,7 @@
     });
     $(document).ready(function () {
         $('.parallax').parallax();
-        alert(<%= avatarPath %>);
+        //  alert(<%= avatarPath %>);
 
     });
 
