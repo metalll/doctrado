@@ -183,9 +183,9 @@
     </div>
 
 
-    <h5 class="center-align"><%=strings.get(1) + " " + strings.get(2) + " " + strings.get(3)%>
+    <h5 class="center-align col s12"><%=strings.get(1) + " " + strings.get(2) + " " + strings.get(3)%>
         </h5>
-        <h5 class="center-align"> Дата рождения: <%= strings.get(7) %>
+    <h5 class="center-align col s12"> Дата рождения: <%= strings.get(7) %>
         </h5>
 
 
