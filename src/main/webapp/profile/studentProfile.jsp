@@ -180,12 +180,11 @@
     <div class="col s4">
 
         <img class="col offset-s4 s4 center center-align"
-             src="<%=NSDConstants.HOST+"/documentController?path="+avatarPath.get(3)%>">
+             src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath.get(3)%>">
 
 
     </div>
-
-    <div class="col s4">
+    е
 
         <h5 class="center-align"><%=strings.get(1) + " " + strings.get(2) + " " + strings.get(3)%>
         </h5>
