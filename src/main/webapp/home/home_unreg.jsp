@@ -41,6 +41,17 @@
     <script charset="UTF-8"
             src="//cdn.sendpulse.com/28edd3380a1c17cf65b137fe96516659/js/push/819b89976985b49b08b2d06dbbf60964_1.js"
             async></script>
+    <script type="text/javascript">
+        document.ondragstart = noselect;
+        // запрет на перетаскивание
+        document.onselectstart = noselect;
+        // запрет на выделение элементов страницы
+        document.oncontextmenu = noselect;
+        // запрет на выведение контекстного меню
+        function noselect() {
+            return false;
+        }
+    </script>
 </head>
 <body>
 
@@ -449,7 +460,14 @@
 </div>
 
 
-<object data="<%=NSDConstants.HOST+"/uploadDocument?path=/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/document.pdf"%>"
+<object style="  -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+"
+        data="<%=NSDConstants.HOST+"/uploadDocument?path=/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/document.pdf"%>"
         type="application/pdf" width="90%" height="450px">
     alt: <a href="http://azbukaweb.ru/pdfs/eatc.pdf">Доп. услуги телефонки</a>
 </object>
