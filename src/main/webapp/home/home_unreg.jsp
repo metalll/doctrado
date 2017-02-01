@@ -449,7 +449,7 @@
 </div>
 
 
-<object data="<%=NSDConstants.HOST+"/uploadDocument?path=/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload"%>"
+<object data="<%=NSDConstants.HOST+"/uploadDocument?path=/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/document.pdf"%>"
         type="application/pdf" width="90%" height="450px">
     alt: <a href="http://azbukaweb.ru/pdfs/eatc.pdf">Доп. услуги телефонки</a>
 </object>
