@@ -19,6 +19,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -221,16 +222,31 @@ public class documentController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        Map<String, String[]> map = req.getParameterMap();
+        String path = map.get("path")[0];
 
-        OutputStream out = resp.getOutputStream();
-        FileInputStream in = new FileInputStream("/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/Chrysanthemum.jpg");
-        byte[] buffer = new byte[4096];
-        int length;
-        while ((length = in.read(buffer)) > 0) {
-            out.write(buffer, 0, length);
+        if (!path.equals("") && path != null) {
+            OutputStream out = resp.getOutputStream();
+            FileInputStream in = new FileInputStream(path);
+            byte[] buffer = new byte[4096];
+            int length;
+            while ((length = in.read(buffer)) > 0) {
+                out.write(buffer, 0, length);
+            }
+            in.close();
+            out.flush();
+
+        } else {
+
+            OutputStream out = resp.getOutputStream();
+            out.write(0);
+            out.flush();
+
         }
-        in.close();
-        out.flush();
+
+
+
+
     }
 }
 
