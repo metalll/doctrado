@@ -155,7 +155,6 @@
                 <li>
                     <a class="menu-elem" href="./certificates">Сертификаты</a>
                 </li>
-
                 <li>
                     <a class="menu-elem" data-anchor="#courses">Курсы</a>
                 </li>
@@ -179,10 +178,8 @@
 
     <div class="col s4">
 
-        <img class="col offset-s4 s4 center center-align"
+        <img class="col s4 center-block responsive-img circle  center center-align"
              src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath.get(3)%>">
-
-
     </div>
 
 
@@ -212,10 +209,10 @@
     <div class="row col s10 push-s1">
 
 
-        <p><a class="waves-effect col s4 waves-light  green btn">Мои курсы<span class="badge new pink darken-2">0</span>
+        <p><a class="waves-effect col s6 waves-light  green btn">Мои курсы<span class="badge new pink darken-2">0</span>
         </a></p>
 
-        <p><a class="waves-effect col s4 waves-light orange btn">Оповещения<span class="badge white">0</span> </a></p>
+        <p><a class="waves-effect col s6 waves-light orange btn">Оповещения<span class="badge white">0</span> </a></p>
 
     </div>
 

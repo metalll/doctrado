@@ -248,6 +248,18 @@
 
         </div>
 
+        <h6 class="col s12 center-align center"> Подтверждающие документы </h6>
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>Обзор</span>
+                <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+        </div>
+
+
         <a class="center center-align col s12 waves-effect waves-light btn"
            onclick="finishReqS()">Зарегестрироваться</a>
     </div>
@@ -330,7 +342,7 @@
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
 </div>
-</div>
+
 
 <div id="modal3" class="modal">
     <!-- <div id="progress" class="center center-block"></div>-->
@@ -370,6 +382,8 @@
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
 </div>
+
+
 <div class="navbar-fixed">
     <nav class="white darken-4 grey-text text-darken-4" role="navigation">
         <div class="nav-wrapper container">
@@ -871,11 +885,9 @@
                             contentType: false,
                             cache: false,
                             data: form,
-                            success: function (data) {
-
-                                alert("error");
-
-                            }
+                        success: function (data) {
+                            window.location.href = "http://doctrado-sviasy.rhcloud.com/profile"
+                        }
 
 
 
