@@ -3,6 +3,7 @@ package controller;
 
 import Interfaces.ICompletion;
 import NSD.NSDConstants;
+import auth_system.UUIDGenerator;
 import com.mysql.jdbc.Statement;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -227,7 +228,7 @@ public class documentController extends HttpServlet {
         File file = new File(path);
 
 
-        resp.setHeader("Content-Disposition", "inline; filename=\".\"");
+        resp.setHeader("Content-Disposition", "inline; filename=\"..." + req.hashCode() + ":......+ " + UUIDGenerator.Generate() + "+.............-1 + " + UUIDGenerator.Generate() + " -1\"");
         resp.setHeader("Content-Type", getServletContext().getMimeType(file.getName()));
         resp.setHeader("Content-Length", String.valueOf(file.length()));
         if (!path.equals("") && path != null) {
