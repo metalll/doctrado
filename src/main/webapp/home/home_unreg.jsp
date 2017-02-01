@@ -417,12 +417,6 @@
             </ul>
 
 
-            <div class="container">
-
-                <iframe src="/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/test1.html"></iframe>
-
-
-            </div>
 
 
             <ul id="nav-mobile" class="side-nav">
@@ -856,7 +850,7 @@
     }
     function finishReqT() {
 
-        alert("te");
+        //    alert("te");
     }
     function callReg(accept) {
         var nameR = document.getElementById('nameR').value;
