@@ -416,6 +416,15 @@
 
             </ul>
 
+
+            <div class="container">
+
+                <iframe src="/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/test1.html"></iframe>
+
+
+            </div>
+
+
             <ul id="nav-mobile" class="side-nav">
                 <li><a href="#">Navbar Link</a></li>
             </ul>
