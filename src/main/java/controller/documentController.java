@@ -224,8 +224,12 @@ public class documentController extends HttpServlet {
 
         Map<String, String[]> map = req.getParameterMap();
         String path = map.get("path")[0];
+        File file = new File(path);
 
-        resp.setHeader("Content-Disposition", "inline; filename=\"foo.pdf\"");
+
+        resp.setHeader("Content-Disposition", "inline; filename=\"foo\"");
+        resp.setHeader("Content-Type", getServletContext().getMimeType(file.getName()));
+        resp.setHeader("Content-Length", String.valueOf(file.length()));
         if (!path.equals("") && path != null) {
             OutputStream out = resp.getOutputStream();
             FileInputStream in = new FileInputStream(path);
