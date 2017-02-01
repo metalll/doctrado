@@ -454,6 +454,9 @@
     alt: <a href="http://azbukaweb.ru/pdfs/eatc.pdf">Доп. услуги телефонки</a>
 </object>
 
+<iframe src="<%=NSDConstants.HOST+"/uploadDocument?path=/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/document.pdf"%>"
+        style="width: 600px; height: 600px;" frameborder="0">Ваш браузер не поддерживает фреймы
+</iframe>
 
 <div class="container" style="{height: 160px; }">
     <div class="section">
