@@ -453,7 +453,8 @@
             <div class="row center">
                 <a href="#modal1" id="download-button"
                    class="btn-large modal-trigger waves-effect waves-light  "
-                   style="    background: linear-gradient(to bottom right, #ef6c00 75%, #2e7d32 75%);">Приступить к
+                   style="    background: linear-gradient(to bottom right, #ef6c00 0%, #2e7d32 36%,#ef6c00 100%);">Приступить
+                    к
                     работе</a>
             </div>
 
