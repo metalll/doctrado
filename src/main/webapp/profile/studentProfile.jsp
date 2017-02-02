@@ -205,7 +205,9 @@
             </div>
             <div class="col s10">
               <span class="black-text">
-                This is a square image. Add the "circle" class to it to make it appear circular.
+                   <h5 class="center-align col s12"><%=strings.get(1) + " " + strings.get(2) + " " + strings.get(3)%></h5>
+                   <h5 class="center-align col s12"> Дата рождения: <%= strings.get(7) %>
+
               </span>
             </div>
         </div>
