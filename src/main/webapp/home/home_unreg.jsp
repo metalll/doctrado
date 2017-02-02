@@ -447,8 +447,7 @@
 
             <h1 class="header center orange-text text-darken-3">Doctrado</h1>
             <div class="row center">
-                <h5 class="header col s12 light green-text text-darken-3">Обретай новые знания сейчас! Каждый день!
-                    Вместе с
+                <h5 class="header col s12 light white-text ">Обретай новые знания сейчас! Каждый день! Вместе с
                     Doctrado.</h5>
             </div>
             <div class="row center">
