@@ -1,4 +1,4 @@
-<%@ page import="NSD.NSDConstants" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: NSD
   Date: 16.12.16
@@ -462,28 +462,6 @@
 </div>
 
 
-<object style="  -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-
-"
-        data="<%=NSDConstants.HOST+"/uploadDocument?path=/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/document.pdf"%>"
-        type="application/pdf" width="90%" height="450px">
-    alt: <a href="http://azbukaweb.ru/pdfs/eatc.pdf">Доп. услуги телефонки</a>
-</object>
-
-<iframe src="<%=NSDConstants.HOST+"/uploadDocument?path=/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/document.pdf"%>"
-        style="width: 600px; height: 600px;" frameborder="0">Ваш браузер не поддерживает фреймы
-</iframe>
-
-
-<iframe
-        src="http://docs.google.com/gview?url=<%=NSDConstants.HOST+"/uploadDocument?path=/var/lib/openshift/58512d040c1e66ad2d000024/app-root/logs/upload/document.pdf"%>"
-        style="width:600px; height:500px;"
-        frameborder="0"
-></iframe>
 
 <div class="container" style="{height: 160px; }">
     <div class="section">
