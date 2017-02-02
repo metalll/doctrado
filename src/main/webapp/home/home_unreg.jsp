@@ -447,9 +447,9 @@
 
             <h1 class="header center orange-text text-darken-3">Doctrado</h1>
             <div class="row center">
-                <h5 class="header col s12 light white-text ">Обретай новые знания сейчас</h5>
-                <h5 class="header col s12 light white-text ">Каждый день</h5>
-                <h5 class="header col s12 light white-text ">Вместе с Doctrado</h5>
+                <h5 class="header col s12 light white-text ">Обретай новые знания сейчас!</h5>
+
+                <h5 class="header col s12 light white-text ">Вместе с Doctrado.</h5>
             </div>
             <div class="row center">
                 <a href="#modal1" id="download-button"
@@ -511,7 +511,7 @@
     <div class="section no-pad-bot">
         <div class="container">
             <div class="row center">
-                <h4 class="header col s12 light black-text">КТО И ПОЧЕМУ</h4>
+                <h4 class="header col s12 light orange-text text-darken-3">КТО И ПОЧЕМУ</h4>
             </div>
         </div>
     </div>
