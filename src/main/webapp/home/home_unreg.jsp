@@ -511,7 +511,7 @@
     <div class="section no-pad-bot">
         <div class="container">
             <div class="row center">
-                <h1 class="header center green-text text-darken-3">Кто и почему?</h1>
+                <h2 class="header center green-text text-darken-3">Кто и почему?</h2>
             </div>
         </div>
     </div>
@@ -541,7 +541,7 @@
     <div class="section no-pad-bot">
         <div class="container">
             <div class="row center">
-                <h1 class="header center orange-text text-darken-3">Возможности</h1>
+                <h2 class="header center orange-text text-darken-3">Возможности</h2>
             </div>
         </div>
     </div>
