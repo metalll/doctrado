@@ -22,7 +22,7 @@
     <meta name="csrf-token" content="Wx6PFl4mn9yqYIFxDmcvdgOH6tNtWn3dVOktVC7V">
     <title>Doctrado</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
+    <link rel="shortcut icon" href="https://doctrado-sviasy.rhcloud.com/img/favicon.ico">
     <link rel="stylesheet" href="../NSDcss/login.css">
     <style type="text/css">
         .parallax-container {
@@ -400,7 +400,7 @@
     <nav class="white darken-4 grey-text text-darken-4" role="navigation">
         <div class="nav-wrapper container">
 
-            <a id="logo-container" href="#" class="brand-logo "><img src="../img/favicon.ico"></a>
+            <a id="logo-container" href="#" class="brand-logo "><img src="../img/logo.png"></a>
 
             <ul class="right hide-on-med-and-down">
 
