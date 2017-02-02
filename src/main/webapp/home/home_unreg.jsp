@@ -1030,6 +1030,20 @@
     function uploadPhotoA() {
         $("#avatar-inputA").click();
     }
+    $('#document-input').change(function () {
+        var document = $(this).prop('files')[0];
+        var alert_document = $('#alert-2-confirmation');
+        alert_document.fadeOut();
+        if (document == undefined) {
+            alert_document.text("Для регистрации профиля преподавателя необходимо предоставить подтверждающие документы").fadeIn();
+            return;
+        }
+        else if (document.size > 10485760) {
+            alert_document.text("Размер документа не должен превышать 10Мб!").fadeIn();
+            return;
+        }
+        $('.reg-popup__condition').text("Спасибо, Ваш файл будет загружен при нажатии на кнопку \"Готово\"!");
+    });
 
 </script>
 
