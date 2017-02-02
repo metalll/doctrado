@@ -199,7 +199,8 @@
     <div class="card-panel grey lighten-5 z-depth-1">
         <div class="row valign-wrapper">
             <div class="col s2">
-                <img src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath.get(3)%>" alt=""
+                <img style="width:200px;height:200px;overflow:hidden"
+                     src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath.get(3)%>" alt=""
                      class="circle responsive-img"> <!-- notice the "circle" class -->
             </div>
             <div class="col s10">
@@ -228,7 +229,7 @@
 
     <div class="col s12">
         <div class="row">
-            <p><a claocss="waves-effect col s12 waves-light orange btn">Ваша статистика</a></p>
+            <p><a class="waves-effect col s12 waves-light orange btn">Ваша статистика</a></p>
         </div>
 
     </div>
