@@ -461,7 +461,7 @@
 
         </div>
     </div>
-    <div class="parallax "><img src="../img/background.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax "><img src="../img/bImg1.jpeg" alt="Unsplashed background img 1"></div>
 </div>
 
 
@@ -513,7 +513,7 @@
             </div>
         </div>
     </div>
-    <div class="parallax"><img src="../img/background.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="../img/bImg2.png" alt="Unsplashed background img 2"></div>
 </div>
 
 <div class="container">
