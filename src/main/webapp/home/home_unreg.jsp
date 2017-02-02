@@ -566,7 +566,7 @@
                     курсов и т.д. То зарегистрировавшись у нас - Вы получите возможность поиска курсов, которые
                     окажуться Вам нужны или интересны. После их прохождения Вы сможете получить государственный
                     сертификат, который поможет Вам - сразу получить более высокооплачиваемую работу</p>
-                <a class="waves-effect waves-light modal-trigger btn-large black white-text"
+                <a class="waves-effect waves-light modal-trigger btn-large green darken-3 white-text"
                    href="#modal2">Регистрация</a>
             </div>
         </div>
