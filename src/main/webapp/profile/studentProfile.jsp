@@ -210,6 +210,8 @@
 
               </span>
             </div>
+            <div class="col s12 divider"></div>
+            <div class="col s12"> Преподаватель</div>
         </div>
     </div>
 </div>
