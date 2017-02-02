@@ -440,15 +440,16 @@
         </div>
     </nav>
 </div>
-<br>
+
 <div class="parallax-container valign-wrapper col s12">
     <div class="section no-pad-bot">
         <div class="container">
 
             <h1 class="header center orange-text text-darken-3">Doctrado</h1>
             <div class="row center">
-                <h5 class="header col s12 light white-text ">Обретай новые знания сейчас! Каждый день! Вместе с
-                    Doctrado.</h5>
+                <h5 class="header col s12 light white-text ">Обретай новые знания сейчас</h5>
+                <h6 class="header col s12 light white-text ">Каждый день</h6>
+                <h5 class="header col s12 light white-text ">Вместе с Doctrado</h5>
             </div>
             <div class="row center">
                 <a href="#modal1" id="download-button"
