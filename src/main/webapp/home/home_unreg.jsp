@@ -246,7 +246,7 @@
                        border: none;
                        margin: 0 auto;"
                 type="button"
-                onclick="uploadPhoto()">
+                onclick="uploadPhotoA()">
 
 
             <img class="responsive-img circle" src="/img/camera.png" id="avatar-imgA">
@@ -274,7 +274,7 @@
 
 
         <a class="center center-align col s12 waves-effect waves-light btn"
-           onclick="finishReqS()">Зарегестрироваться</a>
+           onclick="finishReq                                                                                                                                                                                                                ()">Зарегестрироваться</a>
     </div>
 </div>
 
@@ -452,7 +452,9 @@
             </div>
             <div class="row center">
                 <a href="#modal1" id="download-button"
-                   class="btn-large modal-trigger waves-effect waves-light grey darken-3">Приступить к работе</a>
+                   class="btn-large modal-trigger waves-effect waves-light  "
+                   style="    background: linear-gradient(to top, #ef6c00 0%, #2e7d32 36%, #ef6c00 100%);">Приступить к
+                    работе</a>
             </div>
 
 
@@ -1000,6 +1002,34 @@
     function uploadPhoto() {
         $("#avatar-input").click();
     }
+
+
+    $("#avatar-inputA").change(function () {
+        hasPhoto = false;
+        var file, img;
+        var _URL = window.URL || window.webkitURL;
+        if ((file = this.files[0])) {
+            if (this.files[0].size > 5242880) {
+                document.getElementById("avatar-input").value = "";
+                alert("Размер картинки не должен превышать 5Мб");
+                return;
+            }
+            img = new Image();
+            img.onload = function () {
+                hasPhoto = true;
+                $("#avatar-imgA").css('width', '100%').css('height', '100%');
+                document.getElementById('avatar-img').src = img.src;
+            };
+            img.onerror = function () {
+                alert("Выбранный файл не является картинкой!");
+            };
+            img.src = _URL.createObjectURL(file);
+        }
+    });
+    function uploadPhoto() {
+        $("#avatar-inputA").click();
+    }
+
 </script>
 
 
