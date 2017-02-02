@@ -274,7 +274,7 @@
 
 
         <a class="center center-align col s12 waves-effect waves-light btn"
-           onclick="finishReq                                                                                                                                                                                                                ()">Зарегестрироваться</a>
+           onclick="finishReq()" ()">Зарегестрироваться</a>
     </div>
 </div>
 
@@ -1027,7 +1027,7 @@
             img.src = _URL.createObjectURL(file);
         }
     });
-    function uploadPhoto() {
+    function uploadPhotoA() {
         $("#avatar-inputA").click();
     }
 
