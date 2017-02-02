@@ -274,7 +274,7 @@
 
 
         <a class="center center-align col s12 waves-effect waves-light btn"
-           onclick="finishReq()" ()">Зарегестрироваться</a>
+           onclick="finishReqT()">Зарегестрироваться</a>
     </div>
 </div>
 
@@ -445,9 +445,10 @@
     <div class="section no-pad-bot">
         <div class="container">
 
-            <h1 class="header center black-text">Doctrado</h1>
+            <h1 class="header center orange-text text-darken-3">Doctrado</h1>
             <div class="row center">
-                <h5 class="header col s12 light grey-text darken-4">Обретай новые знания сейчас! Каждый день! Вместе с
+                <h5 class="header col s12 light green-text text-darken-3">Обретай новые знания сейчас! Каждый день!
+                    Вместе с
                     Doctrado.</h5>
             </div>
             <div class="row center">
