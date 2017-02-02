@@ -198,20 +198,26 @@
 <div class="col s12 m8 offset-m2 l6 offset-l3">
     <div class="card-panel grey lighten-5 z-depth-1">
         <div class="row valign-wrapper">
-            <div class="col s3">
-                <img style="width:200px;height:200px;overflow:hidden"
-                     src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath.get(3)%>" alt=""
-                     class="circle responsive-img"> <!-- notice the "circle" class -->
-            </div>
-            <div class="col s9">
+            <div class="row">
+                <div class="col s3">
+                    <img style="width:200px;height:200px;overflow:hidden"
+                         src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath.get(3)%>" alt=""
+                         class="circle responsive-img"> <!-- notice the "circle" class -->
+                </div>
+
+                <div class="col s9">
               <span class="black-text">
                    <h5 class="center-align col s12"><%=strings.get(1) + " " + strings.get(2) + " " + strings.get(3)%></h5>
                    <h5 class="center-align col s12"> Дата рождения: <%= strings.get(7) %>
 
               </span>
+                </div>
             </div>
+
             <div class="col s12 divider"></div>
-            <div class="col s12"> Преподаватель</div>
+            <div class="row">
+                <div class="col s12"> Преподаватель</div>
+            </div>
         </div>
     </div>
 </div>
