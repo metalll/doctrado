@@ -1011,7 +1011,7 @@
         var _URL = window.URL || window.webkitURL;
         if ((file = this.files[0])) {
             if (this.files[0].size > 5242880) {
-                document.getElementById("avatar-input").value = "";
+                document.getElementById("avatar-inputA").value = "";
                 alert("Размер картинки не должен превышать 5Мб");
                 return;
             }
@@ -1019,7 +1019,7 @@
             img.onload = function () {
                 hasPhoto = true;
                 $("#avatar-imgA").css('width', '100%').css('height', '100%');
-                document.getElementById('avatar-img').src = img.src;
+                document.getElementById('avatar-imgA').src = img.src;
             };
             img.onerror = function () {
                 alert("Выбранный файл не является картинкой!");
