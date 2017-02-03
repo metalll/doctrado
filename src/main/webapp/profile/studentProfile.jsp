@@ -230,7 +230,7 @@
         <div class="col s12 m6">
             <div class="card">
                 <div class="card-image">
-                    <img src=""<%=NSDConstants.HOST + "/uploadDocument?path=" + avatarPath.get(3)%>"">
+                    <img src="<%=NSDConstants.HOST + "/uploadDocument?path=" + avatarPath.get(3)%>">
                     <span class="card-title">Card Title</span>
                     <a class="btn-floating halfway-fab waves-effect waves-light red"><i
                             class="material-icons">add</i></a>
