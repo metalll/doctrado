@@ -230,12 +230,9 @@
         <h2 class="header">Horizontal Card</h2>
         <div class="card horizontal">
             <div class="card-image">
-                <p class="center-block center-align center"
-                   style=" width: 250px;
-height: 250px;  background:  50% 50% no-repeat; /* 50% 50% centers image in div */"><img
-                        class="  center-block responsive-img circle  center center-align"
 
-                        src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath.get(3)%>"></p>
+                <img class="  center-block responsive-img circle  center center-align"
+                     src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath.get(3)%>">
             </div>
             <div class="card-stacked">
                 <div class="card-content">
