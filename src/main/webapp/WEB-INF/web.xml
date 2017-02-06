@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<web-app version="3.0"
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         version="3.0"
          xmlns="http://java.sun.com/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          metadata-complete="false">
 
@@ -153,10 +153,24 @@
         <servlet-class>controller.createFinalTest</servlet-class>
     </servlet>
 
+
     <servlet-mapping>
         <servlet-name>createFinalTest</servlet-name>
         <url-pattern>/createFinalTest</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>get_course</servlet-name>
+        <servlet-class>controller.getCourse</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>get_course</servlet-name>
+        <url-pattern>/getCourse</url-pattern>
+    </servlet-mapping>
+
 
     <context-param>
         <param-name>javax.servlet.jsp.jstl.fmt.request.charset</param-name>
