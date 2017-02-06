@@ -174,7 +174,10 @@
 
         for (int i = 0; i < courseList.size(); i++) {
             if (i == 0 || (i % 3) == 0) {
-    %><%=" <div class=\"container\"> <div class=\"row\">"%><%
+                if (i != 0) {%><%="</div></div>"%><%
+    }
+
+%><%=" <div class=\"container\"> <div class=\"row\">"%><%
     }
 %><%="   <div class=\"row col s4\">\n" +
         "            <div class=\"col s12 m12 l12\">\n" +
@@ -194,11 +197,6 @@
         "                </div>\n" +
         "            </div>\n" +
         "        </div> "%><%
-
-    if (i % 3 == 0) {
-%><%="</div></div>"%><%
-        }
-    }
 
 
 %>
