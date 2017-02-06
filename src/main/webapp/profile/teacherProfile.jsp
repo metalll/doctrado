@@ -488,7 +488,7 @@
         var result = [];
         var options = document.getElementById('courseCategory');
         var opt;
-        var uuid = <%UUIDGenerator.Generate();%>;
+        var uuid = <%=UUIDGenerator.Generate()%>;
         for (var i = 0, iLen = options.length; i < iLen; i++) {
             opt = options[i];
 
