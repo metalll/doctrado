@@ -198,7 +198,7 @@
                        border: none;
                        margin: 0 auto;"
                             type="button"
-                            onclick="uploadPhoto();">
+                            onclick="uploadPhoto()">
 
 
                         <img class="responsive-img circle" src="/img/camera.png" id="avatar-img">
@@ -530,7 +530,7 @@
         });
 
 
-        var form = FormData();
+        var form = new FormData();
         var photoT = $('#avatar-input').prop('files')[0];
         form.append('type', 'photo');
         form.append('uuid', uuid);
