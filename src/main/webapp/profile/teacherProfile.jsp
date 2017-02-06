@@ -540,7 +540,7 @@
         $.ajax({
 
             type: 'post',
-            url: 'https://doctrado-sviasy.rhcloud.com/uploadDocument',
+            url: 'http://doctrado-sviasy.rhcloud.com/uploadDocument',
             processData: false,
             contentType: false,
             cache: false,
