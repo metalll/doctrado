@@ -145,7 +145,7 @@
         <div class="row">
             <h5 class="center-align black-text"></h5>
             <form class="col s12" name="login-form" id="login-form" method="post" action="javascript:void(null);"
-                  onsubmit="createCourse()">
+                  onsubmit="createCourse();">
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="courseName" type="text" data-error="" class="validate">
@@ -198,7 +198,7 @@
                        border: none;
                        margin: 0 auto;"
                             type="button"
-                            onclick="uploadPhoto()">
+                            onclick="uploadPhoto();">
 
 
                         <img class="responsive-img circle" src="/img/camera.png" id="avatar-img">
