@@ -116,7 +116,7 @@
     <meta name="csrf-token" content="Wx6PFl4mn9yqYIFxDmcvdgOH6tNtWn3dVOktVC7V">
     <title>Doctrado</title>
 
-    <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
+    <link rel="shortcut icon" href="https://doctrado-sviasy.rhcloud.com/img/favicon.ico">
     <link rel="stylesheet" href="../NSDcss/login.css">
     <style type="text/css">
         .parallax-container {
@@ -141,7 +141,7 @@
     <nav class="white darken-4 grey-text text-darken-4" role="navigation">
         <div class="nav-wrapper container">
 
-            <a id="logo-container" href="#" class="brand-logo "><img src="../img/favicon.ico"></a>
+            <a id="logo-container" href="#" class="brand-logo "><img src="../img/logo.png"></a>
 
             <ul class="right hide-on-med-and-down">
 
@@ -164,7 +164,7 @@
                 <li><a href="<%=NSDConstants.HOST+"/logout"%>" class="menu-elem waves-effect waves-light red btn white-text darken-3" >Выход</a></li>
             </ul>
 
-            <ul id="nav-mobile" class="side-n av">
+            <ul id="nav-mobile" class="side-nav">
                 <li><a href="#">Navbar Link</a></li>
             </ul>
             <a href="#" data-activates="nav-mobile" class="button-collapse black-text"><i
