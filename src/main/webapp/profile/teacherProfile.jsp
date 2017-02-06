@@ -61,7 +61,7 @@
                 "WHERE `id` LIKE '" + uToken + "'");
         while (rs.next()) {
 
-            for (int i = 1; i <= 1; i++) {
+            for (int i = 1; i <= 5; i++) {
                 strings.add(rs.getString(i));
             }
 
@@ -190,7 +190,9 @@
               <span class="black-text center center-align ">
                   <h5>
                    <%=strings.get(1) + " " + strings.get(2) + " " + strings.get(3)%> <br>
-                      Дата рождения: <%= strings.get(7) %></h5>
+                      Дата рождения: <%= strings.get(7) %><br>
+                      Опыт:<%= strings.get(15) %>
+                  </h5>
               </span>
                     </div>
                 </div>
