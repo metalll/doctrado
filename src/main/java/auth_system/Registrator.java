@@ -81,7 +81,7 @@ public class Registrator extends HttpServlet {
                 paramMap.get("hasPhoto")[0].equals("true") ? "YES" : "NO",
                 "NULL",
                 "NULL",
-                "NULL",
+                paramMap.get("teacher_ex")[0],
                 "NULL");
 
        DBTeacher.getInstance().add(teacher, new ICompletion() {
