@@ -886,7 +886,7 @@
         if (doc == null) {
 
             Materialize.toast('<div class="red-text text-darken-3"><b>Добавьте подтверждающие документы</b></div>', 4000, 'rounded');
-
+            return;
         }
 
         $.ajax({
