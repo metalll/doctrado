@@ -195,7 +195,7 @@
         "            </div>\n" +
         "        </div> "%><%
 
-    if (i + 1 == courseList.size() || i % 3 == 0) {
+    if (i + 1 == courseList.size() || (i - 1) % 3 == 0) {
 %><%="</div></div>"%><%
         }
     }
