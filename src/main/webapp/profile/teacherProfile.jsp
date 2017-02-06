@@ -493,7 +493,9 @@
             opt = options[i];
 
             if (opt.selected) {
-                result += "&" + opt.value || opt.text + "&";
+                result += "&";
+                result += opt.value || opt.text;
+                result += "&";
             }
         }
         var creatingC = false;
