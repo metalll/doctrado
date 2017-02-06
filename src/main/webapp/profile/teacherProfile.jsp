@@ -1,4 +1,5 @@
 <%@ page import="NSD.NSDConstants" %>
+<%@ page import="auth_system.UUIDGenerator" %>
 <%@ page import="com.mysql.jdbc.Statement" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.DriverManager" %>
@@ -135,6 +136,8 @@
 </head>
 
 
+<body>
+
 <div id="addingCourse" class="modal">
     <!-- <div id="progress" class="center center-block"></div>-->
     <div class="modal-content">
@@ -157,7 +160,7 @@
                 </div>
 
                 <div class="input-field col s12">
-                    <select class="icons" multiple>
+                    <select id="courseCategory" class="icons" multiple>
 
                         <option value="" disabled selected>Выберите категории</option>
                         <option value="" data-icon="/img/work_icon.png" class="circle">Бизнес</option>
@@ -222,10 +225,6 @@
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
 </div>
-
-
-<body>
-
 
 <div class="navbar-fixed">
     <nav class="white darken-4 grey-text text-darken-4" role="navigation">
@@ -479,6 +478,67 @@
 <script type="application/javascript">
 
     function createCourse() {
+        var name = document.getElementById('courseName').value;
+        var desr = document.getElementById('courseDesr').value;
+        var hasPhoto = false;
+        var learnPeriod = document.getElementById('timeToLearn').value;
+
+
+        var result = [];
+        var options = document.getElementById('courseCategory');
+        var opt;
+        var uuid = <%UUIDGenerator.Generate();%>;
+        for (var i = 0, iLen = options.length; i < iLen; i++) {
+            opt = options[i];
+
+            if (opt.selected) {
+                result.push(opt.value || opt.text);
+            }
+        }
+
+
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/createCourse',
+            data: {
+                name: name,
+                descr: desr,
+                learnPeriod: learnPeriod,
+                categories: result,
+                uuid: uuid
+
+            },
+            success: function (data) {
+                if (data == -1) {
+                    Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>', 4000, 'rounded');
+                    var form = FormData();
+                    var photoT = $('#avatar-input').prop('files')[0];
+                    form.append('type', 'photo');
+                    form.append('uuid', uuid);
+                    form.append('photo', photoT);
+
+
+                    $.ajax({
+
+                        type: 'post',
+                        url: 'https://doctrado-sviasy.rhcloud.com/uploadDocument',
+                        processData: false,
+                        contentType: false,
+                        cache: false,
+                        data: form,
+                        success: function (data) {
+                            // window.location.href = "http://doctrado-sviasy.rhcloud.com/profile"
+                        }
+
+
+                    });
+
+
+                }
+
+            }
+        });
+
 
     }
 
@@ -508,8 +568,6 @@
     function uploadPhoto() {
         $("#avatar-input").click();
     }
-
-
 
 
     function call() {
