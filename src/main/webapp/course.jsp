@@ -5,12 +5,12 @@
 <html lang="ru">
 
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <title>Doctrado</title>
     <!-- CSS  -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="csrf-token" content="Wx6PFl4mn9yqYIFxDmcvdgOH6tNtWn3dVOktVC7V">
@@ -20,14 +20,11 @@
     <link rel="stylesheet" href="./NSDcss/login.css">
 
 
-
-
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
     <link href="./css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="./css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
