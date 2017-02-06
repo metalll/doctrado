@@ -235,7 +235,7 @@
     <div class="row col s10 push-s1">
 
 
-        <p><a class="waves-effect col s6 waves-light  green btn">Мои курсы<span
+        <p><a class="waves-effect col s6 waves-light  green btn">Ваши курсы<span
                 class="badge pink white-text darken-2">0</span>
         </a></p>
 
@@ -251,6 +251,9 @@
 
     <div class="col s4 col push-s4 center-align">
         <h3> Ваши курсы: </h3>
+    </div>
+    <div class="col s4 col push-s4 center-align">
+        <a class="waves-effect waves-light orange btn white-text darken-3"> Создать курс </a>
     </div>
 
 
