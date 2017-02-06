@@ -180,9 +180,9 @@
         "                        <span class=\"card-title flow-text\"></span>\n" +
         "                    </div>\n" +
         "                    <div class=\"card-content\">\n" +
-        "                        <p> " + courseList.get(i).get(3) + "\n" +
+        "                        <p> " + courseList.get(i).get(2) + "\n" +
         "                        </p><br>\n" +
-        "                        <p>Время на изучение: " + courseList.get(i).get(2) + " дней</p>\n" +
+        "                        <p>Время на изучение: " + courseList.get(i).get(3) + " дней</p>\n" +
         "                    </div>\n" +
         "                    <div class=\"card-action center-align\">\n" +
         "                        <p> <a class=\"waves-effect col s12 waves-light green btn\">Подробнее</a>  </p>\n" +
