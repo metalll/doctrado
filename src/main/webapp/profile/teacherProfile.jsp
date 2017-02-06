@@ -477,6 +477,7 @@
 <script src="../js/materialize.min.js"></script>
 <script type="application/javascript">
 
+
     function createCourse() {
         var name = document.getElementById('courseName').value;
         var desr = document.getElementById('courseDesr').value;
@@ -509,7 +510,7 @@
 
             },
             success: function (data) {
-                if (data == -1) {
+
                     Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>', 4000, 'rounded');
                     var form = FormData();
                     var photoT = $('#avatar-input').prop('files')[0];
@@ -536,7 +537,7 @@
 
                 }
 
-            }
+
         });
 
 
@@ -565,302 +566,14 @@
             img.src = _URL.createObjectURL(file);
         }
     });
+
+
     function uploadPhoto() {
         $("#avatar-input").click();
     }
 
 
-    function call() {
 
-        //$('#progress_bar').modal('open');
-
-
-        //  bar.animate(1.0);
-        var email = document.getElementById('email1').value;
-        var password = document.getElementById('password1').value;
-        var errors = false;
-        var errEmail = false;
-        var errPass = false;
-        if (email == "") {
-            //Materialize.toast('Введите ваш email',4000,'rounded');
-            errEmail = true;
-            errors = true;
-
-        }
-
-        if (password == "") {
-            //Materialize.toast('Введите ваш пароль',4000,'rounded');
-            errPass = true;
-            errors = true;
-        }
-        if (errEmail && errPass) {
-            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>', 4000, 'rounded');
-            //       bar.hide();
-            return;
-        }
-        if (errEmail) {
-            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email </b></div>', 4000, 'rounded');
-        }
-        if (errPass) {
-            Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>', 4000, 'rounded');
-        }
-
-        if (errors) {
-            //          bar.hide();
-            return;
-        }
-        $.ajax({
-            type: 'post',
-            url: 'https://doctrado-sviasy.rhcloud.com/login',
-            data: {
-                email: email,
-                password: password
-            },
-            success: function (data) {
-                if (data == -1) {
-                    Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>', 4000, 'rounded');
-                    bar.hide();
-                }
-                else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
-            }
-        });
-    }
-    function call1() {
-//        $('#progress_bar').modal('open');
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('password').value;
-        var errors = false;
-        var errEmail = false;
-        var errPass = false;
-        if (email == "") {
-            //Materialize.toast('Введите ваш email',4000,'rounded');
-            errEmail = true;
-            errors = true;
-
-        }
-
-        if (password == "") {
-            //Materialize.toast('Введите ваш пароль',4000,'rounded');
-            errPass = true;
-            errors = true;
-        }
-        if (errEmail && errPass) {
-            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>', 4000, 'rounded');
-            //          $('#progress_bar').modal('close');
-            return;
-        }
-        if (errEmail) {
-            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email </b></div>', 4000, 'rounded');
-        }
-        if (errPass) {
-            Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>', 4000, 'rounded');
-        }
-
-        if (errors) {
-//            $('#progress_bar').modal('close');
-            return;
-        }
-        $.ajax({
-            type: 'post',
-            url: 'https://doctrado-sviasy.rhcloud.com/login',
-            data: {
-                email: email,
-                password: password
-            },
-            success: function (data) {
-                if (data == -1) {
-                    Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>', 4000, 'rounded');
-                    //  $('#progress_bar').modal('close');
-                }
-                else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
-            }
-        });
-    }
-
-    function callReg1(accept) {
-        var nameR = document.getElementById('nameR1').value;
-        var last_nameR = document.getElementById('last_nameR1').value;
-        var surnameR = document.getElementById('surnameR1').value;
-        var emailR = document.getElementById('emailR1').value;
-        var passwordR = document.getElementById('passwordR1').value;
-        var telephone = document.getElementById('telephone1').value;
-        var born = document.getElementById('born1').value;
-        var test5 = document.getElementById('test51').value;
-
-        var error = false;
-
-        var nameREr = false;
-        var last_nameREr = false;
-        var surnameREr = false;
-        var emailREr = false;
-        var passwordREr = false;
-        var telephoneEr = false;
-        var bornEr = false;
-        var testEr = false;
-
-        if (nameR == "") {
-            error = true;
-            nameREr = true;
-        }
-        if (last_nameR == "") {
-            error = true;
-            last_nameREr = true;
-        }
-        if (surnameR == "") {
-            error = true;
-            surnameREr = true;
-        }
-        if (emailR == "") {
-            error = true;
-            emailREr = true;
-        }
-        if (passwordR == "") {
-            error = true;
-            passwordREr = true;
-        }
-        if (telephone == "") {
-            error = true;
-            telephoneEr = true;
-        }
-        if (born == "") {
-            error = true;
-            bornEr = true;
-        }
-        if (test5 == "") {
-            error = true;
-            testEr = true;
-        }
-
-        if (error) {
-            if (nameREr || last_nameREr || surnameREr || emailREr || passwordREr || telephoneEr || bornEr || testEr) {
-                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>', 4000, 'rounded');
-
-                return;
-            }
-        }
-        $.ajax({
-            type: 'post',
-            url: 'https://doctrado-sviasy.rhcloud.com/validate_user',
-            data: {
-                email: emailR,
-                password: passwordR,
-                name: nameR,
-                last_name: last_nameR,
-                surname: surnameR,
-                telephone: telephone,
-                born: born,
-                type: accept
-            },
-            success: function (data) {
-                if (data == 0) {
-                    $('#modal3').modal('close');
-                    $('#modal1').modal('close');
-                    $('#modal2').modal('close');
-
-
-                    if (accept == 's') $('#modal4').modal('open');
-
-                    if (accept == 't') $('#modal5').modal('open');
-                }
-
-            }
-        });
-
-
-    }
-
-
-    function callReg(accept) {
-        var nameR = document.getElementById('nameR').value;
-        var last_nameR = document.getElementById('last_nameR').value;
-        var surnameR = document.getElementById('surnameR').value;
-        var emailR = document.getElementById('emailR').value;
-        var passwordR = document.getElementById('passwordR').value;
-        var telephone = document.getElementById('telephone').value;
-        var born = document.getElementById('born').value;
-        var test5 = document.getElementById('test5').value;
-
-
-        var error = false;
-
-        var nameREr = false;
-        var last_nameREr = false;
-        var surnameREr = false;
-        var emailREr = false;
-        var passwordREr = false;
-        var telephoneEr = false;
-        var bornEr = false;
-        var testEr = false;
-
-        if (nameR == "") {
-            error = true;
-            nameREr = true;
-        }
-        if (last_nameR == "") {
-            error = true;
-            last_nameREr = true;
-        }
-        if (surnameR == "") {
-            error = true;
-            surnameREr = true;
-        }
-        if (emailR == "") {
-            error = true;
-            emailREr = true;
-        }
-        if (passwordR == "") {
-            error = true;
-            passwordREr = true;
-        }
-        if (telephone == "") {
-            error = true;
-            telephoneEr = true;
-        }
-        if (born == "") {
-            error = true;
-            bornEr = true;
-        }
-        if (test5 == "") {
-            error = true;
-            testEr = true;
-        }
-
-        if (error) {
-            if (nameREr || last_nameREr || surnameREr || emailREr || passwordREr || telephoneEr || bornEr || testEr) {
-                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>', 4000, 'rounded');
-                return;
-            }
-        }
-        $.ajax({
-            type: 'post',
-            url: 'https://doctrado-sviasy.rhcloud.com/validate_user',
-            data: {
-                email: emailR,
-                password: passwordR,
-                name: nameR,
-                last_name: last_nameR,
-                surname: surnameR,
-                telephone: telephone,
-                born: born,
-                type: accept
-            },
-            success: function (data) {
-                if (data == 0) {
-                    $('#modal3').modal('close');
-                    $('#modal1').modal('close');
-                    $('#modal2').modal('close');
-
-                    if (accept == 's') $('#modal4').modal('open');
-
-                    if (accept == 't') $('#modal5').modal('open');
-
-
-                    //  $('#progress_bar').modal('close');
-                }
-
-            }
-        });
-    }
 </script>
 
 <script>
