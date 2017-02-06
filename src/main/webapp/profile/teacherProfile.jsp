@@ -133,6 +133,97 @@
     <link href="../css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
+
+
+<div id="addingCourse" class="modal">
+    <!-- <div id="progress" class="center center-block"></div>-->
+    <div class="modal-content">
+        <h4 class="center-align">Создание курса</h4>
+        <div class="row">
+            <h5 class="center-align black-text"></h5>
+            <form class="col s12" name="login-form" id="login-form" method="post" action="javascript:void(null);"
+                  onsubmit="createCourse()">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="courseName" type="text" data-error="" class="validate">
+                        <label for="courseName">Название курса</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="courseDesr" type="text" class="validate">
+                        <label for="courseDesr">Описание курса</label>
+                    </div>
+                </div>
+
+                <div class="input-field col s12">
+                    <select class="icons" multiple>
+
+                        <option value="" disabled selected>Выберите категории</option>
+                        <option value="" data-icon="/img/work_icon.png" class="circle">Бизнес</option>
+                        <option value="" data-icon="/img/security.png" class="circle">Безопасность</option>
+                        <option value="" data-icon="/img/it.png" class="circle">IT</option>
+                    </select>
+                    <label>Категории курса</label>
+                </div>
+
+
+                <div class="row">
+
+                    <h6 class="col s4">Время на изучение курса</h6>
+
+                    <p class="range-field col s8">
+                        <input type="range" id="test5" min="1" max="100"/>
+                    </p>
+
+                </div>
+
+                <div class="row">
+                    <h6 class="col s12 center center-align"> Изображение курса </h6>
+                </div>
+
+
+                <div class="row">
+
+                    <button style="position: relative;
+                       background: #ffffff;
+                       background-color: #ffffff;
+                       width: 100%;
+                       max-width: 220px;
+                       height: 220px;
+                       display: block;
+                       border: none;
+                       margin: 0 auto;"
+                            type="button"
+                            onclick="uploadPhoto()">
+
+
+                        <img class="responsive-img circle" src="/img/camera.png" id="avatar-img">
+
+                    </button>
+                    <input accept="image/*" style="display: none;" id="avatar-input" type="file">
+
+                </div>
+
+                <div class="row">
+                    <div class="col s3 left-align">
+                        <a href="#!" class=" modal-action modal-close waves-effect btn waves-green">Отмена</a>
+                    </div>
+                    <div class="col s9 center-align">
+                        <button class="btn waves-effect waves-light" type="submit" name="create">Создать курс
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-footer hide">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>
+
+
 <body>
 
 
@@ -254,7 +345,8 @@
         <h4> Ваши курсы: </h4>
     </div>
     <div class="col s4 center center-align">
-        <a class="waves-effect waves-light green btn white-text darken-3"> Создать курс </a>
+        <a href="#addingCourse" class="waves-effect modal-trigger waves-light green btn white-text darken-3"> Создать
+            курс </a>
     </div>
 
 
@@ -686,6 +778,10 @@
         $('.modal').modal();
 
     });
+    $(document).ready(function () {
+        $('select').material_select();
+    });
+
     $(document).ready(function () {
         $('.parallax').parallax();
         //  alert(<%= avatarPath %>);
