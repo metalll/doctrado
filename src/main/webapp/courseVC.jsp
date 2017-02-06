@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Леша
+  Date: 06.02.2017
+  Time: 14:47
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page import="NSD.NSDConstants" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -5,7 +12,6 @@
 <html lang="ru">
 
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <title>Doctrado</title>
@@ -20,20 +26,14 @@
     <link rel="stylesheet" href="./NSDcss/login.css">
 
 
-
-
-
-
-
     <link href="./css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <link href="./css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
 </head>
 <body>
-
 
 
 <div class="navbar-fixed">
@@ -61,7 +61,8 @@
                 <li>
                     <a class="menu-elem" data-anchor="#contacts">Контакты</a>
                 </li>
-                <li><a href="<%=NSDConstants.HOST+"/logout"%>" class="menu-elem waves-effect waves-light red btn white-text darken-3" >Выход</a></li>
+                <li><a href="<%=NSDConstants.HOST+"/logout"%>"
+                       class="menu-elem waves-effect waves-light red btn white-text darken-3">Выход</a></li>
 
 
             </ul>
@@ -74,80 +75,80 @@
     </nav>
 </div>
 <div class="container">
-<p></p>
-<div class="row">
-    <div class="col s12">
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">textsms</i>
-                <input type="text" id="autocomplete-input" class="autocomplete">
-                <label for="autocomplete-input">Autocomplete</label>
+    <p></p>
+    <div class="row">
+        <div class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">textsms</i>
+                    <input type="text" id="autocomplete-input" class="autocomplete">
+                    <label for="autocomplete-input">Autocomplete</label>
+                </div>
             </div>
         </div>
     </div>
+    <p></p>
+
+
+    <div class="row">
+
+        <div class="row col s4">
+            <div class="col s12 m12 l12">
+                <div class="medium card">
+                    <div class="card-image">
+                        <img src="../img/course.jpg">
+                        <span class="card-title flow-text"></span>
+                    </div>
+                    <div class="card-content">
+                        <p> ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ
+                        </p><br>
+                        <p>Время на изучение: 5 дней</p>
+                    </div>
+                    <div class="card-action center-align">
+                        <p><a class="waves-effect col s12 waves-light green btn">Подробнее</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row col s4">
+            <div class="col s12 m12 l12">
+                <div class="medium card">
+                    <div class="card-image">
+                        <img src="../img/picture.png">
+                        <span class="card-title">Card Title</span>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row col s4">
+            <div class="col s12 m12 l12">
+                <div class="medium card">
+                    <div class="card-image">
+                        <img src="../img/picture.png">
+                        <span class="card-title">Card Title</span>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
-<p></p>
-
-
-
-    <div class="row">
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/course.jpg">
-                        <span class="card-title flow-text"></span>
-                    </div>
-                    <div class="card-content">
-                        <p> ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ
-                        </p><br>
-                        <p>Время на изучение: 5 дней</p>
-                    </div>
-                    <div class="card-action center-align">
-                        <p> <a class="waves-effect col s12 waves-light green btn">Подробнее</a>  </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div></div>
 
 <div class="container">
     <div class="row">
@@ -165,7 +166,7 @@
                         <p>Время на изучение: 5 дней</p>
                     </div>
                     <div class="card-action center-align">
-                        <p> <a class="waves-effect col s12 waves-light green btn">Подробнее</a>  </p>
+                        <p><a class="waves-effect col s12 waves-light green btn">Подробнее</a></p>
                     </div>
                 </div>
             </div>
@@ -207,7 +208,8 @@
             </div>
         </div>
 
-    </div></div>
+    </div>
+</div>
 
 <div class="container">
     <div class="row">
@@ -225,7 +227,7 @@
                         <p>Время на изучение: 5 дней</p>
                     </div>
                     <div class="card-action center-align">
-                        <p> <a class="waves-effect col s12 waves-light green btn">Подробнее</a>  </p>
+                        <p><a class="waves-effect col s12 waves-light green btn">Подробнее</a></p>
                     </div>
                 </div>
             </div>
@@ -267,7 +269,8 @@
             </div>
         </div>
 
-    </div></div>
+    </div>
+</div>
 
 <div class="container">
     <div class="row">
@@ -285,7 +288,7 @@
                         <p>Время на изучение: 5 дней</p>
                     </div>
                     <div class="card-action center-align">
-                        <p> <a class="waves-effect col s12 waves-light green btn">Подробнее</a>  </p>
+                        <p><a class="waves-effect col s12 waves-light green btn">Подробнее</a></p>
                     </div>
                 </div>
             </div>
@@ -327,19 +330,15 @@
             </div>
         </div>
 
-    </div></div>
+    </div>
+</div>
 
 
-
-
-
-<script type="application/javascript" >
+<script type="application/javascript">
 
     $('input.autocomplete').autocomplete({
         data: {"Apple": null, "Microsoft": null, "Google": 'http://placehold.it/250x250'}
     });
-
-
 
 
     function call() {
@@ -365,30 +364,32 @@
             errPass = true;
             errors = true;
         }
-        if(errEmail&&errPass){
-            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>',4000,'rounded');
+        if (errEmail && errPass) {
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>', 4000, 'rounded');
             //       bar.hide();
             return;
         }
-        if(errEmail){
-            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email </b></div>',4000,'rounded');
+        if (errEmail) {
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email </b></div>', 4000, 'rounded');
         }
-        if(errPass){
-            Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>',4000,'rounded');
+        if (errPass) {
+            Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>', 4000, 'rounded');
         }
 
         if (errors) {
             //          bar.hide();
-            return;}
+            return;
+        }
         $.ajax({
             type: 'post',
             url: 'https://doctrado-sviasy.rhcloud.com/login',
             data: {
                 email: email,
-                password:password
+                password: password
             },
-            success: function(data) {
-                if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
+            success: function (data) {
+                if (data == -1) {
+                    Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>', 4000, 'rounded');
                     bar.hide();
                 }
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
@@ -414,30 +415,32 @@
             errPass = true;
             errors = true;
         }
-        if(errEmail&&errPass){
-            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>',4000,'rounded');
+        if (errEmail && errPass) {
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email <br> и пароль </b></div>', 4000, 'rounded');
             //          $('#progress_bar').modal('close');
             return;
         }
-        if(errEmail){
-            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email </b></div>',4000,'rounded');
+        if (errEmail) {
+            Materialize.toast('<div class="red-text text-darken-3"><b> Введите ваш email </b></div>', 4000, 'rounded');
         }
-        if(errPass){
-            Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>',4000,'rounded');
+        if (errPass) {
+            Materialize.toast('<div class="red-text text-darken-3"><b>Введите ваш пароль</b></div>', 4000, 'rounded');
         }
 
         if (errors) {
 //            $('#progress_bar').modal('close');
-            return;}
+            return;
+        }
         $.ajax({
             type: 'post',
             url: 'https://doctrado-sviasy.rhcloud.com/login',
             data: {
                 email: email,
-                password:password
+                password: password
             },
-            success: function(data) {
-                if (data==-1){ Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>',4000,'rounded');
+            success: function (data) {
+                if (data == -1) {
+                    Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>', 4000, 'rounded');
                     //  $('#progress_bar').modal('close');
                 }
                 else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
@@ -466,42 +469,42 @@
         var bornEr = false;
         var testEr = false;
 
-        if(nameR==""){
+        if (nameR == "") {
             error = true;
             nameREr = true;
         }
-        if(last_nameR==""){
+        if (last_nameR == "") {
             error = true;
             last_nameREr = true;
         }
-        if(surnameR==""){
+        if (surnameR == "") {
             error = true;
             surnameREr = true;
         }
-        if(emailR==""){
+        if (emailR == "") {
             error = true;
             emailREr = true;
         }
-        if(passwordR==""){
+        if (passwordR == "") {
             error = true;
             passwordREr = true;
         }
-        if(telephone==""){
+        if (telephone == "") {
             error = true;
             telephoneEr = true;
         }
-        if(born==""){
+        if (born == "") {
             error = true;
             bornEr = true;
         }
-        if(test5==""){
+        if (test5 == "") {
             error = true;
             testEr = true;
         }
 
-        if(error){
-            if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
-                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
+        if (error) {
+            if (nameREr || last_nameREr || surnameREr || emailREr || passwordREr || telephoneEr || bornEr || testEr) {
+                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>', 4000, 'rounded');
 
                 return;
             }
@@ -511,23 +514,24 @@
             url: 'https://doctrado-sviasy.rhcloud.com/validate_user',
             data: {
                 email: emailR,
-                password:passwordR,
-                name:nameR,
-                last_name:last_nameR,
-                surname:surnameR,
-                telephone:telephone,
-                born:born,
-                type:accept
+                password: passwordR,
+                name: nameR,
+                last_name: last_nameR,
+                surname: surnameR,
+                telephone: telephone,
+                born: born,
+                type: accept
             },
-            success: function(data) {
-                if (data==0){    $('#modal3').modal('close');
+            success: function (data) {
+                if (data == 0) {
+                    $('#modal3').modal('close');
                     $('#modal1').modal('close');
                     $('#modal2').modal('close');
 
 
-                    if(accept=='s') $('#modal4').modal('open');
+                    if (accept == 's') $('#modal4').modal('open');
 
-                    if(accept=='t') $('#modal5').modal('open');
+                    if (accept == 't') $('#modal5').modal('open');
                 }
 
             }
@@ -559,42 +563,42 @@
         var bornEr = false;
         var testEr = false;
 
-        if(nameR==""){
+        if (nameR == "") {
             error = true;
             nameREr = true;
         }
-        if(last_nameR==""){
+        if (last_nameR == "") {
             error = true;
             last_nameREr = true;
         }
-        if(surnameR==""){
+        if (surnameR == "") {
             error = true;
             surnameREr = true;
         }
-        if(emailR==""){
+        if (emailR == "") {
             error = true;
             emailREr = true;
         }
-        if(passwordR==""){
+        if (passwordR == "") {
             error = true;
             passwordREr = true;
         }
-        if(telephone==""){
+        if (telephone == "") {
             error = true;
             telephoneEr = true;
         }
-        if(born==""){
+        if (born == "") {
             error = true;
             bornEr = true;
         }
-        if(test5==""){
+        if (test5 == "") {
             error = true;
             testEr = true;
         }
 
-        if(error){
-            if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
-                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
+        if (error) {
+            if (nameREr || last_nameREr || surnameREr || emailREr || passwordREr || telephoneEr || bornEr || testEr) {
+                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>', 4000, 'rounded');
                 return;
             }
         }
@@ -603,25 +607,23 @@
             url: 'https://doctrado-sviasy.rhcloud.com/validate_user',
             data: {
                 email: emailR,
-                password:passwordR,
-                name:nameR,
-                last_name:last_nameR,
-                surname:surnameR,
-                telephone:telephone,
-                born:born,
-                type:accept
+                password: passwordR,
+                name: nameR,
+                last_name: last_nameR,
+                surname: surnameR,
+                telephone: telephone,
+                born: born,
+                type: accept
             },
-            success: function(data) {
-                if (data==0){
+            success: function (data) {
+                if (data == 0) {
                     $('#modal3').modal('close');
                     $('#modal1').modal('close');
                     $('#modal2').modal('close');
 
-                    if(accept=='s') $('#modal4').modal('open');
+                    if (accept == 's') $('#modal4').modal('open');
 
-                    if(accept=='t') $('#modal5').modal('open');
-
-
+                    if (accept == 't') $('#modal5').modal('open');
 
 
                     //  $('#progress_bar').modal('close');
@@ -631,7 +633,6 @@
         });
     }
 </script>
-
 
 
 <div>
