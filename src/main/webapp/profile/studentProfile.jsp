@@ -175,24 +175,7 @@
 <br>
 
 
-<div class="row">
 
-    <div class="col s12">
-
-        <p class="center-block center-align center"
-           style=" background: 50% 50% no-repeat; /* 50% 50% centers image in div */"><img
-                class="col s6 push-s3 pull-s3  center-block responsive-img circle  center center-align"
-                src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath.get(3)%>"></p>
-    </div>
-
-
-    <h5 class="center-align col s12"><%=strings.get(1) + " " + strings.get(2) + " " + strings.get(3)%>
-        </h5>
-    <h5 class="center-align col s12"> Дата рождения: <%= strings.get(7) %>
-        </h5>
-
-
-    </div>
 
 <div class="container">
 <div class="col s12 m8 offset-m2 l6 offset-l3">
@@ -207,8 +190,8 @@
 
                 <div class="col s9">
               <span class="black-text">
-                   <h6 class="center-align col s12"><%=strings.get(1) + " " + strings.get(2) + " " + strings.get(3)%></h6>
-                   <h6 class="center-align col s12"> Дата рождения: <%= strings.get(7) %>
+                   <h5 class="center-align col s12"><%=strings.get(1) + " " + strings.get(2) + " " + strings.get(3)%></h5>
+                   <h5 class="center-align col s12"> Дата рождения: <%= strings.get(7) %>
 
               </span>
                 </div>
@@ -218,34 +201,6 @@
         </div>
     </div>
 </div>
-</div>
-
-
-<div class="container">
-
-    <div class="col s12 m7">
-        <h2 class="header">Horizontal Card</h2>
-        <div class="card horizontal">
-            <div class="card-image">
-                <p class="col s4 center-block center-align center"
-                   style=" width: 250px;
-height: 250px;  background:  50% 50% no-repeat; /* 50% 50% centers image in div */"><img
-                        class="  center-block responsive-img circle  center center-align"
-
-                        src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath.get(3)%>"></p>
-            </div>
-            <div class="card-stacked">
-                <div class="card-content">
-                    <p>I am a very simple card. I am good at containing small bits of information.</p>
-                </div>
-                <div class="card-action">
-                    <a href="#">This is a link</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 </div>
 
 
