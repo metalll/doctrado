@@ -235,28 +235,30 @@
     <div class="row col s10 push-s1">
 
 
-        <p><a class="waves-effect col s6 waves-light  green btn">Ваши курсы<span
+        <p><a class="waves-effect col s6 waves-light  darken-3 green btn">Ваши курсы<span
                 class="badge pink white-text darken-2">0</span>
         </a></p>
 
-        <p><a class="waves-effect col s6 waves-light orange btn">Оповещения<span class="badge pink white-text darken-2">0</span>
+        <p><a class="waves-effect col s6 waves-light darken-3 orange btn">Оповещения<span
+                class="badge pink white-text darken-2">0</span>
         </a></p>
 
     </div>
 
 </div>
 
-
+<div class="row valign-wrapper">
 <div class="row">
 
     <div class="col s4 col push-s4 center-align">
         <h3> Ваши курсы: </h3>
     </div>
     <div class="col s4 col push-s4 center-align">
-        <a class="waves-effect waves-light orange btn white-text darken-3"> Создать курс </a>
+        <a class="waves-effect waves-light green btn white-text darken-3"> Создать курс </a>
     </div>
 
 
+</div>
 </div>
 
 
