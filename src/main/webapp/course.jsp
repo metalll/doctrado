@@ -164,12 +164,13 @@
         </div>
     </div>
 </div>
+</div>
 <p></p>
 
     <%
         for (int i = 0; i < courseList.size(); i++) {
             if (i == 0 || (i + 1) % 3 == 0) {
-    %><%="<div class=\"row\">"%><%
+    %><%=" <div class=\"container\"> <div class=\"row\">"%><%
     }
 %><%="   <div class=\"row col s4\">\n" +
         "            <div class=\"col s12 m12 l12\">\n" +
@@ -190,251 +191,17 @@
         "            </div>\n" +
         "        </div> "%><%
 
-
+    if (i == courseList.size() - 1 || (i + 1) % 3 == 0) {
+%><%="</div></div>"%><%
+        }
     }
 
 
 %>
 
 
-    <div class="row">
 
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/course.jpg">
-                        <span class="card-title flow-text"></span>
-                    </div>
-                    <div class="card-content">
-                        <p> ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ
-                        </p><br>
-                        <p>Время на изучение: 5 дней</p>
-                    </div>
-                    <div class="card-action center-align">
-                        <p> <a class="waves-effect col s12 waves-light green btn">Подробнее</a>  </p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div></div>
-
-<div class="container">
-    <div class="row">
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/course.jpg">
-                        <span class="card-title flow-text"></span>
-                    </div>
-                    <div class="card-content">
-                        <p> ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ
-                        </p><br>
-                        <p>Время на изучение: 5 дней</p>
-                    </div>
-                    <div class="card-action center-align">
-                        <p> <a class="waves-effect col s12 waves-light green btn">Подробнее</a>  </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div></div>
-
-<div class="container">
-    <div class="row">
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/course.jpg">
-                        <span class="card-title flow-text"></span>
-                    </div>
-                    <div class="card-content">
-                        <p> ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ
-                        </p><br>
-                        <p>Время на изучение: 5 дней</p>
-                    </div>
-                    <div class="card-action center-align">
-                        <p> <a class="waves-effect col s12 waves-light green btn">Подробнее</a>  </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div></div>
-
-<div class="container">
-    <div class="row">
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/course.jpg">
-                        <span class="card-title flow-text"></span>
-                    </div>
-                    <div class="card-content">
-                        <p> ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ
-                        </p><br>
-                        <p>Время на изучение: 5 дней</p>
-                    </div>
-                    <div class="card-action center-align">
-                        <p> <a class="waves-effect col s12 waves-light green btn">Подробнее</a>  </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div></div>
 
 
 
