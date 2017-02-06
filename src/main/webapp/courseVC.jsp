@@ -6,8 +6,121 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="NSD.NSDConstants" %>
+<%@ page import="com.mysql.jdbc.Statement" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Map" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
 
+    boolean iAmAuthor = false;
+
+    Map<String, String[]> paramMap = request.getParameterMap();
+    String uType = "";
+    String id = paramMap.get("id")[0];
+    String avatarPath = "";
+    ArrayList<String> author = new ArrayList<>();
+    final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
+    //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
+    final String userName = "adminsBmIZAN";
+    final String password = "qIqWymbbb-hk";
+    Connection conn = null;
+    Statement stmt = null;
+    String uToken = null;
+    for (Cookie cookie : request.getCookies()) {
+        if (cookie.getName().equals(NSDConstants.uTokenCookie))
+            uToken = cookie.getValue();
+        if (cookie.getName().equals(NSDConstants.uTypeCookie))
+            uType = cookie.getValue();
+    }
+
+
+    String query = "SELECT * FROM `course` WHERE `id` = '" + id + "'";
+    ArrayList<String> strings = new ArrayList<>();
+
+    try {
+        Class.forName("com.mysql.jdbc.Driver");
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    try {
+        conn = DriverManager.getConnection(databaseUrl, userName, password);
+        stmt = (Statement) conn.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
+        while (rs.next()) {
+            // isSuccess = true;
+
+            for (int i = 1; i <= 8; i++) {
+                strings.add(rs.getString(i));
+            }
+            //strings
+            //0 - id
+            //1 - photo(not used)
+            //2 - createTime(time to learn)
+            //3 - courseName
+            //4 - courseDescr
+            //5 - price
+            //6 - categories
+            //7 - author
+            //  completion.afterOperation(new Teacher();
+        }
+
+        query = "SELECT * FROM `resourses` WHERE `userInfo` = '" + uToken + "' AND `type` = 'photo' AND `uuid` = '" + id + "'";
+        rs = stmt.executeQuery(query);
+        while (rs.next()) {
+
+            avatarPath = rs.getString(3);
+
+        }
+
+        query = "SELECT * FROM `users` WHERE `lastUserToken` = '" + uToken + "'";
+        rs = stmt.executeQuery(query);
+        while (rs.next()) {
+
+            for (int i = 1; i <= 12; i++) {
+                author.add(rs.getString(i));
+            }
+
+        }
+
+        if (uType.equals("t")) {
+            query = "SELECT *\n" +
+                    "FROM `teacher`\n" +
+                    "WHERE `id` LIKE '" + uToken + "'";
+            rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                for (int i = 1; i <= 5; i++) {
+                    author.add(rs.getString(i));
+                }
+            }
+
+            if (author.get(10).equals(uToken)) {
+                iAmAuthor = true;
+            }
+
+        }
+        if (uType.equals("s")) {
+            iAmAuthor = false;
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        if (stmt != null) try {
+            stmt.close();
+        } catch (Exception e) {
+        }
+        if (conn != null) try {
+            conn.close();
+        } catch (Exception e) {
+        }
+
+    }
+
+%>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -90,248 +203,7 @@
     <p></p>
 
 
-    <div class="row">
 
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/course.jpg">
-                        <span class="card-title flow-text"></span>
-                    </div>
-                    <div class="card-content">
-                        <p> ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ
-                        </p><br>
-                        <p>Время на изучение: 5 дней</p>
-                    </div>
-                    <div class="card-action center-align">
-                        <p><a class="waves-effect col s12 waves-light green btn">Подробнее</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/course.jpg">
-                        <span class="card-title flow-text"></span>
-                    </div>
-                    <div class="card-content">
-                        <p> ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ
-                        </p><br>
-                        <p>Время на изучение: 5 дней</p>
-                    </div>
-                    <div class="card-action center-align">
-                        <p><a class="waves-effect col s12 waves-light green btn">Подробнее</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/course.jpg">
-                        <span class="card-title flow-text"></span>
-                    </div>
-                    <div class="card-content">
-                        <p> ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ
-                        </p><br>
-                        <p>Время на изучение: 5 дней</p>
-                    </div>
-                    <div class="card-action center-align">
-                        <p><a class="waves-effect col s12 waves-light green btn">Подробнее</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div class="container">
-    <div class="row">
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/course.jpg">
-                        <span class="card-title flow-text"></span>
-                    </div>
-                    <div class="card-content">
-                        <p> ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ
-                        </p><br>
-                        <p>Время на изучение: 5 дней</p>
-                    </div>
-                    <div class="card-action center-align">
-                        <p><a class="waves-effect col s12 waves-light green btn">Подробнее</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
 
 
 <script type="application/javascript">

@@ -417,10 +417,10 @@
                 <%--<a class="menu-elem" data-anchor="#capabilities">Возможности</a>--%>
                 <%--</li>--%>
                 <li>
-                    <a class="menu-elem" href="./certificates">Сертификаты</a>
+                    <a class="menu-elem" href="https://doctrado-sviasy.rhcloud.com/course">Сертификаты</a>
                 </li>
                 <li>
-                    <a class="menu-elem" data-anchor="#courses">Курсы</a>
+                    <a class="menu-elem" href="https://doctrado-sviasy.rhcloud.com/course">Курсы</a>
                 </li>
                 <li>
                     <a class="menu-elem" data-anchor="#contacts">Контакты</a>
