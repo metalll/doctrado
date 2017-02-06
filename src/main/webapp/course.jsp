@@ -3,7 +3,87 @@
 
 <!DOCTYPE html>
 <html lang="ru">
+<%
+<%@ page import="com.mysql.jdbc.Statement" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Map" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
 
+    boolean iAmAuthor = false;
+
+    Map<String, String[]> paramMap = request.getParameterMap();
+    String uType = "";
+    String id = paramMap.get("id")[0];
+    String avatarPath = "";
+    ArrayList<String> author = new ArrayList<>();
+    final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
+    //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
+    final String userName = "adminsBmIZAN";
+    final String password = "qIqWymbbb-hk";
+    Connection conn = null;
+    Statement stmt = null;
+    String uToken = null;
+    for (Cookie cookie : request.getCookies()) {
+        if (cookie.getName().equals(NSDConstants.uTokenCookie))
+            uToken = cookie.getValue();
+        if (cookie.getName().equals(NSDConstants.uTypeCookie))
+            uType = cookie.getValue();
+    }
+
+
+    String query = "SELECT * FROM `course`";
+    ArrayList<ArrayList<String>> courseList = new ArrayList<>();
+    ArrayList<String> strings = new ArrayList<>();
+
+    try {
+        Class.forName("com.mysql.jdbc.Driver");
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    try {
+        conn = DriverManager.getConnection(databaseUrl, userName, password);
+        stmt = (Statement) conn.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
+        while (rs.next()) {
+            // isSuccess = true;
+            strings = new ArrayList<>();
+            for (int i = 1; i <= 8; i++) {
+                strings.add(rs.getString(i));
+            }
+            //strings
+            //0 - id
+            //1 - photo(not used)
+            //2 - createTime(time to learn)
+            //3 - courseName
+            //4 - courseDescr
+            //5 - price
+            //6 - categories
+            //7 - author
+            //  completion.afterOperation(new Teacher();
+
+            courseList.add(strings);
+
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        if (stmt != null) try {
+            stmt.close();
+        } catch (Exception e) {
+        }
+        if (conn != null) try {
+            conn.close();
+        } catch (Exception e) {
+        }
+
+    }
+
+%>
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -86,6 +166,35 @@
 </div>
 <p></p>
 
+    <%
+        for (int i = 0; i < courseList.size(); i++) {
+            if (i == 0 || (i + 1) % 3 == 0) {
+    %><%="<div class=\"row\">"%><%
+    }
+%><%="   <div class=\"row col s4\">\n" +
+        "            <div class=\"col s12 m12 l12\">\n" +
+        "                <div class=\"medium card\">\n" +
+        "                    <div class=\"card-image\">\n" +
+        "                        <img src=\"../img/course.jpg\">\n" +
+        "                        <span class=\"card-title flow-text\"></span>\n" +
+        "                    </div>\n" +
+        "                    <div class=\"card-content\">\n" +
+        "                        <p> " + courseList.get(i).get(3) + "\n" +
+        "                        </p><br>\n" +
+        "                        <p>Время на изучение: " + courseList.get(i).get(2) + " дней</p>\n" +
+        "                    </div>\n" +
+        "                    <div class=\"card-action center-align\">\n" +
+        "                        <p> <a class=\"waves-effect col s12 waves-light green btn\">Подробнее</a>  </p>\n" +
+        "                    </div>\n" +
+        "                </div>\n" +
+        "            </div>\n" +
+        "        </div> "%><%
+
+
+    }
+
+
+%>
 
 
     <div class="row">
