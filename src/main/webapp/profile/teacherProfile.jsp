@@ -493,7 +493,7 @@
             opt = options[i];
 
             if (opt.selected) {
-                result += opt.value || opt.text;
+                result += "&" + opt.value || opt.text + "&";
             }
         }
         var creatingC = false;
