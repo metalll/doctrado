@@ -489,7 +489,7 @@
         var options = document.getElementById('courseCategory');
         var opt;
         var uuid = "<%=UUIDGenerator.Generate()%>";
-        for (var i = 0, iLen = options.length; i < iLen; i++) {
+        for (var i = 1, iLen = options.length; i < iLen; i++) {
             opt = options[i];
 
             if (opt.selected) {
