@@ -191,7 +191,7 @@
                   <h5>
                    <%=strings.get(1) + " " + strings.get(2) + " " + strings.get(3)%> <br>
                       Дата рождения: <%= strings.get(7) %><br>
-                      Опыт:<%= strings.get(15) %>
+                      Опыт:<%= strings.get(16) %>
                   </h5>
               </span>
                     </div>
