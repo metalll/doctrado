@@ -58,7 +58,7 @@ public class Authorizator extends HttpServlet {
 
                         for (Cookie tempCookie : cookie2) {
                             if (tempCookie.getName().equals("JSESSIONID")) {
-
+                                //TODO additional security
 
                             }
 
