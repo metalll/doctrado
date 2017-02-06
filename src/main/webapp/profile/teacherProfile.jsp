@@ -250,10 +250,10 @@
 <div class="row valign-wrapper">
 <div class="row">
 
-    <div class="col s4 col push-s4 center-align">
+    <div class="col s5  push-s2 center-align">
         <h3> Ваши курсы: </h3>
     </div>
-    <div class="col s4 col push-s4 center-align">
+    <div class="col s4 push-s1 center-align">
         <a class="waves-effect waves-light green btn white-text darken-3"> Создать курс </a>
     </div>
 
