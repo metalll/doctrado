@@ -164,7 +164,7 @@
                 <li><a href="<%=NSDConstants.HOST+"/logout"%>" class="menu-elem waves-effect waves-light red btn white-text darken-3" >Выход</a></li>
             </ul>
 
-            <ul id="nav-mobile" class="side-nav">
+            <ul id="nav-mobile" class="side-n av">
                 <li><a href="#">Navbar Link</a></li>
             </ul>
             <a href="#" data-activates="nav-mobile" class="button-collapse black-text"><i
@@ -214,10 +214,7 @@
                 </div>
             </div>
 
-            <div class="col s12 divider"></div>
-            <div class="row">
-                <div class="col s12"> Преподаватель</div>
-            </div>
+
         </div>
     </div>
 </div>
