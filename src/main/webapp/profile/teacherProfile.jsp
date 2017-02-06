@@ -505,7 +505,7 @@
 
         $.ajax({
             type: 'post',
-            url: 'https://doctrado-sviasy.rhcloud.com/createCourse',
+            url: 'http://doctrado-sviasy.rhcloud.com/createCourse',
             data: {
                 name: name,
                 descr: desr,
