@@ -20,7 +20,7 @@
     String uType = "";
     String id = paramMap.get("id")[0];
     String avatarPath = "";
-    ArrayList<String> author = new ArrayList<>();
+    ArrayList<String> author = new ArrayList<String>();
     final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
     //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
     final String userName = "adminsBmIZAN";
@@ -37,8 +37,8 @@
 
 
     String query = "SELECT * FROM `course`";
-    ArrayList<ArrayList<String>> courseList = new ArrayList<>();
-    ArrayList<String> strings = new ArrayList<>();
+    ArrayList<ArrayList<String>> courseList = new ArrayList<ArrayList<String>>();
+    ArrayList<String> strings = new ArrayList<String>();
 
     try {
         Class.forName("com.mysql.jdbc.Driver");
@@ -51,7 +51,7 @@
         ResultSet rs = stmt.executeQuery(query);
         while (rs.next()) {
             // isSuccess = true;
-            strings = new ArrayList<>();
+            strings = new ArrayList<String>();
             for (int i = 1; i <= 8; i++) {
                 strings.add(rs.getString(i));
             }
