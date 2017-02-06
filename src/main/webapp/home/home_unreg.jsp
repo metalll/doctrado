@@ -824,7 +824,9 @@
 
     }
     function finishReqS() {
-        //  alert("st /n "+Gemail);
+        //
+        //alert("st /n "+Gemail);
+
 
         $.ajax({
             type: 'post',
@@ -873,6 +875,19 @@
 
     }
     function finishReqT() {
+        var photo = $('#avatar-inputA').prop('files')[0];
+        var doc = $('#conf_doc').prop('files')[0];
+        var teacher_ex = document.getElementById('teacher_ex').value;
+        if (teacher_ex == '' || teacher_ex == "") {
+            Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>', 4000, 'rounded');
+            return;
+        }
+
+        if (doc == null) {
+
+            Materialize.toast('<div class="red-text text-darken-3"><b>Добавьте подтверждающие документы</b></div>', 4000, 'rounded');
+
+        }
 
         $.ajax({
             type: 'post',
@@ -888,14 +903,14 @@
                 ifAccept: Gtest5,
                 Type: 't',
                 hasPhoto: hasPhoto,
-                addDoc: true
+                addDoc: true,
+                teacher_ex: teacher_ex
             },
             success: function (data) {
 
                 if (data == 0) {
                     var form = new FormData();
-                    var photo = $('#avatar-inputA').prop('files')[0];
-                    var doc = $('#conf_doc').prop('files')[0];
+
 
                     form.append('type', 'avatar');
                     form.append('photo', photo);

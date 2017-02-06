@@ -67,22 +67,22 @@ public class Registrator extends HttpServlet {
     private void reg_teacher(Map<String,String[]> paramMap, final ICompletion completion){
         final Teacher teacher = new Teacher(
                 1,
-                paramMap.get("user[name]")[0],
-                paramMap.get("user[patronymic]")[0],
-                paramMap.get("user[surname]")[0],
-                paramMap.get("user[email]")[0],
-                paramMap.get("user[password]")[0],
-                paramMap.get("user[phone]")[0],
-                paramMap.get("user[birth_date]")[0],
-                paramMap.get("user[education]")[0],
-                paramMap.get("user[work_place]")[0],
+                paramMap.get("name")[0],
+                paramMap.get("last_name")[0],
+                paramMap.get("surname")[0],
+                paramMap.get("email")[0],
+                paramMap.get("password")[0],
+                paramMap.get("telephone")[0],
+                paramMap.get("born")[0],
+                "No",
+                "No",
                 UUIDGenerator.Generate(),
-                "t",
-                paramMap.get("user[photo]")[0].equals("true")?"YES":"NO",
-                paramMap.get("teacher[graduate_t]")[0],
-                paramMap.get("teacher[extra_graduate]")[0],
-                paramMap.get("teacher[experience]")[0],
-                paramMap.get("teacher[card]")[0]);
+                "s",
+                paramMap.get("hasPhoto")[0].equals("true") ? "YES" : "NO",
+                "NULL",
+                "NULL",
+                "NULL",
+                "NULL");
 
        DBTeacher.getInstance().add(teacher, new ICompletion() {
            @Override
