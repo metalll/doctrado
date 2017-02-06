@@ -190,8 +190,9 @@
                 <div class="col s9">
                     <div class="row valign-wrapper">
               <span class="black-text center center-align ">
+                  <h5>
                    <%=strings.get(1) + " " + strings.get(2) + " " + strings.get(3)%> <br>
-                   Дата рождения: <%= strings.get(7) %>
+                      Дата рождения: <%= strings.get(7) %></h5>
               </span>
                 </div>
                 </div>
