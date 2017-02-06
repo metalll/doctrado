@@ -208,7 +208,7 @@
 
     <div class="col s12">
         <div class="row">
-            <p><a class="waves-effect col s12 waves-light btn disabled">Студент</a></p>
+            <p><a class="waves-effect col s12 waves-light btn disabled">Преподаватель</a></p>
         </div>
     </div>
 
