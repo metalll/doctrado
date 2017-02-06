@@ -52,8 +52,8 @@ public class createCourse extends HttpServlet {
 
         String execute = "INSERT INTO `doctrado`.`course` " +
                 "(`id`, `photo`, `courseName`, `createTime`, `descr`, `price`, `category`, `author`) " +
-                "VALUES ('"+uuid+"', '"+map.get("course[course_photo]")[0]+"', '"+map.get("course[course_name]")[0]+"', '"+map.get("course[course_time]")[0]+"'," +
-                " '"+map.get("course[course_desc]")[0]+"', '"+map.get("course[course_price]")[0]+"', '"+map.get("course[category_id]")[0]+"', '"+userID+"');";
+                "VALUES ('" + map.get("uuid")[0] + "', '" + "YES" + "', '" + map.get("name")[0] + "', '" + map.get("learnPeriod")[0] + "'," +
+                " '" + map.get("descr")[0] + "', '" + 0 + "', '" + map.get("course[category_id]")[0] + "', '" + userID + "');";
         setExecute(execute, new ICompletion() {
             @Override
             public void afterOperation(Object bundle) {

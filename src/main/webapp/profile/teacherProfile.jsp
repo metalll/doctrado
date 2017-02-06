@@ -485,7 +485,7 @@
         var learnPeriod = document.getElementById('timeToLearn').value;
 
 
-        var result = [];
+        var result = "";
         var options = document.getElementById('courseCategory');
         var opt;
         var uuid = "<%=UUIDGenerator.Generate()%>";
@@ -493,9 +493,12 @@
             opt = options[i];
 
             if (opt.selected) {
-                result.push(opt.value || opt.text);
+                result += opt.value || opt.text;
             }
         }
+        var creatingC = false;
+        var upload = false;
+
 
 
         $.ajax({
@@ -511,31 +514,45 @@
             },
             success: function (data) {
 
-                    Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>', 4000, 'rounded');
-                    var form = FormData();
-                    var photoT = $('#avatar-input').prop('files')[0];
-                    form.append('type', 'photo');
-                    form.append('uuid', uuid);
-                    form.append('photo', photoT);
+                creatingC = true;
 
+                if (creatingC && upload) {
 
-                    $.ajax({
-
-                        type: 'post',
-                        url: 'https://doctrado-sviasy.rhcloud.com/uploadDocument',
-                        processData: false,
-                        contentType: false,
-                        cache: false,
-                        data: form,
-                        success: function (data) {
-                            // window.location.href = "http://doctrado-sviasy.rhcloud.com/profile"
-                        }
-
-
-                    });
-
+                    alert('end');
 
                 }
+
+            }
+
+
+        });
+
+
+        var form = FormData();
+        var photoT = $('#avatar-input').prop('files')[0];
+        form.append('type', 'photo');
+        form.append('uuid', uuid);
+        form.append('photo', photoT);
+
+
+        $.ajax({
+
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/uploadDocument',
+            processData: false,
+            contentType: false,
+            cache: false,
+            data: form,
+            success: function (data) {
+                upload = true;
+
+
+                if (creatingC && upload) {
+
+                    alert('end');
+
+                }
+            }
 
 
         });
