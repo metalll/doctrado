@@ -250,7 +250,7 @@
 
 <div class="row valign-wrapper">
 
-    <div class="col s8 center center-align">
+    <div class="col s8 left left-align">
         <h4> Ваши курсы: </h4>
     </div>
     <div class="col s4 center center-align">
