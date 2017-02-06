@@ -198,6 +198,9 @@
 
 <div id="modal4" class="modal">
     <div class="modal-content">
+        <div class="row">
+            <h6 class="center-align center col s12">Ваш аватар для сайта</h6>
+        </div>
 
         <button style="position: relative;
                        background: #ffffff;
@@ -219,7 +222,7 @@
 
 
         <div class="row col s12">
-            <h6 class="center-align center col s12">Ваш аватар для сайта</h6>
+
 
             <a class="center center-align col s12 waves-effect waves-light btn" onclick="finishReqS()">Зарегестрироваться</a>
 
@@ -236,6 +239,10 @@
 
     <div class="modal-content">
 
+
+        <div class="row col s12">
+            <h6 class="center-align center col s12">Ваш аватар для сайта</h6>
+        </div>
         <button style="position: relative;
                        background: #ffffff;
                        background-color: #ffffff;
@@ -253,19 +260,17 @@
 
         </button>
         <input accept="image/*" style="display: none;" id="avatar-inputA" type="file">
-
-
-        <div class="row col s12">
-            <h6 class="center-align center col s12">Ваш аватар для сайта</h6>
-
-
+        <div class="input-field col s12">
+            <input id="teacher_ex" type="text" class="validate">
+            <label for="teacher_ex" data-error="">Преподавательский опыт</label>
         </div>
-
-        <h6 class="col s12 center-align center"> Подтверждающие документы </h6>
+        <div class="row">
+            <h6 class="col s12 center-align center"> Подтверждающие документы </h6>
+        </div>
         <div class="file-field input-field">
             <div class="btn">
                 <span>Обзор</span>
-                <input type="file">
+                <input id="conf_doc" type="file">
             </div>
             <div class="file-path-wrapper">
                 <input class="file-path validate" type="text">
@@ -868,6 +873,79 @@
 
     }
     function finishReqT() {
+
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/register',
+            data: {
+                name: Gname,
+                last_name: Glast_name,
+                surname: Gsurname,
+                email: Gemail,
+                password: Gpassword,
+                telephone: Gtelephone,
+                born: Gborn,
+                ifAccept: Gtest5,
+                Type: 't',
+                hasPhoto: hasPhoto,
+                addDoc: true
+            },
+            success: function (data) {
+
+                if (data == 0) {
+                    var form = new FormData();
+                    var photo = $('#avatar-inputA').prop('files')[0];
+                    var doc = $('#conf_doc').prop('files')[0];
+
+                    form.append('type', 'avatar');
+                    form.append('photo', photo);
+                    var docLoaded = false;
+                    var imgLoaded = false;
+
+                    var docForm = new FormData();
+                    docForm.append('type', 'conf_doc');
+                    docForm.append('doc', doc);
+
+                    $.ajax({
+
+                        type: 'post',
+                        url: 'https://doctrado-sviasy.rhcloud.com/uploadDocument',
+                        processData: false,
+                        contentType: false,
+                        cache: false,
+                        data: form,
+                        success: function (data) {
+                            imgLoaded = true;
+                            if (docLoaded && imgLoaded)
+                                window.location.href = "http://doctrado-sviasy.rhcloud.com/profile"
+                        }
+
+
+                    });
+
+
+                    $.ajax({
+
+                        type: 'post',
+                        url: 'https://doctrado-sviasy.rhcloud.com/uploadDocument',
+                        processData: false,
+                        contentType: false,
+                        cache: false,
+                        data: docForm,
+                        success: function (data) {
+                            docLoaded = true;
+                            if (docLoaded && imgLoaded)
+                                window.location.href = "http://doctrado-sviasy.rhcloud.com/profile"
+                        }
+
+
+                    });
+                }
+            }
+
+
+        });
+
 
         //    alert("te");
     }
