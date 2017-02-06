@@ -77,7 +77,7 @@ public class Registrator extends HttpServlet {
                 "No",
                 "No",
                 UUIDGenerator.Generate(),
-                "s",
+                "t",
                 paramMap.get("hasPhoto")[0].equals("true") ? "YES" : "NO",
                 "NULL",
                 "NULL",
