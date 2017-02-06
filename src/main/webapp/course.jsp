@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="ru">
-<%
+
 <%@ page import="com.mysql.jdbc.Statement" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.DriverManager" %>
