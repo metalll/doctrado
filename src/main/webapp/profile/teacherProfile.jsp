@@ -247,7 +247,7 @@
 
 </div>
 
-
+<div class="container">
 <div class="row valign-wrapper">
 
     <div class="col s8 left left-align">
@@ -259,7 +259,7 @@
 
 
 </div>
-
+</div>
 
 <div class="container">
     <div class="row">
