@@ -417,7 +417,7 @@
                 <%--<a class="menu-elem" data-anchor="#capabilities">Возможности</a>--%>
                 <%--</li>--%>
                 <li>
-                    <a class="menu-elem" href="https://doctrado-sviasy.rhcloud.com/course">Сертификаты</a>
+                    <a class="menu-elem" href="https://doctrado-sviasy.rhcloud.com/certificates">Сертификаты</a>
                 </li>
                 <li>
                     <a class="menu-elem" href="https://doctrado-sviasy.rhcloud.com/course">Курсы</a>
