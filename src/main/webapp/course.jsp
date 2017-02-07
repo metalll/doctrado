@@ -77,7 +77,7 @@
 
             while (rs.next()) {
 
-                images.add(rs.getString(3));
+                images.add(rs.getString(4));
 
             }
 
@@ -193,7 +193,7 @@
 
 %><%=" <div class=\"container\"> <div class=\"row\">"%><%
     }
-%><%="   <div class=\"row col s4\">\n" +
+%><%=   "   <div class=\"row col s4\">\n" +  //small course view
         "            <div class=\"col s12 m12 l12\">\n" +
         "                <div class=\"medium card\">\n" +
         "                    <div class=\"card-image\">\n" +
