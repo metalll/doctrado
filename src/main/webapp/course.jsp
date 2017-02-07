@@ -203,7 +203,7 @@
         "                    </div>\n" +
         "                    <div class=\"card-content\">\n" +
         "                        <p> " + courseList.get(i).get(2) + "\n" +
-        "                        </p><br>\n" +
+        "                        </p>\n" +
         "                        <p>Время на изучение: " + courseList.get(i).get(3) + " дней</p>\n" +
         "                    </div>\n" +
         "                    <div class=\"card-action center-align\">\n" +
