@@ -234,7 +234,7 @@
                 "Microsoft": null,
                 "Google": 'http://placehold.it/250x250',
                 <% for(int i1=0;i1<courseList.size();i1++){
-                    %><%= "\"" +courseList.get(i1).get(2) +"\" : null" %><%
+                    %><%= "\"" +courseList.get(i1).get(2) +"\" : \'" + NSDConstants.HOST + "/uploadDocument?path=" + images.get(i1) + "  \' " %><%
                     if(!(i1-1==courseList.size())){
                         %><%= "," %><%
                     }
