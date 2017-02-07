@@ -229,9 +229,17 @@
     $(document).ready(function () {
         $('input.autocomplete').autocomplete({
             data: {
+
                 "Apple": null,
                 "Microsoft": null,
-                "Google": 'http://placehold.it/250x250'
+                "Google": 'http://placehold.it/250x250',
+                <% for(int i1=0;i1<courseList.size();i1++){
+                    %><%= "\"" +courseList.get(i1).get(2) +"\" : null" %><%
+                    if(!(i1-1==courseList.size())){
+                        %><%= "," %><%
+                    }
+                } %>
+
             },
             limit: 20 // The max amount of results that can be shown at once. Default: Infinity.
         });
