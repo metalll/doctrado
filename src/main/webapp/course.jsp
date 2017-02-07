@@ -19,7 +19,7 @@
     Map<String, String[]> paramMap = request.getParameterMap();
     String uType = "";
     // String id = paramMap.get("id")[0];
-    String avatarPath = "";
+    ArrayList<String> images = new ArrayList<String>();
     ArrayList<String> author = new ArrayList<String>();
     final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
     //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
@@ -67,6 +67,20 @@
             //  completion.afterOperation(new Teacher();
 
             courseList.add(strings);
+
+        }
+
+        for (int i = 0; i < courseList.size(); i++) {
+            query = "SELECT * FROM `resourses` WHERE `type` = 'photo' AND `uuid` = '" + courseList.get(i).get(0) + "'";
+
+            rs = stmt.executeQuery(query);
+
+            while (rs.next()) {
+
+                images.add(rs.getString(3));
+
+            }
+
 
         }
 
@@ -183,7 +197,7 @@
         "            <div class=\"col s12 m12 l12\">\n" +
         "                <div class=\"medium card\">\n" +
         "                    <div class=\"card-image\">\n" +
-        "                        <img src=\"../img/course.jpg\">\n" +
+        "                        <img src=\"" + NSDConstants.HOST + "/uploadDocument?path=" + images.get(i) + "\">\n" +
         "                        <span class=\"card-title flow-text\"></span>\n" +
         "                    </div>\n" +
         "                    <div class=\"card-content\">\n" +
