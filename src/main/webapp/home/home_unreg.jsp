@@ -1173,7 +1173,7 @@
 //Today and clear
         today: 'Сегодня',
         clear: 'Очистить',
-        close: 'Закрыть',
+        close: 'X',
 //The format to show on the `input` element
         format: 'dd/mm/yyyy'
     });
