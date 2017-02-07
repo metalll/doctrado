@@ -593,8 +593,6 @@
     </div>
 </footer>
 
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="../js/materialize.min.js"></script>
 <script type="application/javascript">
     var Gname = null;
     var Glast_name = null;
