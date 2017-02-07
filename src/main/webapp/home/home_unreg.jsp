@@ -325,9 +325,9 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <p>Дата рождения</p>
+
                         <input id="born" type="date" placeholder="Дата рождения" class="validate datepicker">
-                        <label for="born" data-error="некорректный e-mail">День рождения</label>
+                        <label for="born" data-error="некорректный e-mail">Дата рождения</label>
                     </div>
 
                     <p class="col s12 center-align">
