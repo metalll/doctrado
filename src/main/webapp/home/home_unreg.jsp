@@ -326,8 +326,8 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <p>Дата рождения</p>
-                        <input id="born" type="date" placeholder="Дата рождения" class="validate">
-                        <label for="born" data-error="некорректный e-mail"></label>
+                        <input id="born" type="date" placeholder="Дата рождения" class="validate datepicker">
+                        <label for="born" data-error="некорректный e-mail">День рождения</label>
                     </div>
 
                     <p class="col s12 center-align">
@@ -1154,7 +1154,10 @@
     $(document).ready(function () {
         $('.parallax').parallax();
     });
-
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
 
 </script>
 </body>
