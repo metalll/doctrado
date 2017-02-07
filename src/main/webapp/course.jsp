@@ -5,6 +5,7 @@
 <html lang="ru">
 
 <%@ page import="com.mysql.jdbc.Statement" %>
+<%@ page import="controller.StringFormatter" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.ResultSet" %>
@@ -204,7 +205,7 @@
         "                    <div class=\"card-content\">\n" +
         "                        <p class=\"center-align\"> " + courseList.get(i).get(2) + "\n" +
         "                        </p>\n" +
-        "                        <p>Время на изучение: " + courseList.get(i).get(3) + " дней</p>\n" +
+        "                        <p>Время на изучение: " + courseList.get(i).get(3) + " " + StringFormatter.getStringEnding(Integer.parseInt(courseList.get(i).get(3))) + "</p>\n" +
         "                    </div>\n" +
         "                    <div class=\"card-action center-align\">\n" +
         "                        <p> <a class=\"waves-effect col s12 waves-light green btn\">Подробнее</a>  </p>\n" +
@@ -224,9 +225,13 @@
 
 
 
-<script type="application/javascript" >
 
+<script type="application/javascript" >
+    var end = [];
     $(document).ready(function () {
+        end.push("день");
+        end.push("дня");
+        end.push("дней");
         $('input.autocomplete').autocomplete({
             data: {
 
@@ -245,7 +250,28 @@
         });
     });
 
-
+    function getNumEnding(iNumber, aEndings) {
+        var sEnding, i;
+        iNumber = iNumber % 100;
+        if (iNumber >= 11 && iNumber <= 19) {
+            sEnding = aEndings[2];
+        }
+        else {
+            i = iNumber % 10;
+            switch (i) {
+                case (1):
+                    sEnding = aEndings[0];
+                    break;
+                case (2):
+                case (3):
+                case (4):
+                    sEnding = aEndings[1];
+                    break;
+                default:
+                    sEnding = aEndings[2];
+            }
+        }
+        return sEnding;
 
 
     function call() {
@@ -465,42 +491,42 @@
         var bornEr = false;
         var testEr = false;
 
-        if(nameR==""){
+        if (nameR == "") {
             error = true;
             nameREr = true;
         }
-        if(last_nameR==""){
+        if (last_nameR == "") {
             error = true;
             last_nameREr = true;
         }
-        if(surnameR==""){
+        if (surnameR == "") {
             error = true;
             surnameREr = true;
         }
-        if(emailR==""){
+        if (emailR == "") {
             error = true;
             emailREr = true;
         }
-        if(passwordR==""){
+        if (passwordR == "") {
             error = true;
             passwordREr = true;
         }
-        if(telephone==""){
+        if (telephone == "") {
             error = true;
             telephoneEr = true;
         }
-        if(born==""){
+        if (born == "") {
             error = true;
             bornEr = true;
         }
-        if(test5==""){
+        if (test5 == "") {
             error = true;
             testEr = true;
         }
 
-        if(error){
-            if(nameREr||last_nameREr||surnameREr||emailREr||passwordREr||telephoneEr||bornEr||testEr){
-                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>',4000,'rounded');
+        if (error) {
+            if (nameREr || last_nameREr || surnameREr || emailREr || passwordREr || telephoneEr || bornEr || testEr) {
+                Materialize.toast('<div class="red-text text-darken-3"><b>Заполните все поля</b></div>', 4000, 'rounded');
                 return;
             }
         }
@@ -509,25 +535,23 @@
             url: 'https://doctrado-sviasy.rhcloud.com/validate_user',
             data: {
                 email: emailR,
-                password:passwordR,
-                name:nameR,
-                last_name:last_nameR,
-                surname:surnameR,
-                telephone:telephone,
-                born:born,
-                type:accept
+                password: passwordR,
+                name: nameR,
+                last_name: last_nameR,
+                surname: surnameR,
+                telephone: telephone,
+                born: born,
+                type: accept
             },
-            success: function(data) {
-                if (data==0){
+            success: function (data) {
+                if (data == 0) {
                     $('#modal3').modal('close');
                     $('#modal1').modal('close');
                     $('#modal2').modal('close');
 
-                    if(accept=='s') $('#modal4').modal('open');
+                    if (accept == 's') $('#modal4').modal('open');
 
-                    if(accept=='t') $('#modal5').modal('open');
-
-
+                    if (accept == 't') $('#modal5').modal('open');
 
 
                     //  $('#progress_bar').modal('close');
@@ -535,6 +559,7 @@
 
             }
         });
+    }
     }
 </script>
 
