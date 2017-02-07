@@ -1155,8 +1155,27 @@
         $('.parallax').parallax();
     });
     $('.datepicker').pickadate({
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15 // Creates a dropdown of 15 years to control year
+        selectMonths: true,//Creates a dropdown to control month
+        selectYears: 15,//Creates a dropdown of 15 years to control year
+//The title label to use for the month nav buttons
+        labelMonthNext: 'Следущий месяц',
+        labelMonthPrev: 'Прошлый месяц',
+//The title label to use for the dropdown selectors
+        labelMonthSelect: 'Выберите месяц',
+        labelYearSelect: 'Выберите год',
+//Months and weekdays
+        monthsFull: ['Январь', 'Ферваль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+        monthsShort: ['Янв', 'Фев', 'Март', 'Апр', 'Mай', 'Июн', 'Июл', 'Авг', 'Сент', 'Окт', 'Ноябр', 'Декбр'],
+        weekdaysFull: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Субота'],
+        weekdaysShort: ['Вс', 'Пн', 'Вт', 'Ср', 'Чтв', 'Птн', 'Сб'],
+//Materialize modified
+        weekdaysLetter: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+//Today and clear
+        today: 'Сегодня',
+        clear: 'Очистить',
+        close: 'Закрыть',
+//The format to show on the `input` element
+        format: 'dd/mm/yyyy'
     });
 
 </script>
