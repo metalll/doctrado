@@ -208,7 +208,7 @@
         "                        <p>Время на изучение: " + courseList.get(i).get(3) + " " + StringFormatter.getStringEnding(Integer.parseInt(courseList.get(i).get(3))) + "</p>\n" +
         "                    </div>\n" +
         "                    <div class=\"card-action center-align\">\n" +
-        "                        <p> <a class=\"waves-effect col s12 waves-light green btn\">Подробнее</a>  </p>\n" +
+        "                        <p> <a href=\"" + NSDConstants.HOST + "/getCourse?id=" + courseList.get(i).get(0) + "\" class=\"waves-effect col s12 waves-light green btn\">Подробнее</a>  </p>\n" +
         "                    </div>\n" +
         "                </div>\n" +
         "            </div>\n" +
