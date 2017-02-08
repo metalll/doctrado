@@ -22,7 +22,7 @@
     String uType = "";
     String id = paramMap.get("id")[0];
     String avatarPath = "";
-    ArrayList<String> author = new ArrayList<>();
+    ArrayList<String> author = new ArrayList<String>();
     final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
     //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
     final String userName = "adminsBmIZAN";
@@ -201,7 +201,7 @@
         </div>
     </div>
     <p></p>
-
+</div>
 
 
 
