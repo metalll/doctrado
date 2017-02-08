@@ -211,20 +211,22 @@
                      <h5> <%=strings.get(4)%></h5>
 
 
-
-                  <div class="chip">
-    <img src="/img/work_icon.png" alt="Contact Person">
-                  </div>
-                      <div class="chip">
-    <img src="/img/work_icon.png" alt="Contact Person">
-                         </div>
-                                <div class="chip">
-    <img src="/img/work_icon.png" alt="Contact Person">
-                                </div>
-                             <div class="chip">
+                    <div class="row">
+                  <div class="chip col s3">
     <img src="/img/work_icon.png" alt="Contact Person">
     Бизнесс
   </div>
+                        <div class="chip col s3">
+    <img src="/img/work_icon.png" alt="Contact Person">
+    Бизнесс
+  </div>
+                        <div class="chip col s3">
+    <img src="/img/work_icon.png" alt="Contact Person">
+    Бизнесс
+  </div>
+
+
+                    </div>
 
 
               </span>
