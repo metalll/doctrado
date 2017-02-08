@@ -6,12 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="NSD.NSDConstants" %>
-<%@ page import="com.mysql.jdbc.Statement" %>
-<%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.DriverManager" %>
-<%@ page import="java.sql.ResultSet" %>
-<%@ page import="java.sql.SQLException" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Map" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
@@ -21,6 +15,7 @@
     Map<String, String[]> paramMap = request.getParameterMap();
     String uType = "";
     String id = paramMap.get("id")[0];
+<%=id%>
     String avatarPath = "";
     ArrayList<String> author = new ArrayList<String>();
     final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
