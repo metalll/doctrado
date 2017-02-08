@@ -18,11 +18,35 @@
 
     Cookie[] cookies = request.getCookies();
     boolean auth = false;
-    try{
+    boolean nextStepAuth = false;
+
     for (Cookie cookie:cookies) {
-        if(cookie.getName().equals(NSDConstants.uTokenCookie)&&!cookie.getValue().equals("")){
-            auth = true;
-        }}} catch (Exception e){ e.printStackTrace(); }
+        try {
+            if(cookie.getName().equals(NSDConstants.uTokenCookie)&&!cookie.getValue().equals("")){
+                auth = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            if (cookie.getName().equals(NSDConstants.uTypeCookie) && (!cookie.getValue().equals("") || !(cookie.getValue() == null))) {
+                nextStepAuth = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    if (auth && !nextStepAuth) {
+
+    }
+
+
+
+
     response.setContentType("text/html;charset=UTF-8");
         if(auth){
     request.getRequestDispatcher("./home/home_reg.jsp").include(request, response);//рисуем jsp

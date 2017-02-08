@@ -53,8 +53,8 @@ public class Authorizator extends HttpServlet {
                         cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
                         cookie.setSecure(true);
                         Cookie cookie1 = new Cookie(NSDConstants.uTypeCookie,((BaseUser)bundle).getUserType());
-                        cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
-                        cookie.setSecure(true);
+                        cookie1.setMaxAge(60 * 60 * 24 * 365 * 10);
+                        cookie1.setSecure(true);
                         Cookie[] cookie2 = request.getCookies();
 
                         for (Cookie tempCookie : cookie2) {
