@@ -38,8 +38,8 @@
     }
 
 
-    String query = "SELECT * FROM `course` WHERE `id` = '" + id + "'";
-    ArrayList<String> strings = new ArrayList<>();
+    String query = "SELECT * FROM `course` WHERE `id` = `" + id + "`";
+    ArrayList<String> strings = new ArrayList<String>();
 
     try {
         Class.forName("com.mysql.jdbc.Driver");
