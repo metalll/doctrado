@@ -210,6 +210,14 @@
                   <h5>
                       <%=strings.get(2) + ""%></h5><br>
                      <h6> <%=strings.get(4)%></h6>
+
+
+                  <div class="chip">
+    <img src="/img/work_icon.png" alt="Contact Person">
+    Бизнесс
+  </div>
+
+
               </span>
                         </div>
                     </div>
