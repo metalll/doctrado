@@ -76,7 +76,7 @@
         rs = stmt.executeQuery(query);
         while (rs.next()) {
 
-            avatarPath = rs.getString(3);
+            avatarPath = rs.getString(4);
 
         }
 
