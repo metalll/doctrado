@@ -39,7 +39,7 @@
     }
 
 
-    String query = "SELECT * FROM `course` WHERE `id` = `" + id + "`";
+    String query = "SELECT * FROM `course` WHERE `id` = \'" + id + "\'";
     ArrayList<String> strings = new ArrayList<String>();
 
     try {
