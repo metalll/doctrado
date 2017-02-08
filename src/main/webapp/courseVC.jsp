@@ -153,6 +153,7 @@
     <nav class="white darken-4 grey-text text-darken-4" role="navigation">
         <div class="nav-wrapper container">
 
+
             <a id="logo-container" href="#" class="brand-logo "><img src="../img/favicon.ico"></a>
 
             <ul class="right hide-on-med-and-down">
@@ -188,19 +189,33 @@
     </nav>
 </div>
 <div class="container">
-    <p></p>
-    <div class="row">
-        <div class="col s12">
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">textsms</i>
-                    <input type="text" id="autocomplete-input" class="autocomplete">
-                    <label for="autocomplete-input">Autocomplete</label>
+
+    <div class="container">
+        <div class="col s12 m8 offset-m2 l6 offset-l3">
+            <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="row valign-wrapper">
+                    <div class="col s10">
+                        <img style="width:200px;height:200px;overflow:hidden"
+                             src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath%>" alt=""
+                             class=" responsive-img"> <!-- notice the "circle" class -->
+                    </div>
+
+                    <div class="col s9">
+                        <div class="row valign-wrapper">
+              <span class="black-text center center-align ">
+                  <h5>
+                   <%=strings.get(3)%></h5>
+              </span>
+                        </div>
+                    </div>
                 </div>
+
+
             </div>
         </div>
     </div>
-    <p></p>
+
+
 </div>
 
 
@@ -208,9 +223,6 @@
 
 <script type="application/javascript">
 
-    $('input.autocomplete').autocomplete({
-        data: {"Apple": null, "Microsoft": null, "Google": 'http://placehold.it/250x250'}
-    });
 
 
     function call() {
