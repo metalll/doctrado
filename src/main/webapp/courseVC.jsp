@@ -21,8 +21,7 @@
 
     Map<String, String[]> paramMap = request.getParameterMap();
     String uType = "";
-    String id = paramMap.get("id")[0];%>
-<%=id%><%
+    String id = paramMap.get("id")[0];
     String avatarPath = "";
     ArrayList<String> author = new ArrayList<String>();
     final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
@@ -205,8 +204,8 @@
                     <div class="col s9">
                         <div class="row valign-wrapper">
               <span class="black-text center center-align ">
-                  <%--<h5>--%>
-                      <%--<%=strings.get(3)%></h5>--%>
+                  <h5>
+                      <%=strings.size() + ""%></h5>
               </span>
                         </div>
                     </div>
