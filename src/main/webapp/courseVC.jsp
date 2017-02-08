@@ -69,7 +69,12 @@
             //  completion.afterOperation(new Teacher();
         }
 
-        query = "SELECT * FROM `resourses` WHERE `userInfo` = '" + uToken + "' AND `type` = 'photo'" + " AND `uuid` = '" + id + "'";
+        query = "SELECT * \n" +
+                "FROM  `resourses` \n" +
+                "WHERE  `type` =  'photo'\n" +
+                "AND  `uuid` =  '" + id + "'\n" +
+                "AND  `userInfo` =  '" + uToken + "'\n" +
+                "";
         rs = stmt.executeQuery(query);
         while (rs.next()) {
 
