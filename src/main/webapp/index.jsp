@@ -19,25 +19,27 @@
     Cookie[] cookies = request.getCookies();
     boolean auth = false;
     boolean nextStepAuth = false;
-
-    for (Cookie cookie:cookies) {
-        try {
-            if(cookie.getName().equals(NSDConstants.uTokenCookie)&&!cookie.getValue().equals("")){
-                auth = true;
+    try {
+        for (Cookie cookie:cookies) {
+            try {
+                if (cookie.getName().equals(NSDConstants.uTokenCookie) && !cookie.getValue().equals("")) {
+                    auth = true;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+
+            try {
+                if (cookie.getName().equals(NSDConstants.uTypeCookie) && (!cookie.getValue().equals("") || !(cookie.getValue() == null))) {
+                    nextStepAuth = true;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
-        try {
-            if (cookie.getName().equals(NSDConstants.uTypeCookie) && (!cookie.getValue().equals("") || !(cookie.getValue() == null))) {
-                nextStepAuth = true;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
+    } catch (Exception e) {
+        e.printStackTrace();
     }
 
     if (auth && !nextStepAuth) {
