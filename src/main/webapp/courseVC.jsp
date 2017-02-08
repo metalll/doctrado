@@ -214,6 +214,12 @@
 
                   <div class="chip">
     <img src="/img/work_icon.png" alt="Contact Person">
+                         <div class="chip">
+    <img src="/img/work_icon.png" alt="Contact Person">
+                                <div class="chip">
+    <img src="/img/work_icon.png" alt="Contact Person">
+                                       <div class="chip">
+    <img src="/img/work_icon.png" alt="Contact Person">
     Бизнесс
   </div>
 
