@@ -43,7 +43,7 @@
     }
 
     if (auth && !nextStepAuth) {
-
+        response.sendRedirect("https://doctrado-sviasy.rhcloud.com");
     }
 
 
