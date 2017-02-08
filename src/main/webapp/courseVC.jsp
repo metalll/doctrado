@@ -212,17 +212,17 @@
 
 
                     <div class="row">
-                  <div class="chip col s3">
+                  <div class="chip col  s3">
     <img src="/img/work_icon.png" alt="Contact Person">
-    Бизнесс
+    Бизнес
   </div>
-                        <div class="chip col s3">
+                        <div class="chip push-s1 col s3">
     <img src="/img/work_icon.png" alt="Contact Person">
-    Бизнесс
+    Бизнес
   </div>
-                        <div class="chip col s3">
+                        <div class="chip push-s1 col s3">
     <img src="/img/work_icon.png" alt="Contact Person">
-    Бизнесс
+    Бизнес
   </div>
 
 
