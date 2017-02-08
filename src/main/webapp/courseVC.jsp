@@ -72,9 +72,7 @@
         query = "SELECT * \n" +
                 "FROM  `resourses` \n" +
                 "WHERE  `type` =  'photo'\n" +
-                "AND  `uuid` =  '" + id + "'\n" +
-                "AND  `userInfo` =  '" + uToken + "'\n" +
-                "";
+                "AND  `uuid` =  '" + id + "'\n";
         rs = stmt.executeQuery(query);
         while (rs.next()) {
 
