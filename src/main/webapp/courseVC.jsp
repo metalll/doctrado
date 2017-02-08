@@ -207,9 +207,9 @@
                     <div class="col s9">
                         <div class="row valign-wrapper">
               <span class="black-text center center-align ">
-                  <h5>
-                      <%=strings.get(2) + ""%></h5><br>
-                     <h6> <%=strings.get(4)%></h6>
+                  <h5><%=strings.get(2) + ""%></h5><br>
+                     <h5> <%=strings.get(4)%></h5>
+
 
 
                   <div class="chip">
