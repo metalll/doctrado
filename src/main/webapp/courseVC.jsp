@@ -205,7 +205,7 @@
                         <div class="row valign-wrapper">
               <span class="black-text center center-align ">
                   <h5>
-                      <%=strings.get(3) + ""%></h5>
+                      <%=strings.get(2) + ""%></h5>
               </span>
                         </div>
                     </div>
