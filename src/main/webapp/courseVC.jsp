@@ -318,7 +318,7 @@
 
         $.ajax({
             type: 'post',
-            url: 'https://doctrado-sviasy.rhcloud.com/login',
+            url: 'https://doctrado-sviasy.rhcloud.com',
             data: {
                 content: content
 
