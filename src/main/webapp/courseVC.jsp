@@ -270,12 +270,12 @@
         <div class="collapsible-body"><span class="water">
             <div class="row col s12">
 
-           <div class="col s4"> <a href="<%=NSDConstants.HOST+"/logout"%>"
-                                   class="menu-elem waves-effect center center-align waves-light btn white-text">Сохранить</a> </div>
-                <div class="col s4">   <a href="#"
-                                          class="menu-elem  waves-effect center center-align waves-light btn white-text">Удалить</a></div>
-                <div class="col s4">   <a href="#"
-                                          class="menu-elem waves-effect center center-align waves-light btn white-text">Тест</a> </div>
+           <div class="col center center-align s4"> <a href="<%=NSDConstants.HOST+"/logout"%>"
+                                                       class="menu-elem waves-effect center center-align waves-light btn white-text">Сохранить</a> </div>
+                <div class="col center center-align s4">   <a href="#"
+                                                              class="menu-elem  waves-effect center center-align waves-light btn white-text">Удалить</a></div>
+                <div class="col center center-align s4">   <a href="#"
+                                                              class="menu-elem waves-effect center center-align waves-light btn white-text">Тест</a> </div>
             </div>
 
 
