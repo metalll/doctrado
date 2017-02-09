@@ -274,11 +274,11 @@
 
            <div class="col center center-align s4"> <a href="javascript:void(0);" id="input" onclick="funcn();"
                                                        class="menu-elem waves-effect center center-align waves-light btn white-text"
-           >Сохранить</a></div>
+           >Сохранить изменения</a></div>
                 <div class="col center center-align s4">   <a href="#"
-                                                              class="menu-elem  waves-effect center center-align waves-light btn white-text">Удалить</a></div>
+                                                              class="menu-elem  waves-effect center center-align waves-light btn white-text">Удалить тему</a></div>
                 <div class="col center center-align s4">   <a href="#"
-                                                              class="menu-elem waves-effect center center-align waves-light btn white-text">Тест</a> </div>
+                                                              class="menu-elem waves-effect center center-align waves-light btn white-text">Тест темы</a> </div>
             </div>
 
 
@@ -297,14 +297,71 @@
         </span></div>
     </li>
     <li>
-        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        <div class="collapsible-header">
+            <div class="center-align center">Тема 2</div>
+        </div>
+        <div class="collapsible-body"><span class="water">
+            <div class="row col s12">
+
+           <div class="col center center-align s4"> <a href="javascript:void(0);" id="input1" onclick="funcn();"
+                                                       class="menu-elem waves-effect center center-align waves-light btn white-text"
+           >Сохранить изменения</a></div>
+                <div class="col center center-align s4">   <a href="#"
+                                                              class="menu-elem  waves-effect center center-align waves-light btn white-text">Удалить тему</a></div>
+                <div class="col center center-align s4">   <a href="#"
+                                                              class="menu-elem waves-effect center center-align waves-light btn white-text">Тест темы</a> </div>
+            </div>
+
+
+            <textarea name="content2">
+
+
+
+            </textarea>
+
+
+
+
+
+
+
+        </span></div>
     </li>
+
     <li>
-        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        <div class="collapsible-header">
+            <div class="center-align center">Тема 3</div>
+        </div>
+        <div class="collapsible-body"><span class="water">
+            <div class="row col s12">
+
+           <div class="col center center-align s4"> <a href="javascript:void(0);" id="input3" onclick="funcn();"
+                                                       class="menu-elem waves-effect center center-align waves-light btn white-text"
+           >Сохранить изменения</a></div>
+                <div class="col center center-align s4">   <a href="#"
+                                                              class="menu-elem  waves-effect center center-align waves-light btn white-text">Удалить тему</a></div>
+                <div class="col center center-align s4">   <a href="#"
+                                                              class="menu-elem waves-effect center center-align waves-light btn white-text">Тест темы</a> </div>
+            </div>
+
+
+            <textarea name="content3">
+
+
+
+            </textarea>
+
+
+
+
+
+
+
+        </span></div>
     </li>
 </ul>
+    <a class=" col s12 waves-effect center center-align waves-light btn white-text"> <i class="material-icons">plus</i>
+    </a>
 
 </div>
 <script src="/js/tinymce/tinymce.min.js"></script>
