@@ -289,7 +289,7 @@
 </ul>
 
 </div>
-
+<script src="/js/tinymce/tinymce.min.js"></script>
 <script type="application/javascript">
 
 
