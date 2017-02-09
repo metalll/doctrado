@@ -282,7 +282,7 @@
             </div>
 
 
-            <textarea id="id1">
+            <textarea name="content1">
 
 
 
@@ -312,7 +312,20 @@
 
 
     function funcn() {
-        alert("eee");
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/login',
+            data: {
+                content: tinyMCE.get('content1').getContent()
+            },
+            success: function (data) {
+                if (data == -1) {
+                    Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>', 4000, 'rounded');
+                    bar.hide();
+                }
+                else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
+            }
+        });
     }
 
 
