@@ -134,6 +134,20 @@
     <title>Doctrado</title>
     <!-- CSS  -->
 
+    <style>
+        .water {
+            background: #000 url(/img/water.png) repeat;
+            width: 574px;
+            height: 334px;
+        }
+
+        img.watermark {
+            filter: alpha(opacity=75);
+            opacity: .75;
+        }
+
+    </style>
+
     <meta charset="utf-8"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="csrf-token" content="Wx6PFl4mn9yqYIFxDmcvdgOH6tNtWn3dVOktVC7V">
@@ -246,10 +260,33 @@
 </div>
 
 
+<div class="container">
+    <div class="row col s12">
+        <h6 class="center-align center">Темы курса</h6>
+    </div>
 <ul class="collapsible" data-collapsible="accordion">
     <li>
-        <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        <div class="collapsible-header"><i class="material-icons">filter_drama</i>Тема 1</div>
+        <div class="collapsible-body"><span class="water">
+
+
+            пкоаатоцулаолоіуавофуаіпкаміватсутвгоутвфцгвтогфцвтфцгвфвтфгвтцвтцгвфцгвцгвтфцвгфтвфцвгфц
+            цфвфцвтцгвтцфвтгфцтвгфцгтвтв
+            фвфцтивтцфвгфцвтгфцвтфв\цфв
+
+            вфц
+            вфцв
+            фцвц
+            фв
+            фцв
+            цвцшвфцшовфшовфц
+            вц
+            в
+            фцвфцлпоукпоцушфо
+
+
+
+        </span></div>
     </li>
     <li>
         <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
@@ -261,6 +298,7 @@
     </li>
 </ul>
 
+</div>
 
 <script type="application/javascript">
 
