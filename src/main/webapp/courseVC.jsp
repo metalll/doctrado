@@ -310,7 +310,7 @@
 <script src="/js/tinymce/tinymce.min.js"></script>
 <script type="application/javascript">
 
-    $('#input').click(function () {
+    $('#input').onclick(function () {
         save("Q");
     });
 
