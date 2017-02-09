@@ -268,8 +268,15 @@
     <li>
         <div class="collapsible-header"><i class="material-icons">filter_drama</i>Тема 1</div>
         <div class="collapsible-body"><span class="water">
+            <div class="row col s12">
+
             <a href="<%=NSDConstants.HOST+"/logout"%>"
-               class="menu-elem waves-effect waves-light btn white-text">Сохранить</a>
+               class="menu-elem col s4 waves-effect waves-light btn white-text">Сохранить</a>
+                <a href="#" class="menu-elem col s4 waves-effect waves-light btn white-text">Удалить</a>
+                    <a href="#" class="menu-elem col s4 waves-effect waves-light btn white-text">Тест</a>
+            </div>
+
+
             <textarea>
 
 
