@@ -272,9 +272,9 @@
         <div class="collapsible-body"><span class="water">
             <div class="row col s12">
 
-           <div class="col center center-align s4"> <a href="#"
+           <div class="col center center-align s4"> <a href="#" id="input"
                                                        class="menu-elem waves-effect center center-align waves-light btn white-text"
-                                                       onclick="save(this.id)">Сохранить</a></div>
+                                                       onclick="save(this.id);">Сохранить</a></div>
                 <div class="col center center-align s4">   <a href="#"
                                                               class="menu-elem  waves-effect center center-align waves-light btn white-text">Удалить</a></div>
                 <div class="col center center-align s4">   <a href="#"
@@ -310,9 +310,14 @@
 <script src="/js/tinymce/tinymce.min.js"></script>
 <script type="application/javascript">
 
+    $('#input').click(function () {
+        save("Q");
+    });
+
+
 
     function save(id) {
-        var content = document.getElementById(id).value;
+        var content = document.getElementById('text1').value;
 
         $.ajax({
             type: 'post',
