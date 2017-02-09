@@ -311,30 +311,7 @@
 <script type="application/javascript">
 
 
-    $("#input").onclick(
-        function () {
-        var content = document.getElementById('id1').value;
 
-        $.ajax({
-            type: 'post',
-            url: 'https://doctrado-sviasy.rhcloud.com',
-            data: {
-                content: content
-
-            },
-            success: function (data) {
-
-//                if (data == -1) {
-//r
-//
-//        }
-//    else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
-            }
-        });
-
-
-    }
-    );
 
 
     function call() {
