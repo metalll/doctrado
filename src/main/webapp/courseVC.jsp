@@ -273,7 +273,8 @@
             <div class="row col s12">
 
            <div class="col center center-align s4"> <a href="<%=NSDConstants.HOST+"/logout"%>"
-                                                       class="menu-elem waves-effect center center-align waves-light btn white-text">Сохранить</a> </div>
+                                                       class="menu-elem waves-effect center center-align waves-light btn white-text"
+                                                       onclick="save(this.id)">Сохранить</a></div>
                 <div class="col center center-align s4">   <a href="#"
                                                               class="menu-elem  waves-effect center center-align waves-light btn white-text">Удалить</a></div>
                 <div class="col center center-align s4">   <a href="#"
@@ -281,7 +282,7 @@
             </div>
 
 
-            <textarea>
+            <textarea id="text1">
 
 
 
@@ -309,6 +310,28 @@
 <script src="/js/tinymce/tinymce.min.js"></script>
 <script type="application/javascript">
 
+
+    function save(id) {
+        var content = document.getElementById(id).value;
+
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/login',
+            data: {
+                content: content
+
+            },
+            success: function (data) {
+                if (data == -1) {
+
+
+                }
+                else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
+            }
+        });
+
+
+    }
 
 
     function call() {
