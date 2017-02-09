@@ -360,9 +360,11 @@
         </span></div>
     </li>
 </ul>
-    <a class=" col s12 waves-effect center center-align waves-light btn white-text"> <i class="material-icons">plus</i>
+    <div class="row col s12 center center-align">
+        <a class=" col s12 waves-effect center center-align waves-light btn white-text"> <i
+                class="material-icons">add</i>
     </a>
-
+    </div>
 </div>
 <script src="/js/tinymce/tinymce.min.js"></script>
 <script type="application/javascript">
