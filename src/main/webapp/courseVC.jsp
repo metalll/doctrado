@@ -312,7 +312,7 @@
 
 
     $("#input").onclick(
-        function save() {
+        function () {
         var content = document.getElementById('id1').value;
 
         $.ajax({
