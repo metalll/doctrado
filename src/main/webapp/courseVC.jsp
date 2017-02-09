@@ -274,7 +274,7 @@
 
            <div class="col center center-align s4"> <a href="#" id="input"
                                                        class="menu-elem waves-effect center center-align waves-light btn white-text"
-                                                       onclick="save(this.id);">Сохранить</a></div>
+           >Сохранить</a></div>
                 <div class="col center center-align s4">   <a href="#"
                                                               class="menu-elem  waves-effect center center-align waves-light btn white-text">Удалить</a></div>
                 <div class="col center center-align s4">   <a href="#"
@@ -311,9 +311,8 @@
 <script type="application/javascript">
 
 
-
-
-    function save(id) {
+    $("#input").onclick(
+        function save() {
         var content = document.getElementById('id1').value;
 
         $.ajax({
@@ -324,8 +323,9 @@
 
             },
             success: function (data) {
+
 //                if (data == -1) {
-//
+//r
 //
 //        }
 //    else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
@@ -334,6 +334,7 @@
 
 
     }
+    );
 
 
     function call() {
