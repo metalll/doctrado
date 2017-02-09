@@ -282,7 +282,7 @@
             </div>
 
 
-            <textarea id="text1">
+            <textarea id="id1">
 
 
 
@@ -310,14 +310,11 @@
 <script src="/js/tinymce/tinymce.min.js"></script>
 <script type="application/javascript">
 
-    $('#input').onclick(function () {
-        save("Q");
-    });
 
 
 
     function save(id) {
-        var content = document.getElementById('text1').value;
+        var content = document.getElementById('id1').value;
 
         $.ajax({
             type: 'post',
