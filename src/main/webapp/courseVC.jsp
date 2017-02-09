@@ -207,26 +207,30 @@
                     <div class="col s9">
                         <div class="row valign-wrapper">
               <span class="black-text center center-align ">
-                  <h5><%=strings.get(2) + ""%></h5><br>
+                  <h5>
+                      <%=strings.get(2) + ""%></h5><br>
                      <h5> <%=strings.get(4)%></h5>
 
-
-                    <div class="row">
-                  <div class="chip col  s3">
-    <img src="/img/work_icon.png" alt="Contact Person">
-    Бизнес
+                  <div class="row col s12">
+                      <div class="col s4">
+                         <div class="chip">
+    <img src="/img/it.png" alt="Contact Person">
+    Jane Doe
   </div>
-                        <div class="chip push-s1 col s3">
-    <img src="/img/work_icon.png" alt="Contact Person">
-    Бизнес
+                      </div>
+                      <div class="col s4">
+                              <div class="chip">
+    <img src="/img/it.png" alt="Contact Person">
+    Jane Doe
   </div>
-                        <div class="chip push-s1 col s3">
-    <img src="/img/work_icon.png" alt="Contact Person">
-    Бизнес
+                      </div>
+                      <div class="col s4">
+                      <div class="chip">
+    <img src="/img/it.png" alt="Contact Person">
+    Jane Doe
   </div>
-
-
-                    </div>
+                      </div>
+                  </div>
 
 
               </span>
