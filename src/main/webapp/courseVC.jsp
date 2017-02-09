@@ -272,7 +272,7 @@
         <div class="collapsible-body"><span class="water">
             <div class="row col s12">
 
-           <div class="col center center-align s4"> <a href="#" id="input"
+           <div class="col center center-align s4"> <a href="javascript:void(0);" id="input" onclick="funcn();"
                                                        class="menu-elem waves-effect center center-align waves-light btn white-text"
            >Сохранить</a></div>
                 <div class="col center center-align s4">   <a href="#"
@@ -311,6 +311,9 @@
 <script type="application/javascript">
 
 
+    function funcn() {
+        alert("eee");
+    }
 
 
 
@@ -445,8 +448,6 @@
             '//www.tinymce.com/css/codepen.min.css'
         ]
     });
-
-
 
 
     function callReg1(accept) {
