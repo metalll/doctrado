@@ -211,26 +211,28 @@
                       <%=strings.get(2) + ""%></h5><br>
                      <h5> <%=strings.get(4)%></h5>
 
-                  <div class="row col s12">
-                      <div class="col s4">
-                         <div class="chip">
-    <img src="/img/it.png" alt="Contact Person">
+            <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><div class="chip">
+    <img src="img/it.png" alt="Contact Person">
     Jane Doe
-  </div>
-                      </div>
-                      <div class="col s4">
-                              <div class="chip">
-    <img src="/img/it.png" alt="Contact Person">
+  </div></li>
+        <li class="tab col s3"><div class="chip">
+    <img src="img/it.png" alt="Contact Person">
     Jane Doe
-  </div>
-                      </div>
-                      <div class="col s4">
-                      <div class="chip">
-    <img src="/img/it.png" alt="Contact Person">
+  </div></li>
+        <li class="tab col s3 "><div class="chip">
+    <img src="img/it.png" alt="Contact Person">
     Jane Doe
-  </div>
-                      </div>
-                  </div>
+  </div></li>
+        <li class="tab col s3"><div class="chip">
+    <img src="img/it.png" alt="Contact Person">
+    Jane Doe
+  </div></li>
+      </ul>
+    </div>
+                                     </div>
 
 
               </span>
