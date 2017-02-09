@@ -262,11 +262,13 @@
 
 <div class="container">
     <div class="row col s12">
-        <h6 class="center-align center">Темы курса</h6>
+        <h5 class="center-align center">Темы курса</h5>
     </div>
 <ul class="collapsible" data-collapsible="accordion">
     <li>
-        <div class="collapsible-header"><i class="material-icons">filter_drama</i>Тема 1</div>
+        <div class="collapsible-header">
+            <div class="center-align center">Тема 1</div>
+        </div>
         <div class="collapsible-body"><span class="water">
             <div class="row col s12">
 
