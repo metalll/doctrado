@@ -324,11 +324,11 @@
 
             },
             success: function (data) {
-                if (data == -1) {
-
-
-                }
-                else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
+//                if (data == -1) {
+//
+//
+//        }
+//    else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
             }
         });
 
