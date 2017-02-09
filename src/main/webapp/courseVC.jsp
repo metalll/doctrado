@@ -420,7 +420,7 @@
         toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
         toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',
         image_advtab: true,
-        language: "ru_RU",
+        language: "ru",
         translate_mode: true,
         templates: [
             {title: 'Test template 1', content: 'Test 1'},
