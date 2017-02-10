@@ -114,12 +114,12 @@
 
         query = "SELECT * \n" +
                 "FROM  `subCourse` \n" +
-                "WHERE  `parentCourse` LIKE '" + id + "'";
+                "WHERE  `parentCourse` = '" + id + "'";
         rs = stmt.executeQuery(query);
         while (rs.next()) {
             ArrayList<String> tempList = new ArrayList<String>();
 
-            for (int i = 0; i <= 5; i++) {
+            for (int i = 0; i <= 6; i++) {
                 tempList.add(rs.getString(i));
             }
 
@@ -417,7 +417,7 @@
                 number: '<%=themes.size()+1%>'
             },
             success: function (data) {
-
+                window.location.reload();
             }
         })
 
