@@ -113,7 +113,7 @@
 
 
         query = "SELECT * \n" +
-                "FROM  `subCourse` WHERE `parentCourse` = '" + strings.get(0) + "'";
+                "FROM  `subCourse` WHERE `parentCourse` = \'" + strings.get(0) + "\'";
         rs = stmt.executeQuery(query);
         while (rs.next()) {
             ArrayList<String> tempList = new ArrayList<String>();
