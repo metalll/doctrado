@@ -106,7 +106,7 @@
             }
 
         }
-        if (uType.equals("s")) {
+        if (uType.equals("s") || uType.equals("")) {
             iAmAuthor = false;
         }
 
