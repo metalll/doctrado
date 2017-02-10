@@ -114,15 +114,14 @@
 
         query = "SELECT * FROM  `subCourse` WHERE  `parentCourse` = '" + id + "'";
         dQuery = query;
+
         rs = stmt.executeQuery(query);
         while (rs.next()) {
             ArrayList<String> tempList = new ArrayList<String>();
-
             for (int i = 0; i <= 6; i++) {
                 tempList.add(rs.getString(i));
             }
-
-            themes.add(tempList);
+            themes.add((ArrayList<String>) tempList.clone());
 
         }
 
@@ -276,8 +275,7 @@
     Jane Doe
   </div></li>
       </ul>
-    </div>
-                                     </div>
+    </div></div>
 
 
               </span>
