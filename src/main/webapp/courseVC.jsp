@@ -413,8 +413,8 @@
             type: 'post',
             url: 'https://doctrado-sviasy.rhcloud.com/addCourse',
             data: {
-                parent:<%=id%>,
-                number:<%=themes.size()+1%>
+                parent: '<%=id%>',
+                number: '<%=themes.size()+1%>'
             },
             success: function (data) {
 
