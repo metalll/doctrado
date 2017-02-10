@@ -122,6 +122,7 @@
             tempList = new ArrayList<String>();
             for (int i = 0; i <= 6; i++) {
                 tempList.add(rs.getString(i));
+                dQuery = "fuck";
             }
             themes.add(tempList);
 
