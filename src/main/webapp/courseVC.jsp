@@ -271,15 +271,16 @@
             <div class="center-align center">Тема 1</div>
         </div>
         <div class="collapsible-body"><span class="water">
+            <br>
             <div class="row col s12">
 
            <div class="col center center-align s4"> <a href="javascript:void(0);" id="input" onclick="funcn();"
-                                                       class="menu-elem waves-effect center center-align waves-light btn white-text"
+                                                       class="menu-elem waves-effect center center-align green darken-3 waves-light btn white-text"
            >Сохранить изменения</a></div>
                 <div class="col center center-align s4">   <a href="#"
-                                                              class="menu-elem  waves-effect center center-align waves-light btn white-text">Удалить тему</a></div>
+                                                              class="menu-elem  waves-effect center center-align red darken-3 waves-light btn white-text">Удалить тему</a></div>
                 <div class="col center center-align s4">   <a href="#"
-                                                              class="menu-elem waves-effect center center-align waves-light btn white-text">Тест темы</a> </div>
+                                                              class="menu-elem waves-effect center center-align orange darken-3 waves-light btn white-text">Тест темы</a> </div>
             </div>
 
 
