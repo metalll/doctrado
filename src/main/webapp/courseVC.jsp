@@ -391,8 +391,8 @@
 "            url: 'https://doctrado-sviasy.rhcloud.com/updateCourseContent',\n" +
 "            data: {\n" +
 "                content: tinyMCE.get('content"+themes.get(i).get(4)+"').getContent()\n" +
-             ", id : "+themes.get(i).get(0)+
-"            },\n" +
+             ", id : ' \""+themes.get(i).get(0)+
+"            },\n \"" +
 "            success: function (data) {\n" +
 "\n" +
 "            }\n" +
