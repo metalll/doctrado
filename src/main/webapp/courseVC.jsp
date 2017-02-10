@@ -70,6 +70,24 @@
             //  completion.afterOperation(new Teacher();
         }
 
+
+        query = "SELECT * FROM  `subCourse` WHERE  `parentCourse` = '" + id + "'";
+        dQuery = query;
+        conn = DriverManager.getConnection(databaseUrl, userName, password);
+        stmt = (Statement) conn.createStatement();
+
+        rs = stmt.executeQuery(dQuery);
+        while (rs.next()) {
+            tempList = new ArrayList<String>();
+            for (int i = 0; i <= 6; i++) {
+                tempList.add(rs.getString(i));
+            }
+            themes.add(tempList);
+
+        }
+
+
+
         query = "SELECT * \n" +
                 "FROM  `resourses` \n" +
                 "WHERE  `type` =  'photo'\n" +
@@ -112,21 +130,6 @@
         }
 
 
-        query = "SELECT * FROM  `subCourse` WHERE  `parentCourse` = '" + id + "'";
-        dQuery = query;
-        conn = DriverManager.getConnection(databaseUrl, userName, password);
-        stmt = (Statement) conn.createStatement();
-
-        rs = stmt.executeQuery(dQuery);
-        while (rs.next()) {
-            tempList = new ArrayList<String>();
-            for (int i = 0; i <= 6; i++) {
-                tempList.add(rs.getString(i));
-                dQuery = "fuck";
-            }
-            themes.add(tempList);
-
-        }
 
 //bubble sort #optimism)
 //        for (int i = themes.size() - 1; i >= 0; i--) {
