@@ -113,7 +113,8 @@
 
 
         query = "SELECT * \n" +
-                "FROM  `subCourse` WHERE `parentCourse` = \'" + id + "\'";
+                "FROM  `subCourse` \n" +
+                "WHERE  `parentCourse` LIKE = \'" + id + "\'";
         rs = stmt.executeQuery(query);
         while (rs.next()) {
             ArrayList<String> tempList = new ArrayList<String>();
@@ -355,6 +356,8 @@
 </ul>
 
     <% if (iAmAuthor) {
+
+
     %>
     <%=" <div class=\"row col s12 center center-align\">\n" +
             "        <a class=\" col s12 waves-effect center center-align waves-light btn white-text\"> <i\n" +
