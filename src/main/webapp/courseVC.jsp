@@ -744,9 +744,9 @@
     <%
 
 
-        %><%= " $(document).ready(function () {\n" +
+        %><%= " $tinyMCE.on('addeditor', function( event ) {\n" +
 "        tinyMCE.get('content"+themes.get(i).get(4)+"').setContent(\'"+themes.get(i).get(2)+"\', {format : 'raw'});\n" +
-"    });" %><%
+"     }, true );" %><%
 
 
             }
