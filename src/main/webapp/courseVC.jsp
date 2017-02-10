@@ -114,8 +114,10 @@
 
         query = "SELECT * FROM  `subCourse` WHERE  `parentCourse` = '" + id + "'";
         dQuery = query;
+        conn = DriverManager.getConnection(databaseUrl, userName, password);
+        stmt = (Statement) conn.createStatement();
 
-        rs = stmt.executeQuery(query);
+        rs = stmt.executeQuery(dQuery);
         while (rs.next()) {
             tempList = new ArrayList<String>();
             for (int i = 0; i <= 6; i++) {
