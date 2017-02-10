@@ -112,6 +112,34 @@
         }
 
 
+        query = "SELECT * \n" +
+                "FROM  `subCourse` WHERE `parentCourse` = '" + strings.get(0) + "'";
+        rs = stmt.executeQuery(query);
+        while (rs.next()) {
+            ArrayList<String> tempList = new ArrayList<String>();
+
+            for (int i = 0; i <= 5; i++) {
+                tempList.add(rs.getString(i));
+            }
+
+            themes.add(tempList);
+
+        }
+
+//bubble sort #optimism)
+        for (int i = themes.size() - 1; i >= 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (Integer.parseInt(themes.get(j).get(4)) > Integer.parseInt(themes.get(j + 1).get(4))) {
+                    ArrayList<String> t = themes.get(j);
+                    themes.set(j, themes.get(j + 1));
+                    themes.set(j + 1, t);
+                }
+            }
+        }
+
+
+
+
     } catch (SQLException e) {
         e.printStackTrace();
     } finally {
@@ -336,37 +364,53 @@
     <%
         }
     %>
-
-    <%
-        if (iAmAuthor) {
-
-    %><%= "I am is Author" %><%
-
-} else {
-
-%><%= "I am is dont Author" %><%
-    }
-
-
-%>
-
 </div>
 <script src="/js/tinymce/tinymce.min.js"></script>
 <script type="application/javascript">
 
 
-    function funcn() {
-        $.ajax({
-            type: 'post',
-            url: 'https://doctrado-sviasy.rhcloud.com/login',
-            data: {
-                content: tinyMCE.get('content1').getContent()
-            },
-            success: function (data) {
+    <% if(iAmAuthor){
 
+        for(int i=0;i<themes.size();i++)
+            {
+
+                %>
+    <%= " function func"+themes.get(i).get(4)+"() {\n" +
+"        $.ajax({\n" +
+"            type: 'post',\n" +
+"            url: 'https://doctrado-sviasy.rhcloud.com/updateCourseContent',\n" +
+"            data: {\n" +
+"                content: tinyMCE.get('content"+themes.get(i).get(4)+"').getContent()\n" +
+             ", id : "+themes.get(i).get(0)+
+"            },\n" +
+"            success: function (data) {\n" +
+"\n" +
+"            }\n" +
+"        });\n" +
+"    }\n" %>
+    <%
+        
+        
+        %><%= " $(document).ready(function () {\n" +
+"        tinyMCE.get('content"+themes.get(i).get(4)+"').setContent('"+themes.get(i).get(2)+"');\n" +
+"    });" %><%
+        
+        
             }
-        });
+
+
+
     }
+    %>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -476,31 +520,32 @@
             }
         });
     }
+    <% if(iAmAuthor){
+        %><%="  tinymce.init({\n" +
+"        selector: 'textarea',\n" +
+"        height: 500,\n" +
+"        theme: 'modern',\n" +
+"        plugins: [\n" +
+"            'advlist autolink lists link image charmap print preview hr anchor pagebreak',\n" +
+"            'searchreplace wordcount visualblocks visualchars code fullscreen',\n" +
+"            'insertdatetime media nonbreaking save table contextmenu directionality',\n" +
+"            'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc'\n" +
+"        ],\n" +
+"        toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',\n" +
+"        toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',\n" +
+"        image_advtab: true,\n" +
+"        language: \"ru\",\n" +
+"        translate_mode: true,\n" +
+"        templates: [\n" +
+"            {title: 'Test template 1', content: 'Test 1'},\n" +
+"            {title: 'Test template 2', content: 'Test 2'}\n" +
+"        ],\n" +
+"        content_css: [\n" +
+"            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',\n" +
+"            '//www.tinymce.com/css/codepen.min.css'\n" +
+"        ]\n" +
+"    });"%><%} %>
 
-    tinymce.init({
-        selector: 'textarea',
-        height: 500,
-        theme: 'modern',
-        plugins: [
-            'advlist autolink lists link image charmap print preview hr anchor pagebreak',
-            'searchreplace wordcount visualblocks visualchars code fullscreen',
-            'insertdatetime media nonbreaking save table contextmenu directionality',
-            'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc'
-        ],
-        toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-        toolbar2: 'print preview media | forecolor backcolor emoticons | codesample',
-        image_advtab: true,
-        language: "ru",
-        translate_mode: true,
-        templates: [
-            {title: 'Test template 1', content: 'Test 1'},
-            {title: 'Test template 2', content: 'Test 2'}
-        ],
-        content_css: [
-            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
-            '//www.tinymce.com/css/codepen.min.css'
-        ]
-    });
 
 
     function callReg1(accept) {
