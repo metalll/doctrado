@@ -39,7 +39,7 @@
             uType = cookie.getValue();
     }
 
-
+    String dQuery = "";
     String query = "SELECT * FROM `course` WHERE `id` = \'" + id + "\'";
     ArrayList<String> strings = new ArrayList<String>();
 
@@ -112,9 +112,8 @@
         }
 
 
-        query = "SELECT * \n" +
-                "FROM  `subCourse` \n" +
-                "WHERE  `parentCourse` = '" + id + "'";
+        query = "SELECT * FROM  `subCourse` WHERE  `parentCourse` = '" + id + "'";
+        dQuery = query;
         rs = stmt.executeQuery(query);
         while (rs.next()) {
             ArrayList<String> tempList = new ArrayList<String>();
@@ -363,7 +362,7 @@
             "        <a href=\"javascript:void(0);\"  onclick=\"addTheme();\" class=\" col s12 waves-effect center center-align waves-light btn white-text\"> <i\n" +
             "                class=\"material-icons\">add</i>\n" +
             "    </a>\n" +
-            "    </div>"%>
+            "    </div>" + dQuery%>
     <%
         }
     %>
