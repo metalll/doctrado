@@ -379,39 +379,6 @@
 <script type="application/javascript">
 
 
-    <% if(iAmAuthor){
-
-        for(int i=0;i<themes.size();i++)
-            {
-
-                %>
-    <%= " function func"+themes.get(i).get(4)+"() {\n" +
-"        $.ajax({\n" +
-"            type: 'post',\n" +
-"            url: 'https://doctrado-sviasy.rhcloud.com/updateCourseContent',\n" +
-"            data: {\n" +
-"                content: tinyMCE.get('content"+themes.get(i).get(4)+"').getContent()\n" +
-             ", id :  \""+themes.get(i).get(0)+
-"            \"}, " +
-"            success: function (data) {\n" +
-"\n" +
-"            }\n" +
-"        });\n" +
-"    }\n" %>
-    <%
-        
-        
-        %><%= " $(document).ready(function () {\n" +
-"        tinyMCE.get('content"+themes.get(i).get(4)+"').setContent(\""+themes.get(i).get(2)+"\");\n" +
-"    });" %><%
-        
-        
-            }
-
-
-
-    }
-    %>
 
 
     function addTheme() {
@@ -753,6 +720,42 @@
             }
         });
     }
+
+
+    <% if(iAmAuthor){
+
+       for(int i=0;i<themes.size();i++)
+           {
+
+               %>
+    <%= " function func"+themes.get(i).get(4)+"() {\n" +
+"        $.ajax({\n" +
+"            type: 'post',\n" +
+"            url: 'https://doctrado-sviasy.rhcloud.com/updateCourseContent',\n" +
+"            data: {\n" +
+"                content: tinyMCE.get('content"+themes.get(i).get(4)+"').getContent()\n" +
+             ", id :  \""+themes.get(i).get(0)+
+"            \"}, " +
+"            success: function (data) {\n" +
+"\n" +
+"            }\n" +
+"        });\n" +
+"    }\n" %>
+    <%
+
+
+        %><%= " $(document).ready(function () {\n" +
+"        tinyMCE.get('content"+themes.get(i).get(4)+"').setContent(\""+themes.get(i).get(2)+"\");\n" +
+"    });" %><%
+
+
+            }
+
+
+
+    }
+    %>
+
 </script>
 
 
