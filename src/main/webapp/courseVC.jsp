@@ -128,15 +128,15 @@
         }
 
 //bubble sort #optimism)
-        for (int i = themes.size() - 1; i >= 0; i--) {
-            for (int j = 0; j < i; j++) {
-                if (Integer.parseInt(themes.get(j).get(4)) > Integer.parseInt(themes.get(j + 1).get(4))) {
-                    ArrayList<String> t = themes.get(j);
-                    themes.set(j, themes.get(j + 1));
-                    themes.set(j + 1, t);
-                }
-            }
-        }
+//        for (int i = themes.size() - 1; i >= 0; i--) {
+//            for (int j = 0; j < i; j++) {
+//                if (Integer.parseInt(themes.get(j).get(4)) > Integer.parseInt(themes.get(j + 1).get(4))) {
+//                    ArrayList<String> t = themes.get(j);
+//                    themes.set(j, themes.get(j + 1));
+//                    themes.set(j + 1, t);
+//                }
+//            }
+//        }
 
 
 
