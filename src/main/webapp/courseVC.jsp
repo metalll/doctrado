@@ -129,6 +129,9 @@
 
 %><%= "I am is Author" %><%
 
+} else {
+
+%><%= "I am is dont Author" %><%
     }
 
 
