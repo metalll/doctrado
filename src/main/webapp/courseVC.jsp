@@ -125,16 +125,6 @@
     }
 
 
-    if (iAmAuthor) {
-
-%><%= "I am is Author" %><%
-
-} else {
-
-%><%= "I am is dont Author" %><%
-    }
-
-
 %>
 <!DOCTYPE html>
 <html lang="ru">
@@ -374,6 +364,19 @@
                 class="material-icons">add</i>
     </a>
     </div>
+    <%
+        if (iAmAuthor) {
+
+    %><%= "I am is Author" %><%
+
+} else {
+
+%><%= "I am is dont Author" %><%
+    }
+
+
+%>
+
 </div>
 <script src="/js/tinymce/tinymce.min.js"></script>
 <script type="application/javascript">
