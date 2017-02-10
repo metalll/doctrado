@@ -360,7 +360,7 @@
 
     %>
     <%=" <div class=\"row col s12 center center-align\">\n" +
-            "        <a class=\" col s12 waves-effect center center-align waves-light btn white-text\"> <i\n" +
+            "        <a href=\"javascript:void(0);\"  onclick=\"addTheme();\" class=\" col s12 waves-effect center center-align waves-light btn white-text\"> <i\n" +
             "                class=\"material-icons\">add</i>\n" +
             "    </a>\n" +
             "    </div>"%>
@@ -407,11 +407,22 @@
     %>
 
 
+    function addTheme() {
+
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/addCourse',
+            data: {
+                parent:<%=id%>,
+                number:<%=themes.size()+1%>
+            },
+            success: function (data) {
+
+            }
+        })
 
 
-
-
-
+    }
 
 
 
