@@ -114,7 +114,7 @@
 
         query = "SELECT * \n" +
                 "FROM  `subCourse` \n" +
-                "WHERE  `parentCourse` LIKE = '" + id + "'";
+                "WHERE  `parentCourse` LIKE '" + id + "'";
         rs = stmt.executeQuery(query);
         while (rs.next()) {
             ArrayList<String> tempList = new ArrayList<String>();
