@@ -80,7 +80,7 @@
 
         }
 
-        query = "SELECT * FROM `users` WHERE `lastUserToken` = '" + uToken + "'";
+        query = "SELECT * FROM `users` WHERE `lastUserToken` = '" + strings.get(7) + "'";
         rs = stmt.executeQuery(query);
         while (rs.next()) {
 
@@ -93,7 +93,7 @@
         if (uType.equals("t")) {
             query = "SELECT *\n" +
                     "FROM `teacher`\n" +
-                    "WHERE `id` LIKE '" + uToken + "'";
+                    "WHERE `id` LIKE '" + strings.get(7) + "'";
             rs = stmt.executeQuery(query);
             while (rs.next()) {
                 for (int i = 1; i <= 5; i++) {
