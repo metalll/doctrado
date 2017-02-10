@@ -18,7 +18,7 @@
 <%
 
     boolean iAmAuthor = false;
-
+    ArrayList<String> tempList = new ArrayList<String>();
     Map<String, String[]> paramMap = request.getParameterMap();
     String uType = "";
     String id = paramMap.get("id")[0];
@@ -117,11 +117,11 @@
 
         rs = stmt.executeQuery(query);
         while (rs.next()) {
-            ArrayList<String> tempList = new ArrayList<String>();
+            tempList = new ArrayList<String>();
             for (int i = 0; i <= 6; i++) {
                 tempList.add(rs.getString(i));
             }
-            themes.add((ArrayList<String>) tempList.clone());
+            themes.add(tempList);
 
         }
 
