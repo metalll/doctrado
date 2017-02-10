@@ -72,11 +72,9 @@
 
 
         query = "SELECT * FROM  `subCourse` WHERE  `parentCourse` = '" + id + "'";
-        dQuery = query;
-        conn = DriverManager.getConnection(databaseUrl, userName, password);
-        stmt = (Statement) conn.createStatement();
 
-        rs = stmt.executeQuery(dQuery);
+
+        rs = stmt.executeQuery(query);
         while (rs.next()) {
             tempList = new ArrayList<String>();
             for (int i = 0; i <= 6; i++) {
@@ -146,6 +144,9 @@
 
 
     } catch (SQLException e) {
+
+
+        dQuery = e.getLocalizedMessage();
         e.printStackTrace();
     } finally {
         if (stmt != null) try {
@@ -370,7 +371,10 @@
     <%
         }
     %>
+
+    <%=dQuery%>
 </div>
+
 <script src="/js/tinymce/tinymce.min.js"></script>
 <script type="application/javascript">
 
