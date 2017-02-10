@@ -77,7 +77,7 @@
         rs = stmt.executeQuery(query);
         while (rs.next()) {
             tempList = new ArrayList<String>();
-            for (int i = 0; i <= 6; i++) {
+            for (int i = 1; i <= 6; i++) {
                 tempList.add(rs.getString(i));
             }
             themes.add(tempList);
