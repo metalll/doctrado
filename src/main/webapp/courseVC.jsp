@@ -125,7 +125,7 @@
     }
 
 
-    if (iAmAuthor == true) {
+    if (iAmAuthor) {
 
 %><%= "I am is Author" %><%
 
