@@ -24,6 +24,7 @@
     String id = paramMap.get("id")[0];
     String avatarPath = "";
     ArrayList<String> author = new ArrayList<String>();
+    ArrayList<ArrayList<String>> themes = new ArrayList<ArrayList<String>>();
     final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
     //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
     final String userName = "adminsBmIZAN";
@@ -109,6 +110,7 @@
         if (uType.equals("s") || uType.equals("")) {
             iAmAuthor = false;
         }
+
 
     } catch (SQLException e) {
         e.printStackTrace();
@@ -265,106 +267,76 @@
     <div class="row col s12">
         <h5 class="center-align center">Темы курса</h5>
     </div>
-<ul class="collapsible" data-collapsible="accordion">
-    <li>
-        <div class="collapsible-header">
-            <div class="center-align center">Тема 1</div>
-        </div>
-        <div class="collapsible-body"><span class="water">
-            <br>
-            <div class="row col s12">
-
-           <div class="col center center-align s4"> <a href="javascript:void(0);" id="input" onclick="funcn();"
-                                                       class="menu-elem waves-effect center center-align green darken-3 waves-light btn white-text"
-           >Сохранить изменения</a></div>
-                <div class="col center center-align s4">   <a href="#"
-                                                              class="menu-elem  waves-effect center center-align red darken-3 waves-light btn white-text">Удалить тему</a></div>
-                <div class="col center center-align s4">   <a href="#"
-                                                              class="menu-elem waves-effect center center-align orange darken-3 waves-light btn white-text">Тест темы</a> </div>
-            </div>
 
 
-            <textarea name="content1">
-
-            </textarea>
+    <ul class="collapsible" data-collapsible="accordion">
 
 
+        <%
 
 
+            for (int i = 0; i < themes.size(); i++) {
 
 
-
-        </span></div>
-    </li>
-    <li>
-        <div class="collapsible-header">
-            <div class="center-align center">Тема 2</div>
-        </div>
-        <div class="collapsible-body"><span class="water">
-            <div class="row col s12">
-
-           <div class="col center center-align s4"> <a href="javascript:void(0);" id="input1" onclick="funcn();"
-                                                       class="menu-elem waves-effect center center-align waves-light btn white-text"
-           >Сохранить изменения</a></div>
-                <div class="col center center-align s4">   <a href="#"
-                                                              class="menu-elem  waves-effect center center-align waves-light btn white-text">Удалить тему</a></div>
-                <div class="col center center-align s4">   <a href="#"
-                                                              class="menu-elem waves-effect center center-align waves-light btn white-text">Тест темы</a> </div>
-            </div>
-
-
-            <textarea name="content2">
-
-
-
-            </textarea>
-
-
-
-
-
-
-
-        </span></div>
-    </li>
-
-    <li>
-        <div class="collapsible-header">
-            <div class="center-align center">Тема 3</div>
-        </div>
-        <div class="collapsible-body"><span class="water">
-            <div class="row col s12">
-
-           <div class="col center center-align s4"> <a href="javascript:void(0);" id="input3" onclick="funcn();"
-                                                       class="menu-elem waves-effect center center-align waves-light btn white-text"
-           >Сохранить изменения</a></div>
-                <div class="col center center-align s4">   <a href="#"
-                                                              class="menu-elem  waves-effect center center-align waves-light btn white-text">Удалить тему</a></div>
-                <div class="col center center-align s4">   <a href="#"
-                                                              class="menu-elem waves-effect center center-align waves-light btn white-text">Тест темы</a> </div>
-            </div>
+        %><%="  <li>\n" +
+            "        <div class=\"collapsible-header\">\n" +
+            "            <div class=\"center-align center\"> Тема " + themes.get(i).get(4) + "</div>\n" +
+            "        </div>"%><%
+        if (iAmAuthor) {
+    %><%="  <div class=\"collapsible-body\"><span class=\"water\">\n" +
+            "            <br>\n" +
+            "            <div class=\"row col s12\">\n" +
+            "\n" +
+            "           <div class=\"col center center-align s4\"> <a href=\"javascript:void(0);\" id=\"input\" onclick=\"func" + themes.get(i).get(4) + "();\"\n" +
+            "                                                       class=\"menu-elem waves-effect center center-align green darken-3 waves-light btn white-text\"\n" +
+            "           >Сохранить изменения</a></div>\n" +
+            "                <div class=\"col center center-align s4\">   <a href=\"#\"\n" +
+            "                                                              class=\"menu-elem  waves-effect center center-align red darken-3 waves-light btn white-text\">Удалить тему</a></div>\n" +
+            "                <div class=\"col center center-align s4\">   <a href=\"#\"\n" +
+            "                                                              class=\"menu-elem waves-effect center center-align orange darken-3 waves-light btn white-text\">Тест темы</a> </div>\n" +
+            "            </div>\n" +
+            "\n" +
+            "\n" +
+            "            <textarea name=\"content" + themes.get(i).get(4) + "\">\n" +
+            "\n" +
+            "            </textarea>\n" +
+            "\n" +
+            "\n" +
+            "\n" +
+            "\n" +
+            "\n" +
+            "\n" +
+            "\n" +
+            "        </span></div>\n" +
+            "    </li>"%>
+        <%
+        } else {
+        %><%=
+    "  <div class=\"collapsible-body\"><span class=\"water\">\n" +
+            themes.get(i).get(2) +
+            "        </span></div>\n" +
+            "    </li>\n"
+    %><%
+            }
 
 
-            <textarea name="content3">
+        }
 
 
-
-            </textarea>
-
-
-
-
-
-
-
-        </span></div>
-    </li>
+    %>
 </ul>
-    <div class="row col s12 center center-align">
-        <a class=" col s12 waves-effect center center-align waves-light btn white-text"> <i
-                class="material-icons">add</i>
-    </a>
-    </div>
+
+    <% if (iAmAuthor) {
+    %>
+    <%=" <div class=\"row col s12 center center-align\">\n" +
+            "        <a class=\" col s12 waves-effect center center-align waves-light btn white-text\"> <i\n" +
+            "                class=\"material-icons\">add</i>\n" +
+            "    </a>\n" +
+            "    </div>"%>
+    <%
+        }
+    %>
+
     <%
         if (iAmAuthor) {
 
