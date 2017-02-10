@@ -330,7 +330,7 @@
             "            </div>\n" +
             "\n" +
             "\n" +
-            "            <textarea name=\"content" + themes.get(i).get(4) + "\">\n" +
+            "            <textarea id=\"content" + themes.get(i).get(4) + "\" name=\"content" + themes.get(i).get(4) + "\">\n" +
             "\n" +
             "            </textarea>\n" +
             "\n" +
