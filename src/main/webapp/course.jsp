@@ -146,9 +146,9 @@
 <div class="navbar-fixed">
     <nav class="white darken-4 grey-text text-darken-4" role="navigation">
         <div class="nav-wrapper container">
-
+            <div class="valign-wrapper">
             <a id="logo-container" href="#" class="brand-logo "><img src="/img/logo.png"></a>
-
+            </div>
             <ul class="right hide-on-med-and-down">
 
                 <!--<li><a class="waves-effect waves-light black modal-trigger white-text" href="#modal3">Вход</a></li>-->
