@@ -251,8 +251,8 @@
         // var Query = document.getElementById('autocomplete-input').value;
 
         var data = [[]];
-
-
+        var additionalData = [];
+        data.push(additionalData);
 
     });
 
