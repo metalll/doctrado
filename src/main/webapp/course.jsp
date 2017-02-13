@@ -155,9 +155,7 @@
                 <li>
                     <a class="menu-elem" data-anchor="#about">О проекте</a>
                 </li>
-                <li>
-                    <a class="menu-elem" data-anchor="#capabilities">Возможности</a>
-                </li>
+
                 <li>
                     <a class="menu-elem" href="./certificates">Сертификаты</a>
                 </li>
