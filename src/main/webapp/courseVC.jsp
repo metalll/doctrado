@@ -166,22 +166,45 @@
 <html lang="ru">
 
 <head>
+
+
+
+
+
+
+
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <title>Doctrado</title>
     <!-- CSS  -->
 
     <style>
-        .water {
-            background: #000 url(/img/water.png) round;
-            width: 574px;
-            height: 334px;
+        #background{
+            position:absolute;
+            z-index:0;
+            background:white;
+            display:block;
+            min-height:50%;
+            min-width:50%;
+            color:yellow;
         }
 
-        img.watermark {
-            filter: alpha(opacity=75);
-            opacity: .75;
+        #content{
+            position:absolute;
+            z-index:1;
         }
+
+        #bg-text
+        {
+            color:lightgrey;
+            font-size:120px;
+            transform:rotate(300deg);
+            -webkit-transform:rotate(300deg);
+        }
+
+
+
 
     </style>
 
@@ -199,6 +222,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+    <% if(!iAmAuthor){ %>
+    <script type="text/javascript">
+        document.ondragstart = noselect;
+        // запрет на перетаскивание
+        document.onselectstart = noselect;
+        // запрет на выделение элементов страницы
+        document.oncontextmenu = noselect;
+        // запрет на выведение контекстного меню
+        function noselect() {
+            return false;
+        }
+    </script>
+    <%}%>
 
 </head>
 <body>
@@ -296,6 +333,10 @@
 </div>
 
 <script src="/js/tinymce/tinymce.min.js"></script>
+
+
+
+
 
 <div class="container">
     <div class="row col s12">
