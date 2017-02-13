@@ -38,8 +38,10 @@ public class Registrator extends HttpServlet {
                 if(bundle != null){
                     Cookie cookie = new Cookie(NSDConstants.uTokenCookie,((BaseUser)bundle).getLastUserToken());
                     cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
+                    cookie.setSecure(true);
                     Cookie cookie1 = new Cookie(NSDConstants.uTypeCookie,((BaseUser)bundle).getUserType());
-                    cookie.setMaxAge(60 * 60 * 24 * 365 * 10);
+                    cookie1.setMaxAge(60 * 60 * 24 * 365 * 10);
+                    cookie1.setSecure(true);
                     response.addCookie(cookie);
                     response.addCookie(cookie1);
                     response.setStatus(HttpServletResponse.SC_OK);
