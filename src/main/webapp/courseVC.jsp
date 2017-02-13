@@ -738,9 +738,7 @@
     <%
 
 
- %><%= " tinymce.on('addeditor', function( event ) {\n" +
-"         wait(3); tinymce.editors[0].setContent(\'custom\');\n" +
-"     }, true );" %><%
+
 
 
             }
