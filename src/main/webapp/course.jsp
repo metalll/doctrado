@@ -250,7 +250,7 @@
 
 
     $('#autocomplete-input').onchange(function () {
-        var Query = document.getElementById('autocomplete-input').value;
+        // var Query = document.getElementById('autocomplete-input').value;
 
         var data = [];
         var additonalData = [];
