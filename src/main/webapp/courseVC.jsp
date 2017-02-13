@@ -756,6 +756,14 @@
     }
     %>
 
+
+    $(document).ready(function () {
+        for (var i = 0; i < tinymce.editors.length; i++) {
+            console.log("Editor id:", tinymce.editors[i].id);
+        }
+    })
+
+
 </script>
 
 
