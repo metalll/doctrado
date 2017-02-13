@@ -250,20 +250,7 @@
 
         // var Query = document.getElementById('autocomplete-input').value;
 
-        var data = [[]];
-        var additonalData = [];
 
-        <% for(int i2=0;i2<courseList.size();i2++) {
-            %><%= "additonalData = [];" %><%
-            for(int j = 0;j<courseList.get(i2).size();i2++){
-            %><%= "additonalData.push(\""+courseList.get(i2).get(j)+"\");" %><%
-
-
-            }
-            %><%="data.push(additonalData);\n"%><%
-
-
-        }%>
 
 
 
