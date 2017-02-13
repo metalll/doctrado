@@ -11,13 +11,14 @@
 
 
 <%@ page import="javax.servlet.http.Cookie" %>
-<%@ page import="auth_system.Authorizator" %>
+<%@ page import="NSD.NSDConstants" %>
+
 <%
     Cookie[] cookies = request.getCookies();
     boolean auth = false;
     try{
         for (Cookie cookie:cookies) {
-            if(cookie.getName().equals(Authorizator.uTokenCookie)&&!cookie.getValue().equals("")){
+            if(cookie.getName().equals(NSDConstants.uTokenCookie)&&!cookie.getValue().equals("")){
                 auth = true;
             }}} catch (Exception e){ e.printStackTrace(); }
     response.setContentType("text/html;charset=UTF-8");
