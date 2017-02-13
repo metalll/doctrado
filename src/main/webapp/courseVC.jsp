@@ -346,9 +346,9 @@
         <%
         } else {
         %><%=
-    "  <div class=\"collapsible-body\"><span class=\"water\">\n" +
+    "  <div class=\"collapsible-body\">  <span class=\"water \"> <div class=\"water \">\n" +
             themes.get(i).get(2) +
-            "        </span></div>\n" +
+            "        </span></div></div>\n" +
             "    </li>\n"
     %><%
             }
