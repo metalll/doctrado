@@ -801,7 +801,7 @@
              ", id :  \""+themes.get(i).get(0)+
 "            \"}, " +
 "            success: function (data) {\n" +
-"\n" +
+"\n"           %> if(data=="0"){  Materialize.toast('Изменения успешно сохранены', 4000, 'rounded'); } <%=
 "            }\n" +
 "        });\n" +
 "    }\n" %>
