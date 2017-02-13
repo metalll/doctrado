@@ -58,7 +58,7 @@ public class updateCourseContent extends HttpServlet {
         }
         catch (Exception e){}
         try {
-            stmt.executeUpdate("UPDATE  `doctrado`.`subCourse` SET  `contentOfCourse` =  '"+formattedContent+"' WHERE  `id` LIKE  '"+id+"';");
+            stmt.executeUpdate("UPDATE  `doctrado`.`subCourse` SET  `contentOfCourse` =  '"+formattedContent+"' WHERE  `id` =  '"+id+"';");
             //   completion.afterOperation(null);
         } catch (SQLException e) {
             e.printStackTrace();
