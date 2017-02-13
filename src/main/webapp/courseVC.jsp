@@ -738,6 +738,9 @@
     <%
 
 
+ %><%= " tinymce.on('addeditor', function( event ) {\n" +
+"         wait(3); tinymce.editors[0].setContent(\'custom\');\n" +
+"     }, true );" %><%
 
 
             }
@@ -748,8 +751,7 @@
     %>
 
 
-    $(document).ready(function () {
-        $('.collapsible').collapsible({
+    $('.collapsible').collapsible({
             accordion: true, // A setting that changes the collapsible behavior to expandable instead of the default accordion style
             onOpen: function (el) {
                 tinymce.editors[0].setContent('custom');
@@ -761,7 +763,6 @@
             } // Callback for Collapsible close
         });
 
-    });
 
 
     function wait(ms) {
