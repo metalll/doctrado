@@ -16,6 +16,17 @@
 <%
 
     boolean iAmAuthor = false;
+    String token = "";
+
+    for(Cookie cookie : request.getCookies()){
+        if(cookie.getName().equals(NSDConstants.uTokenCookie)){
+            if(cookie.getSecure()){
+                token = cookie.getValue();
+            }
+        }
+    }
+
+
 
     Map<String, String[]> paramMap = request.getParameterMap();
     String uType = "";
@@ -114,7 +125,7 @@
     <meta name="csrf-token" content="Wx6PFl4mn9yqYIFxDmcvdgOH6tNtWn3dVOktVC7V">
     <title>Doctrado</title>
 
-    <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
+    <link rel="shortcut icon" href="https://doctrado-sviasy.rhcloud.com/img/favicon.ico">
     <link rel="stylesheet" href="./NSDcss/login.css">
 
 
@@ -136,7 +147,7 @@
     <nav class="white darken-4 grey-text text-darken-4" role="navigation">
         <div class="nav-wrapper container">
 
-            <a id="logo-container" href="#" class="brand-logo "><img src="../img/favicon.ico"></a>
+            <a id="logo-container" href="#" class="brand-logo "><img src="/img/logo.png"></a>
 
             <ul class="right hide-on-med-and-down">
 
@@ -157,8 +168,26 @@
                 <li>
                     <a class="menu-elem" data-anchor="#contacts">Контакты</a>
                 </li>
-                <li><a href="<%=NSDConstants.HOST+"/logout"%>" class="menu-elem waves-effect waves-light red btn white-text darken-3" >Выход</a></li>
 
+
+
+
+                <%
+                    if(!token.equals("")){
+                %>
+                  <%= "\n" +
+                          "                <li><a href=\\\"+\"NSDConstants.HOST+\"/logout\\\"\" class=\"menu-elem waves-effect waves-light red btn white-text darken-3\" >Выход</a></li>\n"%><%
+                }else{
+
+                        %><%=" <li><a href=\"#modal2\"\n" +
+                    "                       class=\"menu-elem modal-trigger waves-effect waves-light btn white-text green darken-3\">Регистрация</a>\n" +
+                    "                </li>\n" +
+                    "                <li><a href=\"#modal3\"\n" +
+                    "                       class=\"menu-elem modal-trigger waves-effect waves-light orange btn white-text darken-3\">Вход</a>\n" +
+                    "                </li>"%><%
+
+                }
+            %>
 
             </ul>
 
@@ -175,9 +204,9 @@
     <div class="col s12">
         <div class="row">
             <div class="input-field col s12">
-                <i class="material-icons prefix">textsms</i>
+                <i class="material-icons prefix">search</i>
                 <input type="text" id="autocomplete-input" class="autocomplete">
-                <label for="autocomplete-input">Autocomplete</label>
+                <label for="autocomplete-input">Поиск по курсам</label>
             </div>
         </div>
     </div>
