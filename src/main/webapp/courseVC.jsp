@@ -334,7 +334,7 @@
             "\n" +
             "            </textarea>\n" +
             "\n" +
-            "\n" +
+            "\n" +      "<script> tinyMCE.activeEditor.setContent(\'hello\');</script>"+
             "\n" +
             "\n" +
             "\n" +
@@ -376,6 +376,11 @@
 </div>
 
 <script src="/js/tinymce/tinymce.min.js"></script>
+
+
+
+
+
 <script>
     $(document).ready(function(){
         $('.collapsible').collapsible({
@@ -409,6 +414,10 @@
 
 
         //  bar.animate(1.0);
+
+
+
+
         var email = document.getElementById('email1').value;
         var password = document.getElementById('password1').value;
         var errors = false;
