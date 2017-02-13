@@ -295,6 +295,7 @@
         </div>
 </div>
 
+<script src="/js/tinymce/tinymce.min.js"></script>
 
 <div class="container">
     <div class="row col s12">
@@ -375,7 +376,6 @@
 
 </div>
 
-<script src="/js/tinymce/tinymce.min.js"></script>
 
 
 
