@@ -22,6 +22,7 @@ import java.util.Properties;
  */
 @WebServlet(name = "updateCourseContent")
 public class updateCourseContent extends HttpServlet {
+    public static char[] buf = new char[1024];
     private static volatile DBImage instance;
     private Statement stmt;
     protected static final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
@@ -44,6 +45,23 @@ public class updateCourseContent extends HttpServlet {
         }
 
 
+        String s = formattedContent;
+
+        int length = s.length();
+        char[] oldChars = (length < 1024) ? buf : new char[length];
+        s.getChars(0, length, oldChars, 0);
+        int newLen = 0;
+        for (int j = 0; j < length; j++) {
+            char ch = oldChars[j];
+            if (ch >= ' ') {
+                oldChars[newLen] = ch;
+                newLen++;
+            }
+        }
+        if (newLen != length)
+            s = new String(oldChars, 0, newLen);
+
+
         try{
             Class.forName("com.mysql.jdbc.Driver");  }
         catch(Exception e){ e.printStackTrace(); }
@@ -58,7 +76,7 @@ public class updateCourseContent extends HttpServlet {
         }
         catch (Exception e){}
         try {
-            stmt.execute("UPDATE  `doctrado`.`subCourse` SET  `contentOfCourse` =  '"+formattedContent+"' WHERE  `id` =  '"+id+"';");
+            stmt.execute("UPDATE  `doctrado`.`subCourse` SET  `contentOfCourse` =  '"+s+"' WHERE  `id` =  '"+id+"';");
             //   completion.afterOperation(null);
         } catch (SQLException e) {
             e.printStackTrace();
