@@ -30,7 +30,7 @@ public class updateCourseContent extends HttpServlet {
     protected static final String userName = "adminsBmIZAN";
     protected static final String password = "qIqWymbbb-hk";
     protected Connection conn = null;
-    private String er;
+    private String er="";
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         Map<String,String[]>paramMap = request.getParameterMap();
