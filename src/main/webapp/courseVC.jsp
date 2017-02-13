@@ -335,7 +335,7 @@
             "\n" +
             "            </textarea>\n" +
             "\n" +
-            "\n" +      "<script> tinyMCE.activeEditor.setContent(\'hello\');</script>"+
+            "\n" +
             "\n" +
             "\n" +
             "\n" +
@@ -637,6 +637,8 @@
 
     }
 
+    $( window ).load(function(){
+        tinymce.activeEditor.setContent('custom');});
 
     function callReg(accept) {
         var nameR = document.getElementById('nameR').value;
