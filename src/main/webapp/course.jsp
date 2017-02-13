@@ -246,13 +246,11 @@
             },
             limit: 20 // The max amount of results that can be shown at once. Default: Infinity.
         });
-    });
 
 
-    $('#autocomplete-input').onchange(function () {
         // var Query = document.getElementById('autocomplete-input').value;
 
-        var data = [];
+        var data = [[]];
         var additonalData = [];
 
         <% for(int i=0;i<courseList.size();i++) {
@@ -268,9 +266,8 @@
         }%>
 
 
+
     });
-
-
 
 
     function getNumEnding(iNumber, aEndings) {
