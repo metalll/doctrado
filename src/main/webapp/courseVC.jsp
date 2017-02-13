@@ -739,7 +739,7 @@
 
 
    %><%= " tinymce.on('addeditor', function( event ) {\n" +
-"         wait(3); tinyMCE.get('content"+themes.get(i).get(4)+"').setContent(\'custom\', {format : 'raw'});\n" +
+"         wait(3); tinymce.get('content"+themes.get(i).get(4)+"').setContent(\'custom\', {format : 'raw'});\n" +
 "     }, true );" %><%
 
 
