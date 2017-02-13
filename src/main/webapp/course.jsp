@@ -248,6 +248,31 @@
         });
     });
 
+
+    $('#autocomplete-input').onchange(function () {
+        var Query = document.getElementById('autocomplete-input').value;
+
+        var data = [];
+        var additonalData = [];
+
+        <% for(int i=0;i<courseList.size();i++) {
+            %><%= "additonalData = [];" %><%
+            for(int j = 0;j<courseList.get(i).size();i++){
+            %><%= "additonalData.push(\""+courseList.get(i).get(j)+"\");" %><%
+
+
+            }
+            %><%="data.push(additonalData);\n"%><%
+
+
+        }%>
+
+
+    });
+
+
+
+
     function getNumEnding(iNumber, aEndings) {
         var sEnding, i;
         iNumber = iNumber % 100;
@@ -272,26 +297,6 @@
         return sEnding;
 
 
-        $('#autocomplete-input').change(function () {
-            var Query = document.getElementById('autocomplete-input').value;
-
-            var data = [];
-            var additonalData = [];
-
-            <% for(int i=0;i<courseList.size();i++) {
-                %><%= "additonalData = [];" %><%
-                for(int j = 0;j<courseList.get(i).size();i++){
-                %><%= "additonalData.push(\""+courseList.get(i).get(j)+"\");" %><%
-
-
-                }
-                %><%="data.push(additonalData);\n"%><%
-
-
-            }%>
-
-
-        });
 
 
     function call() {
