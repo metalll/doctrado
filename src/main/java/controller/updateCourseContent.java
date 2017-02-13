@@ -30,7 +30,7 @@ public class updateCourseContent extends HttpServlet {
     protected static final String userName = "adminsBmIZAN";
     protected static final String password = "qIqWymbbb-hk";
     protected Connection conn = null;
-
+    private String er;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         Map<String,String[]>paramMap = request.getParameterMap();
@@ -79,6 +79,8 @@ public class updateCourseContent extends HttpServlet {
             stmt.execute("UPDATE  `doctrado`.`subCourse` SET  `contentOfCourse` =  /'"+s+"/' WHERE  `id` LIKE  /'"+id+"/';");
             //   completion.afterOperation(null);
         } catch (SQLException e) {
+            er = e.getLocalizedMessage();
+            er += e.getSQLState();
             e.printStackTrace();
         }
         finally {
