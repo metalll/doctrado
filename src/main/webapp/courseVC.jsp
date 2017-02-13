@@ -379,8 +379,6 @@
 <script type="application/javascript">
 
 
-
-
     function addTheme() {
 
         $.ajax({
@@ -397,9 +395,6 @@
 
 
     }
-
-
-
 
 
     function call() {
@@ -458,7 +453,7 @@
         });
     }
     function call1() {
-//        $('#progress_bar').modal('open');
+        //        $('#progress_bar').modal('open');
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
         var errors = false;
@@ -489,7 +484,7 @@
         }
 
         if (errors) {
-//            $('#progress_bar').modal('close');
+            //            $('#progress_bar').modal('close');
             return;
         }
         $.ajax({
@@ -533,7 +528,6 @@
 "            '//www.tinymce.com/css/codepen.min.css'\n" +
 "        ]\n" +
 "    });"%><%} %>
-
 
 
     function callReg1(accept) {
@@ -744,7 +738,9 @@
     <%
 
 
-
+   %><%= " tinymce.on('addeditor', function( event ) {\n" +
+"         wait(3); tinyMCE.get('content"+themes.get(i).get(4)+"').setContent(\'"+themes.get(i).get(2)+"\', {format : 'raw'});\n" +
+"     }, true );" %><%
 
 
             }
@@ -756,11 +752,17 @@
 
 
     $(document).ready(function () {
-        for (var i = 0; i < tinymce.editors.length; i++) {
-            console.log("Editor id:", tinymce.editors[i].id);
-        }
-    })
 
+    });
+
+
+    function wait(ms) {
+        var start = new Date().getTime();
+        var end = start;
+        while (end < start + ms) {
+            end = new Date().getTime();
+        }
+    }
 
 </script>
 
