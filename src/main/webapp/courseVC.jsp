@@ -752,7 +752,9 @@
     $('.collapsible').collapsible({
             accordion: true, // A setting that changes the collapsible behavior to expandable instead of the default accordion style
             onOpen: function (el) {
-                tinymce.editors[0].setContent('custom');
+                for (var i = 0; i < tinyMCE.editors.length; i++) {
+                    tinymce.editors[i].setContent('custom');
+                }
 
 
             }, // Callback for Collapsible open
