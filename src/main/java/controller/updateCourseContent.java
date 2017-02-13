@@ -68,7 +68,7 @@ public class updateCourseContent extends HttpServlet {
             if(conn != null) try {conn.close();} catch (Exception e){}
 
             response.setStatus(HttpServletResponse.SC_OK);
-            response.getWriter().write();
+            response.getWriter().write("");
             response.getWriter().flush();
             response.getWriter().close();
 
