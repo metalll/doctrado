@@ -183,6 +183,17 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>updateCourseContent</servlet-name>
+        <servlet-class>controller.updateCourseContent</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>updateCourseContent</servlet-name>
+        <url-pattern>/updateCourseContent</url-pattern>
+    </servlet-mapping>
+
 
 
 
