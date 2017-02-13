@@ -367,7 +367,7 @@
             "        <a href=\"javascript:void(0);\"  onclick=\"addTheme();\" class=\" col s12 waves-effect center center-align waves-light btn white-text\"> <i\n" +
             "                class=\"material-icons\">add</i>\n" +
             "    </a>\n" +
-            "    </div>" + dQuery%>
+            "    </div>"%>
     <%
         }
     %>
@@ -744,9 +744,7 @@
     <%
 
 
-        %><%= " tinymce.on('addeditor', function( event ) {\n" +
-"        tinyMCE.get('content"+themes.get(i).get(4)+"').setContent(\'"+themes.get(i).get(2)+"\', {format : 'raw'});\n" +
-"     }, true );" %><%
+
 
 
             }
