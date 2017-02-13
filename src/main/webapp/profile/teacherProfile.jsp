@@ -551,7 +551,7 @@
 
                 if (creatingC && upload) {
 
-                    alert('end');
+                    window.location.href = 'https://doctrado-sviasy.rhcloud.com/getCourse?id='+uuid;
 
                 }
             }
