@@ -252,7 +252,25 @@
 
         var data = [[]];
         var additionalData = [];
-        data.push(additionalData);
+
+
+        <%
+         int i = 0;
+         for(;i<courseList.size();i++){}{
+             %><%=" additionalData = [];"%><%
+            for(int j=0;j<courseList.get(i).size();j++){
+
+                %><%= "additionalData.push(\""+courseList.get(i).get(j)+"\");" %><%
+
+
+            }
+            %><%=" data.push(additionalData);"%><%
+
+        } %>
+
+
+
+
 
     });
 
