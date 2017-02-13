@@ -253,10 +253,10 @@
         var data = [[]];
         var additonalData = [];
 
-        <% for(int i=0;i<courseList.size();i++) {
+        <% for(int i2=0;i2<courseList.size();i2++) {
             %><%= "additonalData = [];" %><%
-            for(int j = 0;j<courseList.get(i).size();i++){
-            %><%= "additonalData.push(\""+courseList.get(i).get(j)+"\");" %><%
+            for(int j = 0;j<courseList.get(i2).size();i2++){
+            %><%= "additonalData.push(\""+courseList.get(i2).get(j)+"\");" %><%
 
 
             }
