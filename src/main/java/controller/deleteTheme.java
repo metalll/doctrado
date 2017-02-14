@@ -65,6 +65,9 @@ public class deleteTheme extends HttpServlet {
             connInfo.put("useUnicode","true");
             connInfo.put("characterEncoding","UTF-8");
             Connection conn = DriverManager.getConnection(databaseUrl, connInfo);
+            conn.setReadOnly(false);
+
+
             stmt = (Statement) conn.createStatement();
         }
         catch (Exception e){}
@@ -118,11 +121,12 @@ public class deleteTheme extends HttpServlet {
 
 //delete block
 
-            sql = "DELETE FROM `doctrado`.`subCourse` WHERE `subCourse`.`internalID` = '"+internalDelID+"'";
+            sql = "DELETE FROM `doctrado`.`subCourse` WHERE `subCourse`.`internalID` = '"+internalDelID+"';";
 
            // sql = "DELETE FROM  `subCourse` WHERE  `id` LIKE  '"+id+"'";
+            conn.nativeSQL(sql);
 
-            stmt.execute(sql);
+//            stmt.execute(sql);
 
 
  //update block
@@ -168,13 +172,13 @@ public class deleteTheme extends HttpServlet {
 
 
                 sql = "UPDATE  `doctrado`.`subCourse` SET  `courseNumber` =  '"+uNum+"' WHERE  `id` = '"+uID+"';";
-                stmt.execute(sql);
+               conn.nativeSQL(sql);
 
 
 
             }
 
-
+            conn.commit();
 
 
 
