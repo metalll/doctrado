@@ -21,7 +21,7 @@ import java.util.Properties;
  */
 @WebServlet(name = "deleteTheme")
 public class deleteTheme extends HttpServlet {
-        String err;
+        String err = "";
     private Statement stmt;
     protected static final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
     //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
@@ -187,6 +187,11 @@ public class deleteTheme extends HttpServlet {
             //   completion.afterOperation(null);
         } catch (SQLException e) {
             err = e.getLocalizedMessage();
+            if(e.getSQLState()!=null){
+
+                err += e.getMessage() + " " + e.getMessage();
+
+            }
             e.printStackTrace();
         }
         finally {
@@ -194,7 +199,7 @@ public class deleteTheme extends HttpServlet {
             if(conn != null) try {conn.close();} catch (Exception e){}
 
             response.setStatus(HttpServletResponse.SC_OK);
-            response.getWriter().write("");
+            response.getWriter().write(" id = " + id +" parent: = "+parent +"  number:" + number + "error " + err);
             response.getWriter().flush();
             response.getWriter().close();
 
