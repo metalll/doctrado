@@ -186,7 +186,7 @@ public class deleteTheme extends HttpServlet {
 
             //   completion.afterOperation(null);
         } catch (SQLException e) {
-            err = e.getLocalizedMessage() + e.getSQLState();
+            err = e.getLocalizedMessage();
             e.printStackTrace();
         }
         finally {
