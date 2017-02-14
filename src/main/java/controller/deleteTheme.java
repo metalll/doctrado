@@ -118,7 +118,7 @@ public class deleteTheme extends HttpServlet {
 
 //delete block
 
-            sql = "DELETE FROM `doctrado`.`subCourse` WHERE `id` = '"+id+"'";
+            sql = "DELETE FROM  `subCourse` WHERE  `id` =  '"+id+"'";
 
             stmt.execute(sql);
 
