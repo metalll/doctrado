@@ -118,7 +118,7 @@ public class deleteTheme extends HttpServlet {
 
 //delete block
 
-            sql = "DELETE FROM `doctrado`.`subCourse` WHERE `subCourse`.`internalID` = "+internalDelID;
+            sql = "DELETE FROM `doctrado`.`subCourse` WHERE `subCourse`.`internalID` = '"+internalDelID+"'";
 
            // sql = "DELETE FROM  `subCourse` WHERE  `id` LIKE  '"+id+"'";
 
