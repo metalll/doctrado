@@ -38,7 +38,7 @@ public class deleteTheme extends HttpServlet {
 
 
 
-
+        int internalDelID = -1;
 
         Map<String,String[]> paramMap = request.getParameterMap();
         String id  = paramMap.get("id")[0];
@@ -74,7 +74,7 @@ public class deleteTheme extends HttpServlet {
             while (rs.next()){
 
                 ArrayList<String> tempArr = new ArrayList<String>();
-                for(int i=1;i<=5;i++)
+                for(int i=1;i<=6;i++)
                 {
 
                     tempArr.add(rs.getString(i));
@@ -87,7 +87,7 @@ public class deleteTheme extends HttpServlet {
 
 
                 if(tempArr.get(4).equals(number)){
-
+                    internalDelID = Integer.parseInt(tempArr.get(5));
                     tempArr = new ArrayList<String>();
                     tempArr.add("DELETED");
 
@@ -118,7 +118,9 @@ public class deleteTheme extends HttpServlet {
 
 //delete block
 
-            sql = "DELETE FROM  `subCourse` WHERE  `id` =  '"+id+"'";
+            sql = "DELETE FROM `doctrado`.`subCourse` WHERE `subCourse`.`internalID` = "+internalDelID;
+
+           // sql = "DELETE FROM  `subCourse` WHERE  `id` LIKE  '"+id+"'";
 
             stmt.execute(sql);
 
