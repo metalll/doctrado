@@ -201,7 +201,7 @@ public class deleteTheme extends HttpServlet {
             if(conn != null) try {conn.close();} catch (Exception e){}
 
             response.setStatus(HttpServletResponse.SC_OK);
-            response.getWriter().write(" id = " + id +" parent: = "+parent +"  number:" + number + " error :" + err +" cL:" + themes.size());
+            response.getWriter().write(" id = " + id +" parent: = "+parent +"  number:" + number + " error :" + err +" cL:" + internalDelID);
             response.getWriter().flush();
             response.getWriter().close();
 
