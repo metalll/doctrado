@@ -819,7 +819,7 @@ user-select: none;
 
 
     function del<%=themes.get(i).get(4)%>() {
-        $ajax({
+        $.ajax({
             type: 'post',
             url:'https://doctrado-sviasy.rhcloud.com/deleteTheme',
             data:{
