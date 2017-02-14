@@ -195,6 +195,17 @@
     </servlet-mapping>
 
 
+    <servlet>
+        <servlet-name>deleteTheme</servlet-name>
+        <servlet-class>controller.deleteTheme</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>deleteTheme</servlet-name>
+        <url-pattern>/deleteTheme</url-pattern>
+    </servlet-mapping>
+
 
 
     <context-param>

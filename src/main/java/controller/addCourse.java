@@ -24,8 +24,8 @@ import java.util.Properties;
 @WebServlet(name = "addCourse")
 public class addCourse extends HttpServlet {
 
-    private static volatile DBImage instance;
-    private Statement stmt;
+
+     private Statement stmt;
     protected static final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
     //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
     protected static final String userName = "adminsBmIZAN";
