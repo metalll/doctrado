@@ -271,9 +271,14 @@
             } %>
 
             },
+
             limit: 20 // The max amount of results that can be shown at once. Default: Infinity.
         });
 
+
+       $('#autocomplete.input').onchange(function () {
+                             alert(document.getElementById('autocomplete.input').value);
+       });         
 
         // var Query = document.getElementById('autocomplete-input').value;
 
