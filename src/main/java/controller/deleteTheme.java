@@ -207,9 +207,9 @@ public class deleteTheme extends HttpServlet {
 
                             int counter =  Integer.parseInt(themes.get(j).get(4));
                             --counter;
-                            themes.get(i).set(4,""+counter);
+                            themes.get(j).set(4,""+counter);
 
-                            doUpdate.add(themes.get(i));
+                            doUpdate.add(themes.get(j));
 
                         }
 
