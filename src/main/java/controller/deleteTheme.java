@@ -115,10 +115,40 @@ public class deleteTheme extends HttpServlet {
 
 
                 for (int j = 0; j < i; j++) {
+
+
+                    try{
                     if (Integer.parseInt(themes.get(j).get(4)) > Integer.parseInt(themes.get(j + 1).get(4))) {
                         ArrayList<String> t = themes.get(j);
                         themes.set(j, themes.get(j + 1));
                         themes.set(j + 1, t);
+                    }
+                    }catch (Exception e){
+
+                        if(themes.get(j).size()==1){
+                            if (Integer.parseInt(number) > Integer.parseInt(themes.get(j + 1).get(4))) {
+                                ArrayList<String> t = themes.get(j);
+                                themes.set(j, themes.get(j + 1));
+                                themes.set(j + 1, t);
+                            }
+
+
+
+                        }
+                        if(themes.get(j+1).size()==1){
+                            if (Integer.parseInt(themes.get(j).get(4)) > Integer.parseInt(number)) {
+                                ArrayList<String> t = themes.get(j);
+                                themes.set(j, themes.get(j + 1));
+                                themes.set(j + 1, t);
+                            }
+
+
+
+                        }
+
+
+
+
                     }
                 }
             }
