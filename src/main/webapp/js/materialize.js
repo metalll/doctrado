@@ -3107,6 +3107,8 @@ $(document).ready(function(){
     /**************************
      * Auto complete plugin  *
      *************************/
+
+
     $.fn.autocomplete = function (options) {
       // Defaults
       var defaults = {

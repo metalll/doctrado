@@ -257,6 +257,17 @@
 <script type="application/javascript" >
     var end = [];
     $(document).ready(function () {
+          var input = document.getElementById('autocomplete-input');
+          input.oninput = function(){
+
+            //  alert(input.value);
+
+
+          };
+
+
+
+
         end.push("день");
         end.push("дня");
         end.push("дней");
@@ -271,7 +282,7 @@
             } %>
 
             },
-              onAutocomplete:(function (sender,text) {   alert(text);  }),
+              onAutocomplete:(function (sender,text) {   alert(input.value);  }),
 
 
 
@@ -279,13 +290,13 @@
             limit: 20 // The max amount of results that can be shown at once. Default: Infinity.
         });
             
-          var input = document.getElementById('autocomplete-input');
-          input.oninput = function(){
-
-            //  alert(input.value);
 
 
-          };
+
+
+
+
+
           
 
 
