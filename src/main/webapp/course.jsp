@@ -272,8 +272,22 @@
 
             },
               onAutocomplete:(function (sender,text) {   alert(text);  }),
+
+
+
+
             limit: 20 // The max amount of results that can be shown at once. Default: Infinity.
         });
+            
+          var input = document.getElementById('autocomplete-input');
+          input.oninput = function(){
+
+              alert(input.value);
+
+
+          };
+          
+
 
 
  
