@@ -253,7 +253,7 @@ public class deleteTheme extends HttpServlet {
                         Connection con = DriverManager.getConnection(databaseUrl, connInfo1);
                         Statement s = (Statement) con.createStatement();
 
-                        s.execute(sql);
+                        s.executeUpdate(sql);
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     } finally {
