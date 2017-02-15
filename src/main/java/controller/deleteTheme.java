@@ -230,10 +230,10 @@ public class deleteTheme extends HttpServlet {
 
 
             for(int i=0;i<doUpdate.size();i++){
-                String uID = doUpdate.get(i).get(0);
+                String uID = doUpdate.get(i).get(5);
                 String uNum = doUpdate.get(i).get(4);
 
-                    sql = "UPDATE  `doctrado`.`subCourse` SET  `courseNumber` =  '" + uNum + "' WHERE  `id` = '" + uID + "';";
+                    sql = "UPDATE  `doctrado`.`subCourse` SET  `courseNumber` =  '" + uNum + "' WHERE `subCourse`.`internalID` = '" + uID + "';";
 
                     try {
                         Properties connInfo1 = new Properties();
