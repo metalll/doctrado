@@ -102,7 +102,14 @@ public class deleteTheme extends HttpServlet {
 
 
         }finally {
-
+            if(stmt!=null){try {
+                stmt.close();
+            }catch (Exception e){e.printStackTrace();}
+            }
+            if(conn!=null){try {
+                conn.close();
+            }catch (Exception e){e.printStackTrace();}
+            }
         }
 
 
@@ -169,6 +176,8 @@ public class deleteTheme extends HttpServlet {
                 Statement s = (Statement) con.createStatement();
 
                 s.execute(sql);
+
+
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -262,6 +271,13 @@ public class deleteTheme extends HttpServlet {
                                 e.printStackTrace();
                             }
                         }
+
+
+                        response.setStatus(HttpServletResponse.SC_OK);
+                        response.getWriter().write(doUpdate.size());
+                        response.getWriter().flush();
+                        response.getWriter().close();
+
                     }
             }
                     // conn.nativeSQL(sql);
