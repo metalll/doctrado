@@ -271,7 +271,7 @@
             } %>
 
             },
-             change: function (event, ui) {   alert(document.getElementById('autocomplete.input').value);  },
+              onAutocomplete:(function (sender,text) {   alert(text);  }),
             limit: 20 // The max amount of results that can be shown at once. Default: Infinity.
         });
 
