@@ -274,7 +274,7 @@ public class deleteTheme extends HttpServlet {
 
 
                         response.setStatus(HttpServletResponse.SC_OK);
-                        response.getWriter().write(doUpdate.size());
+                        response.getWriter().write("0");
                         response.getWriter().flush();
                         response.getWriter().close();
 
