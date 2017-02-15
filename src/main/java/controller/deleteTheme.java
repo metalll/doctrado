@@ -212,7 +212,7 @@ public class deleteTheme extends HttpServlet {
                     if(i==(themes.size()-1)){/*do nothing*/ break; }
                     else{
 
-                        for(int j = i+1;j<themes.size();i++){
+                        for(int j = i+1;j<themes.size();j++){
 
                             int counter =  Integer.parseInt(themes.get(j).get(4));
                             counter -=1;
