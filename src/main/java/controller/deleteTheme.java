@@ -74,22 +74,18 @@ public class deleteTheme extends HttpServlet {
         try {
             ResultSet rs = stmt.executeQuery(sql);
 
-            while (rs.next()){
+            while (rs.next()) {
 
                 ArrayList<String> tempArr = new ArrayList<String>();
-                for(int i=1;i<=6;i++)
-                {
+                for (int i = 1; i <= 6; i++) {
 
                     tempArr.add(rs.getString(i));
-
-
-
 
 
                 }
 
 
-                if(tempArr.get(4).equals(number)){
+                if (tempArr.get(4).equals(number)) {
                     internalDelID = Integer.parseInt(tempArr.get(5));
                     tempArr = new ArrayList<String>();
                     tempArr.add("DELETED");
@@ -101,6 +97,15 @@ public class deleteTheme extends HttpServlet {
                 themes.add(tempArr);
 
             }
+
+        }catch (SQLException e){
+
+
+        }finally {
+
+        }
+
+
 
             //sort
 
@@ -123,8 +128,36 @@ public class deleteTheme extends HttpServlet {
 
             sql = "DELETE FROM `doctrado`.`subCourse` WHERE `subCourse`.`internalID` = '"+internalDelID+"';";
 
-           // sql = "DELETE FROM  `subCourse` WHERE  `id` LIKE  '"+id+"'";
-            conn.nativeSQL(sql);
+
+            try {
+                Properties connInfo1 = new Properties();
+                connInfo1.put("user",userName);
+                connInfo1.put("password",password);
+                connInfo1.put("useUnicode","true");
+                connInfo1.put("characterEncoding","UTF-8");
+                Connection con = DriverManager.getConnection(databaseUrl,connInfo1);
+                Statement s = (Statement) con.createStatement();
+
+                s.execute(sql);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            finally {
+                if(stmt!=null){try {
+                    stmt.close();
+                }catch (Exception e){e.printStackTrace();}
+                }
+                if(conn!=null){try {
+                    conn.close();
+                }catch (Exception e){e.printStackTrace();}
+                }
+            }
+
+
+           //
+            //
+            // sql = "DELETE FROM  `subCourse` WHERE  `id` LIKE  '"+id+"'";
+            //conn.nativeSQL(sql);
 
 //            stmt.execute(sql);
 
@@ -170,46 +203,46 @@ public class deleteTheme extends HttpServlet {
                 String uID = doUpdate.get(i).get(0);
                 String uNum = doUpdate.get(i).get(4);
 
+                    sql = "UPDATE  `doctrado`.`subCourse` SET  `courseNumber` =  '" + uNum + "' WHERE  `id` = '" + uID + "';";
 
-                sql = "UPDATE  `doctrado`.`subCourse` SET  `courseNumber` =  '"+uNum+"' WHERE  `id` = '"+uID+"';";
-               conn.nativeSQL(sql);
+                    try {
+                        Properties connInfo1 = new Properties();
+                        connInfo1.put("user", userName);
+                        connInfo1.put("password", password);
+                        connInfo1.put("useUnicode", "true");
+                        connInfo1.put("characterEncoding", "UTF-8");
+                        Connection con = DriverManager.getConnection(databaseUrl, connInfo1);
+                        Statement s = (Statement) con.createStatement();
 
-
-
+                        s.execute(sql);
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    } finally {
+                        if (stmt != null) {
+                            try {
+                                stmt.close();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        if (conn != null) {
+                            try {
+                                conn.close();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
             }
-
-            conn.commit();
-
+                    // conn.nativeSQL(sql);
 
 
-
+                    //  conn.commit();
 
 
 
 
 
-
-
-            //   completion.afterOperation(null);
-        } catch (SQLException e) {
-            err = e.getLocalizedMessage();
-            if(e.getSQLState()!=null){
-
-                err += e.getMessage() + " " + e.getMessage();
-
-            }
-            e.printStackTrace();
-        }
-        finally {
-            if(stmt != null) try {stmt.close();} catch (Exception e){}
-            if(conn != null) try {conn.close();} catch (Exception e){}
-
-            response.setStatus(HttpServletResponse.SC_OK);
-            response.getWriter().write(" id = " + id +" parent: = "+parent +"  number:" + number + " error :" + err +" cL:" + internalDelID);
-            response.getWriter().flush();
-            response.getWriter().close();
-
-        }
 
 
 
