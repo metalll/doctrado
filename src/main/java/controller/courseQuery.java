@@ -84,12 +84,8 @@ public class courseQuery extends HttpServlet {
                 rs = stmt.executeQuery(query);
 
                 while (rs.next()) {
-
-                   mapArrayList.get(i).put("imageLink",   NSDConstants.HOST + "/uploadDocument?path=" + rs.getString(4));
-
+                    mapArrayList.get(i).put("imageLink",   NSDConstants.HOST + "/uploadDocument?path=" + rs.getString(4));
                 }
-
-
 
             }
 
