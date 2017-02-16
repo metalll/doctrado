@@ -66,7 +66,7 @@ public class courseQuery extends HttpServlet {
             stmt = (Statement) conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()){
-                if(rs.getString(3).contains(paramQuery)) {
+                if(rs.getString(3).toLowerCase().contains(paramQuery.toLowerCase())) {
                     course = new HashMap<String, String>();
                     course.put("moreLink", NSDConstants.HOST + "/getCourse?id=" + rs.getString(1));
                     course.put("id", rs.getString(1));
