@@ -31,6 +31,7 @@ public class courseQuery extends HttpServlet {
 
                 try {
                     response.setStatus(HttpServletResponse.SC_OK);
+                    response.setCharacterEncoding("UTF-8");
                     response.getWriter().write((String)bundle);
                     response.getWriter().flush();
                     response.getWriter().close();
@@ -87,6 +88,7 @@ public class courseQuery extends HttpServlet {
                    mapArrayList.get(i).put("imageLink",   NSDConstants.HOST + "/uploadDocument?path=" + rs.getString(4));
 
                 }
+
 
 
             }
