@@ -147,9 +147,7 @@
     <nav class="white darken-4 grey-text text-darken-4" role="navigation">
         <div class="nav-wrapper container">
 
-            <a id="logo-container" href="#" class="brand-logo "><img style="position: absolute;
-    top: 0; bottom:0; left: 0; right:0;
-    margin: auto;" src="/img/logo.png"></a>
+            <a id="logo-container" href="#" class="brand-logo "><img src="/img/logo.png"></a>
 
             <ul class="right hide-on-med-and-down">
 
