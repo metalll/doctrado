@@ -335,7 +335,7 @@
             } %>
 
             },
-              onAutocomplete:(function (sender,text) {   alert(input.value);  }),
+
 
 
 
