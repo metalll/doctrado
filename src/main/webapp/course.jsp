@@ -264,7 +264,7 @@
                      type: 'post',
                      url: 'https://doctrado-sviasy.rhcloud.com/courseQuery',
                      data: {
-                                                                    
+                                 q:input.value
 
 
 

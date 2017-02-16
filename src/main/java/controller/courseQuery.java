@@ -24,7 +24,7 @@ import java.util.Map;
 @WebServlet(name = "courseQuery")
 public class courseQuery extends HttpServlet {
     protected void doPost(final HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
-       // Map<String,String[]> paramMap = request.getParameterMap();
+        Map<String,String[]> paramMap = request.getParameterMap();
         ICompletion completion = new ICompletion() {
             @Override
             public void afterOperation(Object bundle) {
@@ -41,7 +41,7 @@ public class courseQuery extends HttpServlet {
 
             }
         };
-       // String paramQuery = paramMap.get("q")[0];
+        String paramQuery = paramMap.get("q")[0];
 
         final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
         //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
@@ -66,14 +66,14 @@ public class courseQuery extends HttpServlet {
             stmt = (Statement) conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()){
-
-                course = new HashMap<String,String>();
-                course.put("moreLink",NSDConstants.HOST +"/getCourse?id=" + rs.getString(1));
-                course.put("id",rs.getString(1));
-                course.put("courseName",rs.getString(3));
-                course.put("timeToLearn",rs.getString(4));
-                mapArrayList.add(course);
-
+                if(rs.getString(3).contains(paramQuery)) {
+                    course = new HashMap<String, String>();
+                    course.put("moreLink", NSDConstants.HOST + "/getCourse?id=" + rs.getString(1));
+                    course.put("id", rs.getString(1));
+                    course.put("courseName", rs.getString(3));
+                    course.put("timeToLearn", rs.getString(4));
+                    mapArrayList.add(course);
+                }
             }
 
 
