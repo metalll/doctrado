@@ -274,11 +274,13 @@
 
                      }    ,
                   success:function (data) {
-                    if(data == []){
-                        alert("no has substring");
-                    }
+
+                         console.log(data);
+
+
+
                   }
-                  })
+                  });
           };
 
 
