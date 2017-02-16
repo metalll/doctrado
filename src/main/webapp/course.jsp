@@ -260,9 +260,23 @@
           var input = document.getElementById('autocomplete-input');
           input.oninput = function(){
 
-            //  alert(input.value);
+              $.ajax({
+                     type: 'post',
+                     url: 'https://doctrado-sviasy.rhcloud.com/courseQuery',
+                     data: {
+                                                                    
 
 
+
+
+
+
+
+                     }    ,
+                  success:function (data) {
+
+                  }
+                  })
           };
 
 

@@ -1,9 +1,6 @@
 package controller;
 
-import auth_system.UUIDGenerator;
 import com.mysql.jdbc.Statement;
-import com.sun.org.apache.xerces.internal.impl.xpath.XPath;
-import database.DBImage;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +20,7 @@ import java.util.Properties;
 @WebServlet(name = "updateCourseContent")
 public class updateCourseContent extends HttpServlet {
     public static char[] buf = new char[1024];
-    private static volatile DBImage instance;
+
     private Statement stmt;
     protected static final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
     //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";

@@ -206,6 +206,16 @@
         <url-pattern>/deleteTheme</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>courseQuery</servlet-name>
+        <servlet-class>controller.courseQuery</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>courseQuery</servlet-name>
+        <url-pattern>/courseQuery</url-pattern>
+    </servlet-mapping>
 
 
     <context-param>
