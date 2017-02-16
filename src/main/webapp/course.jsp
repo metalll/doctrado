@@ -226,7 +226,7 @@
         "            <div class=\"col s12 m12 l12\">\n" +
         "                <div class=\"medium card\">\n" +
         "                    <div class=\"card-image\">\n" +
-        "                        <img class=\"center center-align\" style=\"width:200px;height:200px;overflow:hidden; position: absolute; top: 0; bottom:0; left: 0; right:0; margin: auto;\" src=\"" + NSDConstants.HOST + "/uploadDocument?path=" + images.get(i) + "\">\n" +
+        "                        <img class=\"center center-align\" style=\"width:200px;height:200px;overflow:hidden; top: 0; bottom:0; left: 0; right:0; margin: auto;\" src=\"" + NSDConstants.HOST + "/uploadDocument?path=" + images.get(i) + "\">\n" +
         "                        <span class=\"card-title flow-text\"></span>\n" +
         "                    </div>\n" +
         "                    <div class=\"card-content\">\n" +
