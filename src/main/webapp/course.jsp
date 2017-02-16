@@ -210,7 +210,7 @@
     </div>
 </div>
 </div>
-<p>
+<div id = "rootContainer">
 
     <%
 
@@ -248,7 +248,7 @@
 
 
 
-</p>
+</div>
 
 
 
@@ -274,7 +274,33 @@
 
                      }    ,
                   success:function (rawData) {
-                        var data = JSON.parse(rawData);
+                      var data = JSON.parse(rawData);
+
+
+
+
+
+
+
+                      var root = document.getElementById("rootContainer");
+                      for (var i = 0; i < root.childElementCount; i++) {
+                        root.removeChild(root.childNodes[i]);
+                      }
+
+
+                      for(var i = 0;i<data.length;i++){
+
+
+
+
+
+
+
+
+
+                      }
+
+
 
 
 
