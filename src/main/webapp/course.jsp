@@ -273,10 +273,12 @@
 
 
                      }    ,
-                  success:function (data) {
+                  success:function (rawData) {
+                        var data = JSON.parse(rawData);
 
+
+                         console.log(rawData);
                          console.log(data);
-
 
 
                   }
