@@ -128,13 +128,7 @@
     <link rel="shortcut icon" href="https://doctrado-sviasy.rhcloud.com/img/favicon.ico">
     <link rel="stylesheet" href="./NSDcss/login.css">
 
-    <style>
-        img {
-            position: absolute;
-            top: 0; bottom:0; left: 0; right:0;
-            margin: auto;
-        }
-    </style>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
@@ -232,7 +226,7 @@
         "            <div class=\"col s12 m12 l12\">\n" +
         "                <div class=\"medium card\">\n" +
         "                    <div class=\"card-image\">\n" +
-        "                        <img class=\"center center-align\" style=\"width:200px;height:200px;overflow:hidden\" src=\"" + NSDConstants.HOST + "/uploadDocument?path=" + images.get(i) + "\">\n" +
+        "                        <img class=\"center center-align\" style=\"width:200px;height:200px;overflow:hidden; position: absolute; top: 0; bottom:0; left: 0; right:0; margin: auto;\" src=\"" + NSDConstants.HOST + "/uploadDocument?path=" + images.get(i) + "\">\n" +
         "                        <span class=\"card-title flow-text\"></span>\n" +
         "                    </div>\n" +
         "                    <div class=\"card-content\">\n" +
@@ -305,7 +299,7 @@
                              }
                              insertView+='<div class="container"><div class="row">';
                          }
-                            insertView+='<div class="row col s4"><div class="col s12 m12 l12"><div class="medium card"><div class="card-image" ><img  class="center center-align" style="width:200px;height:200px;overflow:hidden" src="'+data[i1].imageLink+'"><span class="card-title flow-text"></span></div><div class="card-content"><p class="center-align" >'+ data[i1].courseName+'</p><br><p>Время на изучение: '+data[i1].timeToLearn+' '+ getNumEnding(data[i1].timeToLearn,end) +'</p></div><div class="card-action center-align"><p><a href="'+data[i1].moreLink+'" class="waves-effect col s12 waves-light green btn">Подробнее</a></p></div></div></div></div>';
+                            insertView+='<div class="row col s4"><div class="col s12 m12 l12"><div class="medium card"><div class="card-image" ><img  class="center center-align" style="width:200px;height:200px;overflow:hidden; position: absolute; top: 0; bottom:0; left: 0; right:0; margin: auto;" src="'+data[i1].imageLink+'"><span class="card-title flow-text"></span></div><div class="card-content"><p class="center-align" >'+ data[i1].courseName+'</p><br><p>Время на изучение: '+data[i1].timeToLearn+' '+ getNumEnding(data[i1].timeToLearn,end) +'</p></div><div class="card-action center-align"><p><a href="'+data[i1].moreLink+'" class="waves-effect col s12 waves-light green btn">Подробнее</a></p></div></div></div></div>';
 
                       }
                         insertView+='</div></div>';
