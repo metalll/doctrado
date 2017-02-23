@@ -362,7 +362,7 @@
 
             },
               onAutocomplete:(function (sender,text) {
-                      var data = JSON.parse(rawData);
+
 
                       var insertView = '';
 
