@@ -256,67 +256,95 @@
 
 <script type="application/javascript" >
     var end = [];
+    var GlobalData = null;
 
     $(document).ready(function () {
         end.push("день");
         end.push("дня");
         end.push("дней");
-          var input = document.getElementById('autocomplete-input');
-          input.oninput = function(){
+        var input = document.getElementById('autocomplete-input');
+        input.oninput = function () {
+            if (GlobalData == null) {
 
-              $.ajax({
-                  type: 'post',
-                  url: 'https://doctrado-sviasy.rhcloud.com/courseQuery',
-                  data: {
-                      q:input.value
-
-
-
+                $.ajax({
+                    type: 'post',
+                    url: 'https://doctrado-sviasy.rhcloud.com/courseQuery',
+                    data: {
+                        q: input.value
 
 
+                    },
+                    success: function (rawData) {
+                        var data = JSON.parse(rawData);
+                        GlobalData = data;
+                        var insertView = '';
 
 
-                  }    ,
-                  success:function (rawData) {
-                      var data = JSON.parse(rawData);
-
-                      var insertView = '';
-
+                        var root = document.getElementById("rootContainer");
+                        for (var i = 0; i < root.childElementCount; i++) {
+                            root.removeChild(root.childNodes[i]);
+                        }
 
 
+                        for (var i1 = 0; i1 < data.length; i1++) {
+                            if (i1 == 0 || i1 % 3 == 0) {
+                                if (i1 != 0) {
+                                    insertView += '</div></div>';
+                                }
+                                insertView += '<div class="container"><div class="row">';
+                            }
+                            insertView += '<div class="row col s4"><div class="col s12 m12 l12"><div class="medium card"><div class="card-image" ><img  class="center center-align" style="width:200px;height:200px;overflow:hidden; top: 0; bottom:0; left: 0; right:0; margin: auto;" src="' + data[i1].imageLink + '"><span class="card-title flow-text"></span></div><div class="card-content"><p class="center-align" >' + data[i1].courseName + '</p><br><p>Время на изучение: ' + data[i1].timeToLearn + ' ' + getNumEnding(data[i1].timeToLearn, end) + '</p></div><div class="card-action center-align"><p><a href="' + data[i1].moreLink + '" class="waves-effect col s12 waves-light green btn">Подробнее</a></p></div></div></div></div>';
+
+                        }
+                        insertView += '</div></div>';
 
 
-                      var root = document.getElementById("rootContainer");
-                      for (var i = 0; i < root.childElementCount; i++) {
-                          root.removeChild(root.childNodes[i]);
-                      }
+                        root.innerHTML = insertView;
+
+                        // console.log(rawData);
+                        // console.log(data);
 
 
-                      for(var i1 = 0;i1<data.length;i1++){
-                          if(i1==0||i1%3==0){
-                              if(i1!=0){
-                                  insertView+='</div></div>';
-                              }
-                              insertView+='<div class="container"><div class="row">';
-                          }
-                          insertView+='<div class="row col s4"><div class="col s12 m12 l12"><div class="medium card"><div class="card-image" ><img  class="center center-align" style="width:200px;height:200px;overflow:hidden; top: 0; bottom:0; left: 0; right:0; margin: auto;" src="'+data[i1].imageLink+'"><span class="card-title flow-text"></span></div><div class="card-content"><p class="center-align" >'+ data[i1].courseName+'</p><br><p>Время на изучение: '+data[i1].timeToLearn+' '+ getNumEnding(data[i1].timeToLearn,end) +'</p></div><div class="card-action center-align"><p><a href="'+data[i1].moreLink+'" class="waves-effect col s12 waves-light green btn">Подробнее</a></p></div></div></div></div>';
+                    }
+                });
 
-                      }
-                      insertView+='</div></div>';
+            } else {
 
 
+                var data = GlobalData;
+                //  GlobalData = data;
+                var insertView = '';
 
 
+                var root = document.getElementById("rootContainer");
+                for (var i = 0; i < root.childElementCount; i++) {
+                    root.removeChild(root.childNodes[i]);
+                }
 
-                      root.innerHTML = insertView;
 
-                      // console.log(rawData);
-                      // console.log(data);
+                for (var i1 = 0; i1 < data.length; i1++) {
+                    if (i1 == 0 || i1 % 3 == 0) {
+                        if (i1 != 0) {
+                            insertView += '</div></div>';
+                        }
+                        insertView += '<div class="container"><div class="row">';
+                    }
+                    insertView += '<div class="row col s4"><div class="col s12 m12 l12"><div class="medium card"><div class="card-image" ><img  class="center center-align" style="width:200px;height:200px;overflow:hidden; top: 0; bottom:0; left: 0; right:0; margin: auto;" src="' + data[i1].imageLink + '"><span class="card-title flow-text"></span></div><div class="card-content"><p class="center-align" >' + data[i1].courseName + '</p><br><p>Время на изучение: ' + data[i1].timeToLearn + ' ' + getNumEnding(data[i1].timeToLearn, end) + '</p></div><div class="card-action center-align"><p><a href="' + data[i1].moreLink + '" class="waves-effect col s12 waves-light green btn">Подробнее</a></p></div></div></div></div>';
+
+                }
+                insertView += '</div></div>';
 
 
-                  }
-              });
-          };
+                root.innerHTML = insertView;
+
+                // console.log(rawData);
+                // console.log(data);
+
+
+            }
+        }});
+
+
 
 
 
@@ -333,20 +361,7 @@
             } %>
 
             },
-              onAutocomplete:(function (sender,text) {     $.ajax({
-                  type: 'post',
-                  url: 'https://doctrado-sviasy.rhcloud.com/courseQuery',
-                  data: {
-                      q:text
-
-
-
-
-
-
-
-                  }    ,
-                  success:function (rawData) {
+              onAutocomplete:(function (sender,text) {
                       var data = JSON.parse(rawData);
 
                       var insertView = '';
@@ -383,8 +398,8 @@
                       // console.log(data);
 
 
-                  }
-              });  }),
+
+              }),
 
 
 
@@ -415,7 +430,7 @@
 
 
 
-    });
+
 
 
     function getNumEnding(iNumber, aEndings) {
