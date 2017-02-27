@@ -500,7 +500,7 @@
 
 <div class="parallax-container valign-wrapper col s12">
     <div class="section no-pad-bot">
-        <div class="container">
+        <div class="container valign">
 
             <h1 class="header center orange-text text-darken-3">Doctrado</h1>
             <div class="row center">
