@@ -262,7 +262,7 @@
 
 %><%=" <div class=\"container\"> <div class=\"row\">"%><%
     }
-%><%=   "   <div class=\"row col s4\">\n" +  //small course view
+%><%=   "   <div class=\"row col s12 m4 l4\">\n" +  //small course view
         "            <div class=\"col s12 m12 l12\">\n" +
         "                <div class=\"medium card\">\n" +
         "                    <div class=\"card-image\">\n" +
@@ -325,7 +325,7 @@
                             }
                             insertView+='<div class="container"><div class="row">';
                         }
-                        insertView+='<div class="row col s4"><div class="col s12 m12 l12"><div class="medium card"><div class="card-image" ><img  class="center center-align" style="width:200px;height:200px;overflow:hidden; top: 0; bottom:0; left: 0; right:0; margin: auto;" src="'+data[i1].imageLink+'"><span class="card-title flow-text"></span></div><div class="card-content"><p class="center-align" >'+ data[i1].courseName+'</p><br><p>Время на изучение: '+data[i1].timeToLearn+' '+ getNumEnding(data[i1].timeToLearn,end) +'</p></div><div class="card-action center-align"><p><a href="'+data[i1].moreLink+'" class="waves-effect col s12 waves-light green btn">Подробнее</a></p></div></div></div></div>';
+                        insertView+='<div class="row col s12 m4 l4"><div class="col s12 m12 l12"><div class="medium card"><div class="card-image" ><img  class="center center-align" style="width:200px;height:200px;overflow:hidden; top: 0; bottom:0; left: 0; right:0; margin: auto;" src="'+data[i1].imageLink+'"><span class="card-title flow-text"></span></div><div class="card-content"><p class="center-align" >'+ data[i1].courseName+'</p><br><p>Время на изучение: '+data[i1].timeToLearn+' '+ getNumEnding(data[i1].timeToLearn,end) +'</p></div><div class="card-action center-align"><p><a href="'+data[i1].moreLink+'" class="waves-effect col s12 waves-light green btn">Подробнее</a></p></div></div></div></div>';
                     }
                     insertView+='</div></div>';
                     root.innerHTML = insertView;
