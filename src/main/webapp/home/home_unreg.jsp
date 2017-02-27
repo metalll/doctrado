@@ -1201,6 +1201,7 @@
     });
     $(document).ready(function () {
         $('.parallax').parallax();
+        $(".button-collapse").sideNav();
     });
     $('.datepicker').pickadate({
         selectMonths: true,//Creates a dropdown to control month
