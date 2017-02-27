@@ -143,7 +143,7 @@
 <body>
 
 
-<% if(request.getHeader("User-Agent").toLowerCase().contains("Mobile".toLowerCase())) {
+<% if(request.getHeader("User-Agent").toLowerCase().contains("Mobile".toLowerCase())||request.getHeader("User-Agent").toLowerCase().contains("Android".toLowerCase())) {
     //you're in mobile land
 %>
 <%="<div class=\"navbar-fixed \">"%>
