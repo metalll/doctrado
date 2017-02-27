@@ -327,7 +327,7 @@
 
 
         <p><a class="waves-effect col s6 waves-light  darken-3 green btn">Ваши курсы<span
-                class="badge pink white-text darken-2">0</span>
+              id = "courseCount"  class="badge pink white-text darken-2">0</span>
         </a></p>
 
         <p><a class="waves-effect col s6 waves-light darken-3 orange btn">Оповещения<span
@@ -523,6 +523,7 @@
         end.push("день");
         end.push("дня");
         end.push("дней");
+        var courseCount = 0;
         $.ajax({
             type: 'post',
             url: '<%=NSDConstants.HOST + "/courseQuery"%>',
@@ -545,9 +546,13 @@
                 }
                 insertView+='</div></div>';
                 root.innerHTML = insertView;
-
+                courseCount = data.length;
                 // console.log(rawData);
                 // console.log(data);
+
+                var CourseCountUI = document.getElementById('courseCount');
+                CourseCountUI.innerHTML=courseCount+'';
+
             }
         });
 
