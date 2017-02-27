@@ -491,6 +491,11 @@
         $('.parallax').parallax();
         //  alert(<%= avatarPath %>);
 
+
+
+    });
+    $( window ).load(function(){
+
         $.ajax({
             type: 'post',
             url: '<%=NSDConstants.HOST + "/courseQuery"%>',
@@ -520,7 +525,6 @@
         });
 
     });
-
 
 </script>
 
