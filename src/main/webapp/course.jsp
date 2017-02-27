@@ -148,26 +148,26 @@
     <nav class="white darken-4 grey-text text-darken-4" role="navigation">
         <div class="nav-wrapper container">
 
-            <a id="logo-container" href="#" class="brand-logo "><img src="/img/logo.png"></a>
+            <a id="logo-container" href="<%=NSDConstants.HOST%>" class="brand-logo "><img src="/img/logo.png"></a>
 
             <ul class="right hide-on-med-and-down">
 
                 <!--<li><a class="waves-effect waves-light black modal-trigger white-text" href="#modal3">Вход</a></li>-->
                 <li>
-                    <a class="menu-elem" data-anchor="#about">О проекте</a>
+                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/about"%>">О проекте</a>
                 </li>
-
+                <%--<li>--%>
+                <%--<a class="menu-elem" data-anchor="#capabilities">Возможности</a>--%>
+                <%--</li>--%>
                 <li>
-                    <a class="menu-elem" href="./certificates">Сертификаты</a>
-                </li>
-
-                <li>
-                    <a class="menu-elem" data-anchor="/courses">Курсы</a>
+                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/certificates"%>">Сертификаты</a>
                 </li>
                 <li>
-                    <a class="menu-elem" data-anchor="#contacts">Контакты</a>
+                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/course"%>">Курсы</a>
                 </li>
-
+                <li>
+                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/contacts"%>">Контакты</a>
+                </li>
 
 
 
@@ -190,10 +190,51 @@
 
             </ul>
 
-            <ul id="nav-mobile" class="side-nav">
-                <li><a href="#">Navbar Link</a></li>
+            <ul class="side-nav" id="mobile-demo">
+
+                <!--<li><a class="waves-effect waves-light black modal-trigger white-text" href="#modal3">Вход</a></li>-->
+                <li>
+                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/about"%>">О проекте</a>
+                </li>
+                <%--<li>--%>
+                <%--<a class="menu-elem" data-anchor="#capabilities">Возможности</a>--%>
+                <%--</li>--%>
+                <li>
+                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/certificates"%>">Сертификаты</a>
+                </li>
+                <li>
+                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/course"%>">Курсы</a>
+                </li>
+                <li>
+                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/contacts"%>">Контакты</a>
+                </li>
+
+
+
+                <%
+                    if(!(token.equals(""))||!token.isEmpty()){
+                %>
+                <%= "\n" +
+                        "                <li><a href=\"+\"NSDConstants.HOST+\"/logout\"\" class=\"menu-elem waves-effect waves-light red btn white-text darken-3\" >Выход</a></li>\n"%><%
+            }else{
+
+            %><%=" <li><a href=\"#modal2\"\n" +
+                    "                       class=\"menu-elem modal-trigger waves-effect waves-light btn white-text green darken-3\">Регистрация</a>\n" +
+                    "                </li>\n" +
+                    "                <li><a href=\"#modal3\"\n" +
+                    "                       class=\"menu-elem modal-trigger waves-effect waves-light orange btn white-text darken-3\">Вход</a>\n" +
+                    "                </li>"%><%
+
+                }
+            %>
+
             </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="<%=NSDConstants.HOST%>">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse green-text text-darken-3"><i
+                    class="material-icons">menu</i></a>
         </div>
     </nav>
 </div>
@@ -260,6 +301,7 @@
     var GlobalData = null;
 
     $(document).ready(function () {
+        $(".button-collapse").sideNav();
         end.push("день");
         end.push("дня");
         end.push("дней");
