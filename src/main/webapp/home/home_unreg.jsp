@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<% String token = null; %>
+<% String token = ""; %>
 <head>
     <meta name="google-site-verification" content="ZWWdaYwb-E3JvxMSiXcCDveaghrcK6aBBCohc9KAV_g" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
