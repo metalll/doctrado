@@ -35,4 +35,15 @@ public class CookieKiller extends HttpServlet {
                 resp.addCookie(cookies[i]);
             }
     }
+
+    public static void logout(HttpServletRequest req, HttpServletResponse resp) {
+        Cookie[] cookies = req.getCookies();
+        if (cookies != null)
+            for (int i = 0; i < cookies.length; i++) {
+                cookies[i].setValue("");
+                cookies[i].setPath("/");
+                cookies[i].setMaxAge(0);
+                resp.addCookie(cookies[i]);
+            }
+    }
 }
