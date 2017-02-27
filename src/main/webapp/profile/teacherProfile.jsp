@@ -352,7 +352,7 @@
 
 </div>
 </div>
-<span id = "rootContainer"></span>
+<div id = "rootContainer"></div>
 
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
