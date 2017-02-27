@@ -5,6 +5,7 @@ import NSD.NSDConstants;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.mysql.jdbc.Statement;
+import database.DB;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -43,10 +44,14 @@ public class courseQuery extends HttpServlet {
         };
         String paramQuery = paramMap.get("q")[0];
 
-        final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
+        String authorQuery = "";
+        try{authorQuery = paramMap.get("a")[0];}catch (Exception e){  }
+
+
+        final String databaseUrl = DB.databaseUrl;
         //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
-        final String userName = "adminsBmIZAN";
-        final String password = "qIqWymbbb-hk";
+        final String userName = DB.userName;
+        final String password = DB.password;
         Connection conn = null;
         Statement stmt = null;
 
@@ -66,13 +71,28 @@ public class courseQuery extends HttpServlet {
             stmt = (Statement) conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()){
+
                 if(rs.getString(3).toLowerCase().contains(paramQuery.toLowerCase())) {
-                    course = new HashMap<String, String>();
-                    course.put("moreLink", NSDConstants.HOST + "/getCourse?id=" + rs.getString(1));
-                    course.put("id", rs.getString(1));
-                    course.put("courseName", rs.getString(3));
-                    course.put("timeToLearn", rs.getString(4));
-                    mapArrayList.add(course);
+
+                    if((!authorQuery.equals(""))&&rs.getString(8).equals(authorQuery)) {
+
+                        course = new HashMap<String, String>();
+                        course.put("moreLink", NSDConstants.HOST + "/getCourse?id=" + rs.getString(1));
+                        course.put("id", rs.getString(1));
+                        course.put("courseName", rs.getString(3));
+                        course.put("timeToLearn", rs.getString(4));
+                        mapArrayList.add(course);
+                    }else{
+
+                        course = new HashMap<String, String>();
+                        course.put("moreLink", NSDConstants.HOST + "/getCourse?id=" + rs.getString(1));
+                        course.put("id", rs.getString(1));
+                        course.put("courseName", rs.getString(3));
+                        course.put("timeToLearn", rs.getString(4));
+                        mapArrayList.add(course);
+
+
+                    }
                 }
             }
 
