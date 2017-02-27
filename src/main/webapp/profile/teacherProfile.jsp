@@ -6,6 +6,7 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="database.DB" %>
 <%--
   Created by IntelliJ IDEA.
   User: NSD
@@ -20,10 +21,10 @@
 <%
 
     ArrayList<String> strings = new ArrayList<String>();
-    final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
+    final String databaseUrl = DB.databaseUrl;
     //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
-    final String userName = "adminsBmIZAN";
-    final String password = "qIqWymbbb-hk";
+    final String userName = DB.userName;
+    final String password = DB.password;
     Connection conn = null;
     Statement stmt = null;
     String uToken = null;
@@ -351,127 +352,8 @@
 
 </div>
 </div>
+<span id = "rootContainer"></span>
 
-<div class="container">
-    <div class="row">
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/course.jpg">
-                        <span class="card-title flow-text"></span>
-                    </div>
-                    <div class="card-content">
-                        <p> ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ
-                        </p><br>
-                        <p>Время на изучение: 5 дней</p>
-                    </div>
-                    <div class="card-action center-align">
-                        <p><a class="waves-effect col s12 waves-light green btn">Подробнее</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/course.jpg">
-                        <span class="card-title flow-text"></span>
-                    </div>
-                    <div class="card-content">
-                        <p class="center-align"> ПОЖАРНО-ТЕХНИЧЕСКИЙ МИНИМУМ
-                        </p><br>
-                        <p>Время на изучение: 5 дней</p>
-                    </div>
-                    <div class="card-action center-align">
-                        <p><a class="waves-effect col s12 waves-light green btn">Подробнее</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row col s4">
-            <div class="col s12 m12 l12">
-                <div class="medium card">
-                    <div class="card-image">
-                        <img src="../img/picture.png">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
 
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="../js/materialize.min.js"></script>
@@ -608,6 +490,34 @@
     $(document).ready(function () {
         $('.parallax').parallax();
         //  alert(<%= avatarPath %>);
+
+        $.ajax({
+            type: 'post',
+            url: '<%=NSDConstants.HOST + "/courseQuery"%>',
+            data: {
+                a:'<%=uToken%>',
+                q:''
+            }    ,
+            success:function (rawData) {
+                var data = JSON.parse(rawData);
+                var insertView = '';
+                var root = document.getElementById("rootContainer");
+                for (var i = 0; i < root.childElementCount; i++) {
+                    root.removeChild(root.childNodes[i]);
+                }
+                for(var i1 = 0;i1<data.length;i1++){
+                    if(i1==0||i1%3==0){
+
+                        insertView+='<div class="container"><div class="row">';
+                    }
+                    insertView+='<div class="row col s4"><div class="col s12 m12 l12"><div class="medium card"><div class="card-image" ><img  class="center center-align" style="width:200px;height:200px;overflow:hidden; top: 0; bottom:0; left: 0; right:0; margin: auto;" src="'+data[i1].imageLink+'"><span class="card-title flow-text"></span></div><div class="card-content"><p class="center-align" >'+ data[i1].courseName+'</p><br><p>Время на изучение: '+data[i1].timeToLearn+' '+ getNumEnding(data[i1].timeToLearn,end) +'</p></div><div class="card-action center-align"><p><a href="'+data[i1].moreLink+'" class="waves-effect col s12 waves-light green btn">Подробнее</a></p></div></div></div></div>';
+                }
+                insertView+='</div>';
+                root.innerHTML = insertView;
+                // console.log(rawData);
+                // console.log(data);
+            }
+        });
 
     });
 
