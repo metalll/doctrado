@@ -1,4 +1,4 @@
-<%--
+<%@ page import="NSD.NSDConstants" %><%--
   Created by IntelliJ IDEA.
   User: NSD
   Date: 16.12.16
@@ -416,19 +416,19 @@
 
                 <!--<li><a class="waves-effect waves-light black modal-trigger white-text" href="#modal3">Вход</a></li>-->
                 <li>
-                    <a class="menu-elem" data-anchor="#about">О проекте</a>
+                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/about"%>">О проекте</a>
                 </li>
                 <%--<li>--%>
                 <%--<a class="menu-elem" data-anchor="#capabilities">Возможности</a>--%>
                 <%--</li>--%>
                 <li>
-                    <a class="menu-elem" href="https://doctrado-sviasy.rhcloud.com/certificates">Сертификаты</a>
+                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/certificates"%>">Сертификаты</a>
                 </li>
                 <li>
-                    <a class="menu-elem" href="https://doctrado-sviasy.rhcloud.com/course">Курсы</a>
+                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/course"%>">Курсы</a>
                 </li>
                 <li>
-                    <a class="menu-elem" data-anchor="#contacts">Контакты</a>
+                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/contacts"%>">Контакты</a>
                 </li>
                 <li><a href="#modal2"
                        class="menu-elem modal-trigger waves-effect waves-light btn white-text green darken-3">Регистрация</a>
@@ -647,7 +647,7 @@
         }
         $.ajax({
             type: 'post',
-            url: 'https://doctrado-sviasy.rhcloud.com/login',
+            url: '<%=NSDConstants.HOST+"/login"%>',
             data: {
                 email: email,
                 password: password
@@ -657,7 +657,7 @@
                     Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>', 4000, 'rounded');
                     bar.hide();
                 }
-                else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
+                else window.location.href = "<%=NSDConstants.HOST+"/profile"%>";
             }
         });
     }
@@ -708,7 +708,7 @@
                     Materialize.toast('<div class="red-text text-darken-3"><b>Неверный логин <br> или пароль</b></div>', 4000, 'rounded');
                     //  $('#progress_bar').modal('close');
                 }
-                else window.location.href = "https://doctrado-sviasy.rhcloud.com/profile";
+                else window.location.href = "<%=NSDConstants.HOST+"/profile"%>";
             }
         });
     }
@@ -833,7 +833,7 @@
 
         $.ajax({
             type: 'post',
-            url: 'https://doctrado-sviasy.rhcloud.com/register',
+            url: '<%=NSDConstants.HOST+"/register"%>',
             data: {
                 name: Gname,
                 last_name: Glast_name,
@@ -857,13 +857,13 @@
                     $.ajax({
 
                             type: 'post',
-                            url: 'https://doctrado-sviasy.rhcloud.com/uploadDocument',
+                            url: '<%=NSDConstants.HOST+"/uploadDocument"%>',
                             processData: false,
                             contentType: false,
                             cache: false,
                             data: form,
                         success: function (data) {
-                            window.location.href = "http://doctrado-sviasy.rhcloud.com/profile"
+                            window.location.href = '<%=NSDConstants.HOST+"/profile"%>'
                         }
 
 
@@ -894,7 +894,7 @@
 
         $.ajax({
             type: 'post',
-            url: 'https://doctrado-sviasy.rhcloud.com/register',
+            url: '<%=NSDConstants.HOST+"/register"%>',
             data: {
                 name: Gname,
                 last_name: Glast_name,
@@ -927,7 +927,7 @@
                     $.ajax({
 
                         type: 'post',
-                        url: 'https://doctrado-sviasy.rhcloud.com/uploadDocument',
+                        url: '<%=NSDConstants.HOST+"/uploadDocument"%>',
                         processData: false,
                         contentType: false,
                         cache: false,
@@ -935,7 +935,7 @@
                         success: function (data) {
                             imgLoaded = true;
                             if (docLoaded && imgLoaded)
-                                window.location.href = "http://doctrado-sviasy.rhcloud.com/profile"
+                                window.location.href = '<%=NSDConstants.HOST+"/profile"%>'
                         }
 
 
@@ -945,7 +945,7 @@
                     $.ajax({
 
                         type: 'post',
-                        url: 'https://doctrado-sviasy.rhcloud.com/uploadDocument',
+                        url: '<%=NSDConstants.HOST+"/uploadDocument"%>',
                         processData: false,
                         contentType: false,
                         cache: false,
@@ -953,7 +953,7 @@
                         success: function (data) {
                             docLoaded = true;
                             if (docLoaded && imgLoaded)
-                                window.location.href = "http://doctrado-sviasy.rhcloud.com/profile"
+                                window.location.href = "<%=NSDConstants.HOST+"/profile"%>"
                         }
 
 
@@ -1030,7 +1030,7 @@
         }
         $.ajax({
             type: 'post',
-            url: 'https://doctrado-sviasy.rhcloud.com/validate_user',
+            url: '<%=NSDConstants.HOST+"/validate_user"%>',
             data: {
                 email: emailR,
                 password: passwordR,
