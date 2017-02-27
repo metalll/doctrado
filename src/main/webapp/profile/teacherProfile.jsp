@@ -422,7 +422,7 @@
         $.ajax({
 
             type: 'post',
-            url: 'https://doctrado-sviasy.rhcloud.com/uploadDocument',
+            url: '<%=NSDConstants.HOST+"/uploadDocument"%>',
             processData: false,
             contentType: false,
             cache: false,
@@ -433,7 +433,7 @@
 
                 if (creatingC && upload) {
 
-                    window.location.href = 'https://doctrado-sviasy.rhcloud.com/getCourse?id='+uuid;
+                    window.location.href = '<%=NSDConstants.HOST+"/getCourse?id="%>'+uuid;
 
                 }
             }

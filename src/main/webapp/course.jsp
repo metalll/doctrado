@@ -36,7 +36,7 @@
     ArrayList<String> author = new ArrayList<String>();
     final String databaseUrl = DB.databaseUrl;
     //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
-    final String userName = DB.databaseUrl;
+    final String userName = DB.userName;
     final String password = DB.password;
     Connection conn = null;
     Statement stmt = null;
