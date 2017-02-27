@@ -10,8 +10,9 @@
 
 <%@ page import="NSD.NSDConstants" %>
 <%@ page import="javax.servlet.http.Cookie" %>
+<%@ page import="auth_system.CookieKiller" %>
 <%
-    if (!request.isSecure()) response.sendRedirect("https://doctrado-sviasy.rhcloud.com");
+
 
 
 
@@ -43,7 +44,14 @@
     }
 
     if (auth && !nextStepAuth) {
-        response.sendRedirect("https://doctrado-sviasy.rhcloud.com");
+
+        CookieKiller.logout(request,response);
+        response.sendRedirect(NSDConstants.HOST);
+        return;
+
+
+
+
     }
 
 
