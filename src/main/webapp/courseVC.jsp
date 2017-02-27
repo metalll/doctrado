@@ -693,6 +693,7 @@ user-select: none;
 
 
     $( window ).load(function(){
+
         <%
       for(int it=0;it<themes.size();it++){
     %>
