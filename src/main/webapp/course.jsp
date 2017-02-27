@@ -146,10 +146,11 @@
 
 <div class="navbar-fixed">
     <nav class="white darken-4 grey-text text-darken-4" role="navigation">
-        <div class="nav-wrapper container">
+        <div class="nav-wrapper">
 
             <a id="logo-container" href="<%=NSDConstants.HOST%>" class="brand-logo "><img src="/img/logo.png"></a>
-
+            <a href="#" data-activates="nav-mobile" class="button-collapse green-text text-darken-3"><i
+                    class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
 
                 <!--<li><a class="waves-effect waves-light black modal-trigger white-text" href="#modal3">Вход</a></li>-->
@@ -231,8 +232,7 @@
             </ul>
 
 
-            <a href="#" data-activates="nav-mobile" class="button-collapse green-text text-darken-3"><i
-                    class="material-icons">menu</i></a>
+
         </div>
     </nav>
 </div>
