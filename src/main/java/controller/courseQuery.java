@@ -83,14 +83,14 @@ public class courseQuery extends HttpServlet {
                         course.put("timeToLearn", rs.getString(4));
                         mapArrayList.add(course);
                     }else{
-
-                        course = new HashMap<String, String>();
-                        course.put("moreLink", NSDConstants.HOST + "/getCourse?id=" + rs.getString(1));
-                        course.put("id", rs.getString(1));
-                        course.put("courseName", rs.getString(3));
-                        course.put("timeToLearn", rs.getString(4));
-                        mapArrayList.add(course);
-
+                         if(authorQuery.equals("")) {
+                             course = new HashMap<String, String>();
+                             course.put("moreLink", NSDConstants.HOST + "/getCourse?id=" + rs.getString(1));
+                             course.put("id", rs.getString(1));
+                             course.put("courseName", rs.getString(3));
+                             course.put("timeToLearn", rs.getString(4));
+                             mapArrayList.add(course);
+                         }
 
                     }
                 }
