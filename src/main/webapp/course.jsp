@@ -143,10 +143,10 @@
 <body>
 
 
-<% if(request.getHeader("User-Agent").indexOf("Mobile") != -1) {
+<% if(request.getHeader("User-Agent").toLowerCase().contains("Mobile".toLowerCase())) {
     //you're in mobile land
 %>
-<div class="navbar-fixed ">
+<%="<div class=\"navbar-fixed \">"%>
   <%  }  %>
     <nav class="white darken-4 grey-text text-darken-4" role="navigation">
         <div class="nav-wrapper">
@@ -238,10 +238,10 @@
 
         </div>
     </nav>
-    <% if(request.getHeader("User-Agent").indexOf("Mobile") != -1) {
+    <% if(request.getHeader("User-Agent").toLowerCase().contains("Mobile".toLowerCase())) {
         //you're in mobile land
     %>
-</div>
+<%= "</div>" %>
         <%  }  %>
 
 <div class="container">
