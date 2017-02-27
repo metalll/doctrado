@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-
+<% String token = null; %>
 <head>
     <meta name="google-site-verification" content="ZWWdaYwb-E3JvxMSiXcCDveaghrcK6aBBCohc9KAV_g" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -406,50 +406,97 @@
     </div>
 </div>
 
-<div class="navbar-fixed">
-    <nav class="white darken-4 grey-text text-darken-4" role="navigation">
-        <div class="nav-wrapper container">
 
-            <a id="logo-container" href="#" class="brand-logo "><img src="../img/logo.png"></a>
+<nav class="white darken-4 grey-text text-darken-4" role="navigation">
+    <div class="nav-wrapper">
 
-            <ul class="right hide-on-med-and-down">
+        <a id="logo-container" href="<%=NSDConstants.HOST%>" class="brand-logo "><img src="/img/logo.png"></a>
+        <a href="#" data-activates="nav-mobile" class="button-collapse green-text text-darken-3"><i
+                class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
 
-                <!--<li><a class="waves-effect waves-light black modal-trigger white-text" href="#modal3">Вход</a></li>-->
-                <li>
-                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/about"%>">О проекте</a>
-                </li>
-                <%--<li>--%>
-                <%--<a class="menu-elem" data-anchor="#capabilities">Возможности</a>--%>
-                <%--</li>--%>
-                <li>
-                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/certificates"%>">Сертификаты</a>
-                </li>
-                <li>
-                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/course"%>">Курсы</a>
-                </li>
-                <li>
-                    <a class="menu-elem" href="<%=NSDConstants.HOST+"/contacts"%>">Контакты</a>
-                </li>
-                <li><a href="#modal2"
-                       class="menu-elem modal-trigger waves-effect waves-light btn white-text green darken-3">Регистрация</a>
-                </li>
-                <li><a href="#modal3"
-                       class="menu-elem modal-trigger waves-effect waves-light orange btn white-text darken-3">Вход</a>
-                </li>
-
-            </ul>
+            <!--<li><a class="waves-effect waves-light black modal-trigger white-text" href="#modal3">Вход</a></li>-->
+            <li>
+                <a class="menu-elem" href="<%=NSDConstants.HOST+"/about"%>">О проекте</a>
+            </li>
+            <%--<li>--%>
+            <%--<a class="menu-elem" data-anchor="#capabilities">Возможности</a>--%>
+            <%--</li>--%>
+            <li>
+                <a class="menu-elem" href="<%=NSDConstants.HOST+"/certificates"%>">Сертификаты</a>
+            </li>
+            <li>
+                <a class="menu-elem" href="<%=NSDConstants.HOST+"/course"%>">Курсы</a>
+            </li>
+            <li>
+                <a class="menu-elem" href="<%=NSDConstants.HOST+"/contacts"%>">Контакты</a>
+            </li>
 
 
 
+            <%
+                if(!(token.equals(""))||!token.isEmpty()){
+            %>
+            <%= "\n" +
+                    "                <li><a href=\"+\"NSDConstants.HOST+\"/logout\"\" class=\"menu-elem waves-effect waves-light red btn white-text darken-3\" >Выход</a></li>\n"%><%
+        }else{
 
-            <ul id="nav-mobile" class="side-nav">
-                <li><a href="#">Navbar Link</a></li>
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse green-text text-darken-3"><i
-                    class="material-icons">menu</i></a>
-        </div>
-    </nav>
-</div>
+        %><%=" <li><a href=\"#modal2\"\n" +
+                "                       class=\"menu-elem modal-trigger waves-effect waves-light btn white-text green darken-3\">Регистрация</a>\n" +
+                "                </li>\n" +
+                "                <li><a href=\"#modal3\"\n" +
+                "                       class=\"menu-elem modal-trigger waves-effect waves-light orange btn white-text darken-3\">Вход</a>\n" +
+                "                </li>"%><%
+
+            }
+        %>
+
+        </ul>
+
+        <ul class="side-nav" id="nav-mobile">
+
+            <!--<li><a class="waves-effect waves-light black modal-trigger white-text" href="#modal3">Вход</a></li>-->
+            <li>
+                <a class="menu-elem" href="<%=NSDConstants.HOST+"/about"%>">О проекте</a>
+            </li>
+            <%--<li>--%>
+            <%--<a class="menu-elem" data-anchor="#capabilities">Возможности</a>--%>
+            <%--</li>--%>
+            <li>
+                <a class="menu-elem" href="<%=NSDConstants.HOST+"/certificates"%>">Сертификаты</a>
+            </li>
+            <li>
+                <a class="menu-elem" href="<%=NSDConstants.HOST+"/course"%>">Курсы</a>
+            </li>
+            <li>
+                <a class="menu-elem" href="<%=NSDConstants.HOST+"/contacts"%>">Контакты</a>
+            </li>
+
+
+
+            <%
+                if(!(token.equals(""))||!token.isEmpty()){
+            %>
+            <%= "\n" +
+                    "                <li><a href=\"+\"NSDConstants.HOST+\"/logout\"\" class=\"menu-elem waves-effect waves-light red btn white-text darken-3\" >Выход</a></li>\n"%><%
+        }else{
+
+        %><%=" <li><a href=\"#modal2\"\n" +
+                "                       class=\"menu-elem modal-trigger waves-effect waves-light btn white-text green darken-3\">Регистрация</a>\n" +
+                "                </li>\n" +
+                "                <li><a href=\"#modal3\"\n" +
+                "                       class=\"menu-elem modal-trigger waves-effect waves-light orange btn white-text darken-3\">Вход</a>\n" +
+                "                </li>"%><%
+
+            }
+        %>
+
+        </ul>
+
+
+
+    </div>
+</nav>
 
 <div class="parallax-container valign-wrapper col s12">
     <div class="section no-pad-bot">
