@@ -502,8 +502,8 @@
     <div class="section no-pad-bot">
         <div class="container valign">
 
-            <h1 class="header center orange-text text-darken-3">Doctrado</h1>
-            <div class="row center">
+            <h1 class="center orange-text text-darken-3 ">Doctrado</h1>
+            <div class="row center hide-on-small-only">
                 <h5 class="header col s12 light white-text ">Обретай новые знания сейчас!</h5>
 
                 <h5 class="header col s12 light white-text ">Вместе с Doctrado.</h5>
