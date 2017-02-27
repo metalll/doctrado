@@ -143,8 +143,11 @@
 <body>
 
 
-
-<div class="navbar-fixed">
+<% if(request.getHeader("User-Agent").indexOf("Mobile") != -1) {
+    //you're in mobile land
+%>
+<div class="navbar-fixed ">
+  <%  }  %>
     <nav class="white darken-4 grey-text text-darken-4" role="navigation">
         <div class="nav-wrapper">
 
@@ -235,7 +238,12 @@
 
         </div>
     </nav>
+    <% if(request.getHeader("User-Agent").indexOf("Mobile") != -1) {
+        //you're in mobile land
+    %>
 </div>
+        <%  }  %>
+
 <div class="container">
 <p></p>
 <div class="row">
