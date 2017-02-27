@@ -190,7 +190,7 @@
 
             </ul>
 
-            <ul class="side-nav" id="mobile-demo">
+            <ul class="side-nav" id="nav-mobile">
 
                 <!--<li><a class="waves-effect waves-light black modal-trigger white-text" href="#modal3">Вход</a></li>-->
                 <li>
@@ -230,9 +230,7 @@
 
             </ul>
 
-            <ul id="nav-mobile" class="side-nav">
-                <li><a href="<%=NSDConstants.HOST%>">Navbar Link</a></li>
-            </ul>
+
             <a href="#" data-activates="nav-mobile" class="button-collapse green-text text-darken-3"><i
                     class="material-icons">menu</i></a>
         </div>
