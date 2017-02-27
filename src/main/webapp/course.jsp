@@ -12,6 +12,7 @@
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="database.DB" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
 
@@ -33,10 +34,10 @@
     // String id = paramMap.get("id")[0];
     ArrayList<String> images = new ArrayList<String>();
     ArrayList<String> author = new ArrayList<String>();
-    final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
+    final String databaseUrl = DB.databaseUrl;
     //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
-    final String userName = "adminsBmIZAN";
-    final String password = "qIqWymbbb-hk";
+    final String userName = DB.databaseUrl;
+    final String password = DB.password;
     Connection conn = null;
     Statement stmt = null;
     String uToken = null;
@@ -266,7 +267,7 @@
         input.oninput = function(){
             $.ajax({
                 type: 'post',
-                url: 'https://doctrado-sviasy.rhcloud.com/courseQuery',
+                url: '<%=NSDConstants.HOST+"/courseQuery"%>',
                 data: {
                     q:input.value
                 }    ,
