@@ -529,7 +529,7 @@
 
         <!--   Icon Section   -->
         <div class="row">
-            <div class="col s12 m4">
+            <div class="col s4 m4 l4">
                 <div class="icon-block">
                     <h2 class="center black-text"><i class="material-icons green-text text-darken-3">schedule</i></h2>
                     <h5 class="center">Быстро и удобно</h5>
@@ -539,7 +539,7 @@
                 </div>
             </div>
 
-            <div class="col s12 m4">
+            <div class="col s4 m4 l4">
                 <div class="icon-block">
                     <h2 class="center black-text"><i class="material-icons green-text text-darken-3">group_work</i>
                     </h2>
@@ -549,7 +549,7 @@
                 </div>
             </div>
 
-            <div class="col s12 m4">
+            <div class="col s4 m4 l4">
                 <div class="icon-block">
                     <h2 class="center black-text"><i class="material-icons green-text text-darken-3">work</i></h2>
                     <h5 class="center">Приступай к работе</h5>
