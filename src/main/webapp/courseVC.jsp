@@ -373,13 +373,12 @@ user-select: none;
             "            <br>\n" +
             "            <div class=\"row col s12\">\n" +
             "\n" +
-            "           <div class=\"col center center-align s4\"> <a href=\"javascript:void(0);\" id=\"input\" onclick=\"func" + themes.get(i).get(4) + "();\"\n" +
+            "           <div class=\"col center center-align s6 m6 l6\"> <a href=\"javascript:void(0);\" id=\"input\" onclick=\"func" + themes.get(i).get(4) + "();\"\n" +
             "                                                       class=\"menu-elem waves-effect center center-align green darken-3 waves-light btn white-text\"\n" +
             "           >Сохранить изменения</a></div>\n" +
-            "                <div class=\"col center center-align s4\">   <a href=\"javascript:void(0);\"" +
+            "                <div class=\"col center center-align s6 m6 l6\">   <a href=\"javascript:void(0);\"" +
             "                                                              class=\"menu-elem  waves-effect center center-align red darken-3 waves-light btn white-text\" onclick=\"del" + themes.get(i).get(4) + "();\">Удалить тему</a></div>\n" +
-            "                <div class=\"col center center-align s4\">   <a href=\"#\"\n" +
-            "                                                              class=\"menu-elem waves-effect center center-align orange darken-3 waves-light btn white-text\">Тест темы</a> </div>\n" +
+            "              "+
             "            </div>\n" +
             "\n" +
             "\n" +
