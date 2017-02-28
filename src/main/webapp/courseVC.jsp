@@ -390,7 +390,7 @@ user-select: none;
 
         <div class="col s12 m8 offset-m2 l6 offset-l3">
             <div class="card-panel grey lighten-5 z-depth-1">
-                <div class="row valign-wrapper">
+                <div class="col s12 row valign-wrapper">
                     <div class="col s4 push-s1">
                         <img style="width:200px;height:200px;overflow:hidden"
                              src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath%>" alt=""
