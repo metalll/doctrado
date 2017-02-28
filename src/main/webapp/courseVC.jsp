@@ -400,9 +400,9 @@ user-select: none;
                     <div class="col s8">
                         <div class="row valign-wrapper">
 
-                  <h5>
+                  <h5 class="row col s12 center center-align ">
                       <%=strings.get(2) + ""%></h5><br>
-                     <h5> <%=strings.get(4)%></h5>
+                     <h5 class="row col s12 center center-align "> <%=strings.get(4)%></h5>
 
 
 
