@@ -405,22 +405,10 @@ user-select: none;
                      <h5> <%=strings.get(4)%></h5>
 
             <div class="row">
-    <div class="col s12">
-      <ul class="tabs">
-        <li class="tab col s3"><div class="chip">
-    <img src="img/it.png" alt="Contact Person">
-    Jane Doe
-  </div></li>
-
-        <li class="tab col s3"><div class="chip">
-    <img src="img/it.png" alt="Contact Person">
-    Jane Doe
-  </div></li>
-        <li class="tab col s3 "><div class="chip">
-    <img src="img/it.png" alt="Contact Person">
-    Jane Doe
-  </div></li>
-      </ul>
+    <div class="row col s12">
+        <div class="col s4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
+        <div class="col s4 center center-align chip"><img src="images/it.png" alt="Contact Person">Jane Doe</div>
+        <div class="col s4 center center-align chip"><img src="images/it.png" alt="Contact Person">Jane Doe</div>
     </div></div>
 
 
