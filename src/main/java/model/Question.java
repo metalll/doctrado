@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Question {
 
     public  String question= null;
-    public  String testUUID= null;
+    public  String questionUUID= null;
     public ArrayList<Answer>answers= null;
 
 }

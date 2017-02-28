@@ -15,6 +15,8 @@
 <%@ page import="java.util.Map" %>
 <%@ page import="auth_system.UUIDGenerator" %>
 <%@ page import="model.Test" %>
+<%@ page import="model.Question" %>
+<%@ page import="model.Answer" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
@@ -153,8 +155,54 @@
             }
         }
 
-        query = "SELECT * FROM ";
+        query = "SELECT * \n" +
+                "FROM  `test` WHERE `parentCourse` = '"+id+"' ";
 
+
+        rs = stmt.executeQuery(query);
+        while (rs.next()){
+
+            finalTest.testUUID = rs.getString(3);
+        }
+
+        if(finalTest.testUUID!=null){
+            query = "SELECT * FROM `question` WHERE `parentTest` = '"+finalTest.testUUID+"'";
+            rs = stmt.executeQuery(query);
+            while (rs.next()){
+
+            if(finalTest.questions==null){ finalTest.questions=new ArrayList<Question>(); }
+
+            Question question = new Question();
+            question.question = rs.getString(3);
+            question.questionUUID = rs.getString(4);
+
+            finalTest.questions.add(question);
+
+            }
+
+            for(int i=0;i<finalTest.questions.size();i++){
+
+              if(finalTest.questions.get(i).answers==null){ finalTest.questions.get(i).answers = new ArrayList<Answer>(); }
+
+              query = "SELECT * FROM `answer` WHERE `parentQuestion` = '"+finalTest.questions.get(i).questionUUID+"'";
+
+                rs = stmt.executeQuery(query);
+
+                while (rs.next()) {
+
+                    Answer answer = new Answer();
+                    answer.Answer = rs.getString(2);
+                    answer.QuestionUUID = rs.getString(4);
+                    answer.isTrue = rs.getInt(3);
+                    finalTest.questions.get(i).answers.add(answer);
+
+
+                }
+            }
+
+
+
+        }
 
 
 
@@ -254,6 +302,38 @@
     <%}%>
 
 </head>
+
+<div id="testModal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>Редактирование Теста</h4>
+
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+        </ul>
+
+
+
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action waves-effect waves-green btn-flat ">Применить изменения</a>
+    </div>
+</div>
+
+
+
+
+
 <% if(iAmAuthor){ %>
    <body>
 <%}else{%>
@@ -438,7 +518,7 @@ user-select: none;
             "    </a>\n" +
             "    </div>"%>
     <div class="row col s12 center center-align">
-        <a href="javascript:void(0);" onclick="addTest()" class="col s12 waves-effect center center-align waves-light btn white-text orange darken-3">Итоговый тест</a>
+        <a href="#testModal" onclick="addTest()" class="col s12 waves-effect center modal-trigger center-align waves-light btn white-text orange darken-3">Итоговый тест</a>
     </div>
     <%
         }
@@ -459,6 +539,8 @@ user-select: none;
             onOpen: function(el) { alert('Open'); }, // Callback for Collapsible open
             onClose: function(el) { alert('Closed'); } // Callback for Collapsible close
         });
+
+        $('.modal').modal();
     });
 
     function addTheme() {
