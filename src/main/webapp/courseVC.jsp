@@ -278,14 +278,12 @@
     <title>Doctrado</title>
 
     <link rel="shortcut icon" href="https://doctrado.me/img/favicon.ico">
-    <link rel="stylesheet" href="./NSDcss/login.css">
-
-
-    <link href="./css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="./css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
     <% if(!iAmAuthor){ %>
     <script type="text/javascript">
@@ -303,7 +301,7 @@
 
 </head>
 
-<div id="testModal" class="modal modal-fixed-footer">
+<div id="test-dialog" class="modal modal-fixed-footer">
     <div class="modal-content">
         <h4>Редактирование Теста</h4>
 
@@ -348,7 +346,7 @@ user-select: none;
 %>
 
 
-<div class="navbar-fixed">
+
     <nav class="white darken-4 grey-text text-darken-4" role="navigation">
         <div class="nav-wrapper container">
 
@@ -386,7 +384,7 @@ user-select: none;
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
         </div>
     </nav>
-</div>
+
 <div class="container">
 
 
@@ -518,7 +516,7 @@ user-select: none;
             "    </a>\n" +
             "    </div>"%>
     <div class="row col s12 center center-align">
-        <a href="#testModal" class="col s12 waves-effect center modal-trigger center-align waves-light btn white-text orange darken-3">Итоговый тест</a>
+        <a href="#test-dialog" class="col s12 waves-effect center modal-trigger center-align waves-light btn white-text orange darken-3">Итоговый тест</a>
     </div>
     <%
         }
@@ -540,6 +538,12 @@ user-select: none;
             onClose: function(el) { alert('Closed'); } // Callback for Collapsible close
         });
 
+
+    });
+
+
+    $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal').modal();
     });
 
