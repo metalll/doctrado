@@ -388,8 +388,8 @@ user-select: none;
 <div class="container">
 
 
-        <div class="col s12 m8 offset-m2 l6 offset-l3">
-            <div class="card-panel grey lighten-5 z-depth-1">
+        <div class="col s12 m12 l12 ">
+            <div class="col s12 card-panel grey lighten-5 z-depth-1">
                 <div class="col s12 row valign-wrapper">
                     <div class="col s4 push-s1">
                         <img style="width:200px;height:200px;overflow:hidden"
@@ -408,11 +408,11 @@ user-select: none;
 
 
 
-                            <div class="row col s12 center center-align">
+
                                 <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
                                 <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
                                 <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
-                            </div>
+
               </span>
                         </div>
                     </div>
