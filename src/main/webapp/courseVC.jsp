@@ -401,7 +401,7 @@ user-select: none;
                         <div class="row valign-wrapper">
 
                   <h5 class="row col s12 center center-align ">
-                      <%=strings.get(2) + ""%></h5><br>
+                      <%=strings.get(2) + ""%></h5>
                      <h5 class="row col s12 center center-align "> <%=strings.get(4)%></h5>
 
 
