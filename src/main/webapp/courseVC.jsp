@@ -399,26 +399,23 @@ user-select: none;
 
                     <div class="col s8">
                         <div class="row valign-wrapper">
-
+    <span class="col s12 black-text center center-align ">
                   <h5 class="row col s12 center center-align ">
                       <%=strings.get(2) + ""%></h5>
                      <h5 class="row col s12 center center-align "> <%=strings.get(4)%></h5>
 
 
 
-
-
-
-                                <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
-                                <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
-                                <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
-
+</span>
 
                         </div>
                     </div>
                 </div>
 
 
+                <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
+                <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
+                <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
             </div>
         </div>
 
