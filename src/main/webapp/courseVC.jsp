@@ -404,12 +404,12 @@ user-select: none;
                       <%=strings.get(2) + ""%></h5><br>
                      <h5> <%=strings.get(4)%></h5>
 
-            <div class="row">
-    <div class="row col s12">
+
+    <div class="row col s12 center center-align">
         <div class="col s4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
         <div class="col s4 center center-align chip"><img src="images/it.png" alt="Contact Person">Jane Doe</div>
         <div class="col s4 center center-align chip"><img src="images/it.png" alt="Contact Person">Jane Doe</div>
-    </div></div>
+    </div>
 
 
               </span>
