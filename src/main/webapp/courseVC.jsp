@@ -412,7 +412,7 @@ user-select: none;
                     </div>
                 </div>
 
-                <div class="container col s12">
+                <div class="container col s12 row">
                     <div class="col s4 m4 l4"><div class="chip"> <img src="img/it.png" alt="Contact Person">Jane Doe</div></div>
                     <div class="col s4 m4 l4"><div class="chip"> <img src="img/it.png" alt="Contact Person">Jane Doe</div></div>
                     <div class="col s4 m4 l4"><div class="chip"> <img src="img/it.png" alt="Contact Person">Jane Doe</div></div>
