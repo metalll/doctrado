@@ -391,13 +391,13 @@ user-select: none;
         <div class="col s12 m12 l12 ">
             <div class="col s12 card-panel grey lighten-5 z-depth-1">
                 <div class="col s12 row valign-wrapper">
-                    <div class="col s4 push-s1">
+                    <div class="col s5">
                         <img style="width:200px;height:200px;overflow:hidden"
                              src="<%=NSDConstants.HOST+"/uploadDocument?path="+avatarPath%>" alt=""
                              class=" responsive-img"> <!-- notice the "circle" class -->
                     </div>
 
-                    <div class="col s8">
+                    <div class="col s7">
                         <div class="row valign-wrapper">
     <span class="col s12 black-text center center-align ">
                   <h5 class="row col s12 center center-align ">
