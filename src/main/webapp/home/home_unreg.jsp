@@ -438,7 +438,7 @@
                 if(!(token.equals(""))||!token.isEmpty()){
             %>
             <%= "\n" +
-                    "                <li><a href=\"+\"NSDConstants.HOST+\"/logout\"\" class=\"menu-elem waves-effect waves-light red btn white-text darken-3\" >Выход</a></li>\n"%><%
+                    "                <li><a href=\""+NSDConstants.HOST+"/logout\" class=\"menu-elem waves-effect waves-light red btn white-text darken-3\">Выход</a></li>\n"%><%
         }else{
 
         %><%=" <li><a href=\"#modal2\"\n" +

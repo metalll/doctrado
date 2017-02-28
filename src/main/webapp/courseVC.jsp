@@ -13,6 +13,7 @@
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="auth_system.UUIDGenerator" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
@@ -238,7 +239,7 @@
     <%}%>
 
 </head>
-<% if(!iAmAuthor){ %>
+<% if(iAmAuthor){ %>
    <body>
 <%}else{%>
 <body style="
@@ -420,6 +421,9 @@ user-select: none;
             "                class=\"material-icons\">add</i>\n" +
             "    </a>\n" +
             "    </div>"%>
+    <div class="row col s12 center center-align">
+        <a href="javascript:void(0);" onclick="addTest()" class="col s12 waves-effect center center-align waves-light btn white-text orange darken-3"></a>
+    </div>
     <%
         }
     %>
@@ -453,11 +457,25 @@ user-select: none;
             success: function (data) {
                 window.location.reload();
             }
-        })
+        });
 
 
     }
 
+
+    function addTest() {
+        $.ajax({
+           type: 'post',
+            url: '<%=NSDConstants.HOST + "/addTest"%>',
+            data:{
+                parent: '<%=id%>',
+                uuid: '<%=UUIDGenerator.Generate()%>'
+            },
+            success: function (data) {
+
+            }
+        });
+    }
 
     function call() {
 
