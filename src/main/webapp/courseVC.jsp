@@ -385,7 +385,7 @@ user-select: none;
         </div>
     </nav>
 
-
+<div class="container">
 
 
         <div class="col s12 m8 offset-m2 l6 offset-l3">
@@ -397,7 +397,7 @@ user-select: none;
                              class=" responsive-img"> <!-- notice the "circle" class -->
                     </div>
 
-                    <div class="col s7">
+                    <div class="col s8">
                         <div class="row valign-wrapper">
               <span class="black-text center center-align ">
                   <h5>
@@ -420,7 +420,7 @@ user-select: none;
 
             </div>
         </div>
-
+</div>
 
 <script src="/js/tinymce/tinymce.min.js"></script>
 
