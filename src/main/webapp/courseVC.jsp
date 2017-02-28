@@ -422,7 +422,7 @@ user-select: none;
             "    </a>\n" +
             "    </div>"%>
     <div class="row col s12 center center-align">
-        <a href="javascript:void(0);" onclick="addTest()" class="col s12 waves-effect center center-align waves-light btn white-text orange darken-3"></a>
+        <a href="javascript:void(0);" onclick="addTest()" class="col s12 waves-effect center center-align waves-light btn white-text orange darken-3">Итоговый тест</a>
     </div>
     <%
         }
