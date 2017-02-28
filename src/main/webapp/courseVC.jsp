@@ -413,9 +413,9 @@ user-select: none;
                 </div>
 
                 <div class="container col s12 row">
-                    <div class="col s4 m4 l4 center-align"><span class="center center-align"><div class="chip center center-align"> <img src="img/it.png" alt="Contact Person">Jane Doe</div></span></div>
-                    <div class="col s4 m4 l4 center-align"><span class="center center-align"><div class="chip center center-align"> <img src="img/it.png" alt="Contact Person">Jane Doe</div></span></div>
-                    <div class="col s4 m4 l4 center-align"><span class="center center-align"><div class="chip center center-align"> <img src="img/it.png" alt="Contact Person">Jane Doe</div></span></div>
+                    <div class="col s4 m4 l4 center-align"><div class="center center-align"><div class="chip center center-align"> <img src="img/it.png" alt="Contact Person">Jane Doe</div></div></div>
+                    <div class="col s4 m4 l4 center-align"><div class="center center-align"><div class="chip center center-align"> <img src="img/it.png" alt="Contact Person">Jane Doe</div></div></div>
+                    <div class="col s4 m4 l4 center-align"><div class="center center-align"><div class="chip center center-align"> <img src="img/it.png" alt="Contact Person">Jane Doe</div></div></div>
                 </div>
             </div>
         </div>
