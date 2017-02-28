@@ -399,7 +399,7 @@ user-select: none;
 
                     <div class="col s8">
                         <div class="row valign-wrapper">
-              <span class="black-text center center-align ">
+
                   <h5>
                       <%=strings.get(2) + ""%></h5><br>
                      <h5> <%=strings.get(4)%></h5>
@@ -413,7 +413,7 @@ user-select: none;
                                 <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
                                 <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
 
-              </span>
+
                         </div>
                     </div>
                 </div>
