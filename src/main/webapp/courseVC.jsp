@@ -14,6 +14,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="auth_system.UUIDGenerator" %>
+<%@ page import="model.Test" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
@@ -39,6 +40,17 @@
         if (cookie.getName().equals(NSDConstants.uTypeCookie))
             uType = cookie.getValue();
     }
+
+    Test finalTest = new Test();
+
+
+
+
+
+
+
+
+
 
     String dQuery = "";
     String query = "SELECT * FROM `course` WHERE `id` = \'" + id + "\'";
@@ -140,6 +152,9 @@
                 }
             }
         }
+
+        query = "SELECT * FROM ";
+
 
 
 
@@ -318,6 +333,7 @@ user-select: none;
     <img src="img/it.png" alt="Contact Person">
     Jane Doe
   </div></li>
+          &nbsp;
         <li class="tab col s3"><div class="chip">
     <img src="img/it.png" alt="Contact Person">
     Jane Doe
