@@ -405,14 +405,15 @@ user-select: none;
                      <h5> <%=strings.get(4)%></h5>
 
 
-    <div class="row col s12 center center-align">
-        <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
-        <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
-        <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
-    </div>
+
 
 
               </span>
+                            <div class="row col s12 center center-align">
+                                <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
+                                <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
+                                <div class="col s4 m4 l4 center center-align chip"><img src="img/it.png" alt="Contact Person">Jane Doe</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -420,6 +421,7 @@ user-select: none;
 
             </div>
         </div>
+
 </div>
 
 <script src="/js/tinymce/tinymce.min.js"></script>
