@@ -518,7 +518,7 @@ user-select: none;
             "    </a>\n" +
             "    </div>"%>
     <div class="row col s12 center center-align">
-        <a href="#testModal" onclick="addTest()" class="col s12 waves-effect center modal-trigger center-align waves-light btn white-text orange darken-3">Итоговый тест</a>
+        <a href="#testModal" class="col s12 waves-effect center modal-trigger center-align waves-light btn white-text orange darken-3">Итоговый тест</a>
     </div>
     <%
         }
