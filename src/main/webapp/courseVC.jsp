@@ -303,9 +303,22 @@
 
 <div id="test-dialog" class="modal modal-fixed-footer">
     <div class="modal-content">
-        <h4>Редактирование Теста</h4>
+        <h6>Редактирование Теста</h6>
+
+        <% if(finalTest.questions.size()>0){ %>
+
 
         <ul class="collapsible" data-collapsible="accordion">
+
+           <%for(int i=0;i<finalTest.questions.size();i++){
+           %>   <li>
+                <div class="collapsible-header">Тест<%=" "+(i+1)%></div>
+                <div class="collabsible-body">
+
+
+                </div>
+                </li>
+           <% } %>
             <li>
                 <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
@@ -320,7 +333,7 @@
             </li>
         </ul>
 
-
+        <%}%>
 
     </div>
     <div class="modal-footer">
@@ -522,7 +535,7 @@ user-select: none;
 
 
 
-    $(document).ready(function(){
+       $(document).ready(function(){
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal').modal();
 
