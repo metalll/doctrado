@@ -57,7 +57,8 @@ public class testController extends HttpServlet {
 
 
 
-
+        try{  Class.forName("com.mysql.jdbc.Driver"); }
+        catch(Exception e){ e.printStackTrace(); }
 
 
         try {
