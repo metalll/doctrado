@@ -78,8 +78,8 @@ public class updateCourseContent extends HttpServlet {
         if (newLen != length)
             s = new String(oldChars, 0, newLen);
 
-        s = s.replaceAll("\"","\\\\\"");
-        s = s.replaceAll("\'","\\\\\'");
+        s = s.replaceAll("\"","\\\"");
+        s = s.replaceAll("\'","\\\'");
 
         sun.misc.BASE64Encoder encoder = new sun.misc.BASE64Encoder();
 
