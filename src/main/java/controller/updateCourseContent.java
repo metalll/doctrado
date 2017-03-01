@@ -77,7 +77,7 @@ public class updateCourseContent extends HttpServlet {
             //   completion.afterOperation(null);
         } catch (SQLException e) {
             response.setStatus(HttpServletResponse.SC_OK);
-            response.getWriter().write(e.getLocalizedMessage());
+            response.getWriter().write(e.getLocalizedMessage() + "\n "+s);
             response.getWriter().flush();
             response.getWriter().close();
 
