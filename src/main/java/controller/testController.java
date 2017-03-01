@@ -112,18 +112,20 @@ public class testController extends HttpServlet {
                     }
                 }
 
+                Gson gson = new Gson();
+                String jsonInString = gson.toJson(finalTest);
+
+                response.setStatus(HttpServletResponse.SC_OK);
+                response.getWriter().write(jsonInString);
+                response.getWriter().flush();
+                response.getWriter().close();
+
+
 
             }
         }catch (Exception e){
         }
         finally {
-            Gson gson = new Gson();
-            String jsonInString = gson.toJson(finalTest);
-
-            response.setStatus(HttpServletResponse.SC_OK);
-            response.getWriter().write(jsonInString);
-            response.getWriter().flush();
-            response.getWriter().close();
 
 
         }
