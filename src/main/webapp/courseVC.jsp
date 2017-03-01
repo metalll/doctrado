@@ -491,9 +491,10 @@ user-select: none;
             "    </li>"%>
         <%
         } else {
+            sun.misc.BASE64Decoder decoder = new sun.misc.BASE64Decoder();
         %><%=
     "  <div class=\"collapsible-body\">  <span>\n" +
-            themes.get(i).get(2) +
+            new String(decoder.decodeBuffer(themes.get(i).get(2)),"UTF-8") +
             "        </span></div>\n" +
             "    </li>\n"
     %><%
