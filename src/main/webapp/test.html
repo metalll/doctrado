@@ -26,6 +26,10 @@
             height: 200px;
         }
 
+
+
+        .test-modal { width: 75% !important ; max-height: 100% !important ; overflow-y: hidden !important ;}
+
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -44,29 +48,103 @@
 
 
 
-<div id="test-dialog" class="modal modal-fixed-footer">
-    <div class="modal-content">
-        <h6>Редактирование Теста</h6>
+<div id="test-dialog" class="modal modal-fixed-footer test-modal">
+    <div class="modal-content" id="test-container">
+        <h6 class="center center-align">Редактирование Теста</h6>
 
 
 
-        <ul class="collapsible" data-collapsible="accordion">
+        <ul class="collapsible" data-collapsible="accordion" id="test-ul">
 
 
-            <li>
+            <li id = "q1">
                 <div class="collapsible-header center center-align">Вопрос 1</div>
-                <div class="collapsible-body center center-align"><span>  </span></div>
+                <div class="collapsible-body">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="question-name-1" type="text" class="validate">
+                            <label for="question-name-1">Вопрос</label>
+                        </div>
+                    </div>
+
+                    <table class="striped responsive-table centered" id="answer-table-1">
+                        <thead>
+                        <tr>
+                            <th data-field="answer-name">Ответ</th>
+                            <th data-field="answer-is-true">Правильный ответ</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div class="left-align input-field col s12">
+                                <input id="answer-name-2" type="text" class="validate">
+                                <label for="answer-name-2">Ответ</label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="switch center center-align">
+                                <label>
+                                    Нет
+                                    <input type="checkbox">
+                                    <span class="lever"></span>
+                                    Да
+                                </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="left-align  input-field col s12">
+                                    <input id="answer-name-3" type="text" class="validate">
+                                    <label for="answer-name-3">Ответ</label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class=" switch center center-align">
+                                    <label>
+                                        Нет
+                                        <input type="checkbox">
+                                        <span class="lever"></span>
+                                        Да
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="left-align  input-field col s12">
+                                    <input id="answer-name-4" type="text" class="validate">
+                                    <label for="answer-name-4">Ответ</label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="switch center center-align">
+                                    <label>
+                                        Нет
+                                        <input type="checkbox">
+                                        <span class="lever"></span>
+                                        Да
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="col s12 row" id="1" href = "javascript:void(0);" onclick = "addAnswer(this.id);"> <a class="btn col s12 center center-align">+</a></div>
+                </div>
             </li>
-            <li>
+            <li id = "q2">
                 <div class="collapsible-header center center-align">Вопрос 2</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
             </li>
-            <li>
+            <li id = "q3">
                 <div class="collapsible-header center center-align">Вопрос 3</div>
                 <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
             </li>
         </ul>
-        <a class="btn"></a>
+        <div class="col s12 row" href = "javascript:void(0);" onclick = "addTest();"> <a class="btn col s12 center center-align">+</a></div>
 
     </div>
     <div class="modal-footer">
@@ -86,6 +164,27 @@
 
 </body>
 <script>
+var GlobalChildNodesSize = 1;
+function addTest() {
+    var test_container= document.getElementById('test-ul');
+    GlobalChildNodesSize = test_container.childElementCount;
+    $("#test-container ul").append('<li id = "q'+ (test_container.childElementCount+1)+'"><div class="collapsible-header center center-align">Вопрос '+ (test_container.childElementCount+1)+'</div><div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div></li>')
+
+}
+
+
+function addAnswer(sender_id) {
+  //  alert(sender_id);
+
+   var table = document.getElementById('answer-table-'+sender_id);
+    $('#'+table.id+' tr:last').after('<tr><td><div class="left-align  input-field col s12"><input id="answer-name-'+table.childElementCount+1+'" type="text" class="validate"><label for="answer-name-'+table.childElementCount+1+'">Ответ</label></div></td><td><div class=" switch center center-align"><label>Нет<input type="checkbox"><span class="lever"></span>Да</label></div></td></tr>');
+
+   alert(table.classList);
+}
+
+
+
+
 
 
 
