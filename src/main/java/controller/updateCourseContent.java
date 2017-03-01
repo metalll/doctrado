@@ -76,9 +76,11 @@ public class updateCourseContent extends HttpServlet {
             stmt.execute("UPDATE  `doctrado`.`subCourse` SET  `contentOfCourse` =  '"+s+"' WHERE  `id` = '"+id+"';");
             //   completion.afterOperation(null);
         } catch (SQLException e) {
-            er = e.getLocalizedMessage();
-            er += e.getSQLState();
-            e.printStackTrace();
+            response.setStatus(HttpServletResponse.SC_OK);
+            response.getWriter().write(e.getLocalizedMessage());
+            response.getWriter().flush();
+            response.getWriter().close();
+
         }
         finally {
             if(stmt != null) try {stmt.close();} catch (Exception e){}
