@@ -80,8 +80,8 @@ public class updateCourseContent extends HttpServlet {
         if (newLen != length)
             s = new String(oldChars, 0, newLen);
 
-        String s1 = s;
-        s = forJSON(s1);
+//        String s1 = s;
+//        s = forJSON(s1);
 
         sun.misc.BASE64Encoder encoder = new sun.misc.BASE64Encoder();
 
@@ -134,31 +134,6 @@ public class updateCourseContent extends HttpServlet {
 
     }
 
-    public static String forJSON(String input) {
-        if (input == null || input.isEmpty()) {
-            return "";
-        }
-        int len = input.length();
-        // сделаем небольшой запас, чтобы не выделять память потом
-        final StringBuilder result = new StringBuilder(len + len / 4);
-        final StringCharacterIterator iterator = new StringCharacterIterator(input);
-        char ch = iterator.current();
-        while (ch != CharacterIterator.DONE) {
-            if (ch == '\n') {
-                result.append("\\n");
-            } else if (ch == '\r') {
-                result.append("\\r");
-            } else if (ch == '\'') {
-                result.append("\\\'");
-            } else if (ch == '"') {
-                result.append("\\\"");
-            } else {
-                result.append(ch);
-            }
-            ch = iterator.next();
-        }
-        return result.toString();
-    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
