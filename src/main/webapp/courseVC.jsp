@@ -419,7 +419,7 @@ user-select: none;
     <span class="col s12 black-text center center-align ">
                   <h5 class="row col s12 center center-align ">
                       <%=strings.get(2) + ""%></h5>
-                     <h5 class="row col s12 center center-align "> <%=strings.get(4)%></h5>
+                     <h6 class="row col s12 center center-align "> <%=strings.get(4)%></h6>
 
 
 
