@@ -30,6 +30,8 @@ public class updateCourseContent extends HttpServlet {
     private String er="";
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+
         Map<String,String[]>paramMap = request.getParameterMap();
         String id = paramMap.get("id")[0];
         String[] content = paramMap.get("content");

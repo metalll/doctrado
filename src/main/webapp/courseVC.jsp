@@ -19,8 +19,9 @@
 <%@ page import="model.Answer" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
 
+<%
+    request.setCharacterEncoding("UTF-8");
     boolean iAmAuthor = false;
     ArrayList<String> tempList = new ArrayList<String>();
     Map<String, String[]> paramMap = request.getParameterMap();
@@ -687,6 +688,7 @@ user-select: none;
         %><%="  tinymce.init({\n" +
 "        selector: 'textarea',\n" +
 "        height: 500,\n" +
+"  entity_encoding : \"raw\""+
 "        theme: 'modern',\n" +
 "        plugins: [\n" +
 "            'advlist autolink lists link image charmap print preview hr anchor pagebreak',\n" +
