@@ -86,9 +86,8 @@
 
 
 var GlobalChildNodesSize = 1;
-var test = new Object();
-test.UUID = getUUID();
-test.questions = [];
+var test ;
+var stringTest = '';
 function deleteAnswer() {
 
 
@@ -102,11 +101,17 @@ function deleteQuestion() {
 
 }
 
+
+
 function loadingTest(ltest) {
-    for(var i=0;i<test.questions.length;i++){
 
 
-        addTest(test.questions[i],q)
+
+
+    for(var i=0;i<ltest.questions.length;i++){
+        //https://doctrado-sviasy.rhcloud.com/test?course=bd325b1e-5541-4906-bbaa-fe3e3275fb81
+
+        addTest(ltest.questions[i].question,ltest.questions[i].numeric,ltest.questions[i].answers);
 
 
     }
@@ -183,6 +188,15 @@ function addAnswer(sender_id) {
 $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
+
+    stringTest = '{"testUUID":"56ed6211-afbe-44ce-9ad3-cefc444a1bd8","questions":[{"question":"???? ??? ?? ????","questionUUID":"ef714c17-1e69-451e-b61f-a02e7f507bd2","answers":[{"QuestionUUID":"ef714c17-1e69-451e-b61f-a02e7f507bd2","Answer":"????","isTrue":0,"numeric":"1"}],"hasAnswers":0,"numeric":"1"},{"question":"???? ??? ?? ????","questionUUID":"1e75f7dc-fd31-4a07-9a31-168460719a25","answers":[{"QuestionUUID":"1e75f7dc-fd31-4a07-9a31-168460719a25","Answer":"?? ????","isTrue":1,"numeric":"1"},{"QuestionUUID":"1e75f7dc-fd31-4a07-9a31-168460719a25","Answer":"?? ???? ????","isTrue":1,"numeric":"2"}],"hasAnswers":0,"numeric":"2"}]}';
+
+    test = JSON.parse(stringTest);
+    console.log(test);
+
+
+
+
 
 }); </script>
 

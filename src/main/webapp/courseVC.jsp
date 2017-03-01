@@ -305,7 +305,7 @@
     <div class="modal-content">
         <h6>Редактирование Теста</h6>
 
-        <% if(finalTest.questions==null){ %>
+        <% if(finalTest.questions!=null){ %>
 
 
         <ul class="collapsible" data-collapsible="accordion">
