@@ -688,7 +688,7 @@ user-select: none;
         %><%="  tinymce.init({\n" +
 "        selector: 'textarea',\n" +
 "        height: 500,\n" +
-"  entity_encoding : \"raw\""+
+"  entity_encoding : \"raw\","+
 "        theme: 'modern',\n" +
 "        plugins: [\n" +
 "            'advlist autolink lists link image charmap print preview hr anchor pagebreak',\n" +
