@@ -29,8 +29,12 @@ public class updateCourseContent extends HttpServlet {
     protected Connection conn = null;
     private String er="";
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+
+
+
         response.setCharacterEncoding("UTF-8");
+
+
 
         Map<String,String[]>paramMap = request.getParameterMap();
         String id = paramMap.get("id")[0];
@@ -43,8 +47,17 @@ public class updateCourseContent extends HttpServlet {
 
         }
 
+        String cEnc = request.getCharacterEncoding();
 
-        String s = formattedContent;
+        String s = new String(formattedContent.getBytes("UTF-8"),cEnc);
+
+
+
+
+      //  String s = formattedContent;
+
+
+
 
         int length = s.length();
         char[] oldChars = (length < 1024) ? buf : new char[length];
