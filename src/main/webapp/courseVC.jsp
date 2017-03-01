@@ -815,7 +815,7 @@ user-select: none;
       for(int it=0;it<themes.size();it++){
            sun.misc.BASE64Decoder decoder = new sun.misc.BASE64Decoder();
     %>
-        tinymce.get('content<%= themes.get(it).get(4) %>').setContent('<%= new String(decoder.decodeBuffer(themes.get(it).get(2)),"UTF-8")%>');
+        tinymce.get('content<%= themes.get(it).get(4) %>').setContent("<%= new String(decoder.decodeBuffer(themes.get(it).get(2)),"UTF-8")%>");
 
         <%
       }
