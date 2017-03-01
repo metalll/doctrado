@@ -124,6 +124,10 @@ public class testController extends HttpServlet {
 
             }
         }catch (Exception e){
+            response.setStatus(HttpServletResponse.SC_OK);
+            response.getWriter().write(e.getLocalizedMessage());
+            response.getWriter().flush();
+            response.getWriter().close();
         }
         finally {
 
