@@ -29,7 +29,7 @@ public class updateCourseContent extends HttpServlet {
     protected Connection conn = null;
     private String er="";
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        response.setCharacterEncoding("UTF-8");
 
 
        // response.setCharacterEncoding("UTF-8");
