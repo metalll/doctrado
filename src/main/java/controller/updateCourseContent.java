@@ -50,7 +50,7 @@ public class updateCourseContent extends HttpServlet {
 
         // String cEnc = request.getCharacterEncoding();
 
-      String s = new String(formattedContent.getBytes("UTF-8"),"CP1252");
+      String s = new String(formattedContent.getBytes("CP1251"),"UTF-8");
 
 
 
