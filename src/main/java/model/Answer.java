@@ -6,5 +6,6 @@ package model;
 public class Answer {
     public  String QuestionUUID= null;
     public  String Answer= null ;
-    public  int isTrue = -1;
+    public  int isTrue = 0;
+    public String numeric = null;
 }

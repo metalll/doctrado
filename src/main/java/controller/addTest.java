@@ -1,6 +1,6 @@
 package controller;
 
-import auth_system.UUIDGenerator;
+
 import com.mysql.jdbc.Statement;
 import database.DB;
 

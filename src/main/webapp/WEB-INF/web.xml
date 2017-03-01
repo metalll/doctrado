@@ -15,6 +15,15 @@
         <url-pattern>/validate_user</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>test</servlet-name>
+        <servlet-class>controller.testController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>test</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+
 
     <servlet>
         <servlet-name>authorizator</servlet-name>

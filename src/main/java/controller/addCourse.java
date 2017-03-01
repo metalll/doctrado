@@ -1,10 +1,7 @@
 package controller;
 
-import NSD.NSDConstants;
 import auth_system.UUIDGenerator;
 import com.mysql.jdbc.Statement;
-import database.DBImage;
-import database.User.DBBaseUser;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

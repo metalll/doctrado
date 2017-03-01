@@ -10,5 +10,8 @@ public class Question {
     public  String question= null;
     public  String questionUUID= null;
     public ArrayList<Answer>answers= null;
+    public int hasAnswers = 0;
+    public String numeric = null;
+
 
 }
