@@ -20,8 +20,10 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+
 <%
     request.setCharacterEncoding("UTF-8");
+
     boolean iAmAuthor = false;
     ArrayList<String> tempList = new ArrayList<String>();
     Map<String, String[]> paramMap = request.getParameterMap();

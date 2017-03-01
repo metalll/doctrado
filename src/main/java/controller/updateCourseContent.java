@@ -47,9 +47,10 @@ public class updateCourseContent extends HttpServlet {
 
         }
 
-       // String cEnc = request.getCharacterEncoding();
 
-      String s = formattedContent;
+        // String cEnc = request.getCharacterEncoding();
+
+      String s = new String(formattedContent.getBytes("CP1252"),"UTF-8");
 
 
 
@@ -91,6 +92,10 @@ public class updateCourseContent extends HttpServlet {
             stmt.execute("UPDATE  `doctrado`.`subCourse` SET  `contentOfCourse` =  '"+s+"' WHERE  `id` = '"+id+"';");
             //   completion.afterOperation(null);
         } catch (SQLException e) {
+
+
+
+
             response.setStatus(HttpServletResponse.SC_OK);
             response.getWriter().write(e.getLocalizedMessage() + "\n "+s);
             response.getWriter().flush();
