@@ -79,6 +79,10 @@ public class updateCourseContent extends HttpServlet {
             s = new String(oldChars, 0, newLen);
 
 
+        sun.misc.BASE64Encoder encoder = new sun.misc.BASE64Encoder();
+
+        String base64 = encoder.encode(s.getBytes());
+
         try{
             Class.forName("com.mysql.jdbc.Driver");  }
         catch(Exception e){ e.printStackTrace(); }
@@ -93,9 +97,10 @@ public class updateCourseContent extends HttpServlet {
         }
         catch (Exception e){}
         try {
-            stmt.execute("UPDATE  `doctrado`.`subCourse` SET  `contentOfCourse` =  '"+s+"' WHERE  `id` = '"+id+"';");
+            stmt.execute("UPDATE  `doctrado`.`subCourse` SET  `contentOfCourse` =  '"+base64+"' WHERE  `id` = '"+id+"';");
             //   completion.afterOperation(null);
         } catch (SQLException e) {
+
 
 
 
