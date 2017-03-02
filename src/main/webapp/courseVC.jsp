@@ -6,18 +6,18 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="NSD.NSDConstants" %>
+<%@ page import="auth_system.UUIDGenerator" %>
 <%@ page import="com.mysql.jdbc.Statement" %>
+<%@ page import="model.Answer" %>
+<%@ page import="model.Question" %>
+<%@ page import="model.Test" %>
+<%@ page import="utils.StrFormatter" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.DriverManager" %>
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Map" %>
-<%@ page import="auth_system.UUIDGenerator" %>
-<%@ page import="model.Test" %>
-<%@ page import="model.Question" %>
-<%@ page import="model.Answer" %>
-<%@ page import="utils.StrFormatter" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -248,6 +248,14 @@
     <!-- CSS  -->
 
     <style>
+
+
+        .test-modal {
+            width: 75% !important;
+            max-height: 100% !important;
+            overflow-y: hidden !important;
+        }
+
         #background{
             position:absolute;
             z-index:0;
@@ -305,47 +313,23 @@
 
 </head>
 
-<div id="test-dialog" class="modal modal-fixed-footer">
-    <div class="modal-content">
-        <h6>Редактирование Теста</h6>
-
-        <% if(finalTest.questions!=null){ %>
+<div id="test-dialog" class="modal modal-fixed-footer test-modal">
+    <div class="modal-content" id="test-container">
+        <h6 class="center center-align">Редактирование Теста</h6>
 
 
-        <ul class="collapsible" data-collapsible="accordion">
-
-           <%for(int i=0;i<finalTest.questions.size();i++){
-           %>   <li>
-                <div class="collapsible-header">Тест<%=" "+(i+1)%></div>
-                <div class="collabsible-body">
+        <ul class="collapsible" data-collapsible="accordion" id="test-ul">
 
 
-                </div>
-                </li>
-           <% } %>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
         </ul>
-
-        <%}%>
+        <div class="col s12 row" href="javascript:void(0);" onclick="addTest();"><a
+                class="btn col s12 center center-align">+</a></div>
 
     </div>
     <div class="modal-footer">
         <a href="#!" class="modal-action waves-effect waves-green btn-flat ">Применить изменения</a>
     </div>
 </div>
-
-
 
 
 
@@ -430,9 +414,30 @@ user-select: none;
                 </div>
 
                 <div class="col s12 row">
-                    <div class="col s12 m4 l4 center-align"><div class="center center-align"><div class="chip center center-align"> <img src="img/it.png" alt="Contact Person">Jane Doe</div></div></div>
-                    <div class="col s12 m4 l4 center-align"><div class="center center-align"><div class="chip center center-align"> <img src="img/it.png" alt="Contact Person">Jane Doe</div></div></div>
-                    <div class="col s12 m4 l4 center-align"><div class="center center-align"><div class="chip green darken-3 center center-align"> <img src="img/it.png" alt="Contact Person">Jane Doe</div></div></div>
+                    <div class="col s12 m4 l4 center-align">
+                        <div class="center center-align">
+                            <div class="chip  orange darken-3 white-text  center center-align"><img
+                                    src="http://www.navcesto.ru/upload/iblock/228/22812763d41b9cb278b0e7d8d669126f.jpg"
+                                    alt="Contact Person">ІТР
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m4 l4 center-align">
+                        <div class="center center-align">
+                            <div class="chip  green darken-3 white-text center center-align"><img
+                                    src="http://greenologia.ru/wp-content/uploads/2015/01/Kraski-360x236.jpg"
+                                    alt="Contact Person">Лако-краска
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m4 l4 center-align">
+                        <div class="center center-align">
+                            <div class="chip yellow darken-3 white-text center center-align"><img
+                                    src="https://skn-group.ru/upload/iblock/e2f/e2fb5963746f7dcbc743c6e68d561798.jpg"
+                                    alt="Contact Person">Промбез
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -538,9 +543,93 @@ user-select: none;
     });
 
 
+    function getUUID() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : r & 0x3 | 0x8;
+            return v.toString(16);
+        });
+
+    }
 
 
-       $(document).ready(function(){
+    var GlobalChildNodesSize = 1;
+    var test;
+    var stringTest = '';
+    function deleteAnswer() {
+
+
+    }
+
+    function deleteQuestion() {
+
+    }
+
+
+    function loadingTest(ltest) {
+
+
+        for (var i = 0; i < ltest.questions.length; i++) {
+            //https://doctrado-sviasy.rhcloud.com/test?course=bd325b1e-5541-4906-bbaa-fe3e3275fb81
+
+            addTest(ltest.questions[i].question, ltest.questions[i].numeric, ltest.questions[i].answers);
+
+
+        }
+    }
+
+    function addTest(questionText, numeric, answers) {
+
+    }
+
+
+    function addTest() {
+
+
+        var test_container = document.getElementById('test-ul');
+        var counter = test_container.childElementCount + 1;
+
+        var inputView = "";
+        inputView += "<li id = \"question-list-" + counter + "\">";
+        inputView += "                <div class=\"collapsible-header center center-align\">Вопрос<\/div>";
+        inputView += "                <div class=\"collapsible-body\">";
+        inputView += "                    <div class=\"row\">";
+        inputView += "                        <div class=\"input-field col s12\">";
+        inputView += "                            <input id=\"question-name-" + counter + "\" type=\"text\" class=\"validate\">";
+        inputView += "                            <label for=\"question-name-" + counter + "\">Вопрос<\/label>";
+        inputView += "                        <\/div>";
+        inputView += "                    <\/div>";
+        inputView += "";
+        inputView += "                    <table class=\"striped responsive-table centered\" id=\"answer-table-" + counter + "\">";
+        inputView += "                        <thead>";
+        inputView += "                        <tr>";
+        inputView += "                            <th data-field=\"answer-name\">Ответ<\/th>";
+        inputView += "                            <th data-field=\"answer-is-true\">Правильный ответ<\/th>";
+        inputView += "";
+        inputView += "                        <\/tr>";
+        inputView += "                        <\/thead>";
+        inputView += "                     ";
+        inputView += "               ";
+        inputView += "                    <\/table>";
+        inputView += "                    <div class=\"col s12 row\" id=\"" + counter + "\" href = \"javascript:void(0);\" onclick = \"addAnswer(this.id);\"> <a class=\"btn col s12 center center-align\">+<\/a><\/div>";
+        inputView += "                <\/div>";
+        inputView += "            <\/li>";
+
+        $("#test-container ul").append(inputView);
+    }
+
+
+    function addAnswer(sender_id) {
+        //  alert(sender_id);
+
+        var table = document.getElementById('answer-table-' + sender_id);
+        var counter = table.rows.length;
+        $('#' + table.id + ' tr:last').after('<tr><td><div class="left-align  input-field col s12"><input id="answer-name-' + counter + '" type="text" class="validate"><label for="answer-name-' + counter + '">Ответ</label></div></td><td><div class=" switch center center-align"><label>Нет<input type="checkbox"><span class="lever"></span>Да</label></div></td></tr>');
+
+
+    }
+
+
+    $(document).ready(function () {
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal').modal();
 
