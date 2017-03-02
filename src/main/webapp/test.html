@@ -91,10 +91,6 @@ var stringTest = '';
 function deleteAnswer() {
 
 
-
-
-
-
 }
 
 function deleteQuestion() {
@@ -157,7 +153,31 @@ function addTest() {
     inputView += "            <\/li>";
 
     $("#test-container ul").append(inputView);
+
+
+    var ul = document.getElementById('test-ul');
+
+
+    //console.log( ul.innerHTML);
+    toJSON();
+
 }
+
+    function toJSON() {
+
+        var ul = document.getElementById('test-ul');
+
+        for (var i = 0; i < ul.childNodes.length; i++) {
+            var QName = ul.childNodes[i];
+
+
+            console.log("Q name " + QName);
+
+        }
+
+
+    }
+
 
 
 function addAnswer(sender_id) {

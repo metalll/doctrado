@@ -11,8 +11,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.text.CharacterIterator;
-import java.text.StringCharacterIterator;
 import java.util.Map;
 import java.util.Properties;
 
@@ -21,14 +19,13 @@ import java.util.Properties;
  */
 @WebServlet(name = "updateCourseContent")
 public class updateCourseContent extends HttpServlet {
-    public static char[] buf = new char[1024];
-
-    private Statement stmt;
     protected static final String databaseUrl = "jdbc:mysql://127.6.55.2:3306/doctrado?useUnicode=true&amp;characterEncoding=utf8";
     //private static final String databaseUrl = "jdbc:mysql://localhost:3307/tochka";
     protected static final String userName = "adminsBmIZAN";
     protected static final String password = "qIqWymbbb-hk";
+    public static char[] buf = new char[1024];
     protected Connection conn = null;
+    private Statement stmt;
     private String er="";
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
        // response.setCharacterEncoding("UTF-8");
@@ -120,7 +117,7 @@ public class updateCourseContent extends HttpServlet {
             if(conn != null) try {conn.close();} catch (Exception e){}
 
             response.setStatus(HttpServletResponse.SC_OK);
-            response.getWriter().write("0 "+s );
+            response.getWriter().write("0");
             response.getWriter().flush();
             response.getWriter().close();
 
