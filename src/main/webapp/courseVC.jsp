@@ -326,7 +326,8 @@
 
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-action waves-effect waves-green btn-flat ">Применить изменения</a>
+        <a href="javascript:void(0);" onclick="closeTest();" class="modal-action waves-effect waves-green btn-flat ">Применить
+            изменения</a>
     </div>
 </div>
 
@@ -1051,6 +1052,12 @@ user-select: none;
     %>
 
 
+    function closeTest() {
+
+        $('#test-dialog').modal('close');
+        Materialize.toast("Изменения успешно сохранены")
+
+    }
 
 
     function wait(ms) {
