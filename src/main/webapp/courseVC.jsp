@@ -6,7 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="NSD.NSDConstants" %>
-<%@ page import="auth_system.UUIDGenerator" %>
 <%@ page import="com.mysql.jdbc.Statement" %>
 <%@ page import="model.Answer" %>
 <%@ page import="model.Question" %>
@@ -653,19 +652,7 @@ user-select: none;
     }
 
 
-    function addTest() {
-        $.ajax({
-           type: 'post',
-            url: '<%=NSDConstants.HOST + "/addTest"%>',
-            data:{
-                parent: '<%=id%>',
-                uuid: '<%=UUIDGenerator.Generate()%>'
-            },
-            success: function (data) {
 
-            }
-        });
-    }
 
     function call() {
 
