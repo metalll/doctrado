@@ -612,8 +612,7 @@ user-select: none;
     }
 
     function loadTest(json) {
-        var object = JSON.parse(json);;;;;;
-
+        var object = JSON.parse(json);
         var toselect = [];
 
         for (var i = 0; i < object.length; i++) {
@@ -624,7 +623,7 @@ user-select: none;
             inputView += "                <div class=\"collapsible-header center center-align\">Вопрос<\/div>";
             inputView += "                <div class=\"collapsible-body\">";
             inputView += "   <div class=\"row col s12 center center-align\">";
-            inputView += "<a href=\"javasript:void(0);\" id = \"del-" + i + "\" onclick=\"deleteQuestion(this.id);\" class=\"btn col s12 center center-align red darken-3\">Удалить вопрос<\/a>";
+            inputView += "<a href=\"javascript:void(0);\" id = \"del-" + i + "\" onclick=\"deleteQuestion(this.id);\" class=\"btn col s12 center center-align red darken-3\">Удалить вопрос<\/a>";
             inputView += "                        <\/div>";
             inputView += "                    <div class=\"row\">";
             inputView += "                        <div class=\"input-field col s12\">";
@@ -644,7 +643,7 @@ user-select: none;
             for (var j = 0; j < object[i].answers.length; j++) {
 
                 inputView += '<tr><td><div class="left-align  input-field col s12"><input id="answer-name-' + j + '" type="text" value="' + object[i].answers[j].name + '" class="validate"><label for="answer-name-' + j + '">Ответ</label></div></td><td><div class=" switch center center-align"><label>Нет<input';
-                inputView += ' id = "isTrue-' + j + '-' + i + '" type="checkbox"><span class="lever"></span>Да</label></div></td><td><a href=\"javasript:void(0);\" id = \"del-a-' + i + j + '\" onclick=\"deleteAnswer(this.id);\" class=\"btn col s12 center center-align red darken-3\"><i class=\"material-icons\">delete</i></a><\/a></td></tr>';
+                inputView += ' id = "isTrue-' + j + '-' + i + '" type="checkbox"><span class="lever"></span>Да</label></div></td><td><a href=\"javascript:void(0);\" id = \"del-a-' + i + j + '\" onclick=\"deleteAnswer(this.id);\" class=\"btn col s12 center center-align red darken-3\"><i class=\"material-icons\">delete</i></a><\/a></td></tr>';
                 if (object[i].answers[j].isTrue) {
                     toselect.push('isTrue-' + j + '-' + i + '');
                 }
@@ -685,7 +684,7 @@ user-select: none;
         inputView += "                <div class=\"collapsible-header center center-align\">Вопрос<\/div>";
         inputView += "                <div class=\"collapsible-body\">";
         inputView += "   <div class=\"row col s12 center center-align\">";
-        inputView += "<a href=\"javasript:void(0);\" id = \"del-" + counter + "\" onclick=\"deleteQuestion(this.id);\" class=\"btn col s12 center center-align red darken-3\">Удалить вопрос<\/a>";
+        inputView += "<a href=\"javascript:void(0);\" id = \"del-" + counter + "\" onclick=\"deleteQuestion(this.id);\" class=\"btn col s12 center center-align red darken-3\">Удалить вопрос<\/a>";
         inputView += "                    <\/div>";
         inputView += "                    <div class=\"row\">";
         inputView += "                        <div class=\"input-field col s12\">";
@@ -821,7 +820,7 @@ user-select: none;
 
         var table = document.getElementById('answer-table-' + sender_id);
         var counter = table.rows.length;
-        $('#' + table.id + ' tr:last').after('<tr><td><div class="left-align  input-field col s12"><input id="answer-name-' + counter + '" type="text" class="validate"><label for="answer-name-' + counter + '">Ответ</label></div></td><td><div class=" switch center center-align"><label>Нет<input type="checkbox"><span class="lever"></span>Да</label></div></td><td><a href=\"javasript:void(0);\" id = \"del-a-' + counter + '\" onclick=\"deleteAnswer(this.id);\" class=\"btn col s12 center center-align red darken-3\"><i class=\"material-icons\">delete</i></a><\/a></td></tr>');
+        $('#' + table.id + ' tr:last').after('<tr><td><div class="left-align  input-field col s12"><input id="answer-name-' + counter + '" type="text" class="validate"><label for="answer-name-' + counter + '">Ответ</label></div></td><td><div class=" switch center center-align"><label>Нет<input type="checkbox"><span class="lever"></span>Да</label></div></td><td><a href=\"javascript:void(0);\" id = \"del-a-' + counter + '\" onclick=\"deleteAnswer(this.id);\" class=\"btn col s12 center center-align red darken-3\"><i class=\"material-icons\">delete</i></a><\/a></td></tr>');
 
 
     }
