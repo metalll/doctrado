@@ -498,30 +498,51 @@
     </div>
 </nav>
 
-<div class="parallax-container valign-wrapper col s12">
-    <div class="section no-pad-bot">
-        <div class="container valign">
 
-            <h1 class="center orange-text text-darken-3 ">Doctrado</h1>
-            <div class="row center hide-on-small-only">
-                <h5 class="header col s12 light white-text ">Обретай новые знания сейчас!</h5>
+<div class="carousel carousel-slider center" data-indicators="true">
+    <div class="carousel-fixed-item center">
+        <a href="#modal1" id="download-button" class="btn-large modal-trigger waves-effect waves-light  " style="    background: linear-gradient(to bottom right, #ef6c00 0%, #2e7d32 36%,#ef6c00 100%);">Приступить
+            к
+            работе</a>
+    </div>
+    <div class="carousel-item white-text" href="#one!" style="background: url('../img/bImg1.jpeg') center center fixed;  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
 
-                <h5 class="header col s12 light white-text ">Вместе с Doctrado.</h5>
-            </div>
-            <div class="row center">
-                <a href="#modal1" id="download-button"
-                   class="btn-large modal-trigger waves-effect waves-light  "
-                   style="    background: linear-gradient(to bottom right, #ef6c00 0%, #2e7d32 36%,#ef6c00 100%);">Приступить
-                    к
-                    работе</a>
-            </div>
+
+        <h1 class="center orange-text text-darken-3 ">Doctrado</h1>
+        <div class="row center ">
+            <h5 class="header col s12 light white-text ">Обретай новые знания сейчас!</h5>
+
+            <h5 class="header col s12 light white-text ">Вместе с Doctrado</h5>
+        </div>
+    </div>
+    <div class="carousel-item amber white-text" href="#two!"  style="background: url('../img/bImg2.png') center center fixed ;  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+        <h1 class="center green-text text-darken-3 ">Сертификаты</h1>
+        <div class="row center ">
+            <h5 class="header col s12 light white-text ">Выберите нужный курс. Ознакомьтесь с лекционный материалом</h5>
+            <h5 class="header col s12 light white-text ">Пройдите тест. И сертификат у вас!</h5>
+
+        </div>
+    </div>
+    <div class="carousel-item green white-text" href="#three!" style="background: url('../img/bImage3.png') center center fixed ;  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+
+        <h1 class="center orange-text text-darken-3 ">Возможности</h1>
+        <div class="row center ">
+            <h5 class="header col s12 green-text text-darken-3  ">Наш сервис вам предоставляет возможности студентов и преподавателей</h5>
 
 
         </div>
     </div>
-    <div class="parallax "><img src="../img/bImg1.jpeg" alt="Unsplashed background img 1"></div>
-</div>
 
+</div>
 
 
 <div class="container" style="{height: 160px; }">
@@ -531,7 +552,7 @@
         <div class="row">
             <div class="col s12 m4 l4">
                 <div class="icon-block">
-                    <h2 class="center black-text"><i class="material-icons green-text text-darken-3">schedule</i></h2>
+                    <h2 class="center black-text"><i class="medium material-icons green-text text-darken-3">schedule</i></h2>
                     <h5 class="center">Быстро и удобно</h5>
 
                     <p class="light center-align">Региструешься, находишь нужный курс, проходишь все темы и тесты после
@@ -541,7 +562,7 @@
 
             <div class="col s12 m4 l4">
                 <div class="icon-block">
-                    <h2 class="center black-text"><i class="material-icons green-text text-darken-3">group_work</i>
+                    <h2 class="center black-text"><i class="medium material-icons green-text text-darken-3">group_work</i>
                     </h2>
                     <h5 class="center">Командная работа</h5>
                     <p class="light center-align">Для развития сервиса мы добавили возможность каждому, у кого есть
@@ -551,7 +572,7 @@
 
             <div class="col s12 m4 l4">
                 <div class="icon-block">
-                    <h2 class="center black-text"><i class="material-icons green-text text-darken-3">work</i></h2>
+                    <h2 class="center black-text"><i class="medium material-icons green-text text-darken-3">work</i></h2>
                     <h5 class="center">Приступай к работе</h5>
 
                     <p class="light center-align">Пройдя какой-либо курс, получив сертификат - Вы тут же можете
@@ -564,83 +585,76 @@
 </div>
 
 
-<div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
+<div id = "rootContainer">
+
+
+
+
+</div>
+
+
+<div>
+    <footer class="page-footer center-align grey darken-4 white-text">
         <div class="container">
-            <div class="row center">
-                <h2 class="header center green-text text-darken-3">Кто и почему?</h2>
+            <div class="footer-copyright">
+                <div class="container">Doctrado © 2016</div>
             </div>
         </div>
-    </div>
-    <div class="parallax"><img src="../img/bImg2.png" alt="Unsplashed background img 2"></div>
-</div>
-
-<div class="container">
-    <div class="section">
-        <div class="row">
-            <div class="col s12 center">
-                <h3><i class="mdi-content-send brown-text"></i></h3>
-
-                <p class="left-align light">Мы - команда из людей разных специальностей, и каждый из нас сталкивался с
-                    проблемой поиска информации, для улучшения своих навыков, либо же не хватало времени, чтобы
-                    закончить курсы и получить нужный сертификат. Сейчас мы решили создать сервис, где каждый человек,
-                    который занят своей работой, может не тратив свое время на лишние путешествия в учебные центры -
-                    быстро, легко, а главное 100% пройти нужный ему курс онлайн и получить государственный
-                    сертификат.</p>
-            </div>
-        </div>
-
-    </div>
+    </footer>
 </div>
 
 
-<div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-        <div class="container">
-            <div class="row center">
-                <h2 class="header center orange-text text-darken-3">Возможности</h2>
-            </div>
-        </div>
-    </div>
-    <div class="parallax"><img src="../img/bImage3.png" alt="Unsplashed background img 3"></div>
-</div>
 
-<div class="container">
-    <div class="section">
+<script>
+    $('.carousel.carousel-slider').carousel({fullWidth: true});
+   // $('.button-collapse').sideNav();
+    setInterval(function() {
+        $('.carousel').carousel('next');
+    }, 5000);
+    $(document).ready(function () {
 
-        <div class="row">
-            <div class="col s12 m6 center">
-                <h3><i class="mdi-content-send brown-text"></i></h3>
-                <h5>БЫТЬ СТУДЕНТОМ</h5>
-            </div>
-            <div class="col s12 m6 center">
-                <h3><i class="mdi-content-send brown-text"></i></h3>
-                <h5>БЫТЬ ПРЕПОДАВАТЕЛЕМ</h5>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s12 center-align">
-                <h3><i class="mdi-content-send brown-text"></i></h3>
-                <p class="light center-align">Если у Вас нет времени на прохождение офф-лайн тренингов, тестирования,
-                    курсов и т.д. То зарегистрировавшись у нас - Вы получите возможность поиска курсов, которые
-                    окажуться Вам нужны или интересны. После их прохождения Вы сможете получить государственный
-                    сертификат, который поможет Вам - сразу получить более высокооплачиваемую работу</p>
-                <a class="waves-effect waves-light modal-trigger btn-large green darken-3 white-text"
-                   href="#modal2">Регистрация</a>
-            </div>
-        </div>
+        loadCourse();
 
-    </div>
-</div>
+    });
+
+    function loadCourse() {
+
+        $.ajax({
+            type: 'post',
+            url: 'https://doctrado-sviasy.rhcloud.com/courseQuery',
+            data: {
+                q:""
+            }    ,
+            success:function (rawData) {
+                var data = JSON.parse(rawData);
+                var insertView = '';
+                var root = document.getElementById("rootContainer");
+                for (var i = 0; i < root.childElementCount; i++) {
+                    root.removeChild(root.childNodes[i]);
+                }
+                for(var i1 = 0;i1<data.length;i1++){
+                    if(i1==0||i1%3==0){
+                        if(i1!=0){
+                            insertView+='</div></div>';
+                        }
+                        insertView+='<div class="container"><div class="row">';
+                    }
+                    insertView+='<div class="row col s12 m4 l4"><div class="col s12 m12 l12"><div class="medium card"><div class="card-image" ><img  class="center center-align" style="width:200px;height:200px;overflow:hidden; top: 0; bottom:0; left: 0; right:0; margin: auto;" src="'+data[i1].imageLink+'"><span class="card-title flow-text"></span></div><div class="card-content"><p class="center-align" >'+ data[i1].courseName+'</p><br><p>Время на изучение: '+data[i1].timeToLearn+' '+ getNumEnding(data[i1].timeToLearn,end) +'</p></div><div class="card-action center-align"><p><a href="'+data[i1].moreLink+'" class="waves-effect col s12 waves-light green btn">Подробнее</a></p></div></div></div></div>';
+                }
+                insertView+='</div></div>';
+                root.innerHTML = insertView;
+                // console.log(rawData);
+                // console.log(data);
+            }
+        });
 
 
-<footer class="page-footer center-align grey darken-4 white-text">
-    <div class="container">
-        <div class="footer-copyright">
-            <div class="container">Doctrado © 2016</div>
-        </div>
-    </div>
-</footer>
+
+    }
+</script>
+
+
+
 
 <script type="application/javascript">
     var Gname = null;
