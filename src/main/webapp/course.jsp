@@ -432,8 +432,7 @@
         return sEnding;
 
 
-
-
+    }
     function call() {
 
         //$('#progress_bar').modal('open');
@@ -720,7 +719,7 @@
             }
         });
     }
-    }
+
 
 
 
