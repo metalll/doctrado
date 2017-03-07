@@ -606,6 +606,7 @@
 
 
 <script>
+    var end = [];
     $('.carousel.carousel-slider').carousel({fullWidth: true});
    // $('.button-collapse').sideNav();
     setInterval(function() {
@@ -618,7 +619,9 @@
     });
 
     function loadCourse() {
-
+        end.push("день");
+        end.push("дня");
+        end.push("дней");
         $.ajax({
             type: 'post',
             url: 'https://doctrado-sviasy.rhcloud.com/courseQuery',
