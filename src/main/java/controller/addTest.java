@@ -153,11 +153,11 @@ public class addTest extends HttpServlet {
             try {
                 stmt.executeUpdate("INSERT INTO  `doctrado`.`test` (\n" +
                         "`parentCourse` ,\n" +
-                        "`testUUID` ,\n" +
+                        "`testUUID` , `uid`\n" +
                         ")\n" +
                         "VALUES (\n" +
                         " '" + parent + "', '" + uuid + "'" +
-                        ");");
+                        ",NULL);");
                 //   completion.afterOperation(null);
             } catch (SQLException e) {
                 e.printStackTrace();
