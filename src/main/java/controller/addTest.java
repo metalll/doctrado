@@ -10,9 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Properties;
 
@@ -35,7 +34,16 @@ public class addTest extends HttpServlet {
         Map<String,String[]> paramMap = request.getParameterMap();
 
         String parent = paramMap.get("parentCourse")[0];
-        String uuid = paramMap.get("uuid")[0];
+        String uuid = paramMap.get("JSON")[0]; // uuid - json
+
+        boolean has = false;
+
+
+        String query = "SELECT * FROM `test` WHERE `parentCourse` = \'" + parent + "\'";
+
+
+
+
 
         try{
             Class.forName("com.mysql.jdbc.Driver");  }
@@ -51,14 +59,169 @@ public class addTest extends HttpServlet {
         }
         catch (Exception e){}
         try {
-            stmt.executeUpdate("INSERT INTO  `doctrado`.`test` (\n" +
-                    "`testID` ,\n" +
-                    "`parentCourse` ,\n" +
-                    "`testUUID` ,\n" +
-                    ")\n" +
-                    "VALUES (\n" +
-                    "'NULL',  '"+parent+"', '"+uuid+"'" +
-                    ");");
+            ResultSet rs = stmt.executeQuery(query);
+
+            while (rs.next()){
+                has = true;
+            }
+
+            //   completion.afterOperation(null);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            if(stmt != null) try {stmt.close();} catch (Exception e){}
+            if(conn != null) try {conn.close();} catch (Exception e){}
+
+
+
+        }
+
+
+
+        if(has){
+
+            query = "DELETE FROM  `doctrado`.`test` WHERE  `test`.`parentCourse` =  '"+parent+"'";
+
+
+
+
+
+
+
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                Properties connInfo = new Properties();
+                connInfo.put("user", userName);
+                connInfo.put("password", password);
+                connInfo.put("useUnicode", "true");
+                connInfo.put("characterEncoding", "UTF-8");
+                Connection conn = DriverManager.getConnection(databaseUrl, connInfo);
+                stmt = (Statement) conn.createStatement();
+            } catch (Exception e) {
+            }
+            try {
+                stmt.executeUpdate(query);
+                //   completion.afterOperation(null);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                if (stmt != null) try {
+                    stmt.close();
+                } catch (Exception e) {
+                }
+                if (conn != null) try {
+                    conn.close();
+                } catch (Exception e) {
+                }
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                Properties connInfo = new Properties();
+                connInfo.put("user", userName);
+                connInfo.put("password", password);
+                connInfo.put("useUnicode", "true");
+                connInfo.put("characterEncoding", "UTF-8");
+                Connection conn = DriverManager.getConnection(databaseUrl, connInfo);
+                stmt = (Statement) conn.createStatement();
+            } catch (Exception e) {
+            }
+            try {
+                stmt.executeUpdate("INSERT INTO  `doctrado`.`test` (\n" +
+                        "`parentCourse` ,\n" +
+                        "`testUUID` ,\n" +
+                        ")\n" +
+                        "VALUES (\n" +
+                        " '" + parent + "', '" + uuid + "'" +
+                        ");");
+                //   completion.afterOperation(null);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            } finally {
+                if (stmt != null) try {
+                    stmt.close();
+                } catch (Exception e) {
+                }
+                if (conn != null) try {
+                    conn.close();
+                } catch (Exception e) {
+                }
+
+                response.setStatus(HttpServletResponse.SC_OK);
+                response.getWriter().write("0");
+                response.getWriter().flush();
+                response.getWriter().close();
+
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String parent = request.getParameterMap().get("parent")[0];
+
+
+        String retVal = "";
+
+
+        String query = "SELECT * FROM `test` WHERE `parentCourse` = \'" + parent + "\'";
+
+
+
+
+
+        try{
+            Class.forName("com.mysql.jdbc.Driver");  }
+        catch(Exception e){ e.printStackTrace(); }
+        try {
+            Properties connInfo = new Properties();
+            connInfo.put("user",userName);
+            connInfo.put("password",password);
+            connInfo.put("useUnicode","true");
+            connInfo.put("characterEncoding","UTF-8");
+            Connection conn = DriverManager.getConnection(databaseUrl, connInfo);
+            stmt = (Statement) conn.createStatement();
+        }
+        catch (Exception e){}
+        try {
+            ResultSet rs = stmt.executeQuery(query);
+
+            while (rs.next()){
+                retVal += rs.getString(2);
+            }
+
             //   completion.afterOperation(null);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -68,7 +231,7 @@ public class addTest extends HttpServlet {
             if(conn != null) try {conn.close();} catch (Exception e){}
 
             response.setStatus(HttpServletResponse.SC_OK);
-            response.getWriter().write("0");
+            response.getWriter().write(retVal);
             response.getWriter().flush();
             response.getWriter().close();
 
@@ -76,18 +239,6 @@ public class addTest extends HttpServlet {
 
 
 
-
-
-
-
-
-
-
-
-
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 }

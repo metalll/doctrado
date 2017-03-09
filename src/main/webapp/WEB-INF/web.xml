@@ -17,7 +17,7 @@
 
     <servlet>
         <servlet-name>test</servlet-name>
-        <servlet-class>controller.testController</servlet-class>
+        <servlet-class>controller.addTest</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>test</servlet-name>

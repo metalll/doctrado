@@ -783,7 +783,25 @@ user-select: none;
 
         });
 
-        console.log(JSON.stringify(retVal));
+
+        var JSONSend = JSON.stringify(retVal);
+
+        $.ajax({
+
+            type:"post",
+            url:"https://doctrado-sviasy.rhcloud.com/addTest",
+            data:{
+               JSON:JSONSend,
+                parent:'<%=id%>'
+            },
+            success:function (data) {
+                alert('eeee');
+            }
+
+
+        });
+
+
 
 
     }
