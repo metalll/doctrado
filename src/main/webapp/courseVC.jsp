@@ -789,7 +789,7 @@ user-select: none;
         $.ajax({
 
             type:"post",
-            url:"https://doctrado-sviasy.rhcloud.com/addTest",
+            url:"https://doctrado-sviasy.rhcloud.com/test",
             data:{
                JSON:JSONSend,
                 parent:'<%=id%>'
