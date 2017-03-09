@@ -33,7 +33,7 @@ public class addTest extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Map<String,String[]> paramMap = request.getParameterMap();
 
-        String parent = paramMap.get("parentCourse")[0];
+        String parent = paramMap.get("parent")[0];
         String uuid = paramMap.get("JSON")[0]; // uuid - json
 
         boolean has = false;
