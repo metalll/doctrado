@@ -800,6 +800,16 @@ user-select: none;
         // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal').modal();
 
+        $.ajax({
+            url: 'https://doctrado-sviasy.rhcloud.com/test?parent=<%=id%>',
+            type:'get',
+            success:function (data) {
+                loadTest(data);
+            }
+        });
+
+
+
     });
 
     function addTheme() {
