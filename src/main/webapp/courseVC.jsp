@@ -727,7 +727,7 @@ user-select: none;
         var retVal = [];
 
 
-        $('ul li').each(function (i) {
+        $("#test-ul li").each(function (i) {
             var Question = {};
 
 
@@ -743,13 +743,13 @@ user-select: none;
             console.log(input.val());
             //    console.log(inputA.a)
             var myTableArray = [];
-            var Answers = $('#' + questionID + " div:last-child table tr");
+
             $('#' + questionID + " div:last-child table tr").each(function () {
 
                 var arrayOfThisRow = {};
                 var tableData = $(this).find('td');
                 var counter = 1;
-                tableData.each(function () {
+                tableData.each(function (each) {
 
                     if (counter == 1) {
                         counter += 1;
@@ -765,7 +765,8 @@ user-select: none;
                     }
 
                 });
-                if (!isEmpty(arrayOfThisRow)) {
+                if (!isEmpty(arrayOfThisRow)&&!isEmpty(arrayOfThisRow.name)&&!isEmpty(arrayOfThisRow.isTrue)) {
+
                     myTableArray.push(arrayOfThisRow);
                 }
 
