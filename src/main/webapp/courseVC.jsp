@@ -710,7 +710,7 @@ user-select: none;
 
                     } else {
                         if(counter==2) {
-                            var elem = $(this).find('input');
+                            var elem = $(this.childNodes[0].childNodes[0]);
 
                             arrayOfThisRow.isTrue = elem.is(":checked");
                         }else{}
