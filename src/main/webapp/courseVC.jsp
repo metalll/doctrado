@@ -702,20 +702,32 @@ user-select: none;
                 var counter = 1;
                 tableData.each(function (each) {
 
-                    if (counter == 1) {
-                        counter += 1;
 
+                    if (each == 0) {
                         arrayOfThisRow.name = $(this).find('input').val();
-
-
-                    } else {
-                        if(counter==2) {
-                            counter++;
-                        }else{   var elem = $(this.childNodes[0].childNodes[0]);
-                            console.log(elem);
-                            arrayOfThisRow.isTrue = elem.is(":checked");}
                     }
 
+                    if (each == 1) {
+                        arrayOfThisRow.isTrue = $(this).find('input').is(":checked");
+                    }
+
+
+//                    if (counter == 1) {
+//                        counter += 1;
+//
+//
+//
+//
+//                    } else {
+//                        if(counter==2) {
+//                            counter++;
+//
+//                        }else{   var elem = $(this.childNodes[0].childNodes[0]);
+//                            console.log(elem);
+//
+//                    }
+//
+//                });
                 });
                 if (!isEmpty(arrayOfThisRow)) {
 
