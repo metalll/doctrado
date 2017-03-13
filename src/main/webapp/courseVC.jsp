@@ -765,7 +765,7 @@ user-select: none;
                     }
 
                 });
-                if (!isEmpty(arrayOfThisRow)&&!isEmpty(arrayOfThisRow.name)&&!isEmpty(arrayOfThisRow.isTrue)) {
+                if (!isEmpty(arrayOfThisRow)&&) {
 
                     myTableArray.push(arrayOfThisRow);
                 }
