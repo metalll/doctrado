@@ -710,10 +710,10 @@ user-select: none;
 
                     } else {
                         if(counter==2) {
-                            var elem = $(this.childNodes[0].childNodes[0]);
-                                console.log(elem);
-                            arrayOfThisRow.isTrue = elem.is(":checked");
-                        }else{}
+
+                        }else{   var elem = $(this.childNodes[0].childNodes[0]);
+                            console.log(elem);
+                            arrayOfThisRow.isTrue = elem.is(":checked");}
                     }
 
                 });
