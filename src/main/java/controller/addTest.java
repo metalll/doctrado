@@ -210,7 +210,7 @@ public class addTest extends HttpServlet {
 
         String query = "SELECT * FROM `test` WHERE `parentCourse` = \'" + parent + "\'";
 
-
+        response.setCharacterEncoding("UTF-8");
 
 
 
