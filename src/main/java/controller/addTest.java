@@ -32,9 +32,15 @@ public class addTest extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Map<String,String[]> paramMap = request.getParameterMap();
+        String error = "";
+
 
         String parent = paramMap.get("parent")[0];
         String uuid = paramMap.get("JSON")[0]; // uuid - json
+
+        String err = "";
+
+
 
         boolean has = false;
 
@@ -68,6 +74,8 @@ public class addTest extends HttpServlet {
             //   completion.afterOperation(null);
         } catch (SQLException e) {
             e.printStackTrace();
+            err +=e.getLocalizedMessage();
+            err += "\n";
         }
         finally {
             if(stmt != null) try {stmt.close();} catch (Exception e){}
@@ -109,6 +117,8 @@ public class addTest extends HttpServlet {
                 //   completion.afterOperation(null);
             } catch (SQLException e) {
                 e.printStackTrace();
+                err +=e.getLocalizedMessage();
+                err += "\n";
             } finally {
                 if (stmt != null) try {
                     stmt.close();
@@ -160,6 +170,8 @@ public class addTest extends HttpServlet {
                         ",NULL);");
                 //   completion.afterOperation(null);
             } catch (SQLException e) {
+                err +=e.getLocalizedMessage();
+                err += "\n";
                 e.printStackTrace();
             } finally {
                 if (stmt != null) try {
@@ -172,7 +184,7 @@ public class addTest extends HttpServlet {
                 }
 
                 response.setStatus(HttpServletResponse.SC_OK);
-                response.getWriter().write("0");
+                response.getWriter().write("0" +"  "+ err);
                 response.getWriter().flush();
                 response.getWriter().close();
 
