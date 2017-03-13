@@ -709,10 +709,11 @@ user-select: none;
 
 
                     } else {
-                        var elem = $(this).find('input');
+                        if(counter==2) {
+                            var elem = $(this).find('input');
 
-                        arrayOfThisRow.isTrue = elem.is(":checked");
-
+                            arrayOfThisRow.isTrue = elem.is(":checked");
+                        }else{}
                     }
 
                 });
