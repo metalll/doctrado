@@ -46,7 +46,6 @@
             uType = cookie.getValue();
     }
 
-    Test finalTest = new Test();
 
 
 
@@ -158,54 +157,6 @@
             }
         }
 
-        query = "SELECT * \n" +
-                "FROM  `test` WHERE `parentCourse` = '"+id+"' ";
-
-
-        rs = stmt.executeQuery(query);
-        while (rs.next()){
-
-            finalTest.testUUID = rs.getString(3);
-        }
-
-        if(finalTest.testUUID!=null){
-            query = "SELECT * FROM `question` WHERE `parentTest` = '"+finalTest.testUUID+"'";
-            rs = stmt.executeQuery(query);
-            while (rs.next()){
-
-            if(finalTest.questions==null){ finalTest.questions=new ArrayList<Question>(); }
-
-            Question question = new Question();
-            question.question = rs.getString(3);
-            question.questionUUID = rs.getString(4);
-
-            finalTest.questions.add(question);
-
-            }
-
-            for(int i=0;i<finalTest.questions.size();i++){
-
-              if(finalTest.questions.get(i).answers==null){ finalTest.questions.get(i).answers = new ArrayList<Answer>(); }
-
-              query = "SELECT * FROM `answer` WHERE `parentQuestion` = '"+finalTest.questions.get(i).questionUUID+"'";
-
-                rs = stmt.executeQuery(query);
-
-                while (rs.next()) {
-
-                    Answer answer = new Answer();
-                    answer.Answer = rs.getString(2);
-                    answer.QuestionUUID = rs.getString(4);
-                    answer.isTrue = rs.getInt(3);
-                    finalTest.questions.get(i).answers.add(answer);
-
-
-                }
-            }
-
-
-
-        }
 
 
 
